@@ -11,7 +11,7 @@
     "test": "echo \"No test specified\" && exit 0",
     "dev": "quasar dev",
     "build": "quasar build",
-    "deploy": "npx quasar build && npx gh-pages -d dist"
+    "deploy": "npx quasar build && cp -r dist/spa/* dist/&& npx gh-pages -d dist"
   },
   "dependencies": {
     "@quasar/extras": "^1.16.4",
