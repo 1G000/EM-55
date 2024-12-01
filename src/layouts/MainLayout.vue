@@ -2,7 +2,7 @@
   <q-layout view="lHh Lpr lFf">
     <q-header elevated class="header">
       <div class="logo__container">
-        <img src="/src/assets/logo.png" class="navbar__logo" />
+        <img src="../assets/logo.png" class="navbar__logo" />
       </div>
       <div class="firstline"></div>
       <div class="secondline"></div>
@@ -60,25 +60,21 @@ defineOptions({
   name: "MainLayout",
 });
 
-const navItems = [
-  {
-    label: "О компании",
-    secondLevel: true,
-    secondLevelItems: [
-      "О компании",
-      "Производство",
-      "История",
-      "Наши клиенты",
-      "Вакансии",
-      "Реквизиты",
-    ],
-  },
-  { label: "Проекты", secondLevel: false },
-  { label: "Оборудование", secondLevel: false },
-  { label: "Услуги", secondLevel: false },
-  { label: "Вакансии", secondLevel: false },
-  { label: "События", secondLevel: false },
-];
+import { ref, onMounted } from "vue";
+const navItems = ref(null);
+
+onMounted(async () => {
+  try {
+    const response = await fetch("./navitems.json");
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    navItems.value = (await response.json()).navItems;
+  } catch (error) {
+    console.error("Error fetching navItems:", error);
+    navItems.value = [];
+  }
+});
 </script>
 
 <style scoped>
