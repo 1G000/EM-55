@@ -16,7 +16,7 @@
             <div v-for="item in navItems" :key="item">
               <template v-if="item.secondLevel">
                 <q-btn-dropdown flat square :label="item.label" fab>
-                  <q-list>
+                  <q-list bordered>
                     <q-item
                       class="dropdown"
                       v-for="subitem in item.secondLevelItems"
@@ -190,10 +190,7 @@ button::before {
 .q-toolbar {
   min-height: 54px;
 }
-.q-position-engine {
-  border-top-left-radius: 0 !important;
-  border-top-right-radius: 0 !important;
-}
+
 @media (max-width: 1400px) {
   .toolbar {
     justify-content: flex-end;
