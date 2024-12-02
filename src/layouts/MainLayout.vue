@@ -1,3 +1,28 @@
+<script setup>
+defineOptions({
+  name: "MainLayout",
+});
+
+import MobileNavigation from "src/components/MobileNavigation.vue";
+import { ref, onMounted } from "vue";
+
+const navItems = ref(null);
+const showMobileMenu = ref(false);
+
+onMounted(async () => {
+  try {
+    const response = await fetch("./navitems.json");
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    navItems.value = (await response.json()).navItems;
+  } catch (error) {
+    console.error("Error fetching navItems:", error);
+    navItems.value = [];
+  }
+});
+</script>
+
 <template>
   <q-layout view="lHh Lpr lFf">
     <q-header elevated class="header">
@@ -12,7 +37,7 @@
             Оборудование для<br />
             трансформаторных подстанций
           </q-toolbar-title>
-          <div class="navigation nav-text">
+          <div class="navigation nav-text" v-if="$q.screen.width > 1200">
             <div v-for="item in navItems" :key="item">
               <template v-if="item.secondLevel">
                 <q-btn-dropdown flat square :label="item.label" fab>
@@ -50,6 +75,36 @@
             /></svg
           ><a>8 (812) 294–20–13</a>
         </div>
+        <!-- Кнопка бургера -->
+        <div class="flex justify-start q-py-md" v-if="$q.screen.width < 1200">
+          <q-icon
+            name="menu"
+            color="accent"
+            size="24px"
+            class="cursor-pointer q-px-sm q-py-xs bg-secondary"
+            style="border-radius: 5px"
+            @click="showMobileMenu = !showMobileMenu"
+          />
+          <q-drawer
+            side="right"
+            :breakpoint="1200"
+            v-model="showMobileMenu"
+            style="position: absolute; top: 0; right: 0"
+          >
+            <q-icon
+              name="close"
+              color="accent"
+              size="xl"
+              class="cursor-pointer q-pa-md"
+              @click="showMobileMenu = false"
+            />
+
+            <!-- Выплывающее меню -->
+            <transition>
+              <MobileNavigation :menu="navItems" />
+            </transition>
+          </q-drawer>
+        </div>
       </div>
     </q-header>
     <q-page-container>
@@ -57,28 +112,6 @@
     </q-page-container>
   </q-layout>
 </template>
-
-<script setup>
-defineOptions({
-  name: "MainLayout",
-});
-
-import { ref, onMounted } from "vue";
-const navItems = ref(null);
-
-onMounted(async () => {
-  try {
-    const response = await fetch("./navitems.json");
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
-    navItems.value = (await response.json()).navItems;
-  } catch (error) {
-    console.error("Error fetching navItems:", error);
-    navItems.value = [];
-  }
-});
-</script>
 
 <style scoped>
 .header {
