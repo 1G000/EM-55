@@ -1,29 +1,32 @@
 <script setup>
-import { ref } from "vue";
+import MobileNavigationItem from "./MobileNavigationItem.vue";
+import MobileNavigation from "src/components/MobileNavigation.vue";
 defineProps({
   menu: {
     type: Array,
     require: true,
   },
 });
-
-const expanded = ref(false);
 </script>
 
 <template>
-  <div class="text-accent text-weight-bold" style="max-width: 100%">
+  <div class="navigation-back">
     <q-list>
-      <header-toolbar-mobile-menu-item
-        label="Услуги"
-        :menuKeys="[6, 8]"
-        section="services"
-      />
-      <header-toolbar-mobile-menu-item label="Информация" section="info" />
-      <q-list class="text-accent text-weight-bold q-pt-md">
-        <q-item clickable to="/schedule" @click="closeMenu">
-          Расписание полетов
-        </q-item>
-      </q-list>
+      <q-list-item>
+        <MobileNavigationItem
+          v-for="item in menu"
+          :key="item.label"
+          :label="item.label"
+          :second-level="item.secondLevel"
+          :second-level-items="item.secondLevelItems"
+        />
+      </q-list-item>
     </q-list>
   </div>
 </template>
+
+<style scoped>
+.navigation-back {
+  background-color: #830024;
+}
+</style>

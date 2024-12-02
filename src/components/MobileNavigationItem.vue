@@ -6,41 +6,63 @@ defineProps({
     require: true,
   },
   secondLevel: {
+    type: Boolean,
+    require: true,
+  },
+  secondLevelItems: {
     type: Array,
     require: true,
   },
 });
 
 const expanded = ref(false);
+const expandedSecond = ref(false);
 </script>
 
 <template>
   <q-expansion-item
+    class="navigation-list"
     v-model="expanded"
-    class="q-py-sm"
-    style="
-      border-bottom: 1px solid #e9e9e9;
-      padding-top: 12px;
-      padding-bottom: 14px;
-    "
+    :label="label"
+    :hide-expand-icon="label === 'Вакансии'"
+    dense-toggle
   >
-    <q-expansion-item
-      v-for="item in menu"
+    <q-card
+      v-for="item in secondLevelItems"
       :key="item.title"
-      :label="item.title"
-      class="text-accent text-weight-bold"
+      class="q-pl-md expansion-inner text-white"
     >
-      <q-card class="text-accent text-weight-regular">
-        <q-item
-          v-for="el in item.items"
-          :key="el.title"
-          :to="formRoute(el.path, item.path)"
-          @click="closeMenu"
-          class="toolbar-link"
-        >
-          {{ el.title }}
-        </q-item>
-      </q-card>
-    </q-expansion-item>
+      <q-card-section
+        v-if="!item.thirdLevel"
+        :to="kkk"
+        @click="expanded = false"
+      >
+        {{ item.title }}
+      </q-card-section>
+      <q-expansion-item
+        v-else
+        v-model="expandedSecond"
+        :label="item.title"
+        expand-separator
+        dense-toggle
+      >
+        <q-card class="q-pl-md expansion-inner text-white">
+          <q-card-section
+            v-for="thirdLevelItem in item.thirdLevelItems"
+            :key="thirdLevelItem.title"
+            :to="kkk"
+            @click="expandedSecond = false"
+          >
+            {{ thirdLevelItem.title }}
+          </q-card-section>
+        </q-card>
+      </q-expansion-item>
+    </q-card>
   </q-expansion-item>
 </template>
+
+<style scoped>
+.expansion-inner {
+  background-color: #830024;
+}
+</style>

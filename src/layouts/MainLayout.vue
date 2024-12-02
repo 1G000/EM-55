@@ -76,28 +76,33 @@ onMounted(async () => {
           ><a>8 (812) 294–20–13</a>
         </div>
         <!-- Кнопка бургера -->
-        <div class="flex justify-start q-py-md" v-if="$q.screen.width < 1200">
+        <div class="burger" v-if="$q.screen.width < 1200">
           <q-icon
             name="menu"
-            color="accent"
-            size="24px"
-            class="cursor-pointer q-px-sm q-py-xs bg-secondary"
-            style="border-radius: 5px"
+            size="32px"
+            class="burger-icon"
             @click="showMobileMenu = !showMobileMenu"
           />
           <q-drawer
             side="right"
             :breakpoint="1200"
             v-model="showMobileMenu"
-            style="position: absolute; top: 0; right: 0"
+            style="
+              position: absolute;
+              top: 0;
+              right: 0;
+              background-color: #830024;
+              color: white;
+            "
           >
-            <q-icon
-              name="close"
-              color="accent"
-              size="xl"
-              class="cursor-pointer q-pa-md"
-              @click="showMobileMenu = false"
-            />
+            <div class="close-icon-wrapper">
+              <q-icon
+                name="close"
+                size="32px"
+                class="close-cross"
+                @click="showMobileMenu = false"
+              />
+            </div>
 
             <!-- Выплывающее меню -->
             <transition>
@@ -223,7 +228,33 @@ button::before {
 .q-toolbar {
   min-height: 54px;
 }
-
+.burger {
+  background: rgb(131, 0, 36);
+  height: 55px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.burger-icon {
+  cursor: pointer;
+  background: none;
+  padding: 10px;
+  color: #dba572;
+  /* z-index: 9999999999999999; */
+}
+.close-icon-wrapper {
+  display: flex;
+  justify-content: end;
+}
+.close-cross {
+  cursor: pointer;
+  color: #dba572;
+  padding: 30px 16px;
+  display: flex;
+  justify-content: end;
+  width: 32px;
+  height: 32px;
+}
 @media (max-width: 1400px) {
   .toolbar {
     justify-content: flex-end;
