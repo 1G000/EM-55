@@ -4,57 +4,72 @@
       "label": "О компании",
       "secondLevel": true,
       "secondLevelItems": [
-        "О компании",
-        "Производство",
-        "История",
-        "Галерея",
-        "Отзывы",
-        "Вакансии",
-        "Наши партнёры",
-        "Реквизиты"
+        { "title": "О компании", "thirdLevel": false},
+        { "title": "Производство", "thirdLevel": false},
+        {"title": "История", "thirdLevel": true,"thirdLevelItems": [
+            { "title": "Как мы пили коктели" },
+            { "title": "Как мы курили кальян" }
+          ]
+        },
+        { "title": "Галерея", "thirdLevel": false},
+        { "title": "Отзывы", "thirdLevel": false},
+        { "title": "Вакансии", "thirdLevel": false},
+        { "title": "Наши партнёры", "thirdLevel": false},
+        { "title": "Реквизиты", "thirdLevel": false}
       ]
     },
     {
       "label": "Оборудование",
       "secondLevel": true,
-      "secondLevelItems": ["БКТП", "КТПН", "КСО", "УВР", "ГРЩ", "КЛ"]
+      "secondLevelItems": [
+        { "title": "БКТП", "thirdLevel": false },
+        { "title": "КТПН", "thirdLevel": false },
+        { "title": "КСО", "thirdLevel": false },
+        { "title": "УВР", "thirdLevel": false },
+        { "title": "ГРЩ", "thirdLevel": false },
+        { "title": "КЛ", "thirdLevel": false }
+      ]
     },
     {
       "label": "Сопровождение",
       "secondLevel": true,
       "secondLevelItems": [
-        "Сертификаты",
-        "Опросные листы",
-        "Инструкции",
-        "Каталоги",
-        "Сроки поставки",
-        "Доставка",
-        "Вопрос-ответ",
-        "Сервис"
+        { "title": "Сертификаты", "thirdLevel": false },
+        { "title": "Опросные листы", "thirdLevel": false },
+        { "title": "Инструкции", "thirdLevel": false },
+        { "title": "Каталоги", "thirdLevel": false },
+        { "title": "Сроки поставки", "thirdLevel": false },
+        { "title": "Доставка", "thirdLevel": false },
+        { "title": "Вопрос-ответ", "thirdLevel": false },
+        { "title": "Сервис", "thirdLevel": false }
       ]
     },
     {
       "label": "Услуги",
       "secondLevel": true,
       "secondLevelItems": [
-        "Отдел продаж",
-        "Комплексные услуги",
-        "Проектирование",
-        "Производство",
-        "Комплектация",
-        "Монтаж",
-        "Наладочные работы",
-        "Сдача и подключение",
-        "Ремонт кабельных линий",
-        "Опреление места повреждения",
-        "Аренда спецтехники"
+        { "title": "Отдел продаж", "thirdLevel": false },
+        { "title": "Комплексные услуги", "thirdLevel": false },
+        { "title": "Проектирование", "thirdLevel": false },
+        { "title": "Производство", "thirdLevel": false },
+        { "title": "Комплектация", "thirdLevel": false },
+        { "title": "Монтаж", "thirdLevel": false },
+        { "title": "Наладочные работы", "thirdLevel": false },
+        { "title": "Сдача и подключение", "thirdLevel": false },
+        { "title": "Ремонт кабельных линий", "thirdLevel": false },
+        { "title": "Опреление места повреждения", "thirdLevel": false },
+        { "title": "Аренда спецтехники", "thirdLevel": false }
       ]
     },
     { "label": "Вакансии", "secondLevel": false },
     {
       "label": "Деятельность",
       "secondLevel": true,
-      "secondLevelItems": ["СМР", "ПИР", "КЛЮЧ"]
+      "secondLevelItems": [
+        { "title": "СМР", "thirdLevel": false },
+        { "title": "ПИР", "thirdLevel": false },
+        { "title": "КЛЮЧ", "thirdLevel": false }
+      ]
     }
   ]
 }
