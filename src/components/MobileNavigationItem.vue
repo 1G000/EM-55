@@ -25,12 +25,12 @@ const expandedSecond = ref(false);
     v-model="expanded"
     :label="label"
     :hide-expand-icon="label === 'Вакансии'"
-    dense-toggle
+    expand-icon-class="text-white"
   >
     <q-card
       v-for="item in secondLevelItems"
       :key="item.title"
-      class="q-pl-md expansion-inner text-white"
+      class="q-pl-md bg-primary text-secondary"
     >
       <q-card-section
         v-if="!item.thirdLevel"
@@ -43,10 +43,10 @@ const expandedSecond = ref(false);
         v-else
         v-model="expandedSecond"
         :label="item.title"
-        expand-separator
-        dense-toggle
+        expand-icon-class="text-white"
+        dense
       >
-        <q-card class="q-pl-md expansion-inner text-white">
+        <q-card class="q-pl-md bg-primary text-white">
           <q-card-section
             v-for="thirdLevelItem in item.thirdLevelItems"
             :key="thirdLevelItem.title"
@@ -62,7 +62,4 @@ const expandedSecond = ref(false);
 </template>
 
 <style scoped>
-.expansion-inner {
-  background-color: #830024;
-}
 </style>

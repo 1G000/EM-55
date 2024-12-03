@@ -1,8 +1,7 @@
 <script setup>
 import MobileNavigationItem from "./MobileNavigationItem.vue";
-import MobileNavigation from "src/components/MobileNavigation.vue";
 defineProps({
-  menu: {
+  navItems: {
     type: Array,
     require: true,
   },
@@ -10,11 +9,11 @@ defineProps({
 </script>
 
 <template>
-  <div class="navigation-back">
+  <div class="bg-primary">
     <q-list>
       <q-list-item>
         <MobileNavigationItem
-          v-for="item in menu"
+          v-for="item in navItems"
           :key="item.label"
           :label="item.label"
           :second-level="item.secondLevel"
@@ -26,7 +25,4 @@ defineProps({
 </template>
 
 <style scoped>
-.navigation-back {
-  background-color: #830024;
-}
 </style>
