@@ -4,18 +4,18 @@
       "label": "О компании",
       "secondLevel": true,
       "secondLevelItems": [
-        { "title": "О компании", "thirdLevel": false},
-        { "title": "Производство", "thirdLevel": false},
-        {"title": "История", "thirdLevel": true,"thirdLevelItems": [
-            { "title": "Как мы пили коктели" },
-            { "title": "Как мы курили кальян" }
-          ]
+        { "title": "О компании", "thirdLevel": false },
+        { "title": "Производство", "thirdLevel": false },
+        {
+          "title": "История",
+          "thirdLevel": true,
+          "thirdLevelItems": [{ "title": "2023" }, { "title": "2024" }]
         },
-        { "title": "Галерея", "thirdLevel": false},
-        { "title": "Отзывы", "thirdLevel": false},
-        { "title": "Вакансии", "thirdLevel": false},
-        { "title": "Наши партнёры", "thirdLevel": false},
-        { "title": "Реквизиты", "thirdLevel": false}
+        { "title": "Галерея", "thirdLevel": false },
+        { "title": "Отзывы", "thirdLevel": false },
+        { "title": "Вакансии", "thirdLevel": false },
+        { "title": "Наши партнёры", "thirdLevel": false },
+        { "title": "Реквизиты", "thirdLevel": false }
       ]
     },
     {
