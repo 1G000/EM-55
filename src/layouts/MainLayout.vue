@@ -98,14 +98,14 @@ onMounted(async () => {
 .firstline {
   width: 12px;
   height: 50px;
-  background-color: #e5c696;
+  background-color: rgb(229, 198, 150);
   transform: skew(-17deg, 0deg);
 }
 
 .secondline {
   width: 27px;
   height: 50px;
-  background-color: #dba572;
+  background-color: rgb(219, 165, 114);
   transform: skew(-17deg, 0deg);
 }
 
