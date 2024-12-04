@@ -24,7 +24,7 @@ const showMobileMenu = ref(false);
       <div class="first-line"></div>
       <div class="second-line"></div>
       <q-toolbar class="toolbar">
-        <q-toolbar-title v-if="$q.screen.width > 1400" class="nav__title">
+        <q-toolbar-title v-if="$q.screen.width > 1520" class="nav__title">
           Оборудование для<br />
           трансформаторных подстанций
         </q-toolbar-title>
@@ -149,7 +149,7 @@ const showMobileMenu = ref(false);
 .container {
   display: flex;
   align-items: center;
-  max-width: 1440px;
+  max-width: 1920px;
   margin: 0 auto;
   padding: 10px;
 }
@@ -203,6 +203,9 @@ const showMobileMenu = ref(false);
 .navigation {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  width: 60%;
+  padding-left: 24px;
 }
 
 button:hover {
@@ -245,9 +248,9 @@ button::before {
   width: 32px;
   height: 32px;
 }
-@media (max-width: 1400px) {
+/* @media (max-width: 1400px) {
   .toolbar {
     justify-content: flex-end;
   }
-}
+} */
 </style>
