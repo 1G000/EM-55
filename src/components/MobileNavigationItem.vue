@@ -30,7 +30,7 @@ const expandedSecond = ref(false);
     <q-card
       v-for="item in secondLevelItems"
       :key="item.title"
-      class="q-pl-md bg-primary text-secondary"
+      class="q-pl-md bg-primary text-secondary subtext-hover"
     >
       <q-card-section
         v-if="!item.thirdLevel"
@@ -44,7 +44,6 @@ const expandedSecond = ref(false);
         v-model="expandedSecond"
         :label="item.title"
         expand-icon-class="text-white"
-        dense
       >
         <q-card class="q-pl-md bg-primary text-white">
           <q-card-section
@@ -62,4 +61,16 @@ const expandedSecond = ref(false);
 </template>
 
 <style scoped>
+.navigation-list {
+  font-size: 16px;
+}
+.navigation-list:hover {
+  color: var(--q-secondary);
+}
+.subtext-hover:hover {
+  color: white;
+}
+.submenu-item:hover {
+  color: var(--q-secondary);
+}
 </style>

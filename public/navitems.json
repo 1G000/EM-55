@@ -7,11 +7,15 @@
         { "title": "О компании", "thirdLevel": false},
         { "title": "Производство", "thirdLevel": false},
         {"title": "История", "thirdLevel": true,"thirdLevelItems": [
-            { "title": "Как мы пили коктели" },
-            { "title": "Как мы курили кальян" }
+            { "title": "История 1" },
+            { "title": "История 1" }
           ]
         },
-        { "title": "Галерея", "thirdLevel": false},
+        { "title": "Галерея", "thirdLevel": true,"thirdLevelItems": [
+            { "title": "2022" },
+            { "title": "2023" },
+            { "title": "2024" }
+          ]},
         { "title": "Отзывы", "thirdLevel": false},
         { "title": "Вакансии", "thirdLevel": false},
         { "title": "Наши партнёры", "thirdLevel": false},

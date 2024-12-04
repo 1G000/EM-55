@@ -10,6 +10,7 @@ defineProps({
 });
 import MobileNavigation from "src/components/MobileNavigation.vue";
 import ToolbarContactButton from "./ToolbarContactButton.vue";
+import DesktopNavigationMenu from "./DesktopNavigationMenu.vue";
 import { ref } from "vue";
 
 const showMobileMenu = ref(false);
@@ -24,96 +25,25 @@ const showMobileMenu = ref(false);
       <div class="first-line"></div>
       <div class="second-line"></div>
       <q-toolbar class="toolbar">
-        <q-toolbar-title v-if="$q.screen.width > 1520" class="nav__title">
+        <q-toolbar-title v-if="$q.screen.width > 1540" class="nav__title">
           Оборудование для<br />
           трансформаторных подстанций
         </q-toolbar-title>
-        <div class="navigation nav-text" v-if="$q.screen.width > 1200">
-          <div v-for="item in navItems" :key="item">
-            <template v-if="item.secondLevel">
-              <q-btn-dropdown
-                flat
-                square
-                :label="item.label"
-                fab
-                dropdown-icon="keyboard_arrow_down"
-              >
-                <q-list dense>
-                  <q-item
-                    class="bg-primary text-white q-px-auto q-py-md"
-                    style="font-size: 16px"
-                    v-for="subitem in item.secondLevelItems"
-                    :key="subitem"
-                    clickable
-                  >
-                    <template v-if="!subitem.thirdLevel">
-                      <q-item-section>{{ subitem.title }}</q-item-section>
-                    </template>
-                    <template v-else>
-                      <q-item-section>{{ subitem.title }}</q-item-section>
-                      <q-item-section side>
-                        <q-icon name="keyboard_arrow_right" color="white" />
-                      </q-item-section>
-                      <q-menu anchor="top end" self="top start">
-                        <q-list dense>
-                          <q-item
-                            v-for="n in 3"
-                            :key="n"
-                            dense
-                            clickable
-                            class="bg-primary text-white q-px-auto q-py-md"
-                            style="font-size: 16px"
-                          >
-                            <q-item-section>Третий уровень</q-item-section>
-                            <q-item-section side>
-                              <q-icon
-                                name="keyboard_arrow_right"
-                                color="white"
-                              />
-                            </q-item-section>
-                            <q-menu
-                              auto-close
-                              anchor="top end"
-                              self="top start"
-                            >
-                              <q-list dense>
-                                <q-item
-                                  v-for="n in 3"
-                                  :key="n"
-                                  dense
-                                  clickable
-                                  class="bg-primary text-white q-px-auto q-py-md"
-                                  style="font-size: 16px"
-                                >
-                                  <q-item-section
-                                    >Четвертый уровень</q-item-section
-                                  >
-                                </q-item>
-                              </q-list>
-                            </q-menu>
-                          </q-item>
-                        </q-list>
-                      </q-menu>
-                    </template>
-                  </q-item>
-                </q-list>
-              </q-btn-dropdown>
-            </template>
-            <template v-else>
-              <q-btn :label="item.label" />
-            </template>
-          </div>
-        </div>
+        <DesktopNavigationMenu
+          v-if="$q.screen.width > 1230"
+          :navItems="navItems"
+        />
         <ToolbarContactButton />
         <!-- Кнопка бургера -->
         <q-icon
-          v-if="$q.screen.width < 1200"
+          v-if="$q.screen.width < 1230"
           name="menu"
           size="32px"
           class="burger-icon"
           @click="showMobileMenu = !showMobileMenu"
-        /> </q-toolbar
-      ><q-drawer
+        />
+      </q-toolbar>
+      <q-drawer
         side="right"
         :breakpoint="1200"
         v-model="showMobileMenu"
@@ -170,7 +100,7 @@ const showMobileMenu = ref(false);
 }
 .second-line {
   width: 14px;
-  background-color: #dba572;
+  background-color: var(--q-secondary);
 }
 
 .toolbar {
@@ -200,35 +130,6 @@ const showMobileMenu = ref(false);
   font-size: 10px;
 }
 
-.navigation {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 60%;
-  padding-left: 24px;
-}
-
-button:hover {
-  color: #e5c696;
-}
-
-button::before {
-  box-shadow: none;
-}
-
-.navigation.nav-text > div > button,
-.nav-subtext {
-  font-family: "Montserrat", sans-serif;
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 19.5px;
-  text-transform: none;
-  padding: 4px 8px;
-}
-.q-toolbar {
-  min-height: 55px;
-}
-
 .burger-icon {
   cursor: pointer;
   background: none;
@@ -248,9 +149,4 @@ button::before {
   width: 32px;
   height: 32px;
 }
-/* @media (max-width: 1400px) {
-  .toolbar {
-    justify-content: flex-end;
-  }
-} */
 </style>
