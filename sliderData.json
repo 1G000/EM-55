@@ -1,17 +1,8 @@
 {
   "sliderData": [
     {
-      "imgSrc": "./Images/Slider/slide-1.jpg",
-      "title": "Электромонтаж 55",
-      "subtitle": "Электрооборудование для трансформаторных подстанций",
-      "textcontent": "На протяжении 30 лет изготавливаем электротехническое оборудование и выполняем все виды электромонтажных работ",
-      "buttons": [
-        { "btnTitle": "Написать нам", "style": "btn__left" },
-        { "btnTitle": "О компании", "style": "btn__right" }
-      ]
-    },
-    {
       "imgSrc": "./Images/Slider/slide-2.jpg",
+      "imgSmallSrc": "./Images/Slider/smallSlide-1.jpg",
       "title": "Электромонтаж 55",
       "subtitle": "Электрооборудование для трансформаторных подстанций",
       "textcontent": "На протяжении 30 лет изготавливаем электротехническое оборудование и выполняем все виды электромонтажных работ",
@@ -21,22 +12,35 @@
       ]
     },
     {
-      "imgSrc": "./Images/Slider/slide-3.jpg",
-      "title": "Электромонтаж 55",
-      "subtitle": "Электрооборудование для трансформаторных подстанций",
-      "textcontent": "На протяжении 30 лет изготавливаем электротехническое оборудование и выполняем все виды электромонтажных работ",
+      "imgSrc": "./Images/Slider/slide-6.jpg",
+      "imgSmallSrc": "./Images/Slider/smallSlide-1.jpg",
+      "title": "С новым годом!",
+      "subtitle": "Коллектив организации Электромонтаж 55 от души поздравляет Вас с Новым годом и Рождеством",
+      "textcontent": "",
       "buttons": [
         { "btnTitle": "Написать нам", "style": "btn__left" },
+        { "btnTitle": "О компании", "style": "btn__right" }
+      ]
+    },
+    {
+      "imgSrc": "./Images/Slider/slide-1.jpg",
+      "imgSmallSrc": "./Images/Slider/smallSlide-1.jpg",
+      "title": "Электромонтаж 55",
+      "subtitle": "Выполняем все виды электромонтажных работ",
+      "textcontent": "Ремонт кабельных линий напряжением 10кВ-0,4кВ, поиск места повреждения КЛ, все виды испытаний, восстановление нарушенного благоустройства ",
+      "buttons": [
+        { "btnTitle": "Услуги", "style": "btn__left" },
         { "btnTitle": "О компании", "style": "btn__right" }
       ]
     },
     {
       "imgSrc": "./Images/Slider/slide-4.jpg",
+      "imgSmallSrc": "./Images/Slider/smallSlide-1.jpg",
       "title": "Электромонтаж 55",
-      "subtitle": "Электрооборудование для трансформаторных подстанций",
-      "textcontent": "На протяжении 30 лет изготавливаем электротехническое оборудование и выполняем все виды электромонтажных работ",
+      "subtitle": "Производим электрооборудование",
+      "textcontent": "Изготавливаем БКТП, КТПН, КСО, УВР, ГРЩ под Ваши нужды ",
       "buttons": [
-        { "btnTitle": "Написать нам", "style": "btn__left" },
+        { "btnTitle": "Оборудование", "style": "btn__left" },
         { "btnTitle": "О компании", "style": "btn__right" }
       ]
     }
