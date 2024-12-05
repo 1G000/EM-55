@@ -1,16 +1,15 @@
 <template>
-  <div class="q-pa-md">
+  <div class="q-md">
     <q-carousel
       animated
       v-model="slide"
-      navigation
       infinite
       :autoplay-speed="5000"
       swipeable
       ref="carousel"
     >
       <q-carousel-slide
-        v-for="(slideData, index) in sliderData"
+        v-for="(slideData, index) in slideData"
         :key="index"
         :name="index + 1"
         class="slide"
@@ -69,7 +68,7 @@
 <script setup>
 import { ref, onMounted } from "vue";
 let slide = ref(1);
-const sliderData = ref(null);
+const slideData = ref([]);
 
 onMounted(async () => {
   try {
@@ -77,7 +76,7 @@ onMounted(async () => {
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
-    sliderData.value = (await response.json()).sliderData;
+    slideData.value = (await response.json()).sliderData;
   } catch (error) {
     console.error("Error fetching navItems:", error);
     navItems.value = [];
@@ -121,7 +120,7 @@ const handleMouseLeave = (event) => {
 }
 
 .q-carousel {
-  height: 80vh;
+  height: 90vh;
 }
 
 .carousel-wrapper {
@@ -156,30 +155,35 @@ const handleMouseLeave = (event) => {
   padding: 0px;
 }
 
+.q-carousel__slide {
+  background-size: cover;
+  background-position: center;
+}
+
 .slide__title {
   font-family: Montserrat-bold, serif;
   font-weight: 700;
-  font-size: 80px;
-  line-height: 80px;
+  font-size: clamp(2rem, 4.5vw, 8rem);
   background-image: linear-gradient(to right, #d4ad6f, #eeeeee);
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
+  line-height: 1em;
 }
 
 .slide__subtitle {
   font-family: Montserrat-regular, serif;
   font-weight: 700;
-  font-size: 50px;
-  line-height: 64px;
+  font-size: clamp(1.5rem, 3.5vw, 7rem);
   color: #eeeeee;
+  line-height: 1em;
 }
 
 .slide__textcontent {
   font-family: Montserrat-regular, serif;
-  font-size: 18px;
-  line-height: 21.94px;
+  font-size: clamp(1rem, 1.5vw, 4rem);
   color: #eeeeee;
+  line-height: 1.2.3em;
 }
 
 .buttons__container {
@@ -224,28 +228,41 @@ const handleMouseLeave = (event) => {
   }
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 1400px) {
   .text-overlay {
-    position: absolute;
-    top: 60px;
-    left: 10px;
-    padding: 2px;
-    display: flex;
-    gap: 10px;
-    max-width: 370px;
+    max-width: 700px;
   }
+}
 
+@media screen and (max-width: 1000px) {
+  .text-overlay {
+    max-width: 500px;
+  }
+}
+
+@media screen and (max-width: 768px) {
   .slide__title {
-    font-size: 30px;
+    line-height: 50px;
   }
 
   .slide__subtitle {
-    font-size: 20px;
     line-height: 30px;
+  }
+}
+@media screen and (max-width: 548px) {
+  .text-overlay {
+    position: absolute;
+    top: 30px;
+    left: 20px;
+    padding: 2px;
+    display: flex;
+    gap: 20px;
+    max-width: 370px;
   }
 
   .buttons__container {
     flex-direction: column;
+    margin-top: 60px;
   }
 
   .q-pa-md {
