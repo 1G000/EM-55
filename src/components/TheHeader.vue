@@ -10,6 +10,7 @@ defineProps({
 });
 import MobileNavigation from "src/components/MobileNavigation.vue";
 import ToolbarContactButton from "./ToolbarContactButton.vue";
+import LogoIcon from "./LogoIcon.vue";
 import DesktopNavigationMenu from "./DesktopNavigationMenu.vue";
 import { ref } from "vue";
 
@@ -17,28 +18,33 @@ const showMobileMenu = ref(false);
 </script>
 
 <template>
-  <q-header elevated class="header">
+  <q-header unelevated class="header">
     <div class="container">
       <div class="logo__container">
-        <img src="../assets/logo.png" class="navbar__logo" />
+        <LogoIcon />
+        <!-- <img src="../assets/logo.png" class="navbar__logo" /> -->
       </div>
       <div class="first-line"></div>
       <div class="second-line"></div>
       <q-toolbar class="toolbar">
-        <q-toolbar-title v-if="$q.screen.width > 1540" class="nav__title">
+        <q-toolbar-title
+          v-if="$q.screen.width > 1280 || $q.screen.width < 1075"
+          class="nav__title"
+        >
           Оборудование для<br />
           трансформаторных подстанций
         </q-toolbar-title>
         <DesktopNavigationMenu
-          v-if="$q.screen.width > 1230"
+          v-if="$q.screen.width > 1075"
           :navItems="navItems"
         />
         <ToolbarContactButton />
         <!-- Кнопка бургера -->
         <q-icon
-          v-if="$q.screen.width < 1230"
+          v-if="$q.screen.width < 1075"
           name="menu"
-          size="32px"
+          size="40px"
+          color="accent"
           class="burger-icon"
           @click="showMobileMenu = !showMobileMenu"
         />
@@ -47,13 +53,7 @@ const showMobileMenu = ref(false);
         side="right"
         :breakpoint="1200"
         v-model="showMobileMenu"
-        style="
-          position: absolute;
-          top: 0;
-          right: 0;
-          background-color: #830024;
-          color: white;
-        "
+        style="position: absolute; top: 0; right: 0; background-color: white"
       >
         <div class="close-icon-wrapper">
           <q-icon
@@ -81,10 +81,11 @@ const showMobileMenu = ref(false);
   align-items: center;
   max-width: 1920px;
   margin: 0 auto;
-  padding: 10px;
+  padding: 10px 0;
 }
 .logo__container {
-  width: 200px;
+  /* width: 200px; */
+  width: 140px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -95,7 +96,7 @@ const showMobileMenu = ref(false);
   width: 12px;
   height: 55px;
   flex-shrink: 0;
-  background-color: #e5c696;
+  background-color: var(--q-accent);
   transform: skew(-17deg, 0deg);
 }
 .second-line {
@@ -106,7 +107,7 @@ const showMobileMenu = ref(false);
 .toolbar {
   display: flex;
   justify-content: space-between;
-  background-color: #830024;
+  background-color: var(--q-primary);
   clip-path: polygon(17px 0, 100% 0, 100% 100%, 0 100%);
   height: 55px;
   padding-left: 2px;
@@ -114,15 +115,17 @@ const showMobileMenu = ref(false);
   margin-left: -10px;
 }
 
-.navbar__logo {
+/* .navbar__logo {
   width: 130px;
   height: 70px;
-}
+} */
 
 .q-toolbar__title {
   flex: none;
   padding-left: 24px;
   text-transform: uppercase;
+  font-weight: 600;
+  user-select: none;
 }
 
 .nav__title {
@@ -134,7 +137,7 @@ const showMobileMenu = ref(false);
   cursor: pointer;
   background: none;
   padding: 10px;
-  color: #dba572;
+  color: var(--q-accent);
 }
 .close-icon-wrapper {
   display: flex;
@@ -142,11 +145,26 @@ const showMobileMenu = ref(false);
 }
 .close-cross {
   cursor: pointer;
-  color: #dba572;
-  padding: 30px 16px;
+  color: var(--q-primary);
+  padding: 18px 14px;
   display: flex;
   justify-content: end;
-  width: 32px;
-  height: 32px;
+  width: 40px;
+  height: 40px;
+}
+@media (max-width: 1075px) {
+  .toolbar {
+    justify-content: end;
+  }
+}
+@media (max-width: 1075px) {
+  .nav__title {
+    margin-right: auto;
+  }
+}
+@media (max-width: 556px) {
+  .nav__title {
+    display: none;
+  }
 }
 </style>

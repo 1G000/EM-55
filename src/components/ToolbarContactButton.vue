@@ -7,23 +7,27 @@ defineOptions({
 <template>
   <q-btn-dropdown
     class="q-mr-md contact-button"
-    style="width: 245px; font-size: 16px"
-    color="secondary"
+    color="accent"
+    unelevated
     text-color="primary"
     size="md"
-    transition-show="slide-down"
-    icon="phone"
+    transition-show="fade"
+    icon="mdi-card-account-phone-outline"
     square
     dropdown-icon="keyboard_arrow_down"
-    :label="$q.screen.width > 500 ? '8 (812) 294–20–13' : ''"
   >
-    <q-list class="bg-primary text-white">
+    <q-list separator class="bg-primary text-white q-pt-md contact-list">
       <q-item clickable v-close-popup>
         <q-item-section avatar>
           <q-avatar icon="mdi-email-fast" size="xl" text-color="secondary" />
         </q-item-section>
         <q-item-section>
-          <q-item-label><b>Секретарь</b><br />referent@em-55.com</q-item-label>
+          <q-item-label class="text-bold">Приемная:</q-item-label>
+          <q-item-label
+            ><a href="mailto:referent@em-55.com" class="links"
+              >referent@em-55.com</a
+            ></q-item-label
+          >
         </q-item-section>
       </q-item>
       <q-item clickable v-close-popup @click="onItemClick">
@@ -31,9 +35,14 @@ defineOptions({
           <q-avatar icon="mdi-map-marker" size="xl" text-color="secondary" />
         </q-item-section>
         <q-item-section>
+          <q-item-label class="text-bold">Адрес:</q-item-label>
           <q-item-label
-            ><b>Адрес:</b> <br />194223, пр. Тореза,<br />д.44, к.2, лит.А,
-            п.12Н</q-item-label
+            ><a
+              href="https://www.google.com/maps/dir//%D0%BF%D1%80.+%D0%A2%D0%BE%D1%80%D0%B5%D0%B7%D0%B0,+44+%D0%BA%D0%BE%D1%80%D0%BF%D1%83%D1%81+2+%D0%A1%D0%B0%D0%BD%D0%BA%D1%82-%D0%9F%D0%B5%D1%82%D0%B5%D1%80%D0%B1%D1%83%D1%80%D0%B3+194223/@60.00784,30.3468141,16z/data=!4m8!4m7!1m0!1m5!1m1!1s0x4696338614187a55:0x65807e5c291f3d9c!2m2!1d30.3468141!2d60.00784?entry=ttu&g_ep=EgoyMDI0MTIwMy4wIKXMDSoASAFQAw%3D%3D"
+              class="links"
+              >194223, пр. Тореза,д.44,<br />
+              к.2, лит.А, п.12Н</a
+            ></q-item-label
           >
         </q-item-section>
       </q-item>
@@ -42,17 +51,21 @@ defineOptions({
           <q-avatar icon="mdi-point-of-sale" size="xl" text-color="secondary" />
         </q-item-section>
         <q-item-section>
+          <q-item-label class="text-bold">Отдел продаж:</q-item-label>
           <q-item-label
-            ><b>Отдел продаж:</b> <br />(812) 294-20-13<br />sale1@em-55.com</q-item-label
+            ><a href="tel:+78122942013" class="links">(812) 294-20-13</a
+            ><a href="mailto:sale1@em-55.com" class="links"
+              >sale1@em-55.com</a
+            ></q-item-label
           >
         </q-item-section>
       </q-item>
       <q-item-section class="q-mt-sm">
         <q-btn
-          class="q-py-sm text-bold"
+          class="q-py-sm text-bold contact-btn"
           size="md"
-          color="secondary"
-          text-color="primary "
+          color="accent"
+          text-color="primary"
           label="Контакты"
         />
       </q-item-section>
@@ -62,17 +75,25 @@ defineOptions({
 
 <style scoped>
 .contact-button {
-  border-radius: 4px;
+  border-radius: 8px;
+  font-size: clamp(16px, 1vw, 20px);
 }
-@media (max-width: 1230px) {
-  .contact-button {
-    margin-left: auto;
-    margin-right: 0;
-  }
+.links {
+  display: block;
+  text-decoration: none;
+  color: white;
+  transition: 0.3s linear;
 }
-@media (max-width: 500px) {
+.links:hover {
+  color: var(--q-secondary);
+}
+.contact-btn {
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+}
+@media (max-width: 960px) {
   .contact-button {
-    width: 85px !important;
+    justify-self: end;
   }
 }
 </style>

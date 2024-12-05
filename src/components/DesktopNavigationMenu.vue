@@ -19,10 +19,9 @@ defineProps({
           dropdown-icon="keyboard_arrow_down"
           class="navigation__button"
         >
-          <q-list dense>
+          <q-list dense separator>
             <q-item
               class="bg-primary text-white submenu-item"
-              style="font-size: 16px"
               v-for="subitem in item.secondLevelItems"
               :key="subitem"
               clickable
@@ -43,7 +42,6 @@ defineProps({
                       dense
                       clickable
                       class="bg-primary text-white q-px-auto q-py-md submenu-item"
-                      style="font-size: 16px"
                     >
                       <q-item-section>{{ level.title }}</q-item-section>
                       <q-item-section side>
@@ -57,7 +55,6 @@ defineProps({
                             dense
                             clickable
                             class="bg-primary text-white q-px-auto q-py-md submenu-item"
-                            style="font-size: 16px"
                           >
                             <q-item-section>Четвертый уровень</q-item-section>
                           </q-item>
@@ -83,14 +80,13 @@ defineProps({
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 60%;
-  padding-left: 24px;
+  width: 80%;
 }
 
 .navigation__button,
-.nav-subtext {
+.nav-text {
   font-family: "Montserrat", sans-serif;
-  font-size: 16px;
+  font-size: clamp(16px, 1vw, 20px);
   font-weight: 500;
   line-height: 19.5px;
   text-transform: none;
@@ -103,14 +99,22 @@ defineProps({
 .q-btn:before {
   box-shadow: none !important;
 }
-
 .q-toolbar {
   min-height: 55px;
 }
 .submenu-item {
+  font-size: clamp(14px, 1vw, 20px);
   padding: 10px 12px !important;
 }
 .submenu-item:hover {
   color: var(--q-secondary) !important;
+}
+@media (max-width: 1280px) {
+  .navigation {
+    width: 100%;
+  }
+  .nav-text {
+    padding-left: 24px;
+  }
 }
 </style>

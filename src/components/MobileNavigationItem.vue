@@ -25,12 +25,12 @@ const expandedSecond = ref(false);
     v-model="expanded"
     :label="label"
     :hide-expand-icon="label === 'Вакансии'"
-    expand-icon-class="text-white"
+    expand-icon-class="text-black"
   >
     <q-card
       v-for="item in secondLevelItems"
       :key="item.title"
-      class="q-pl-md bg-primary text-secondary subtext-hover"
+      class="q-pl-lg bg-white subtext-hover"
     >
       <q-card-section
         v-if="!item.thirdLevel"
@@ -43,14 +43,15 @@ const expandedSecond = ref(false);
         v-else
         v-model="expandedSecond"
         :label="item.title"
-        expand-icon-class="text-white"
+        expand-icon-class="text-black"
       >
-        <q-card class="q-pl-md bg-primary text-white">
+        <q-card class="q-pl-lg bg-white">
           <q-card-section
             v-for="thirdLevelItem in item.thirdLevelItems"
             :key="thirdLevelItem.title"
             :to="kkk"
             @click="expandedSecond = false"
+            class="subtext-hover cursor-pointer"
           >
             {{ thirdLevelItem.title }}
           </q-card-section>
@@ -62,13 +63,17 @@ const expandedSecond = ref(false);
 
 <style scoped>
 .navigation-list {
-  font-size: 16px;
+  font-size: clamp(16px, 1vw, 20px);
+  color: black;
 }
 .navigation-list:hover {
   color: var(--q-secondary);
 }
+.subtext-hover {
+  color: #333;
+}
 .subtext-hover:hover {
-  color: white;
+  color: var(--q-secondary);
 }
 .submenu-item:hover {
   color: var(--q-secondary);
