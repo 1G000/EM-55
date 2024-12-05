@@ -9,7 +9,7 @@ defineProps({
 </script>
 
 <template>
-  <div class="bg-primary">
+  <div class="bg-white">
     <q-list>
       <q-list-item>
         <MobileNavigationItem
