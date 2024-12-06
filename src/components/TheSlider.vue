@@ -45,7 +45,7 @@
       <template v-slot:control>
         <q-carousel-control
           position="bottom-right"
-          :offset="[30, 90]"
+          :offset="[20, 90]"
           class="q-gutter-xs"
         >
           <q-btn
@@ -250,7 +250,6 @@ const handleMouseLeave = (event) => {
   }
   .buttons__container {
     flex-direction: column;
-    margin-top: 60px;
   }
 }
 
@@ -280,8 +279,12 @@ const handleMouseLeave = (event) => {
 }
 
 @media screen and (max-width: 430px) {
-  .slide__textcontent {
+  .slide__textcontent,
+  .slide__subtitle {
     max-width: 212px;
+  }
+  .text-overlay {
+    top: 60px;
   }
 }
 </style>
