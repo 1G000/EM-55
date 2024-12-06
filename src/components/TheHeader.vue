@@ -21,8 +21,9 @@ const showMobileMenu = ref(false);
   <q-header unelevated class="header">
     <div class="container">
       <div class="logo__container">
-        <LogoIcon />
-        <!-- <img src="../assets/logo.png" class="navbar__logo" /> -->
+        <!-- <LogoIcon /> -->
+        <img src="../assets/logo.png" class="navbar__logo" />
+        <h1 class="logo__text">Электромонтаж 55</h1>
       </div>
       <div class="first-line"></div>
       <div class="second-line"></div>
@@ -43,8 +44,8 @@ const showMobileMenu = ref(false);
         <q-icon
           v-if="$q.screen.width < 1075"
           name="menu"
-          size="40px"
-          color="accent"
+          size="30px"
+          color="primary"
           class="burger-icon"
           @click="showMobileMenu = !showMobileMenu"
         />
@@ -85,12 +86,28 @@ const showMobileMenu = ref(false);
 }
 .logo__container {
   /* width: 200px; */
-  width: 140px;
+  width: 180px;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin-top: -7px;
 }
 
+.navbar__logo {
+  width: 90px;
+  height: 45px;
+}
+
+.logo__text {
+  font-size: 8px;
+  color: var(--q-primary);
+  font-weight: 600;
+  line-height: 0;
+  text-transform: uppercase;
+  letter-spacing: -0.5px;
+  margin-right: 11px;
+}
 .first-line,
 .second-line {
   width: 12px;
@@ -115,11 +132,6 @@ const showMobileMenu = ref(false);
   margin-left: -10px;
 }
 
-/* .navbar__logo {
-  width: 130px;
-  height: 70px;
-} */
-
 .q-toolbar__title {
   flex: none;
   padding-left: 24px;
@@ -136,8 +148,11 @@ const showMobileMenu = ref(false);
 .burger-icon {
   cursor: pointer;
   background: none;
-  padding: 10px;
+  padding: 2px 4px;
+  border-radius: 8px;
   color: var(--q-accent);
+  background-color: var(--q-accent);
+  margin-right: 14px;
 }
 .close-icon-wrapper {
   display: flex;
