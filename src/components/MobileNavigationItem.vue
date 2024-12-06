@@ -1,6 +1,6 @@
 <script setup>
-import { ref } from "vue";
-defineProps({
+import { ref, reactive } from "vue";
+const props = defineProps({
   label: {
     type: String,
     require: true,
@@ -14,16 +14,24 @@ defineProps({
     require: true,
   },
 });
-
 const expanded = ref(false);
-const expandedSecond = ref(false);
+const secondLevelItemsCopy = reactive(props.secondLevelItems);
+
+const closeAllExpansions = () => {
+  expanded.value = false;
+  secondLevelItemsCopy.forEach((item) => {
+    item.expandedSecondLevel = false;
+  });
+};
 </script>
 
 <template>
   <q-expansion-item
     class="navigation-list"
+    @click.stop
     v-model="expanded"
     :label="label"
+    active-class="navigation-list-active"
     :hide-expand-icon="label === 'Вакансии'"
     expand-icon-class="text-black"
   >
@@ -34,23 +42,25 @@ const expandedSecond = ref(false);
     >
       <q-card-section
         v-if="!item.thirdLevel"
-        :to="kkk"
-        @click="expanded = false"
+        @click="closeAllExpansions"
+        class="cursor-pointer"
       >
         {{ item.title }}
       </q-card-section>
+
       <q-expansion-item
         v-else
-        v-model="expandedSecond"
         :label="item.title"
+        v-model="item.expandedSecondLevel"
         expand-icon-class="text-black"
       >
-        <q-card class="q-pl-lg bg-white">
+        <q-card
+          v-for="(thirdLevelItem, index) in item.thirdLevelItems"
+          :key="thirdLevelItem.title"
+          class="q-pl-lg bg-white"
+        >
           <q-card-section
-            v-for="thirdLevelItem in item.thirdLevelItems"
-            :key="thirdLevelItem.title"
-            :to="kkk"
-            @click="expandedSecond = false"
+            @click="closeAllExpansions(index)"
             class="subtext-hover cursor-pointer"
           >
             {{ thirdLevelItem.title }}

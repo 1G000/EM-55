@@ -35,7 +35,7 @@ defineProps({
                   <q-icon name="keyboard_arrow_right" color="white" />
                 </q-item-section>
                 <q-menu anchor="top end" self="top start">
-                  <q-list dense>
+                  <q-list dense separator>
                     <q-item
                       v-for="level in subitem.thirdLevelItems"
                       :key="level"
@@ -48,7 +48,7 @@ defineProps({
                         <q-icon name="keyboard_arrow_right" color="white" />
                       </q-item-section>
                       <q-menu auto-close anchor="top end" self="top start">
-                        <q-list dense>
+                        <q-list dense separator>
                           <q-item
                             v-for="n in 3"
                             :key="n"

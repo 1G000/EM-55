@@ -3,15 +3,16 @@
     {
       "label": "О компании",
       "secondLevel": true,
+      "expandedFirstLevel": false,
       "secondLevelItems": [
         { "title": "О компании", "thirdLevel": false},
         { "title": "Производство", "thirdLevel": false},
-        {"title": "История", "thirdLevel": true,"thirdLevelItems": [
+        {"title": "История", "thirdLevel": true, "expandedSecondLevel": false, "thirdLevelItems": [
             { "title": "История 1" },
             { "title": "История 1" }
           ]
         },
-        { "title": "Галерея", "thirdLevel": true,"thirdLevelItems": [
+        { "title": "Галерея", "thirdLevel": true, "expandedSecondLevel": false, "thirdLevelItems": [
             { "title": "2022" },
             { "title": "2023" },
             { "title": "2024" }
@@ -25,6 +26,7 @@
     {
       "label": "Оборудование",
       "secondLevel": true,
+      "expandedFirstLevel": false,
       "secondLevelItems": [
         { "title": "БКТП", "thirdLevel": false },
         { "title": "КТПН", "thirdLevel": false },
@@ -37,6 +39,7 @@
     {
       "label": "Сопровождение",
       "secondLevel": true,
+      "expandedFirstLevel": false,
       "secondLevelItems": [
         { "title": "Сертификаты", "thirdLevel": false },
         { "title": "Опросные листы", "thirdLevel": false },
@@ -51,6 +54,7 @@
     {
       "label": "Услуги",
       "secondLevel": true,
+      "expandedFirstLevel": false,
       "secondLevelItems": [
         { "title": "Отдел продаж", "thirdLevel": false },
         { "title": "Комплексные услуги", "thirdLevel": false },
@@ -65,10 +69,11 @@
         { "title": "Аренда спецтехники", "thirdLevel": false }
       ]
     },
-    { "label": "Вакансии", "secondLevel": false },
+    { "label": "Вакансии", "expandedFirstLevel": false, "secondLevel": false },
     {
       "label": "Деятельность",
       "secondLevel": true,
+      "expandedFirstLevel": false,
       "secondLevelItems": [
         { "title": "СМР", "thirdLevel": false },
         { "title": "ПИР", "thirdLevel": false },

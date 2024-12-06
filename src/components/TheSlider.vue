@@ -17,9 +17,12 @@
       >
         <div class="carousel-wrapper">
           <div class="text-overlay">
-            <h2 class="slide__title">{{ slideData.title }}</h2>
-            <h3 class="slide__subtitle">{{ slideData.subtitle }}</h3>
-            <span class="slide__textcontent">{{ slideData.textcontent }}</span>
+            <!-- <h2 class="slide__title">{{ slideData.title }}</h2> -->
+            <h3 class="slide__subtitle" v-html="slideData.subtitle"></h3>
+            <span
+              class="slide__textcontent"
+              v-html="slideData.textcontent"
+            ></span>
             <div
               v-if="slideData.buttons && slideData.buttons.length > 0"
               class="buttons__container"
@@ -42,21 +45,21 @@
       <template v-slot:control>
         <q-carousel-control
           position="bottom-right"
-          :offset="[30, 30]"
+          :offset="[30, 90]"
           class="q-gutter-xs"
         >
           <q-btn
-            push
             color="white"
-            text-color="red"
-            icon="arrow_left"
+            text-color="primary"
+            icon="keyboard_arrow_left"
+            class="slider__switcher"
             @click="$refs.carousel.previous()"
           />
           <q-btn
-            push
             color="white"
-            text-color="red"
-            icon="arrow_right"
+            text-color="primary"
+            icon="keyboard_arrow_right"
+            class="slider__switcher"
             @click="$refs.carousel.next()"
           />
         </q-carousel-control>
@@ -157,13 +160,14 @@ const handleMouseLeave = (event) => {
 
 .q-carousel__slide {
   background-size: cover;
-  background-position: center;
+  background-position: center center;
+  background-repeat: no-repeat;
 }
 
 .slide__title {
   font-family: Montserrat-bold, serif;
   font-weight: 700;
-  font-size: clamp(2rem, 4.5vw, 8rem);
+  font-size: clamp(16px, 4.5vw, 24px);
   background-image: linear-gradient(to right, #d4ad6f, #eeeeee);
   background-clip: text;
   -webkit-background-clip: text;
@@ -174,16 +178,19 @@ const handleMouseLeave = (event) => {
 .slide__subtitle {
   font-family: Montserrat-regular, serif;
   font-weight: 700;
-  font-size: clamp(1.5rem, 3.5vw, 7rem);
-  color: #eeeeee;
-  line-height: 1em;
+  font-size: clamp(1.2rem, 2vw, 4rem);
+  line-height: 26.5px;
+  color: white;
+  letter-spacing: 0.3px;
 }
 
 .slide__textcontent {
-  font-family: Montserrat-regular, serif;
-  font-size: clamp(1rem, 1.5vw, 4rem);
-  color: #eeeeee;
-  line-height: 1.2.3em;
+  font-family: "Montserrat", sans-serif;
+  font-size: clamp(16px, 1vw, 24px);
+  font-weight: 500;
+  line-height: 19.5px;
+  color: white;
+  letter-spacing: 0.3px;
 }
 
 .buttons__container {
@@ -191,6 +198,7 @@ const handleMouseLeave = (event) => {
   gap: 20px;
   font-family: Montserrat-bold, serif;
   font-size: 16px;
+  margin-top: 50px;
 }
 
 .btn__left {
@@ -214,7 +222,9 @@ const handleMouseLeave = (event) => {
   padding: 10px 40px;
   transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
-
+.slider__switcher {
+  border-radius: 8px;
+}
 @media (hover: hover) {
   .btn__right:hover {
     border: none;
@@ -230,13 +240,17 @@ const handleMouseLeave = (event) => {
 
 @media screen and (max-width: 1400px) {
   .text-overlay {
-    max-width: 700px;
+    max-width: 750px;
   }
 }
 
 @media screen and (max-width: 1000px) {
   .text-overlay {
     max-width: 500px;
+  }
+  .buttons__container {
+    flex-direction: column;
+    margin-top: 60px;
   }
 }
 
@@ -246,13 +260,13 @@ const handleMouseLeave = (event) => {
   }
 
   .slide__subtitle {
-    line-height: 30px;
+    line-height: 19.5px;
   }
 }
 @media screen and (max-width: 548px) {
   .text-overlay {
     position: absolute;
-    top: 30px;
+    top: 100px;
     left: 20px;
     padding: 2px;
     display: flex;
@@ -260,13 +274,14 @@ const handleMouseLeave = (event) => {
     max-width: 370px;
   }
 
-  .buttons__container {
-    flex-direction: column;
-    margin-top: 60px;
-  }
-
   .q-pa-md {
     padding: 0;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .slide__textcontent {
+    max-width: 212px;
   }
 }
 </style>

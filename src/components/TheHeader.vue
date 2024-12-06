@@ -29,20 +29,20 @@ const showMobileMenu = ref(false);
       <div class="second-line"></div>
       <q-toolbar class="toolbar">
         <q-toolbar-title
-          v-if="$q.screen.width > 1280 || $q.screen.width < 1075"
+          v-if="$q.screen.width > 1450 || $q.screen.width < 1215"
           class="nav__title"
         >
           Оборудование для<br />
           трансформаторных подстанций
         </q-toolbar-title>
         <DesktopNavigationMenu
-          v-if="$q.screen.width > 1075"
+          v-if="$q.screen.width > 1215"
           :navItems="navItems"
         />
         <ToolbarContactButton />
         <!-- Кнопка бургера -->
         <q-icon
-          v-if="$q.screen.width < 1075"
+          v-if="$q.screen.width <= 1215"
           name="menu"
           size="30px"
           color="primary"
@@ -52,7 +52,7 @@ const showMobileMenu = ref(false);
       </q-toolbar>
       <q-drawer
         side="right"
-        :breakpoint="1200"
+        :breakpoint="1215"
         v-model="showMobileMenu"
         style="position: absolute; top: 0; right: 0; background-color: white"
       >
@@ -120,7 +120,10 @@ const showMobileMenu = ref(false);
   width: 14px;
   background-color: var(--q-secondary);
 }
-
+.first-line {
+  border-bottom-left-radius: 2px;
+  border-top-left-radius: 2px;
+}
 .toolbar {
   display: flex;
   justify-content: space-between;
@@ -167,12 +170,12 @@ const showMobileMenu = ref(false);
   width: 40px;
   height: 40px;
 }
-@media (max-width: 1075px) {
+@media (max-width: 1215px) {
   .toolbar {
     justify-content: end;
   }
 }
-@media (max-width: 1075px) {
+@media (max-width: 1215px) {
   .nav__title {
     margin-right: auto;
   }

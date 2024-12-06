@@ -5,6 +5,10 @@
   list-style: none;
 }
 
+img {
+  max-width: 100%;
+}
+
 ::-webkit-scrollbar-thumb {
   background: var(--q-primary);
   width: 2px;
