@@ -108,20 +108,6 @@ const handleMouseLeave = (event) => {
 </script>
 
 <style scoped>
-@font-face {
-  font-family: "Montserrat-regular";
-  src: url("/src/fonts/Montserrat-Regular.ttf") format("truetype");
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Montserrat-bold";
-  src: url("/src/fonts/Montserrat-Bold.ttf") format("truetype");
-  font-weight: 700;
-  font-style: normal;
-}
-
 .q-carousel {
   height: 90vh;
 }
