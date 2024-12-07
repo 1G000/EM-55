@@ -142,7 +142,7 @@
 
 .advantages__picture {
   width: 50%;
-  background-image: url("./Images/advantage.jpg");
+  background-image: url("/Images/advantage.jpg");
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -155,6 +155,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   width: 50%;
   height: 358px;
   background-color: rgba(212, 171, 109, 0.102);
@@ -224,6 +225,8 @@
 
   .advantages__items {
     width: 100%;
+    height: auto;
+    min-height: 358px;
   }
 
   .advantage__item {
