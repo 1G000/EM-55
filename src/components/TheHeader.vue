@@ -20,11 +20,11 @@ const showMobileMenu = ref(false);
 <template>
   <q-header unelevated class="header">
     <div class="container">
-      <div class="logo__container">
+      <a href="/" class="logo__container">
         <!-- <LogoIcon /> -->
         <img src="../assets/logo.png" class="navbar__logo" />
         <h1 class="logo__text">Электромонтаж 55</h1>
-      </div>
+      </a>
       <div class="first-line"></div>
       <div class="second-line"></div>
       <q-toolbar class="toolbar">
@@ -44,7 +44,7 @@ const showMobileMenu = ref(false);
         <q-icon
           v-if="$q.screen.width <= 1215"
           name="menu"
-          size="30px"
+          size="34px"
           color="primary"
           class="burger-icon"
           @click="showMobileMenu = !showMobileMenu"
@@ -92,6 +92,7 @@ const showMobileMenu = ref(false);
   align-items: center;
   justify-content: center;
   margin-top: -7px;
+  text-decoration: none;
 }
 
 .navbar__logo {
@@ -107,6 +108,7 @@ const showMobileMenu = ref(false);
   text-transform: uppercase;
   letter-spacing: -0.5px;
   margin-right: 11px;
+  margin-top: 3px;
 }
 .first-line,
 .second-line {
