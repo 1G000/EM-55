@@ -3,10 +3,17 @@
     <q-carousel
       animated
       v-model="slide"
+      transition-prev="slide-right"
+      transition-next="slide-left"
       infinite
       :autoplay-speed="5000"
       swipeable
       ref="carousel"
+      prev-icon="arrow_back"
+      next-icon="arrow_forward"
+      arrows
+      navigation-icon="radio_button_unchecked"
+      navigation
     >
       <q-carousel-slide
         v-for="(slideData, index) in slideData"
@@ -17,7 +24,7 @@
       >
         <div class="carousel-wrapper">
           <div class="text-overlay">
-            <!-- <h2 class="slide__title">{{ slideData.title }}</h2> -->
+            <h2 class="slide__title" v-html="slideData.title"></h2>
             <h3 class="slide__subtitle" v-html="slideData.subtitle"></h3>
             <span
               class="slide__textcontent"
@@ -32,8 +39,12 @@
                 :key="buttonIndex"
                 :class="button.style"
                 ref="button"
-                @mousemove="handleMouseMove(buttonIndex, $event)"
-                @mouseleave="handleMouseLeave($event)"
+                v-on="{
+                  mousemove: supportsHover
+                    ? handleMouseMove.bind(_, buttonIndex)
+                    : null,
+                  mouseleave: supportsHover ? handleMouseLeave : null,
+                }"
               >
                 {{ button.btnTitle }}
               </button>
@@ -42,7 +53,7 @@
         </div>
       </q-carousel-slide>
 
-      <template v-slot:control>
+      <!-- <template v-slot:control>
         <q-carousel-control
           position="bottom-right"
           :offset="[20, 90]"
@@ -63,13 +74,13 @@
             @click="$refs.carousel.next()"
           />
         </q-carousel-control>
-      </template>
+      </template> -->
     </q-carousel>
   </div>
 </template>
 
 <script setup>
-import { ref, onMounted } from "vue";
+import { ref, onMounted, computed } from "vue";
 let slide = ref(1);
 const slideData = ref([]);
 
@@ -88,7 +99,11 @@ onMounted(async () => {
 
 //hover
 
-const handleMouseMove = (_, event) => {
+const supportsHover = computed(() => {
+  return window.matchMedia("(hover: hover)").matches;
+});
+
+const handleMouseMove = (color, event) => {
   const button = event.currentTarget;
   const x = event.offsetX;
   const y = event.offsetY;
@@ -97,7 +112,7 @@ const handleMouseMove = (_, event) => {
   const xPercent = (x / width) * 100;
   const yPercent = (y / height) * 100;
 
-  const gradient = `radial-gradient(circle at ${xPercent}% ${yPercent}%, rgba(225, 225, 225,1), transparent)`;
+  const gradient = `radial-gradient(circle at ${xPercent}% ${yPercent}%, rgba(225, 225, 225,0.3), transparent)`;
   button.style.backgroundImage = gradient;
 };
 
@@ -112,26 +127,11 @@ const handleMouseLeave = (event) => {
   height: 90vh;
 }
 
-.carousel-wrapper {
-  position: relative;
-  background-image: linear-gradient(
-    to right,
-    rgba(0, 0, 0, 1),
-    rgba(0, 0, 0, 0.2)
-  );
-  background-size: cover;
-  height: 100%;
-  width: 100%;
-}
-
 .text-overlay {
   -webkit-user-select: none; /* Safari */
   -ms-user-select: none; /* IE 10+ */
   user-select: none;
-  position: absolute;
-  top: 120px;
-  left: 50px;
-  padding: 10px;
+  padding: 100px 0px 0px 100px;
   display: flex;
   flex-direction: column;
   align-items: left;
@@ -153,7 +153,7 @@ const handleMouseLeave = (event) => {
 .slide__title {
   font-family: Montserrat-bold, serif;
   font-weight: 700;
-  font-size: clamp(16px, 4.5vw, 24px);
+  font-size: clamp(18px, 5vw, 48px);
   background-image: linear-gradient(to right, #d4ad6f, #eeeeee);
   background-clip: text;
   -webkit-background-clip: text;
@@ -164,8 +164,8 @@ const handleMouseLeave = (event) => {
 .slide__subtitle {
   font-family: Montserrat-regular, serif;
   font-weight: 700;
-  font-size: clamp(1.2rem, 2vw, 4rem);
-  line-height: 26.5px;
+  font-size: clamp(14px, 4.5vw, 44px);
+  line-height: 1em;
   color: white;
   letter-spacing: 0.3px;
 }
@@ -232,35 +232,43 @@ const handleMouseLeave = (event) => {
 
 @media screen and (max-width: 1000px) {
   .text-overlay {
-    max-width: 500px;
+    max-width: 590px;
   }
   .buttons__container {
     flex-direction: column;
   }
 }
 
-@media screen and (max-width: 768px) {
-  .slide__title {
-    line-height: 50px;
+@media screen and (max-width: 548px) {
+  .slide {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 50px;
   }
 
+  .slide__textcontent,
   .slide__subtitle {
-    line-height: 19.5px;
+    max-width: 250px;
   }
-}
-@media screen and (max-width: 548px) {
+
   .text-overlay {
-    position: absolute;
-    top: 100px;
-    left: 20px;
-    padding: 2px;
     display: flex;
     gap: 20px;
     max-width: 370px;
+    padding: 0;
   }
 
-  .q-pa-md {
-    padding: 0;
+  .buttons__container {
+    font-size: 14px;
+    margin-top: 20px;
+  }
+
+  .btn__left,
+  .btn__right {
+    padding: 10px 10px;
+    width: 150px;
+    height: 50px;
   }
 }
 
@@ -268,9 +276,6 @@ const handleMouseLeave = (event) => {
   .slide__textcontent,
   .slide__subtitle {
     max-width: 212px;
-  }
-  .text-overlay {
-    top: 60px;
   }
 }
 </style>
