@@ -151,32 +151,28 @@ const handleMouseLeave = (event) => {
 }
 
 .slide__title {
-  font-family: Montserrat-bold, serif;
   font-weight: 700;
   font-size: clamp(16px, 4.5vw, 24px);
   background-image: linear-gradient(to right, #d4ad6f, #eeeeee);
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
-  line-height: 1em;
 }
 
 .slide__subtitle {
-  font-family: Montserrat-regular, serif;
-  font-weight: 700;
-  font-size: clamp(1.2rem, 2vw, 4rem);
-  line-height: 26.5px;
+  font-family: "Montserrat", sans-serif;
+  font-size: clamp(2rem, 1vw, 4.5rem);
+  letter-spacing: -0.4px;
+  line-height: 2rem;
+  font-weight: 500;
   color: white;
-  letter-spacing: 0.3px;
 }
 
 .slide__textcontent {
-  font-family: "Montserrat", sans-serif;
-  font-size: clamp(16px, 1vw, 24px);
-  font-weight: 500;
-  line-height: 19.5px;
+  font-family: Montserrat-regular, sans-serif;
+  font-size: clamp(1rem, 1vw, 2rem);
   color: white;
-  letter-spacing: 0.3px;
+  letter-spacing: -0.4px;
 }
 
 .buttons__container {
@@ -240,13 +236,6 @@ const handleMouseLeave = (event) => {
 }
 
 @media screen and (max-width: 768px) {
-  .slide__title {
-    line-height: 50px;
-  }
-
-  .slide__subtitle {
-    line-height: 19.5px;
-  }
 }
 @media screen and (max-width: 548px) {
   .text-overlay {

@@ -77,15 +77,15 @@ const closeAllExpansions = () => {
   color: black;
 }
 .navigation-list:hover {
-  color: var(--q-secondary);
+  color: var(--q-primary);
 }
 .subtext-hover {
   color: #333;
 }
 .subtext-hover:hover {
-  color: var(--q-secondary);
+  color: var(--q-primary);
 }
 .submenu-item:hover {
-  color: var(--q-secondary);
+  color: var(--q-primary);
 }
 </style>
