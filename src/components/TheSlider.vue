@@ -126,14 +126,12 @@ const handleMouseLeave = (event) => {
 }
 
 .slide__title {
-  font-family: Montserrat-bold, serif;
   font-weight: 700;
   font-size: 48px;
   background-image: linear-gradient(to right, #d4ad6f, #eeeeee);
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
-  line-height: 1em;
 }
 
 .slide__subtitle {
@@ -141,8 +139,8 @@ const handleMouseLeave = (event) => {
   font-weight: 700;
   font-size: 22px;
   line-height: 1.2em;
+
   color: white;
-  letter-spacing: 0.3px;
 }
 
 .slide__textcontent {
@@ -153,6 +151,7 @@ const handleMouseLeave = (event) => {
   color: white;
   letter-spacing: 0.3px;
   min-height: 120px;
+
 }
 
 .buttons__container {

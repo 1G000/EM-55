@@ -1,5 +1,4 @@
 <script setup>
-import MobileNavigationItem from "./MobileNavigationItem.vue";
 defineProps({
   navItems: {
     type: Array,
@@ -103,7 +102,7 @@ defineProps({
   min-height: 55px;
 }
 .submenu-item {
-  font-size: clamp(14px, 1vw, 20px);
+  font-size: clamp(16px, 1vw, 20px);
   padding: 10px 12px !important;
 }
 .submenu-item:hover {
