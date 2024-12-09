@@ -8,11 +8,6 @@
       infinite
       :autoplay-speed="5000"
       swipeable
-      ref="carousel"
-      prev-icon="arrow_back"
-      next-icon="arrow_forward"
-      arrows
-      navigation-icon="radio_button_unchecked"
       navigation
     >
       <q-carousel-slide
@@ -24,12 +19,14 @@
       >
         <div class="carousel-wrapper">
           <div class="text-overlay">
-            <h2 class="slide__title" v-html="slideData.title"></h2>
-            <h3 class="slide__subtitle" v-html="slideData.subtitle"></h3>
-            <span
-              class="slide__textcontent"
-              v-html="slideData.textcontent"
-            ></span>
+            <div class="text-overlay__text">
+              <h2 class="slide__title" v-html="slideData.title"></h2>
+              <h3 class="slide__subtitle" v-html="slideData.subtitle"></h3>
+              <span
+                class="slide__textcontent"
+                v-html="slideData.textcontent"
+              ></span>
+            </div>
             <div
               v-if="slideData.buttons && slideData.buttons.length > 0"
               class="buttons__container"
@@ -52,29 +49,6 @@
           </div>
         </div>
       </q-carousel-slide>
-
-      <!-- <template v-slot:control>
-        <q-carousel-control
-          position="bottom-right"
-          :offset="[20, 90]"
-          class="q-gutter-xs"
-        >
-          <q-btn
-            color="white"
-            text-color="primary"
-            icon="keyboard_arrow_left"
-            class="slider__switcher"
-            @click="$refs.carousel.previous()"
-          />
-          <q-btn
-            color="white"
-            text-color="primary"
-            icon="keyboard_arrow_right"
-            class="slider__switcher"
-            @click="$refs.carousel.next()"
-          />
-        </q-carousel-control>
-      </template> -->
     </q-carousel>
   </div>
 </template>
@@ -131,17 +105,18 @@ const handleMouseLeave = (event) => {
   -webkit-user-select: none; /* Safari */
   -ms-user-select: none; /* IE 10+ */
   user-select: none;
-  padding: 100px 0px 0px 100px;
   display: flex;
   flex-direction: column;
-  align-items: left;
-  justify-content: center;
-  gap: 20px;
-  max-width: 900px;
+  padding: 80px 60px;
+  align-items: flex-start;
 }
 
-.slide {
-  padding: 0px;
+.text-overlay__text {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  max-width: 800px;
+  min-height: 300px;
 }
 
 .q-carousel__slide {
@@ -153,7 +128,7 @@ const handleMouseLeave = (event) => {
 .slide__title {
   font-family: Montserrat-bold, serif;
   font-weight: 700;
-  font-size: clamp(18px, 5vw, 48px);
+  font-size: 48px;
   background-image: linear-gradient(to right, #d4ad6f, #eeeeee);
   background-clip: text;
   -webkit-background-clip: text;
@@ -164,23 +139,25 @@ const handleMouseLeave = (event) => {
 .slide__subtitle {
   font-family: Montserrat-regular, serif;
   font-weight: 700;
-  font-size: clamp(14px, 4.5vw, 44px);
-  line-height: 1em;
+  font-size: 22px;
+  line-height: 1.2em;
   color: white;
   letter-spacing: 0.3px;
 }
 
 .slide__textcontent {
   font-family: "Montserrat", sans-serif;
-  font-size: clamp(16px, 1vw, 24px);
+  font-size: 20px;
   font-weight: 500;
-  line-height: 19.5px;
+  line-height: 1.2em;
   color: white;
   letter-spacing: 0.3px;
+  min-height: 120px;
 }
 
 .buttons__container {
   display: flex;
+  justify-content: center;
   gap: 20px;
   font-family: Montserrat-bold, serif;
   font-size: 16px;
@@ -224,39 +201,31 @@ const handleMouseLeave = (event) => {
   }
 }
 
-@media screen and (max-width: 1400px) {
-  .text-overlay {
-    max-width: 750px;
-  }
-}
-
-@media screen and (max-width: 1000px) {
-  .text-overlay {
-    max-width: 590px;
-  }
-  .buttons__container {
+@media screen and (max-width: 768px) {
+  .text-overlay__text {
+    display: flex;
     flex-direction: column;
+    align-items: center;
+    min-height: 290px;
+    gap: 20px;
   }
-}
 
-@media screen and (max-width: 548px) {
+  .q-carousel {
+    height: 60vh;
+  }
   .slide {
     display: flex;
-    align-items: flex-start;
     justify-content: center;
-    padding-top: 50px;
   }
 
-  .slide__textcontent,
-  .slide__subtitle {
-    max-width: 250px;
+  .slide__title {
+    font-size: 30px;
   }
 
   .text-overlay {
     display: flex;
-    gap: 20px;
     max-width: 370px;
-    padding: 0;
+    padding: 40px 0 0 0;
   }
 
   .buttons__container {
@@ -267,15 +236,19 @@ const handleMouseLeave = (event) => {
   .btn__left,
   .btn__right {
     padding: 10px 10px;
-    width: 150px;
+    width: 130px;
     height: 50px;
   }
 }
 
 @media screen and (max-width: 430px) {
-  .slide__textcontent,
-  .slide__subtitle {
-    max-width: 212px;
+  .slide {
+    padding: 10px;
+    background-position: right;
+  }
+  .text-overlay {
+    align-items: center;
+    min-height: 400px;
   }
 }
 </style>
