@@ -139,7 +139,6 @@ const handleMouseLeave = (event) => {
   font-weight: 700;
   font-size: 22px;
   line-height: 1.2em;
-
   color: white;
 }
 
@@ -151,7 +150,6 @@ const handleMouseLeave = (event) => {
   color: white;
   letter-spacing: 0.3px;
   min-height: 120px;
-
 }
 
 .buttons__container {
@@ -210,7 +208,7 @@ const handleMouseLeave = (event) => {
   }
 
   .q-carousel {
-    height: 60vh;
+    height: 90vh;
   }
   .slide {
     display: flex;
@@ -246,6 +244,7 @@ const handleMouseLeave = (event) => {
     background-position: right;
   }
   .text-overlay {
+    padding: 30px 0 0 0;
     align-items: center;
     min-height: 400px;
   }
