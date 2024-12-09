@@ -1,43 +1,32 @@
 {
   "sliderData": [
     {
-      "imgSrc": "./Images/slide-111.jpg",
-      "imgSmallSrc": "./Images/slide-111.jpg",
-      "title": "Электромонтаж 55",
-      "subtitle": "Электрооборудование для&nbsp;трансформаторных подстанций",
-      "textcontent": "На&nbsp;протяжении 30&nbsp;лет изготавливаем электротехническое оборудование и&nbsp;выполняем все&nbsp;виды электромонтажных работ",
-      "buttons": [
-        { "btnTitle": "Написать нам", "style": "btn__left" },
-        { "btnTitle": "О компании", "style": "btn__right" }
-      ]
-    },
-    {
-      "imgSrc": "./Images/Slider/slide-6.jpg",
-      "imgSmallSrc": "./Images/Slider/smallSlide-1.jpg",
-      "title": "С новым годом!",
-      "subtitle": "Коллектив организации Электромонтаж&nbsp;55 от&nbsp;души поздравляет Вас&nbsp;с&nbsp;Новым годом и&nbsp;Рождеством",
-      "textcontent": "",
-      "buttons": [
-        { "btnTitle": "Написать нам", "style": "btn__left" },
-        { "btnTitle": "О компании", "style": "btn__right" }
-      ]
-    },
-    {
       "imgSrc": "./Images/Slider/slide-1.jpg",
+      "imgSmallSrc": "./Images/slide-111.jpg",
+      "title": "ЭЛЕКТРОМОНТАЖ&nbsp;55",
+      "subtitle": "Коллектив организации Электромонтаж&nbsp;55 от&nbsp;души поздравляет Вас&nbsp;с&nbsp;Новым годом и&nbsp;Рождеством!",
+      "textcontent": "На&nbsp;протяжении 30&nbsp;лет мы изготавливаем электротехническое оборудование и&nbsp;выполняем все&nbsp;виды электромонтажных работ",
+      "buttons": [
+        { "btnTitle": "Написать нам", "style": "btn__left" },
+        { "btnTitle": "О компании", "style": "btn__right" }
+      ]
+    },
+    {
+      "imgSrc": "./Images/Slider/slide-2.jpg",
       "imgSmallSrc": "./Images/Slider/smallSlide-1.jpg",
-      "title": "Электромонтаж 55",
+      "title": "ЭЛЕКТРОМОНТАЖ&nbsp;55",
       "subtitle": "Выполняем все&nbsp;виды электромонтажных работ",
-      "textcontent": "Ремонт кабельных линий напряжением 10кВ-0,4кВ, поиск места повреждения&nbsp;КЛ, все&nbsp;виды испытаний, восстановление нарушенного благоустройства ",
+      "textcontent": "Ремонт кабельных линий напряжением 0,4кВ - 10кВ, поиск места повреждения&nbsp;КЛ, все&nbsp;виды испытаний, восстановление нарушенного благоустройства ",
       "buttons": [
         { "btnTitle": "Услуги", "style": "btn__left" },
         { "btnTitle": "О компании", "style": "btn__right" }
       ]
     },
     {
-      "imgSrc": "./Images/Slider/slide-4.jpg",
+      "imgSrc": "./Images/Slider/slide-3.jpg",
       "imgSmallSrc": "./Images/Slider/smallSlide-1.jpg",
-      "title": "Электромонтаж 55",
-      "subtitle": "Производим электрооборудование",
+      "title": "ЭЛЕКТРОМОНТАЖ&nbsp;55",
+      "subtitle": "Производим электрооборудование напряжением 0,4кв - 10кВ",
       "textcontent": "Изготавливаем БКТП, КТПН, КСО, УВР, ГРЩ&nbsp;под&nbsp;Ваши нужды ",
       "buttons": [
         { "btnTitle": "Оборудование", "style": "btn__left" },
