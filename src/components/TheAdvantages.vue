@@ -2,7 +2,7 @@
 
 <template>
   <section class="advantages__section">
-    <div class="advantages__picture">
+    <!-- <div class="advantages__picture">
       <div class="rectangle">
         <svg
           class="rectangle__ico"
@@ -22,7 +22,7 @@
           <p>лет на рынке</p>
         </div>
       </div>
-    </div>
+    </div> -->
     <div class="advantages__items">
       <div class="advantage__item">
         <span class="advantage__ico">
@@ -140,7 +140,7 @@
   gap: 10px;
 }
 
-.advantages__picture {
+/* .advantages__picture {
   width: 50%;
   background-image: url("/Images/advantage.jpg");
   background-size: cover;
@@ -149,24 +149,24 @@
   height: 358px;
   border-radius: 8px;
   opacity: 93%;
-}
+} */
 
 .advantages__items {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 50%;
-  height: 358px;
+  width: 100%;
+  min-height: 100px;
   background-color: rgba(212, 171, 109, 0.102);
   border-radius: 8px;
-  padding: 40px 36px;
+  padding: 20px 10px;
   gap: 10px;
 }
 
 .advantage__item {
   display: flex;
-  gap: 56px;
+  gap: 20px;
+  width: 33%;
 }
 
 .advantage__ico {
@@ -185,53 +185,56 @@
   font-family: Montserrat-regular, serif;
 }
 
-.rectangle {
+/* .rectangle {
   display: flex;
   justify-content: end;
   position: relative;
-}
+} */
 
 .advantage__ico {
   min-width: 70px;
 }
 
-.rectangle p {
+/* .rectangle p {
   text-align: center;
   font-family: Montserrat-bold, serif;
   color: white;
-}
+} */
 
-.rectangle p:first-child {
+/* .rectangle p:first-child {
   font-size: 32px;
 }
 .rectangle p:nth-child(2) {
   font-size: 16px;
-}
+} */
 
-.rectangle__content {
+/* .rectangle__content {
   position: absolute;
   right: 8px;
   top: 25px;
-}
+} */
 
 @media screen and (max-width: 768px) {
-  .advantages__section {
+  /* .advantages__section {
     flex-direction: column;
+    padding: 10px;
   }
 
   .advantages__picture {
     width: 100%;
-  }
+  } */
 
   .advantages__items {
+    flex-direction: column;
     width: 100%;
     height: auto;
-    min-height: 358px;
+    padding: 10px 0px;
   }
 
   .advantage__item {
     margin: 0 auto;
-    gap: 30px;
+    gap: 10px;
+    width: 100%;
   }
 }
 </style>

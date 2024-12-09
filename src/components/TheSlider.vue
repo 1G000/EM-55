@@ -3,10 +3,12 @@
     <q-carousel
       animated
       v-model="slide"
+      transition-prev="slide-right"
+      transition-next="slide-left"
       infinite
       :autoplay-speed="5000"
       swipeable
-      ref="carousel"
+      navigation
     >
       <q-carousel-slide
         v-for="(slideData, index) in slideData"
@@ -17,12 +19,14 @@
       >
         <div class="carousel-wrapper">
           <div class="text-overlay">
-            <!-- <h2 class="slide__title">{{ slideData.title }}</h2> -->
-            <h3 class="slide__subtitle" v-html="slideData.subtitle"></h3>
-            <span
-              class="slide__textcontent"
-              v-html="slideData.textcontent"
-            ></span>
+            <div class="text-overlay__text">
+              <h2 class="slide__title" v-html="slideData.title"></h2>
+              <h3 class="slide__subtitle" v-html="slideData.subtitle"></h3>
+              <span
+                class="slide__textcontent"
+                v-html="slideData.textcontent"
+              ></span>
+            </div>
             <div
               v-if="slideData.buttons && slideData.buttons.length > 0"
               class="buttons__container"
@@ -32,8 +36,12 @@
                 :key="buttonIndex"
                 :class="button.style"
                 ref="button"
-                @mousemove="handleMouseMove(buttonIndex, $event)"
-                @mouseleave="handleMouseLeave($event)"
+                v-on="{
+                  mousemove: supportsHover
+                    ? handleMouseMove.bind(_, buttonIndex)
+                    : null,
+                  mouseleave: supportsHover ? handleMouseLeave : null,
+                }"
               >
                 {{ button.btnTitle }}
               </button>
@@ -41,35 +49,12 @@
           </div>
         </div>
       </q-carousel-slide>
-
-      <template v-slot:control>
-        <q-carousel-control
-          position="bottom-right"
-          :offset="[20, 90]"
-          class="q-gutter-xs"
-        >
-          <q-btn
-            color="white"
-            text-color="primary"
-            icon="keyboard_arrow_left"
-            class="slider__switcher"
-            @click="$refs.carousel.previous()"
-          />
-          <q-btn
-            color="white"
-            text-color="primary"
-            icon="keyboard_arrow_right"
-            class="slider__switcher"
-            @click="$refs.carousel.next()"
-          />
-        </q-carousel-control>
-      </template>
     </q-carousel>
   </div>
 </template>
 
 <script setup>
-import { ref, onMounted } from "vue";
+import { ref, onMounted, computed } from "vue";
 let slide = ref(1);
 const slideData = ref([]);
 
@@ -88,7 +73,11 @@ onMounted(async () => {
 
 //hover
 
-const handleMouseMove = (_, event) => {
+const supportsHover = computed(() => {
+  return window.matchMedia("(hover: hover)").matches;
+});
+
+const handleMouseMove = (color, event) => {
   const button = event.currentTarget;
   const x = event.offsetX;
   const y = event.offsetY;
@@ -97,7 +86,7 @@ const handleMouseMove = (_, event) => {
   const xPercent = (x / width) * 100;
   const yPercent = (y / height) * 100;
 
-  const gradient = `radial-gradient(circle at ${xPercent}% ${yPercent}%, rgba(225, 225, 225,1), transparent)`;
+  const gradient = `radial-gradient(circle at ${xPercent}% ${yPercent}%, rgba(225, 225, 225,0.3), transparent)`;
   button.style.backgroundImage = gradient;
 };
 
@@ -112,36 +101,22 @@ const handleMouseLeave = (event) => {
   height: 90vh;
 }
 
-.carousel-wrapper {
-  position: relative;
-  background-image: linear-gradient(
-    to right,
-    rgba(0, 0, 0, 1),
-    rgba(0, 0, 0, 0.2)
-  );
-  background-size: cover;
-  height: 100%;
-  width: 100%;
-}
-
 .text-overlay {
   -webkit-user-select: none; /* Safari */
   -ms-user-select: none; /* IE 10+ */
   user-select: none;
-  position: absolute;
-  top: 120px;
-  left: 50px;
-  padding: 10px;
   display: flex;
   flex-direction: column;
-  align-items: left;
-  justify-content: center;
-  gap: 20px;
-  max-width: 900px;
+  padding: 80px 60px;
+  align-items: flex-start;
 }
 
-.slide {
-  padding: 0px;
+.text-overlay__text {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  max-width: 800px;
+  min-height: 300px;
 }
 
 .q-carousel__slide {
@@ -152,7 +127,7 @@ const handleMouseLeave = (event) => {
 
 .slide__title {
   font-weight: 700;
-  font-size: clamp(16px, 4.5vw, 24px);
+  font-size: 48px;
   background-image: linear-gradient(to right, #d4ad6f, #eeeeee);
   background-clip: text;
   -webkit-background-clip: text;
@@ -160,23 +135,28 @@ const handleMouseLeave = (event) => {
 }
 
 .slide__subtitle {
-  font-family: "Montserrat", sans-serif;
-  font-size: clamp(2rem, 1vw, 4.5rem);
-  letter-spacing: -0.4px;
-  line-height: 2rem;
-  font-weight: 500;
+  font-family: Montserrat-regular, serif;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 1.2em;
+
   color: white;
 }
 
 .slide__textcontent {
-  font-family: Montserrat-regular, sans-serif;
-  font-size: clamp(1rem, 1vw, 2rem);
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.2em;
   color: white;
-  letter-spacing: -0.4px;
+  letter-spacing: 0.3px;
+  min-height: 120px;
+
 }
 
 .buttons__container {
   display: flex;
+  justify-content: center;
   gap: 20px;
   font-family: Montserrat-bold, serif;
   font-size: 16px;
@@ -220,46 +200,54 @@ const handleMouseLeave = (event) => {
   }
 }
 
-@media screen and (max-width: 1400px) {
-  .text-overlay {
-    max-width: 750px;
-  }
-}
-
-@media screen and (max-width: 1000px) {
-  .text-overlay {
-    max-width: 500px;
-  }
-  .buttons__container {
-    flex-direction: column;
-  }
-}
-
 @media screen and (max-width: 768px) {
-}
-@media screen and (max-width: 548px) {
-  .text-overlay {
-    position: absolute;
-    top: 100px;
-    left: 20px;
-    padding: 2px;
+  .text-overlay__text {
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 290px;
     gap: 20px;
-    max-width: 370px;
   }
 
-  .q-pa-md {
-    padding: 0;
+  .q-carousel {
+    height: 60vh;
+  }
+  .slide {
+    display: flex;
+    justify-content: center;
+  }
+
+  .slide__title {
+    font-size: 30px;
+  }
+
+  .text-overlay {
+    display: flex;
+    max-width: 370px;
+    padding: 40px 0 0 0;
+  }
+
+  .buttons__container {
+    font-size: 14px;
+    margin-top: 20px;
+  }
+
+  .btn__left,
+  .btn__right {
+    padding: 10px 10px;
+    width: 130px;
+    height: 50px;
   }
 }
 
 @media screen and (max-width: 430px) {
-  .slide__textcontent,
-  .slide__subtitle {
-    max-width: 212px;
+  .slide {
+    padding: 10px;
+    background-position: right;
   }
   .text-overlay {
-    top: 60px;
+    align-items: center;
+    min-height: 400px;
   }
 }
 </style>
