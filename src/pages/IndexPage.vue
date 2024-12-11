@@ -21,7 +21,7 @@ defineOptions({
 .content__wrapper {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 70px;
   max-width: 1920px;
   padding: 20px 20px 0 20px;
 }

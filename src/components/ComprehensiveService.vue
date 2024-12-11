@@ -4,7 +4,7 @@
   <h2 class="heading__two">
     Строительство и реконструкция электроустановок “под ключ”
   </h2>
-  <p class="card__text">
+  <p class="card__text-long">
     Обеспечиваем полное сопровождение на каждом этапе, начиная с проектирования
     и заканчивая вводом электроустановки в эксплуатацию
   </p>
@@ -185,7 +185,7 @@
       </q-card-section>
     </q-card>
   </div>
-  <p class="card__text">
+  <p class="card__text-long">
     Напишите или позвоните нам, чтобы узнать подробности и рассчитать примерную
     стоимость
   </p>
@@ -208,10 +208,15 @@
   background-color: #86002a;
 }
 
-.card__text {
+.card__text,
+.card__text-long {
   font-family: Montserrat-regular, serif;
   font-size: 16px;
   margin: 0px;
+}
+
+.card__text-long {
+  margin: -50px 0;
 }
 
 .btn {
