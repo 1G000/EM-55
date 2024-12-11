@@ -238,7 +238,6 @@
 
   .advantage__item {
     margin: 0 auto;
-    gap: 10px;
     width: 100%;
   }
 }

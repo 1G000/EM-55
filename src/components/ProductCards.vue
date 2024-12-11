@@ -22,32 +22,24 @@
 const production = [
   {
     title: "БКТП/БРТП в бетонной оболочке",
-    imgSrc: "/public/Images/Production/product-1.jpg",
+    imgSrc: "./Images/Production/product-1.jpg",
   },
   {
     title: "КТПН в металлической оболочке",
-    imgSrc: "/public/Images/Production/product-2.jpg",
+    imgSrc: "./Images/Production/product-2.jpg",
   },
   {
     title: "КТП внутренней установки",
-    imgSrc: "/public/Images/Production/product-3.jpg",
+    imgSrc: "./Images/Production/product-3.jpg",
   },
   {
     title: "Низковольтные комплектные устройства",
-    imgSrc: "/public/Images/Production/product-4.jpg",
+    imgSrc: "./Images/Production/product-4.jpg",
   },
 ];
 </script>
 
 <style scoped>
-.container {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  max-width: 1920px;
-  padding: 20px 0px;
-}
-
 .my-card {
   width: 100%;
   max-width: 400px;
@@ -76,6 +68,12 @@ const production = [
 @media screen and (max-width: 968px) {
   .container {
     justify-content: center;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .my-card {
+    max-width: 100%;
   }
 }
 </style>
