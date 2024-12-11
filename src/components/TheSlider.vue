@@ -101,6 +101,10 @@ const selectedImgSrc = computed(() => (slideData) => {
 </script>
 
 <style scoped>
+.q-md {
+  width: 100%;
+}
+
 .q-carousel {
   height: 90vh;
 }
@@ -253,6 +257,24 @@ const selectedImgSrc = computed(() => (slideData) => {
 
   ::v-deep .q-carousel__navigation {
     bottom: 80px;
+  }
+}
+
+@media screen and (min-width: 1441px) {
+  .slide__title {
+    font-size: 60px;
+  }
+
+  .slide__subtitle {
+    font-size: 30px;
+  }
+
+  .slide__textcontent {
+    font-size: 25px;
+  }
+
+  .text-overlay__text {
+    max-width: 1000px;
   }
 }
 </style>

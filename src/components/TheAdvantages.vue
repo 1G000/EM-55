@@ -121,7 +121,7 @@
         <div class="advantage__text-content">
           <h4 class="advantage__title">Независимость и мобильность</h4>
           <p class="advantage__text">
-            наличие большого автопарка, включая собственную электротехническую
+            Наличие большого автопарка, включая собственную электротехническую
             лабораторию
           </p>
         </div>
@@ -133,33 +133,18 @@
 <style scoped>
 .advantages__section {
   display: flex;
-  justify-content: space-between;
-  margin: 0 auto;
-  max-width: 1440px;
-  padding: 10px;
-  gap: 10px;
-}
-
-/* .advantages__picture {
-  width: 50%;
-  background-image: url("/Images/advantage.jpg");
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  height: 358px;
+  justify-content: center;
+  max-width: 1920px;
   border-radius: 8px;
-  opacity: 93%;
-} */
+  background-color: rgba(212, 171, 109, 0.102);
+}
 
 .advantages__items {
   display: flex;
   align-items: center;
-  justify-content: center;
-  width: 100%;
+  width: 70%;
   min-height: 100px;
-  background-color: rgba(212, 171, 109, 0.102);
   border-radius: 8px;
-  padding: 20px 10px;
   gap: 10px;
 }
 
@@ -167,6 +152,7 @@
   display: flex;
   gap: 20px;
   width: 33%;
+  padding: 15px 0px;
 }
 
 .advantage__ico {
@@ -181,59 +167,29 @@
   line-height: 20px;
 }
 
+.advantage__text-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
 .advantage__text {
   font-family: Montserrat-regular, serif;
 }
-
-/* .rectangle {
-  display: flex;
-  justify-content: end;
-  position: relative;
-} */
 
 .advantage__ico {
   min-width: 70px;
 }
 
-/* .rectangle p {
-  text-align: center;
-  font-family: Montserrat-bold, serif;
-  color: white;
-} */
-
-/* .rectangle p:first-child {
-  font-size: 32px;
-}
-.rectangle p:nth-child(2) {
-  font-size: 16px;
-} */
-
-/* .rectangle__content {
-  position: absolute;
-  right: 8px;
-  top: 25px;
-} */
-
 @media screen and (max-width: 768px) {
-  /* .advantages__section {
-    flex-direction: column;
-    padding: 10px;
-  }
-
-  .advantages__picture {
-    width: 100%;
-  } */
-
   .advantages__items {
     flex-direction: column;
-    width: 100%;
     height: auto;
     padding: 10px 0px;
   }
 
   .advantage__item {
     margin: 0 auto;
-    gap: 10px;
     width: 100%;
   }
 }

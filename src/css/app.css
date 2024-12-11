@@ -12,6 +12,12 @@
   font-style: normal;
 }
 
+.q-page-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -66,4 +72,30 @@ img {
 
 .q-list--separator > .q-item-type + .q-item-type {
   border-top: 1px solid #d4ab6d1a;
+}
+
+.heading__two {
+  align-self: flex-start;
+  font-family: Montserrat-bold, serif;
+  font-size: 40px;
+  line-height: 1em;
+}
+
+.text-h6 {
+  font-family: Montserrat-bold, serif;
+  font-size: 18px;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  max-width: 1920px;
+  padding: 20px 0px;
+}
+
+@media screen and (max-width: 740px) {
+  .heading__two {
+    font-size: 30px;
+  }
 }
