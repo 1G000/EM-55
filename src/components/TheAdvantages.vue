@@ -121,7 +121,7 @@
         <div class="advantage__text-content">
           <h4 class="advantage__title">Независимость и мобильность</h4>
           <p class="advantage__text">
-            наличие большого автопарка, включая собственную электротехническую
+            Наличие большого автопарка, включая собственную электротехническую
             лабораторию
           </p>
         </div>
@@ -134,9 +134,7 @@
 .advantages__section {
   display: flex;
   justify-content: space-between;
-  margin: 0 auto;
-  max-width: 1440px;
-  padding: 10px;
+  max-width: 1920px;
   gap: 10px;
 }
 
@@ -159,7 +157,7 @@
   min-height: 100px;
   background-color: rgba(212, 171, 109, 0.102);
   border-radius: 8px;
-  padding: 20px 10px;
+
   gap: 10px;
 }
 
@@ -167,6 +165,7 @@
   display: flex;
   gap: 20px;
   width: 33%;
+  padding: 15px 0px;
 }
 
 .advantage__ico {
@@ -179,6 +178,12 @@
   font-size: 18px;
   font-family: Montserrat-bold, serif;
   line-height: 20px;
+}
+
+.advantage__text-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .advantage__text {

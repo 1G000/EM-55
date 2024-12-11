@@ -101,6 +101,10 @@ const selectedImgSrc = computed(() => (slideData) => {
 </script>
 
 <style scoped>
+.q-md {
+  width: 100%;
+}
+
 .q-carousel {
   height: 90vh;
 }
