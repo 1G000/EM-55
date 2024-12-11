@@ -252,7 +252,7 @@ const selectedImgSrc = computed(() => (slideData) => {
   }
 
   ::v-deep .q-carousel__navigation {
-    bottom: 50px;
+    bottom: 80px;
   }
 }
 </style>
