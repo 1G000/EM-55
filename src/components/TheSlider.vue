@@ -15,7 +15,7 @@
         :key="index"
         :name="index + 1"
         class="slide"
-        :img-src="slideData.imgSrc"
+        :img-src="selectedImgSrc(slideData)"
       >
         <div class="carousel-wrapper">
           <div class="text-overlay">
@@ -94,6 +94,10 @@ const handleMouseLeave = (event) => {
   const button = event.currentTarget;
   button.style.backgroundImage = "";
 };
+
+const selectedImgSrc = computed(() => (slideData) => {
+  return window.innerWidth < 430 ? slideData.imgSmallSrc : slideData.imgSrc;
+});
 </script>
 
 <style scoped>
@@ -202,7 +206,6 @@ const handleMouseLeave = (event) => {
   .text-overlay__text {
     display: flex;
     flex-direction: column;
-    align-items: center;
     min-height: 290px;
     gap: 20px;
   }
@@ -233,7 +236,7 @@ const handleMouseLeave = (event) => {
   .btn__left,
   .btn__right {
     padding: 10px 10px;
-    width: 130px;
+    width: 150px;
     height: 50px;
   }
 }
@@ -241,12 +244,15 @@ const handleMouseLeave = (event) => {
 @media screen and (max-width: 430px) {
   .slide {
     padding: 10px;
-    background-position: right;
   }
   .text-overlay {
     padding: 30px 0 0 0;
     align-items: center;
     min-height: 400px;
+  }
+
+  ::v-deep .q-carousel__navigation {
+    bottom: 50px;
   }
 }
 </style>
