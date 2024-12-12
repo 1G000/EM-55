@@ -22,19 +22,19 @@
 const production = [
   {
     title: "БКТП/БРТП в бетонной оболочке",
-    imgSrc: "./Images/Production/product-1.jpg",
+    imgSrc: "./Images/Production/product-1.webp",
   },
   {
     title: "КТПН в металлической оболочке",
-    imgSrc: "./Images/Production/product-2.jpg",
+    imgSrc: "./Images/Production/product-2.webp",
   },
   {
     title: "КТП внутренней установки",
-    imgSrc: "./Images/Production/product-3.jpg",
+    imgSrc: "./Images/Production/product-3.webp",
   },
   {
     title: "Низковольтные комплектные устройства",
-    imgSrc: "./Images/Production/product-4.jpg",
+    imgSrc: "./Images/Production/product-4.webp",
   },
 ];
 </script>
@@ -43,6 +43,15 @@ const production = [
 .my-card {
   width: 100%;
   max-width: 400px;
+
+  box-shadow: none;
+  border-radius: 8px;
+}
+
+.q-card__actions {
+  border-bottom: 1px solid rgb(128, 128, 128, 0.3) !important;
+  border-left: 1px solid rgb(128, 128, 128, 0.3) !important;
+  border-right: 1px solid rgb(128, 128, 128, 0.3) !important;
 }
 
 .card__btn:hover {
@@ -68,12 +77,13 @@ const production = [
 @media screen and (max-width: 968px) {
   .container {
     justify-content: center;
+    align-self: center;
   }
 }
 
 @media screen and (max-width: 430px) {
   .my-card {
-    max-width: 100%;
+    max-width: 320px;
   }
 }
 </style>

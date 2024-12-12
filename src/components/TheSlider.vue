@@ -117,14 +117,15 @@ const selectedImgSrc = computed(() => (slideData) => {
   flex-direction: column;
   padding: 80px 60px;
   align-items: flex-start;
+  gap: 20px;
 }
 
 .text-overlay__text {
   display: flex;
   flex-direction: column;
-  gap: 30px;
-  max-width: 800px;
-  min-height: 300px;
+  gap: 5px;
+  max-width: 700px;
+  min-height: 200px;
 }
 
 .q-carousel__slide {
@@ -157,7 +158,7 @@ const selectedImgSrc = computed(() => (slideData) => {
   line-height: 1.2em;
   color: white;
   letter-spacing: 0.3px;
-  min-height: 120px;
+  margin-top: 20px;
 }
 
 .buttons__container {
@@ -166,7 +167,6 @@ const selectedImgSrc = computed(() => (slideData) => {
   gap: 20px;
   font-family: Montserrat-bold, serif;
   font-size: 16px;
-  margin-top: 50px;
 }
 
 .btn__left {
@@ -190,8 +190,13 @@ const selectedImgSrc = computed(() => (slideData) => {
   padding: 10px 40px;
   transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
+
 .slider__switcher {
   border-radius: 8px;
+}
+
+::v-deep .q-carousel__navigation {
+  bottom: 80px;
 }
 @media (hover: hover) {
   .btn__right:hover {
@@ -210,8 +215,7 @@ const selectedImgSrc = computed(() => (slideData) => {
   .text-overlay__text {
     display: flex;
     flex-direction: column;
-    min-height: 290px;
-    gap: 20px;
+    min-height: 240px;
   }
 
   .q-carousel {
@@ -234,7 +238,6 @@ const selectedImgSrc = computed(() => (slideData) => {
 
   .buttons__container {
     font-size: 14px;
-    margin-top: 20px;
   }
 
   .btn__left,
@@ -252,11 +255,6 @@ const selectedImgSrc = computed(() => (slideData) => {
   .text-overlay {
     padding: 30px 0 0 0;
     align-items: center;
-    min-height: 400px;
-  }
-
-  ::v-deep .q-carousel__navigation {
-    bottom: 80px;
   }
 }
 
@@ -274,7 +272,7 @@ const selectedImgSrc = computed(() => (slideData) => {
   }
 
   .text-overlay__text {
-    max-width: 1000px;
+    max-width: 800px;
   }
 }
 </style>
