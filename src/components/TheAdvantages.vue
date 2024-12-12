@@ -186,10 +186,10 @@
     flex-direction: column;
     height: auto;
     padding: 10px 0px;
+    width: 100%;
   }
 
   .advantage__item {
-    margin: 0 auto;
     width: 100%;
   }
 }

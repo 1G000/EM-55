@@ -196,6 +196,8 @@
 .my-card {
   max-width: 550px;
   background-color: rgba(212, 171, 109, 0.102);
+  box-shadow: none;
+  border-radius: 8px;
 }
 
 .card__section {
@@ -282,6 +284,9 @@
 @media screen and (max-width: 430px) {
   .my-card {
     max-width: 100%;
+  }
+  .container {
+    align-self: center;
   }
 }
 </style>
