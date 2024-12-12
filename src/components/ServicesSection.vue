@@ -1,16 +1,16 @@
 <template>
-  <h2 class="heading__two">Продукция</h2>
-  <div class="q-pa-md row items-center q-gutter-md container">
+  <h2 class="heading__two">Услуги</h2>
+  <div class="q-pa-md row items-center q-gutter-md container_services">
     <q-card
-      v-for="(product, index) in production"
+      v-for="(service, index) in services"
       :key="index"
       class="my-card col-md-4 col-sm-6 col-xs-12"
     >
-      <q-img :src="product.imgSrc" :lazy-src="product.imgSrc">
+      <q-img :src="service.imgSrc" :lazy-src="service.imgSrc">
         <div
           class="absolute-bottom text-white bg-dark-80 text-shadow-1 text__content"
         >
-          <div class="text-h6">{{ product.title }}</div>
+          <div class="text-h6">{{ service.title }}</div>
         </div>
       </q-img>
       <q-card-actions>
@@ -21,27 +21,36 @@
 </template>
 
 <script setup>
-const production = [
+const services = [
   {
-    title: "БКТП/БРТП в бетонной оболочке",
-    imgSrc: "./Images/Production/product-1.webp",
+    title: "Ремонт кабельных линий напряжением 0,4/6/10 кВт",
+    imgSrc: "./Images/Services/1.webp",
   },
   {
-    title: "КТПН в металлической оболочке",
-    imgSrc: "./Images/Production/product-2.webp",
+    title:
+      "Поиск места повреждения на кабельных линиях напряжением 0,4/6/10 кВт",
+    imgSrc: "./Images/Services/2.webp",
   },
   {
-    title: "КТП внутренней установки",
-    imgSrc: "./Images/Production/product-3.webp",
+    title: "Электромонтажные работы любой сложности",
+    imgSrc: "./Images/Services/3.webp",
   },
   {
-    title: "Низковольтные комплектные устройства",
-    imgSrc: "./Images/Production/product-4.webp",
+    title: "Восстановление нарушенного благоустройства",
+    imgSrc: "./Images/Services/4.webp",
   },
 ];
 </script>
 
 <style scoped>
+.container_services {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
 .my-card {
   width: 100%;
   max-width: 400px;
@@ -71,7 +80,7 @@ const production = [
 }
 
 .text__content {
-  min-height: 100px;
+  min-height: 130px;
   display: flex;
   align-items: center;
 }
