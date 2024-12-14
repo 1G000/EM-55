@@ -2,27 +2,6 @@
 
 <template>
   <section class="advantages__section">
-    <!-- <div class="advantages__picture">
-      <div class="rectangle">
-        <svg
-          class="rectangle__ico"
-          width="133"
-          height="180"
-          viewBox="0 0 133 180"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M0 8C0 3.58172 3.58172 0 8 0H125C129.418 0 133 3.58172 133 8V171.546C133 178.22 125.308 181.96 120.059 177.838L71.4409 139.658C68.5407 137.38 64.4593 137.38 61.5591 139.658L12.9409 177.838C7.6916 181.96 0 178.22 0 171.546V8Z"
-            fill="#86002A"
-          />
-        </svg>
-        <div class="rectangle__content">
-          <p>30+</p>
-          <p>лет на рынке</p>
-        </div>
-      </div>
-    </div> -->
     <div class="advantages__items">
       <div class="advantage__item">
         <span class="advantage__ico">

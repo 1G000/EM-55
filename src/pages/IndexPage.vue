@@ -3,7 +3,7 @@
   <div class="content__wrapper">
     <TheAdvantages />
     <ProductCards />
-    <ComprehensiveService />
+    <ComplexServiceSection />
     <ServicesSection />
   </div>
 </template>
@@ -12,7 +12,7 @@
 import TheSlider from "src/components/TheSlider.vue";
 import TheAdvantages from "src/components/TheAdvantages.vue";
 import ProductCards from "src/components/ProductCards.vue";
-import ComprehensiveService from "src/components/ComprehensiveService.vue";
+import ComplexServiceSection from "src/components/ComplexServiceSection.vue";
 import ServicesSection from "src/components/ServicesSection.vue";
 defineOptions({
   name: "IndexPage",
