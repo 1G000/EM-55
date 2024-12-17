@@ -1,0 +1,85 @@
+{
+  "contacts": [
+    {
+      "title": "Офис",
+      "employees": [
+        {
+          "id": 1,
+          "imgSrc": "/public/Images/Contacts/logo.png",
+          "specialization": "",
+          "fullName": "",
+          "phoneNumbers": ["+7-812-294-20-13", "+7-812-294-23-03"],
+          "email": "referent@em-55.com"
+        }
+      ]
+    },
+    {
+      "title": "Отдел по работе с персоналом",
+      "employees": [
+        {
+          "id": 2,
+          "imgSrc": "./Images/Contacts/female.png",
+          "specialization": "Менеджер по персоналу",
+          "fullName": "Марина Юрьевна",
+          "phoneNumbers": ["+7-911-296-50-58"],
+          "email": "personal@em-55.com"
+        }
+      ]
+    },
+    {
+      "title": "Отдел продаж",
+      "employees": [
+        {
+          "id": 3,
+          "imgSrc": "./Images/Contacts/female.png",
+          "specialization": "БКТП, КТП, УВР",
+          "fullName": "Дмитрий Антонович",
+          "phoneNumbers": ["+7-911-734-90-01", "+7-812-294-23-03"],
+          "email": "sale1@em-55.com"
+        },
+        {
+          "id": 4,
+          "imgSrc": "./Images/Contacts/male.png",
+          "specialization": "Отдел низковольтного оборудования",
+          "fullName": "Александр Николаевич",
+          "phoneNumbers": ["+7-812-294-23-03"],
+          "email": "sale2@em-55.com"
+        },
+        {
+          "id": 5,
+          "imgSrc": "./Images/Contacts/female.png",
+          "specialization": "Отдел высоковольтного оборудования",
+          "fullName": "Татьяна Гавриловна",
+          "phoneNumbers": ["+7-812-294-23-03"],
+          "email": "sale2@em-55.com"
+        }
+      ]
+    },
+    {
+      "title": "Отдел снабжения и логистики",
+      "employees": [
+        {
+          "id": 6,
+          "imgSrc": "./Images/Contacts/female.png",
+          "specialization": "Менеджер по персоналу",
+          "fullName": "Любовь Сергеевна",
+          "phoneNumbers": ["+7-812-294-23-03"],
+          "email": "zakupki@em-55.com"
+        }
+      ]
+    },
+    {
+      "title": "Автобаза",
+      "employees": [
+        {
+          "id": 7,
+          "imgSrc": "./Images/Contacts/male.png",
+          "specialization": "Аренда строительной и дорожной техники",
+          "fullName": "Николай Николаевич",
+          "phoneNumbers": [],
+          "email": ""
+        }
+      ]
+    }
+  ]
+}

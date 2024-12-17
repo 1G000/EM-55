@@ -26,6 +26,7 @@ export default {
 .my-card {
   max-width: 550px;
   box-shadow: none;
+  border: none;
   border-radius: 8px;
   background-color: rgba(212, 171, 109, 0.102);
 }
