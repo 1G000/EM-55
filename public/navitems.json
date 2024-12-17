@@ -5,22 +5,31 @@
       "secondLevel": true,
       "expandedFirstLevel": false,
       "secondLevelItems": [
-        { "title": "О компании", "thirdLevel": false},
-        { "title": "Производство", "thirdLevel": false},
-        {"title": "История", "thirdLevel": true, "expandedSecondLevel": false, "thirdLevelItems": [
+        { "title": "О компании", "thirdLevel": false },
+        { "title": "Производство", "thirdLevel": false },
+        {
+          "title": "История",
+          "thirdLevel": true,
+          "expandedSecondLevel": false,
+          "thirdLevelItems": [
             { "title": "История 1" },
             { "title": "История 1" }
           ]
         },
-        { "title": "Галерея", "thirdLevel": true, "expandedSecondLevel": false, "thirdLevelItems": [
+        {
+          "title": "Галерея",
+          "thirdLevel": true,
+          "expandedSecondLevel": false,
+          "thirdLevelItems": [
             { "title": "2022" },
             { "title": "2023" },
             { "title": "2024" }
-          ]},
-        { "title": "Отзывы", "thirdLevel": false},
-        { "title": "Вакансии", "thirdLevel": false},
-        { "title": "Наши партнёры", "thirdLevel": false},
-        { "title": "Реквизиты", "thirdLevel": false}
+          ]
+        },
+        { "title": "Отзывы", "thirdLevel": false },
+        { "title": "Вакансии", "thirdLevel": false },
+        { "title": "Наши партнёры", "thirdLevel": false },
+        { "title": "Реквизиты", "thirdLevel": false }
       ]
     },
     {

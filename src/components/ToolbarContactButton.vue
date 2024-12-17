@@ -61,16 +61,17 @@ defineOptions({
           >
         </q-item-section>
       </q-item>
-
-      <q-item-section class="q-mt-sm">
-        <q-btn
-          class="q-py-sm text-bold contact-btn"
-          size="md"
-          color="accent"
-          text-color="primary"
-          label="Контакты"
-        />
-      </q-item-section>
+      <router-link to="/contacts">
+        <q-item-section class="q-mt-sm">
+          <q-btn
+            class="q-py-sm text-bold contact-btn"
+            size="md"
+            color="accent"
+            text-color="primary"
+            label="Контакты"
+          />
+        </q-item-section>
+      </router-link>
     </q-list>
   </q-btn-dropdown>
 </template>
@@ -99,5 +100,3 @@ defineOptions({
   font-size: clamp(16px, 1vw, 20px) !important;
 }
 </style>
-
-

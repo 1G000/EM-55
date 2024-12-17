@@ -32,9 +32,6 @@ export default {
 }
 
 .q-card__actions {
-  border-bottom: 1px solid rgb(128, 128, 128, 0.3) !important;
-  border-left: 1px solid rgb(128, 128, 128, 0.3) !important;
-  border-right: 1px solid rgb(128, 128, 128, 0.3) !important;
   background-color: rgba(212, 171, 109, 0.102);
 }
 
