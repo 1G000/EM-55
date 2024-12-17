@@ -23,7 +23,7 @@ const contactsData = ref(null);
 
 onMounted(async () => {
   try {
-    const response = await fetch("/public/contactsItems.json");
+    const response = await fetch("./contactsItems.json");
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`); // Fixed syntax error here
     }
