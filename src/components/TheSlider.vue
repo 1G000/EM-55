@@ -195,7 +195,7 @@ const selectedImgSrc = computed(() => (slide) => {
   border-radius: 8px;
 }
 
-::v-deep .q-carousel__navigation {
+:deep(.q-carousel__navigation) {
   bottom: 80px;
 }
 @media (hover: hover) {

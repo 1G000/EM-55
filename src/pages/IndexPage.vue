@@ -25,6 +25,6 @@ defineOptions({
   flex-direction: column;
   gap: 70px;
   max-width: 1920px;
-  padding: 20px 20px 0 20px;
+  padding: 40px 20px 0 20px;
 }
 </style>
