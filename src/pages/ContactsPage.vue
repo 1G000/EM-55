@@ -1,5 +1,6 @@
 <template>
   <div class="container">
+    <h2 class="page__title">Контактные данные специалистов</h2>
     <div class="contact__section">
       <ContactItem
         v-for="contact in contactsData?.contacts || []"
@@ -9,12 +10,14 @@
         class="contact__item"
       />
     </div>
+    <ProductCards />
   </div>
 </template>
 
 <script setup>
 import { ref, onMounted } from "vue";
 import ContactItem from "src/components/ContactItem.vue";
+import ProductCards from "src/components/ProductCards.vue";
 
 const contactsData = ref(null);
 
@@ -40,6 +43,7 @@ onMounted(async () => {
   justify-content: center;
   max-width: 1920px;
   width: 100%;
+  padding: 20px 20px;
   gap: 40px;
 }
 
@@ -49,5 +53,16 @@ onMounted(async () => {
   max-width: 1920px;
   width: 100%;
   align-items: center;
+  gap: 10px;
+}
+
+.page__title {
+  width: 100%;
+  text-align: center;
+  font-family: Montserrat-bold, serif;
+  text-transform: uppercase;
+  font-size: 18px;
+  color: black;
+  background-color: #d4ab6d1a;
 }
 </style>
