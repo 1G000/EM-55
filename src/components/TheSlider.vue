@@ -95,8 +95,8 @@ const handleMouseLeave = (event) => {
   button.style.backgroundImage = "";
 };
 
-const selectedImgSrc = computed(() => (slideData) => {
-  return window.innerWidth < 430 ? slideData.imgSmallSrc : slideData.imgSrc;
+const selectedImgSrc = computed(() => (slide) => {
+  return window.innerWidth < 430 ? slide.imgSmallSrc : slide.imgSrc;
 });
 </script>
 
