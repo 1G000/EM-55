@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="section">
     <h4 class="section__title">{{ title }}</h4>
     <q-card class="my-card" flat>
       <q-list class="q__list">
@@ -12,12 +12,16 @@
             <q-img
               :src="employee.imgSrc"
               :lazy-src="employee.imgSrc"
-              style="height: 160px; width: 137px"
+              style="height: 160px; width: 130px"
             />
           </q-item-section>
-          <q-item-section>
-            <q-item-label>{{ employee.fullName }}</q-item-label>
-            <q-item-label caption>{{ employee.specialization }}</q-item-label>
+          <q-item-section style="width: 225px">
+            <q-item-label class="contact__item-specialization">{{
+              employee.specialization
+            }}</q-item-label>
+            <q-item-label class="contact__item-name" caption>{{
+              employee.fullName
+            }}</q-item-label>
             <div v-if="employee.phoneNumbers.length > 0" class="phone__number">
               <svg
                 width="19"
@@ -32,19 +36,17 @@
                 />
               </svg>
 
-              <q-item-label caption>
+              <q-item-label caption class="numbers__container">
                 <span
                   v-for="(phone, phoneIndex) in employee.phoneNumbers"
                   :key="phoneIndex"
+                  class="contact-phone__numbers"
                 >
-                  {{ phone }}
-                  <span v-if="phoneIndex < employee.phoneNumbers.length - 1"
-                    >,
-                  </span>
+                  <span>{{ phone }}</span>
                 </span>
               </q-item-label>
             </div>
-            <q-item-label caption v-if="employee.email">
+            <q-item-label caption v-if="employee.email" class="contact__mail">
               <svg
                 width="23"
                 height="18"
@@ -63,6 +65,7 @@
       </q-list>
     </q-card>
   </div>
+  <hr class="dividing__line" />
 </template>
 
 <script setup>
@@ -79,18 +82,40 @@ defineProps({
 </script>
 
 <style scoped>
-.my-card {
+.dividing__line {
+  border: none;
+  height: 1px;
   width: 100%;
-  max-width: 600px;
-  align-self: center;
+  background-color: var(--q-primary);
+  margin-bottom: 30px;
 }
 
-.q-list {
+.my-card {
+  align-self: center;
+  width: 70%;
+}
+
+.section {
   display: flex;
+  width: 100%;
+  margin-bottom: 20px;
+}
+.q-list {
+  width: 100%;
+  display: flex;
+  gap: 10px;
+  justify-content: flex-start;
+  flex-wrap: wrap;
 }
 
 .q-item {
-  width: 100%;
+  max-width: 100%;
+  display: flex;
+  gap: 10px;
+}
+
+.q-item__section--main {
+  gap: 10px;
 }
 
 .q-item__section--avatar {
@@ -98,26 +123,52 @@ defineProps({
   height: 160px;
 }
 
-.phone__number {
+.numbers__container {
   display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
-.contact__item::after {
-  content: "";
-  display: block;
-  height: 1px;
-  width: 100%;
-  background-color: #86002a;
-  margin-top: 10px;
+.contact-phone__numbers {
+  display: flex;
+  flex-direction: column;
+  font-family: Montserrat-regular, serif;
+  font-size: 16px;
+  color: black;
+}
+
+.phone__number {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.contact__mail {
+  font-family: Montserrat-regular, serif;
+  font-size: 16px;
+  color: black;
+  display: flex;
+  gap: 10px;
 }
 
 .section__title {
-  min-width: 100%;
+  width: 30%;
+  font-family: Montserrat-regular, serif;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.2em;
+  color: rgb(0, 0, 0);
 }
 
 .contact__item {
   width: 100%;
   display: flex;
-  flex-direction: column;
+  gap: 10px;
+}
+.contact__item-specialization,
+.contact__item-name {
+  font-family: Montserrat-regular, serif;
+  font-size: 16px;
+  color: black;
 }
 </style>
