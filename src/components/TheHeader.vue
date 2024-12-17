@@ -10,7 +10,6 @@ defineProps({
 });
 import MobileNavigation from "src/components/MobileNavigation.vue";
 import ToolbarContactButton from "./ToolbarContactButton.vue";
-import LogoIcon from "./LogoIcon.vue";
 import DesktopNavigationMenu from "./DesktopNavigationMenu.vue";
 import { ref } from "vue";
 
@@ -21,8 +20,12 @@ const showMobileMenu = ref(false);
   <q-header unelevated class="header">
     <div class="container">
       <a href="/" class="logo__container">
-        <!-- <LogoIcon /> -->
-        <img src="../assets/logo.png" class="navbar__logo" />
+        <img
+          src="../assets/logo.png"
+          width="10px"
+          height="auto"
+          class="navbar__logo"
+        />
         <h1 class="logo__text">Электромонтаж 55</h1>
       </a>
       <div class="first-line"></div>
@@ -85,30 +88,21 @@ const showMobileMenu = ref(false);
   padding: 10px 0;
 }
 .logo__container {
-  /* width: 200px; */
   width: 180px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
-  margin-top: -7px;
   text-decoration: none;
 }
 
 .navbar__logo {
-  width: 90px;
-  height: 45px;
+  width: 100px;
+  height: auto;
 }
 
 .logo__text {
-  font-size: 8px;
-  color: var(--q-primary);
-  font-weight: 600;
-  line-height: 0;
-  text-transform: uppercase;
-  letter-spacing: -0.5px;
-  margin-right: 11px;
-  margin-top: 3px;
+  display: none;
 }
 .first-line,
 .second-line {
