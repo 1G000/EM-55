@@ -5,7 +5,7 @@
       "employees": [
         {
           "id": 1,
-          "imgSrc": "/public/Images/Contacts/logo.png",
+          "imgSrc": "./Images/Contacts/female.png",
           "specialization": "",
           "fullName": "",
           "phoneNumbers": ["+7-812-294-20-13", "+7-812-294-23-03"],
