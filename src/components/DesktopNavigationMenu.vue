@@ -89,7 +89,7 @@ defineProps({
   font-weight: 500;
   line-height: 19.5px;
   text-transform: none;
-  padding: 4px 8px;
+  padding: 4px 10px;
   transition: 0.3s linear;
 }
 .navigation__button:hover {

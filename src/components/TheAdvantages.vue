@@ -12,7 +12,7 @@ import VanIcon from "./icons/VanIcon.vue";
         <div class="advantage__text-content">
           <h4 class="advantage__title">Гарантия и качество</h4>
           <p class="advantage__text">
-            Выполняем все виды электромонтажных и электроизмерительных работ
+            Все виды электромонтажных и электроизмерительных работ
           </p>
         </div>
       </div>
@@ -21,8 +21,7 @@ import VanIcon from "./icons/VanIcon.vue";
         <div class="advantage__text-content">
           <h4 class="advantage__title">Доверие и надежность</h4>
           <p class="advantage__text">
-            Имеем лицензии Мэрии Санкт-Петербурга и Северо-Западного управления
-            Ростехнадзора
+            Лицензии Северо-Западного управления Ростехнадзора и Мэрии СПб
           </p>
         </div>
       </div>
@@ -31,7 +30,7 @@ import VanIcon from "./icons/VanIcon.vue";
         <div class="advantage__text-content">
           <h4 class="advantage__title">Автономия и мобильность</h4>
           <p class="advantage__text">
-            Имеем собственную электротехническую лабораторию и большой автопарк
+            Собственная электротехническая лаборатория и большой автопарк
           </p>
         </div>
       </div>
@@ -45,6 +44,7 @@ import VanIcon from "./icons/VanIcon.vue";
   justify-content: center;
   max-width: 1920px;
   border-radius: 8px;
+  height: 135px;
   background-color: rgba(212, 171, 109, 0.102);
 }
 
@@ -55,14 +55,14 @@ import VanIcon from "./icons/VanIcon.vue";
   width: 100%;
   min-height: 100px;
   border-radius: 8px;
-  gap: 10px;
+  gap: 20px;
+  padding: 15px;
 }
 
 .advantage__item {
   display: flex;
   gap: 30px;
-  padding: 30px 20px;
-  max-width: 560px;
+  max-width: 555px;
   min-width: 300px;
   flex-grow: 1;
 }
@@ -74,7 +74,7 @@ import VanIcon from "./icons/VanIcon.vue";
 }
 
 .advantage__title {
-  font-size: clamp(1.1rem, 1.4vw, 1.2rem);
+  font-size: clamp(1rem, 1vw, 1.1rem);
   font-family: Montserrat-bold, serif;
   line-height: 20px;
 }
@@ -87,52 +87,48 @@ import VanIcon from "./icons/VanIcon.vue";
 
 .advantage__text {
   font-family: Montserrat-regular, serif;
-  font-size: clamp(0.9rem, 1.4vw, 1rem);
+  font-size: clamp(0.9rem, 1vw, 1rem);
+  padding-bottom: 0;
 }
 
 .advantage__ico {
   min-width: 70px;
 }
+@media (max-width: 1725px) {
+  .advantage__item {
+    max-width: 506px;
+  }
+}
 
-@media (max-width: 1613px) {
+@media (max-width: 1284px) {
   .advantage__item {
-    max-width: 443px;
-    padding: 30px 15px;
-    gap: 20px;
-  }
-}
-@media (max-width: 1350px) {
-  .advantage__item {
-    max-width: 391px;
-    padding: 30px 0px;
-  }
-}
-@media (max-width: 1260px) {
-  .advantage__item:nth-child(2) {
-    max-width: 324px;
-  }
-}
-@media (max-width: 1260px) {
-  .advantages__items {
-    gap: 40px;
-  }
-  .advantage__item:nth-child(3) {
-    max-width: 353px;
+    max-width: 336px;
   }
   .advantage__item:nth-child(1) {
-    max-width: 317px;
+    max-width: 310px;
+  }
+  .advantages__items {
+    justify-content: space-between;
+    padding: 15px 25px;
+  }
+  .advantage__item {
+    gap: 10px;
   }
 }
-@media screen and (max-width: 1148px) {
+
+@media screen and (max-width: 1110px) {
+  .advantages__section {
+    height: 305px;
+  }
   .advantages__items {
     flex-direction: column;
     height: auto;
     width: 100%;
     max-width: 100%;
     align-items: start;
-    max-width: 738px;
+    max-width: 607px;
     padding: 20px;
-    gap: 0;
+    gap: 10;
   }
 
   .advantage__item,
@@ -142,10 +138,12 @@ import VanIcon from "./icons/VanIcon.vue";
     max-width: 100%;
   }
 }
-@media (max-width: 360px) {
-  .advantage__item {
-    min-width: 0;
-    padding: 10px 0px;
+@media (max-width: 500px) {
+  .advantages__section {
+    height: auto;
+  }
+  .advantages__items {
+    gap: 30px;
   }
 }
 </style>

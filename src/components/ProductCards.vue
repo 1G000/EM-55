@@ -17,13 +17,14 @@ const production = [
     title: "БКТП/БРТП в бетонной оболочке",
     imgSrc: "./Images/Production/product-1.webp",
   },
-  {
-    title: "КТПН в металлической оболочке",
-    imgSrc: "./Images/Production/product-2.webp",
-  },
+
   {
     title: "КТП внутренней установки",
     imgSrc: "./Images/Production/product-3.webp",
+  },
+  {
+    title: "КТПН в металлической оболочке",
+    imgSrc: "./Images/Production/product-2.webp",
   },
   {
     title: "Низковольтные комплектные устройства",
@@ -43,6 +44,7 @@ const production = [
   .container {
     justify-content: center;
     align-self: center;
+    /* flex-wrap: nowrap; */
   }
 }
 
