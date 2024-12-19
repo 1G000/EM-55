@@ -31,7 +31,7 @@
       "employees": [
         {
           "id": 3,
-          "imgSrc": "./Images/Contacts/female.png",
+          "imgSrc": "./Images/Contacts/male.png",
           "specialization": "БКТП, КТП, УВР",
           "fullName": "Дмитрий Антонович",
           "phoneNumbers": ["+7-911-734-90-01", "+7-812-294-23-03"],
