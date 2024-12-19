@@ -170,27 +170,6 @@ const comprehensiveServiceItems = [
   margin: -50px 0;
 }
 
-.btn {
-  font-family: Montserrat-bold, serif;
-  font-size: 16px;
-  align-self: center;
-  background-color: rgb(134, 0, 42);
-  border: none;
-  color: white;
-  width: 290px;
-  height: 60px;
-  border-radius: 8px;
-  padding: 10px 40px;
-  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
-}
-
-@media (hover: hover) {
-  .btn:hover {
-    cursor: pointer;
-    color: #d4ad6f;
-  }
-}
-
 @media screen and (max-width: 1600px) {
   .container {
     justify-content: center;

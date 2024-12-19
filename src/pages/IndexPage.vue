@@ -5,6 +5,7 @@
     <ProductCards />
     <ComplexServiceSection />
     <ServicesSection />
+    <ContactsSection />
   </div>
 </template>
 
@@ -14,6 +15,7 @@ import TheAdvantages from "src/components/TheAdvantages.vue";
 import ProductCards from "src/components/ProductCards.vue";
 import ComplexServiceSection from "src/components/ComplexServiceSection.vue";
 import ServicesSection from "src/components/ServicesSection.vue";
+import ContactsSection from "src/components/ContactsSection.vue";
 defineOptions({
   name: "IndexPage",
 });
