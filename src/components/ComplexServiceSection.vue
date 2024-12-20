@@ -1,6 +1,6 @@
 <template>
-  <h2 class="heading__two">
-    Строительство и реконструкция электроустановок “под ключ”
+  <h2 class="heading__two q-mt-lg">
+    Строительство и реконструкция электроустановок «под ключ»
   </h2>
   <p class="card__text-long">
     Обеспечиваем полное сопровождение на каждом этапе, начиная с проектирования
@@ -167,7 +167,7 @@ const comprehensiveServiceItems = [
 .card__text-long {
   font-family: Montserrat-regular, serif;
   font-size: 16px;
-  margin: -50px 0;
+  margin: -30px 0;
 }
 
 .btn {

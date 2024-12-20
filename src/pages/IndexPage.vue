@@ -14,6 +14,7 @@ import TheAdvantages from "src/components/TheAdvantages.vue";
 import ProductCards from "src/components/ProductCards.vue";
 import ComplexServiceSection from "src/components/ComplexServiceSection.vue";
 import ServicesSection from "src/components/ServicesSection.vue";
+
 defineOptions({
   name: "IndexPage",
 });
@@ -23,7 +24,7 @@ defineOptions({
 .content__wrapper {
   display: flex;
   flex-direction: column;
-  gap: 70px;
+  gap: 90px;
   max-width: 1920px;
   padding: 20px 20px 0 20px;
 }

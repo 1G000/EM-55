@@ -7,6 +7,7 @@
       transition-next="slide-left"
       infinite
       :autoplay-speed="5000"
+      control-color="secondary"
       swipeable
       navigation
     >
@@ -103,6 +104,7 @@ const selectedImgSrc = computed(() => (slide) => {
 <style scoped>
 .q-md {
   max-width: 1920px;
+  /* padding: 0 20px; */
 }
 
 .q-carousel {
@@ -214,7 +216,7 @@ const selectedImgSrc = computed(() => (slide) => {
 }
 @media screen and (max-width: 1110px) {
   .q-carousel {
-    height: calc(100vh - 305px - 75px - 40px);
+    height: calc(100vh - 205px - 75px - 40px);
   }
 }
 @media screen and (max-width: 768px) {
@@ -249,7 +251,7 @@ const selectedImgSrc = computed(() => (slide) => {
     height: 50px;
   }
 }
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 767px) {
   .q-carousel {
     height: calc(100vh - 75px);
   }
