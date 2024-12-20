@@ -1,28 +1,40 @@
-<template>
-  <q-card class="my-card col-md-4 col-sm-6 col-xs-12">
-    <q-img :src="product.imgSrc" :lazy-src="product.imgSrc">
-      <div
-        class="absolute-bottom text-white bg-dark-80 text-shadow-1 text__content"
-      >
-        <div class="text-h6">{{ product.title }}</div>
-      </div>
-    </q-img>
-    <q-card-actions>
-      <q-btn class="card__btn" flat label="Подробнее" />
-    </q-card-actions>
-  </q-card>
-</template>
+<script setup>
+import { computed } from "vue";
 
-<script>
-export default {
-  props: {
-    product: {
-      type: Object,
-      required: true,
-    },
+const props = defineProps({
+  product: {
+    type: Object,
+    required: true,
   },
-};
+  type: {
+    type: String,
+    required: true,
+  },
+});
+
+const elHeight = computed(() => (props.type === "services" ? "100%" : "70px"));
+const elWidth = computed(() => (props.type === "services" ? "180px" : "230px"));
+const clipPathValue = computed(() =>
+  props.type === "services"
+    ? "polygon(16% 0, 41% 20%, 51% 61%,100% 93%,100% 100%,0 100%,0 100%,0 100%,0 100%,0 0)"
+    : "none"
+);
 </script>
+
+<template>
+  <q-responsive :ratio="4 / 3" class="col">
+    <q-card class="my-card q-ma-none">
+      <q-img :src="product.imgSrc" :lazy-src="product.imgSrc">
+        <div class="absolute-bottom text__content">
+          <div class="text-h6">{{ product.title }}</div>
+        </div>
+      </q-img>
+      <q-card-actions>
+        <q-btn class="card__btn" flat label="Подробнее" />
+      </q-card-actions>
+    </q-card>
+  </q-responsive>
+</template>
 
 <style scoped>
 .my-card {
@@ -40,8 +52,14 @@ export default {
 }
 
 .text-h6 {
+  max-width: v-bind(elWidth);
   font-family: Montserrat-bold, serif;
-  font-size: 18px;
+  font-size: clamp(0.8rem, 1vw, 1rem);
+  line-height: 15.2px;
+  background: #0e0d0d99;
+  background: linear-gradient(79.79deg, #d4ad6f 11.83%, #ffffff 105.26%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .card__btn {
@@ -50,12 +68,16 @@ export default {
 }
 
 .text__content {
-  min-height: 130px;
+  /* min-height: 130px; */
+  height: v-bind(elHeight);
   display: flex;
-  align-items: center;
+  align-items: end;
+  max-width: 100%;
+  background-color: #0e0d0d99;
+  clip-path: v-bind(clipPathValue);
 }
 
-::v-deep .q-img__container {
+:deep(.q-img__container) {
   overflow: hidden;
 }
 

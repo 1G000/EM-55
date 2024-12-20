@@ -25,6 +25,10 @@
   list-style: none;
 }
 
+p {
+  margin-bottom: 0;
+}
+
 img {
   max-width: 100%;
 }
@@ -112,7 +116,6 @@ a {
 }
 
 .container {
-  width: 100%;
   display: flex;
   justify-content: space-between;
   max-width: 1920px;

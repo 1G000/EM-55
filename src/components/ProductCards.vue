@@ -5,25 +5,30 @@
       v-for="(product, index) in production"
       :key="index"
       :product="product"
+      :type="typeOfSection"
     />
   </div>
 </template>
 
 <script setup>
 import ProductCard from "./ProductCard.vue";
+import { ref } from "vue";
+
+const typeOfSection = ref("production");
 
 const production = [
   {
     title: "БКТП/БРТП в бетонной оболочке",
     imgSrc: "./Images/Production/product-1.webp",
   },
-  {
-    title: "КТПН в металлической оболочке",
-    imgSrc: "./Images/Production/product-2.webp",
-  },
+
   {
     title: "КТП внутренней установки",
     imgSrc: "./Images/Production/product-3.webp",
+  },
+  {
+    title: "КТПН в металлической оболочке",
+    imgSrc: "./Images/Production/product-2.webp",
   },
   {
     title: "Низковольтные комплектные устройства",
@@ -33,22 +38,32 @@ const production = [
 </script>
 
 <style scoped>
-@media screen and (max-width: 1440px) {
-  .my-card {
-    max-width: 300px;
-  }
-}
-
-@media screen and (max-width: 968px) {
+@media (max-width: 1200px) {
   .container {
-    justify-content: center;
-    align-self: center;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 60px;
+    padding: 0 150px;
   }
 }
-
-@media screen and (max-width: 430px) {
-  .my-card {
-    max-width: 320px;
+@media (max-width: 1100px) {
+  .container {
+    padding: 0 80px;
+  }
+}
+@media (max-width: 1000px) {
+  .container {
+    padding: 0 40px;
+  }
+}
+@media (max-width: 768px) {
+  .container {
+    padding: 0;
+  }
+}
+@media (max-width: 376px) {
+  .container {
+    grid-template-columns: repeat(1, 1fr);
   }
 }
 </style>

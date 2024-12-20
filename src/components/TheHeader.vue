@@ -19,7 +19,7 @@ const showMobileMenu = ref(false);
 <template>
   <q-header unelevated class="header">
     <div class="container">
-      <a href="/" class="logo__container">
+      <router-link to="/" class="logo__container">
         <img
           src="../assets/logo.png"
           width="10px"
@@ -27,7 +27,7 @@ const showMobileMenu = ref(false);
           class="navbar__logo"
         />
         <h1 class="logo__text">Электромонтаж 55</h1>
-      </a>
+      </router-link>
       <div class="first-line"></div>
       <div class="second-line"></div>
       <q-toolbar class="toolbar">
