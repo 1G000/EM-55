@@ -1,7 +1,7 @@
 {
   "navItems": [
     {
-      "label": "О компании",
+      "label": "О нас",
       "secondLevel": true,
       "expandedFirstLevel": false,
       "secondLevelItems": [
@@ -9,7 +9,7 @@
         { "title": "Производство", "thirdLevel": false },
         {
           "title": "История",
-          "thirdLevel": true,
+          "thirdLevel": false,
           "expandedSecondLevel": false,
           "thirdLevelItems": [
             { "title": "История 1" },
@@ -18,7 +18,7 @@
         },
         {
           "title": "Галерея",
-          "thirdLevel": true,
+          "thirdLevel": false,
           "expandedSecondLevel": false,
           "thirdLevelItems": [
             { "title": "2022" },
