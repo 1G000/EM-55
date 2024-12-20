@@ -12,10 +12,31 @@
       <div class="text__content">
         <h4 class="heading__four">Общество с ограниченной ответственностью</h4>
         <h3 class="heading__three">"ЭЛЕКТРОМОНТАЖ 55"</h3>
-        <div class="contacts__section-info">
-          <div class="contacts__section-info-item">
+        <h5>ОФИС</h5>
+        <span>Режим работы офиса: Пн-Пт: 8:00 - 18:00 Сб-Вс: выходные</span>
+        <h6>Почтовый адрес:</h6>
+        <span
+          >194223, г. Санкт-Петербург,проспект Тореза, д. 44, корп. 2, лит. А,
+          п. 12Н</span
+        >
+        <h6>Фактический адрес:</h6>
+        <span
+          >194223, г. Санкт-Петербург,проспект Тореза, д. 44, корп. 2, лит. А,
+          п. 12Н</span
+        >
+        <h6>Юридический адрес:</h6>
+        <span
+          >194223, г. Санкт-Петербург,проспект Тореза, д. 44, корп. 2, лит. А,
+          п. 12Н</span
+        >
+        <h5>ПРОИЗВОДСТВО</h5>
+        <span>Режим работы : Пн-Пт: 7:00 - 16:00 Сб-Вс: выходные</span>
+        <h5>ПРОИЗВОДСТВЕННО-РЕМОНТНАЯ БАЗА</h5>
+        <span>Режим работы: Пт-Сб: 7:00 - 17:00 Вс: выходной</span>
+        <!-- <div class="contacts__section-info"> -->
+        <!-- <div class="contacts__section-info-item">
             <span class="item">Режим работы:</span
-            ><span>Пн-Пт: 8:00 - 17:00 Сб-Вс: выходные</span>
+            ><span>Пн-Пт: 8:00 - 18:00 Сб-Вс: выходные</span>
           </div>
         </div>
         <div class="contacts__section-info-item">
@@ -36,7 +57,8 @@
         <div class="contacts__section-info-item">
           <span class="item">Юридический адрес: </span
           ><span class="value">
-            194156, г. Санкт-Петербург, пр. Энгельса, д.27 л. З, оф. 403</span
+            194223, г. Санкт-Петербург,проспект Тореза, д. 44, корп. 2, лит. А,
+            п. 12Н</span
           >
         </div>
 
@@ -53,7 +75,7 @@
             188641, Ленинградская область, Всеволожский район, поселок
             Ковалево, производственная зона "Ковалево"
           </span>
-        </div>
+        </div> -->
       </div>
       <button class="btn">Написать нам</button>
     </div>
@@ -67,7 +89,7 @@
   align-items: center;
   gap: 20px;
   width: 100%;
-  height: 450px;
+  height: 650px;
 }
 
 .map__section-map {
@@ -164,6 +186,19 @@
   }
   .map__section-contacts {
     width: 65%;
+  }
+}
+
+@media screen and (max-width: 975px) {
+  .map__section {
+    flex-direction: column-reverse;
+  }
+
+  .map__section-map {
+    width: 100%;
+  }
+  .map__section-contacts {
+    width: 100%;
   }
 }
 </style>

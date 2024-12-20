@@ -5,7 +5,6 @@
     <ProductCards />
     <ComplexServiceSection />
     <ServicesSection />
-    <ContactsSection />
   </div>
 </template>
 
