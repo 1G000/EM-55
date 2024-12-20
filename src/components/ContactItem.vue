@@ -171,4 +171,39 @@ defineProps({
   font-size: 16px;
   color: black;
 }
+
+@media screen and (max-width: 645px) {
+  .section {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .q-item {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .q-list {
+    justify-content: center;
+  }
+
+  .section__title {
+    width: 100%;
+    text-align: center;
+  }
+
+  .q-item__section {
+    min-width: 250px;
+  }
+
+  .q-item__section--side {
+    display: flex;
+    align-items: center;
+    padding: 0;
+  }
+
+  .contact__item-specialization,
+  .contact__item-name {
+    text-align: center;
+  }
+}
 </style>

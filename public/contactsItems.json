@@ -6,9 +6,9 @@
         {
           "id": 1,
           "imgSrc": "./Images/Contacts/female.png",
-          "specialization": "",
-          "fullName": "",
-          "phoneNumbers": ["+7-812-294-20-13", "+7-812-294-23-03"],
+          "specialization": "Секретарь-референт",
+          "fullName": "Екатерина",
+          "phoneNumbers": ["+7-812-294-20-13", "+7-981-936-09-10"],
           "email": "referent@em-55.com"
         }
       ]
@@ -19,7 +19,7 @@
         {
           "id": 2,
           "imgSrc": "./Images/Contacts/female.png",
-          "specialization": "Менеджер по персоналу",
+          "specialization": "Руководитель кадровой службы",
           "fullName": "Марина Юрьевна",
           "phoneNumbers": ["+7-911-296-50-58"],
           "email": "personal@em-55.com"
@@ -32,9 +32,9 @@
         {
           "id": 3,
           "imgSrc": "./Images/Contacts/male.png",
-          "specialization": "БКТП, КТП, УВР",
+          "specialization": "Старший менеджер",
           "fullName": "Дмитрий Антонович",
-          "phoneNumbers": ["+7-911-734-90-01", "+7-812-294-23-03"],
+          "phoneNumbers": ["+7-911-908-50-52", "+7-812-294-23-03"],
           "email": "sale1@em-55.com"
         },
         {
@@ -42,16 +42,16 @@
           "imgSrc": "./Images/Contacts/male.png",
           "specialization": "Отдел низковольтного оборудования",
           "fullName": "Александр Николаевич",
-          "phoneNumbers": ["+7-812-294-23-03"],
-          "email": "sale2@em-55.com"
+          "phoneNumbers": ["+7-911-734-90-01", "+7-812-294-23-03"],
+          "email": "yan@em-55.com"
         },
         {
           "id": 5,
           "imgSrc": "./Images/Contacts/female.png",
           "specialization": "Отдел высоковольтного оборудования",
           "fullName": "Татьяна Гавриловна",
-          "phoneNumbers": ["+7-812-294-23-03"],
-          "email": "sale2@em-55.com"
+          "phoneNumbers": ["+7-911-734-90-01", "+7-812-294-23-03"],
+          "email": "kgt@em-55.com"
         }
       ]
     },
@@ -61,23 +61,62 @@
         {
           "id": 6,
           "imgSrc": "./Images/Contacts/female.png",
-          "specialization": "Менеджер по персоналу",
+          "specialization": "Специалист отдела снабжения и логистики",
           "fullName": "Любовь Сергеевна",
-          "phoneNumbers": ["+7-812-294-23-03"],
+          "phoneNumbers": [],
           "email": "zakupki@em-55.com"
         }
       ]
     },
     {
-      "title": "Автобаза",
+      "title": "Производственно-технический отдел",
       "employees": [
         {
           "id": 7,
           "imgSrc": "./Images/Contacts/male.png",
-          "specialization": "Аренда строительной и дорожной техники",
+          "specialization": "",
+          "fullName": "Владимир Федорович",
+          "phoneNumbers": ["+7-911-719-70-59", "+7-812-294-23-03"],
+          "email": "pto@em-55.com"
+        }
+      ]
+    },
+    {
+      "title": "Сметно-договорной отдел",
+      "employees": [
+        {
+          "id": 8,
+          "imgSrc": "./Images/Contacts/male.png",
+          "specialization": "",
+          "fullName": "",
+          "phoneNumbers": ["+7-911-788-50-21"],
+          "email": "sdo@em-55.com"
+        }
+      ]
+    },
+    {
+      "title": "Завод Электромонтаж-55",
+      "employees": [
+        {
+          "id": 9,
+          "imgSrc": "./Images/Contacts/male.png",
+          "specialization": "",
+          "fullName": "Роман Александрович",
+          "phoneNumbers": ["+7-911-724-50-02"],
+          "email": "production@em-55.com"
+        }
+      ]
+    },
+    {
+      "title": "Аренда строительной и дорожной техники",
+      "employees": [
+        {
+          "id": 10,
+          "imgSrc": "./Images/Contacts/male.png",
+          "specialization": "Главный механик",
           "fullName": "Николай Николаевич",
-          "phoneNumbers": [],
-          "email": ""
+          "phoneNumbers": ["+7-981-990-97-37"],
+          "email": "rent@em-55.com"
         }
       ]
     }

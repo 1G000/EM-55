@@ -11,7 +11,6 @@
         class="contact__item"
       />
     </section>
-    <ProductCards />
   </div>
 </template>
 
