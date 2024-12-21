@@ -138,6 +138,7 @@ const selectedImgSrc = computed(() => (slide) => {
 }
 
 .slide__title {
+  font-family: Montserrat-bold, serif;
   font-weight: 700;
   font-size: 48px;
   background-image: linear-gradient(to right, #d4ad6f, #eeeeee);
@@ -155,7 +156,7 @@ const selectedImgSrc = computed(() => (slide) => {
 }
 
 .slide__textcontent {
-  font-family: "Montserrat", sans-serif;
+  font-family: Montserrat-regular, serif;
   font-size: 20px;
   font-weight: 500;
   line-height: 1.2em;
