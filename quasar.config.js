@@ -88,6 +88,7 @@ module.exports = configure(function (/* ctx */) {
           primary: "#830024",
           secondary: "#dba572",
           accent: "#e5c696"
+          light: " #d4ab6d1a",
         },
       },
 

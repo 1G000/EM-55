@@ -35,31 +35,35 @@
                   fill="#86002A"
                 />
               </svg>
-
               <q-item-label caption class="numbers__container">
-                <span
+                <a
                   v-for="(phone, phoneIndex) in employee.phoneNumbers"
                   :key="phoneIndex"
+                  :href="`tel:${phone}`"
                   class="contact-phone__numbers"
+                  target="_blank"
                 >
                   <span>{{ phone }}</span>
-                </span>
+                </a>
               </q-item-label>
             </div>
             <q-item-label caption v-if="employee.email" class="contact__mail">
-              <svg
-                width="23"
-                height="18"
-                viewBox="0 0 23 18"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M21.5 0C21.7652 0 22.0196 0.105357 22.2071 0.292893C22.3946 0.48043 22.5 0.734784 22.5 1V17.007C22.4982 17.2696 22.3931 17.521 22.2075 17.7068C22.0219 17.8926 21.7706 17.9979 21.508 18H3.492C3.22881 17.9997 2.9765 17.895 2.79049 17.7088C2.60448 17.5226 2.5 17.2702 2.5 17.007V16H20.5V4.3L12.5 11.5L2.5 2.5V1C2.5 0.734784 2.60536 0.48043 2.79289 0.292893C2.98043 0.105357 3.23478 0 3.5 0H21.5ZM8.5 12V14H0.5V12H8.5ZM5.5 7V9H0.5V7H5.5ZM20.066 2H4.934L12.5 8.81L20.066 2Z"
-                  fill="#86002A"
-                /></svg
-              >{{ employee.email }}</q-item-label
-            >
+              <a :href="`mailto:${employee.email}`" target="_blank">
+                <svg
+                  width="23"
+                  height="18"
+                  viewBox="0 0 23 18"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M21.5 0C21.7652 0 22.0196 0.105357 22.2071 0.292893C22.3946 0.48043 22.5 0.734784 22.5 1V17.007C22.4982 17.2696 22.3931 17.521 22.2075 17.7068C22.0219 17.8926 21.7706 17.9979 21.508 18H3.492C3.22881 17.9997 2.9765 17.895 2.79049 17.7088C2.60448 17.5226 2.5 17.2702 2.5 17.007V16H20.5V4.3L12.5 11.5L2.5 2.5V1C2.5 0.734784 2.60536 0.48043 2.79289 0.292893C2.98043 0.105357 3.23478 0 3.5 0H21.5ZM8.5 12V14H0.5V12H8.5ZM5.5 7V9H0.5V7H5.5ZM20.066 2H4.934L12.5 8.81L20.066 2Z"
+                    fill="#86002A"
+                  />
+                </svg>
+                {{ employee.email }}
+              </a>
+            </q-item-label>
           </q-item-section>
         </q-item>
       </q-list>
