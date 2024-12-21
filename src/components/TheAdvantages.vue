@@ -2,10 +2,15 @@
 import WorkerIcon from "./icons/WorkerIcon.vue";
 import ShieldIcon from "./icons/ShieldIcon.vue";
 import VanIcon from "./icons/VanIcon.vue";
+import UiSection from "./UiSection.vue";
 </script>
 
 <template>
-  <section class="advantages__section">
+  <UiSection
+    class="advantages__section"
+    :margin="`20px`"
+    :background="'var(--background-light-accent)'"
+  >
     <div class="advantages__items">
       <div class="advantage__item">
         <span class="advantage__ico"><WorkerIcon /></span>
@@ -35,17 +40,15 @@ import VanIcon from "./icons/VanIcon.vue";
         </div>
       </div>
     </div>
-  </section>
+  </UiSection>
 </template>
 
 <style scoped>
 .advantages__section {
   display: flex;
   justify-content: center;
-  max-width: 1920px;
   border-radius: 8px;
   height: 135px;
-  background-color: rgba(212, 171, 109, 0.102);
 }
 
 .advantages__items {

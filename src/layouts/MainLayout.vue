@@ -25,11 +25,17 @@ onMounted(async () => {
 <template>
   <q-layout view="lHh Lpr lFf">
     <TheHeader :navItems="navItems" />
-    <q-page-container>
+    <main class="main">
       <router-view />
-    </q-page-container>
+    </main>
   </q-layout>
 </template>
 
 <style scoped>
+.main {
+  padding-top: 75px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1920px;
+}
 </style>

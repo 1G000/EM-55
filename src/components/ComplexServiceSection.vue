@@ -1,43 +1,30 @@
-<template>
-  <h2 class="heading__two q-mt-lg">
-    Строительство и реконструкция электроустановок «под ключ»
-  </h2>
-  <p class="card__text-long">
-    Обеспечиваем полное сопровождение на каждом этапе, начиная с проектирования
-    и заканчивая вводом электроустановки в эксплуатацию.<br />
-    Напишите или позвоните нам, чтобы узнать подробности и рассчитать примерную
-    стоимость.
-  </p>
-
-  <div class="q-pa-md row q-gutter-md container">
-    <ComplexItem
-      v-for="(item, index) in comprehensiveServiceItems"
-      :key="index"
-      :item="item"
-    />
-  </div>
-
-  <button class="btn">Заказать оборудование</button>
-</template>
-
 <script setup>
 import ComplexItem from "./ComplexItem.vue";
-const comprehensiveServiceItems = [
-  {
-    title: "ПРОЕКТИРОВАНИЕ",
-    icon: {
-      svg: `
+import UiSection from "./UiSection.vue";
+import UiSectionTitle from "./UiSectionTitle.vue";
+
+const complex = {
+  sectionTitle: "Строительство и реконструкция электроустановок «под ключ»",
+  sectionTextFirst:
+    "Обеспечиваем полное сопровождение на каждом этапе, начиная с проектирования и заканчивая вводом электроустановки в эксплуатацию.",
+  sectionTextSecond:
+    "Напишите или позвоните нам, чтобы узнать подробности и рассчитать примерную стоимость.",
+  comprehensiveServiceItems: [
+    {
+      title: "ПРОЕКТИРОВАНИЕ",
+      icon: {
+        svg: `
       <svg width="38" height="37" viewBox="0 0 38 37" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M36.7449 34.7887L31.3338 29.411V8.72209L28.7782 4.02209C28.5897 3.66375 28.3069 3.36373 27.9603 3.15443C27.6137 2.94514 27.2165 2.83451 26.8116 2.83451C26.4067 2.83451 26.0095 2.94514 25.6629 3.15443C25.3163 3.36373 25.0334 3.66375 24.8449 4.02209L22.4449 8.7332V20.5665L2.12268 0.344309C1.96726 0.18761 1.76871 0.0807427 1.55232 0.037332C1.33593 -0.00607876 1.11152 0.015934 0.907696 0.100564C0.703869 0.185193 0.529863 0.328606 0.407861 0.512517C0.28586 0.696427 0.221392 0.912504 0.222675 1.1332V10.111H2.63379V11.8888H0.222675V18.9999H2.63379V20.7776H0.222675V28.1665H2.63379V29.9443H0.222675V35.5776C0.222675 35.8723 0.339738 36.1549 0.548112 36.3633C0.756486 36.5717 1.0391 36.6887 1.33379 36.6887H35.956C36.1767 36.69 36.3928 36.6256 36.5767 36.5036C36.7606 36.3816 36.904 36.2076 36.9886 36.0037C37.0733 35.7999 37.0953 35.5755 37.0519 35.3591C37.0085 35.1427 36.9016 34.9442 36.7449 34.7887ZM9.11156 27.8888V17.8221L19.1893 27.8888H9.11156ZM29.1116 30.2332H24.6671V27.5332H29.1116V30.2332ZM29.1116 25.7888H24.6671V9.27764L26.8227 5.08875L29.1116 9.28875V25.7888Z" fill="black"/>
       </svg>
     `,
+      },
+      text: "Разработка проектно-сметной документации, получение технических условий, согласование проекта в сбытовых и сетевых организациях",
     },
-    text: "Разработка проектно-сметной документации, получение технических условий, согласование проекта в сбытовых и сетевых организациях",
-  },
-  {
-    title: "ПРОИЗВОДСТВО",
-    icon: {
-      svg: `
+    {
+      title: "ПРОИЗВОДСТВО",
+      icon: {
+        svg: `
       <svg
           width="41"
           height="40"
@@ -67,13 +54,13 @@ const comprehensiveServiceItems = [
           </defs>
         </svg>
     `,
+      },
+      text: "Производство электрооборудования для подстанций под ваши нужды",
     },
-    text: "Производство электрооборудования для подстанций под ваши нужды",
-  },
-  {
-    title: "КОМПЛЕКТАЦИЯ",
-    icon: {
-      svg: `
+    {
+      title: "КОМПЛЕКТАЦИЯ",
+      icon: {
+        svg: `
       <svg
           width="40"
           height="40"
@@ -87,13 +74,13 @@ const comprehensiveServiceItems = [
           />
         </svg>
     `,
+      },
+      text: "Поставка всех необходимых вспомогательных материалов для эффективного монтажа и эксплуатации",
     },
-    text: "Поставка всех необходимых вспомогательных материалов для эффективного монтажа и эксплуатации",
-  },
-  {
-    title: "МОНТАЖ",
-    icon: {
-      svg: `
+    {
+      title: "МОНТАЖ",
+      icon: {
+        svg: `
       <svg
           width="38"
           height="30"
@@ -107,13 +94,13 @@ const comprehensiveServiceItems = [
           />
         </svg>
     `,
+      },
+      text: "Выполнение электромонтажных работ в строгом соответствии с согласованным графиком и требований контролируемых организаций",
     },
-    text: "Выполнение электромонтажных работ в строгом соответствии с согласованным графиком и требований контролируемых организаций",
-  },
-  {
-    title: "НАЛАДОЧНЫЕ РАБОТЫ",
-    icon: {
-      svg: `
+    {
+      title: "НАЛАДОЧНЫЕ РАБОТЫ",
+      icon: {
+        svg: `
       <svg
           width="41"
           height="40"
@@ -127,13 +114,13 @@ const comprehensiveServiceItems = [
           />
         </svg>
     `,
+      },
+      text: "Выполнение полного комплекса наладочных работ и испытаний собственной электролабораторией, с выдачей необходимой документации",
     },
-    text: "Выполнение полного комплекса наладочных работ и испытаний собственной электролабораторией, с выдачей необходимой документации",
-  },
-  {
-    title: "СДАЧА И ПОДКЛЮЧЕНИЕ",
-    icon: {
-      svg: `
+    {
+      title: "СДАЧА И ПОДКЛЮЧЕНИЕ",
+      icon: {
+        svg: `
       <svg
           width="47"
           height="40"
@@ -157,43 +144,60 @@ const comprehensiveServiceItems = [
           />
         </svg>
     `,
+      },
+      text: "Сдача электроустановки контролирующей и сетевой организациям для официального ввода в эксплуатацию, подключение к сетям электроснабжения и подача напряжения на объект",
     },
-    text: "Сдача электроустановки контролирующей и сетевой организациям для официального ввода в эксплуатацию, подключение к сетям электроснабжения и подача напряжения на объект",
-  },
-];
+  ],
+};
 </script>
 
+<template>
+  <UiSection :margin="`0 20px`">
+    <UiSectionTitle :title-text="complex.sectionTitle" />
+    <div class="complex_content">
+      <p class="complex__text-long">{{ complex.sectionTextFirst }}</p>
+
+      <div class="complex__container">
+        <ComplexItem
+          v-for="(item, index) in complex.comprehensiveServiceItems"
+          :key="index"
+          :item="item"
+        />
+      </div>
+      <p class="complex__text-long">{{ complex.sectionTextSecond }}</p>
+    </div>
+    <button class="btn">Заказать оборудование</button>
+  </UiSection>
+</template>
+
 <style lang="css" scoped>
-.card__text-long {
+.complex_content {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+.complex__text-long {
   font-family: Montserrat-regular, serif;
-  font-size: 16px;
-  margin: -30px 0;
+  font-size: clamp(1rem, 1vw, 1.2rem);
 }
 
-@media screen and (max-width: 1600px) {
-  .container {
-    justify-content: center;
-    gap: 30px;
-  }
+.complex__container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-self: center;
+  gap: 30px;
 }
 
-@media screen and (max-width: 970px) {
-  .container {
-    justify-content: center;
+@media screen and (max-width: 1170px) {
+  .complex__container {
+    grid-template-columns: repeat(2, 1fr);
     gap: 10px;
   }
 }
-
-@media screen and (max-width: 740px) {
-  .container {
-    justify-content: center;
-    gap: 10px;
-  }
-}
-
-@media screen and (max-width: 430px) {
-  .container {
-    align-self: center;
+@media screen and (max-width: 767px) {
+  .complex__container {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
   }
 }
 </style>
