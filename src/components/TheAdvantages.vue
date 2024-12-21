@@ -73,12 +73,6 @@ import VanIcon from "./icons/VanIcon.vue";
   justify-content: center;
 }
 
-.advantage__title {
-  font-size: clamp(1rem, 1vw, 1.1rem);
-  font-family: Montserrat-bold, serif;
-  line-height: 20px;
-}
-
 .advantage__text-content {
   display: flex;
   flex-direction: column;

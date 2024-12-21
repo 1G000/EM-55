@@ -1,38 +1,76 @@
 <template>
   <section class="map__section">
     <div class="map__section-map">
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3745.1851661259207!2d30.342718001617087!3d60.008640053885614!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x469633866903012f%3A0x723b17e919be136!2z0L_RgC4g0KLQvtGA0LXQt9CwLCDQodCw0L3QutGCLdCf0LXRgtC10YDQsdGD0YDQsywgMTk0MjIz!5e0!3m2!1sru!2sru!4v1734634330661!5m2!1sru!2sru"
-        style="border: 0; border-radius: 8px; width: 100%; height: 100%"
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"
-      ></iframe>
+      <div style="position: relative; overflow: hidden" class="map__frame">
+        <a
+          href="https://yandex.ru/maps/2/saint-petersburg/?utm_medium=mapframe&utm_source=maps"
+          style="color: #eee; font-size: 12px; position: absolute; top: 0px"
+          >Санкт‑Петербург</a
+        ><a
+          href="https://yandex.ru/maps/2/saint-petersburg/house/prospekt_toreza_44k2/Z0kYdQNnSEMCQFhqfXxxeXhqYQ==/?ll=30.347165%2C60.008496&utm_medium=mapframe&utm_source=maps&z=17.05"
+          style="color: #eee; font-size: 12px; position: absolute; top: 14px"
+          >Проспект Тореза, 44к2 — Яндекс Карты</a
+        ><iframe
+          src="https://yandex.ru/map-widget/v1/?ll=30.347165%2C60.008496&mode=search&ol=geo&ouri=ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgg1NzQ0NDUwORJR0KDQvtGB0YHQuNGPLCDQodCw0L3QutGCLdCf0LXRgtC10YDQsdGD0YDQsywg0L_RgNC-0YHQv9C10LrRgiDQotC-0YDQtdC30LAsIDQ00LoyIgoN_8byQRWzCHBC&z=17.05"
+          allowfullscreen="true"
+          style="position: relative"
+          class="map__frame--frame"
+        ></iframe>
+      </div>
     </div>
     <div class="map__section-contacts">
       <div class="text__content">
-        <h4 class="heading__four">Общество с ограниченной ответственностью</h4>
-        <h3 class="heading__three">"ЭЛЕКТРОМОНТАЖ 55"</h3>
-        <h5>ОФИС</h5>
-        <span>Режим работы офиса: Пн-Пт: 8:00 - 18:00 Сб-Вс: выходные</span>
-        <h6>Почтовый адрес:</h6>
-        <span
-          >194223, г. Санкт-Петербург,проспект Тореза, д. 44, корп. 2, лит. А,
-          п. 12Н</span
-        >
-        <h6>Фактический адрес:</h6>
-        <span
-          >194223, г. Санкт-Петербург,проспект Тореза, д. 44, корп. 2, лит. А,
-          п. 12Н</span
-        >
-        <h6>Юридический адрес:</h6>
-        <span
-          >194223, г. Санкт-Петербург,проспект Тореза, д. 44, корп. 2, лит. А,
-          п. 12Н</span
-        >
-        <h5>ПРОИЗВОДСТВО</h5>
-        <span>Режим работы : Пн-Пт: 7:00 - 16:00 Сб-Вс: выходные</span>
-        <h5>ПРОИЗВОДСТВЕННО-РЕМОНТНАЯ БАЗА</h5>
-        <span>Режим работы: Пт-Сб: 7:00 - 17:00 Вс: выходной</span>
+        <div>
+          <h4 class="heading__four">
+            Общество с ограниченной ответственностью
+          </h4>
+          <h3 class="heading__three">"ЭЛЕКТРОМОНТАЖ 55"</h3>
+        </div>
+        <div class="text__content-section">
+          <h5 class="advantage__title">ОФИС</h5>
+          <span class="advantage__text">
+            <strong>Режим работы:</strong><br />
+            <span class="green__text">Пн-Пт: 8:00 - 18:00, </span>
+            <span class="red__text">Сб-Вс: выходные</span></span
+          >
+          <div>
+            <h6 class="advantage__text"><strong>Почтовый адрес:</strong></h6>
+            <span class="advantage__text"
+              >194223, г. Санкт-Петербург, проспект Тореза, д. 44, корп. 2, лит.
+              А, п. 12Н</span
+            >
+          </div>
+          <div>
+            <h6 class="advantage__text"><strong>Фактический адрес:</strong></h6>
+            <span class="advantage__text"
+              >194223, г. Санкт-Петербург, проспект Тореза, д. 44, корп. 2, лит.
+              А, п. 12Н</span
+            >
+          </div>
+          <div>
+            <h6 class="advantage__text"><strong>Юридический адрес:</strong></h6>
+            <span class="advantage__text"
+              >194223, г. Санкт-Петербург, проспект Тореза, д. 44, корп. 2, лит.
+              А, п. 12Н</span
+            >
+          </div>
+        </div>
+        <div class="text__content-section">
+          <h5 class="advantage__title">ПРОИЗВОДСТВО</h5>
+          <span class="advantage__text"
+            ><strong>Режим работы:</strong><br />
+            <span class="green__text">Пн-Пт: 7:00 - 16:00, </span>
+            <span class="red__text">Сб-Вс: выходные</span></span
+          >
+        </div>
+        <div class="text__content-section">
+          <h5 class="advantage__title">ПРОИЗВОДСТВЕННО-РЕМОНТНАЯ БАЗА</h5>
+          <span class="advantage__text"
+            ><strong>Режим работы:</strong><br />
+            <span class="green__text">Пт-Сб: 7:00 - 17:00, </span>
+            <span class="red__text">Вс: выходной</span></span
+          >
+        </div>
         <!-- <div class="contacts__section-info"> -->
         <!-- <div class="contacts__section-info-item">
             <span class="item">Режим работы:</span
@@ -92,9 +130,20 @@
   height: 650px;
 }
 
+.map__frame {
+  width: 100%;
+  height: 100%;
+}
+
+.map__frame--frame {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
 .map__section-map {
   display: flex;
-  width: 55%;
+  width: 60%;
   height: 100%;
 }
 
@@ -102,28 +151,44 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  gap: 30px;
   padding: 20px;
-  width: 45%;
+  width: 40%;
   height: 100%;
   border-radius: 8px;
-  background-color: #d4ab6d1a;
+  background-color: var(--q-light);
 }
 
-.contact__section {
+.text__content-section {
   display: flex;
   flex-direction: column;
-  max-width: 1920px;
   width: 100%;
-  align-items: center;
   gap: 10px;
+}
+
+.advantage__title {
+  text-align: center;
+}
+
+.advantage__text {
+  text-align: left;
 }
 
 .text__content {
   display: flex;
   align-items: center;
   flex-direction: column;
-  gap: 10px;
+  gap: 20px;
+}
+
+.red__text {
+  color: var(--q-primary);
+  font-weight: 700;
+}
+
+.green__text {
+  color: #488866;
+  font-weight: 700;
 }
 
 .contacts__section-info {
@@ -153,6 +218,7 @@
   font-size: 14px;
   color: black;
   line-height: 25px;
+  text-align: center;
 }
 
 .heading__three {
@@ -160,6 +226,7 @@
   font-size: 18px;
   color: black;
   line-height: 25px;
+  text-align: center;
 }
 
 @media screen and (min-width: 1440px) {
@@ -192,6 +259,7 @@
 @media screen and (max-width: 975px) {
   .map__section {
     flex-direction: column-reverse;
+    height: 900px;
   }
 
   .map__section-map {
