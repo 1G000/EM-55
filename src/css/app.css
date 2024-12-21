@@ -108,3 +108,7 @@ a {
   font-family: Montserrat-bold, serif;
   font-size: 18px;
 }
+
+.q-menu {
+  max-height: 100%;
+}

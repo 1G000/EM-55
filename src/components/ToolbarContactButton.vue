@@ -8,6 +8,7 @@ defineOptions({
 
 <template>
   <q-btn-dropdown
+    :menu-offset="[0, 8]"
     class="q-mr-md contact-button"
     color="accent"
     unelevated

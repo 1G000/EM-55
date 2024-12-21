@@ -81,7 +81,11 @@ import UiSection from "./UiSection.vue";
   flex-direction: column;
   gap: 10px;
 }
-
+.advantage__title {
+  font-size: clamp(1rem, 1vw, 1.1rem);
+  font-family: Montserrat-bold, serif;
+  line-height: 20px;
+}
 .advantage__text {
   font-family: Montserrat-regular, serif;
   font-size: clamp(0.9rem, 1vw, 1rem);
