@@ -24,11 +24,11 @@ export default {
 
 <style scoped>
 .my-card {
-  max-width: 550px;
+  max-width: 600px;
   box-shadow: none;
   border: none;
   border-radius: 8px;
-  background-color: rgba(212, 171, 109, 0.102);
+  background-color: var(--background-light-accent);
 }
 
 .card__section {
@@ -44,39 +44,10 @@ export default {
 }
 
 .q-separator {
-  background-color: #86002a;
+  background-color: var(--q-primary);
 }
 
 .card__text {
   min-height: 155px;
-}
-
-@media screen and (max-width: 1741px) {
-  .my-card {
-    max-width: 500px;
-  }
-}
-@media screen and (max-width: 1600px) {
-  .my-card {
-    max-width: 430px;
-  }
-}
-
-@media screen and (max-width: 970px) {
-  .my-card {
-    max-width: 330px;
-  }
-}
-
-@media screen and (max-width: 740px) {
-  .my-card {
-    max-width: 300px;
-  }
-}
-
-@media screen and (max-width: 430px) {
-  .my-card {
-    max-width: 100%;
-  }
 }
 </style>

@@ -11,26 +11,27 @@ const props = defineProps({
     required: true,
   },
 });
-
+const buttonText = "Подробнее";
 const elHeight = computed(() => (props.type === "services" ? "100%" : "70px"));
-const elWidth = computed(() => (props.type === "services" ? "180px" : "230px"));
+const elWidth = computed(() => (props.type === "services" ? "180px" : "229px"));
 const clipPathValue = computed(() =>
   props.type === "services"
     ? "polygon(16% 0, 41% 20%, 51% 61%,100% 93%,100% 100%,0 100%,0 100%,0 100%,0 100%,0 0)"
     : "none"
 );
+const ratio = computed(() => (props.type === "services" ? 1 / 1 : 4 / 3));
 </script>
 
 <template>
-  <q-responsive :ratio="4 / 3" class="col">
-    <q-card class="my-card q-ma-none">
+  <q-responsive :ratio="ratio" class="col">
+    <q-card class="q-ma-none shadow-0 my-card">
       <q-img :src="product.imgSrc" :lazy-src="product.imgSrc">
         <div class="absolute-bottom text__content">
-          <div class="text-h6">{{ product.title }}</div>
+          <div class="card__text">{{ product.title }}</div>
         </div>
       </q-img>
       <q-card-actions>
-        <q-btn class="card__btn" flat label="Подробнее" />
+        <q-btn class="card__btn" flat color="primary" label="Подробнее" />
       </q-card-actions>
     </q-card>
   </q-responsive>
@@ -39,7 +40,6 @@ const clipPathValue = computed(() =>
 <style scoped>
 .my-card {
   max-width: 400px;
-  box-shadow: none;
   border-radius: 8px;
 }
 
@@ -48,10 +48,10 @@ const clipPathValue = computed(() =>
 }
 
 .card__btn:hover {
-  color: #86002a;
+  color: var(--color-black);
 }
 
-.text-h6 {
+.card__text {
   max-width: v-bind(elWidth);
   font-family: Montserrat-bold, serif;
   font-size: clamp(0.8rem, 1vw, 1rem);

@@ -1,4 +1,6 @@
 <script setup>
+import { nextTick } from "vue";
+
 defineOptions({
   name: "ToolbarContactButton",
 });
@@ -16,7 +18,11 @@ defineOptions({
     :label="$q.screen.width <= 1215 ? '' : '+7 (812) 294–20–13'"
     dropdown-icon="keyboard_arrow_down"
   >
-    <q-list separator class="bg-primary text-white q-pt-md contact-list">
+    <q-list
+      id="myId"
+      separator
+      class="bg-primary text-white q-pt-md contact-list"
+    >
       <q-item clickable v-close-popup>
         <q-item-section avatar>
           <q-avatar icon="mdi-email-fast" size="xl" text-color="secondary" />
