@@ -118,8 +118,12 @@ defineProps({
   gap: 10px;
 }
 
+.q-item__section {
+}
+
 .q-item__section--main {
   gap: 10px;
+  min-width: 260px;
 }
 
 .q-item__section--avatar {

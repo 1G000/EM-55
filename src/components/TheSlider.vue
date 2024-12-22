@@ -32,7 +32,7 @@
               v-if="slideData.buttons && slideData.buttons.length > 0"
               class="buttons__container"
             >
-              <button
+              <q-btn
                 v-for="(button, buttonIndex) in slideData.buttons"
                 :key="buttonIndex"
                 :class="button.style"
@@ -45,7 +45,7 @@
                 }"
               >
                 {{ button.btnTitle }}
-              </button>
+              </q-btn>
             </div>
           </div>
         </div>
@@ -56,6 +56,7 @@
 
 <script setup>
 import { ref, onMounted, computed } from "vue";
+
 let slide = ref(1);
 const slideData = ref([]);
 

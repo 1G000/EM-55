@@ -6,8 +6,13 @@ const routes = [
   },
   {
     path: "/contacts",
-    component: () => import("layouts/MainLayout.vue"), // Different layout
+    component: () => import("layouts/MainLayout.vue"),
     children: [{ path: "", component: () => import("pages/ContactsPage.vue") }],
+  },
+  {
+    path: "/about",
+    component: () => import("layouts/MainLayout.vue"),
+    children: [{ path: "", component: () => import("pages/AboutPage.vue") }],
   },
 
   // Always leave this as last one,
