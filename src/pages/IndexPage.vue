@@ -19,7 +19,7 @@ defineOptions({
     <ProductCards />
     <ComplexServiceSection />
     <ServicesSection />
-    <!-- <FormSection /> -->
+    <FormSection />
     <ContactsSection />
   </div>
 </template>

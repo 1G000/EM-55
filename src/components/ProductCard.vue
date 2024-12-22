@@ -44,7 +44,7 @@ const ratio = computed(() => (props.type === "services" ? 1 / 1 : 4 / 3));
 }
 
 .q-card__actions {
-  background-color: rgba(212, 171, 109, 0.102);
+  background-color: var(--background-light-accent);
 }
 
 .card__btn:hover {
@@ -56,8 +56,7 @@ const ratio = computed(() => (props.type === "services" ? 1 / 1 : 4 / 3));
   font-family: Montserrat-bold, serif;
   font-size: clamp(0.8rem, 1vw, 1rem);
   line-height: 15.2px;
-  background: #0e0d0d99;
-  background: linear-gradient(79.79deg, #d4ad6f 11.83%, #ffffff 105.26%);
+  background: var(--text-gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
