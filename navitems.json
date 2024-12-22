@@ -5,7 +5,7 @@
       "secondLevel": true,
       "expandedFirstLevel": false,
       "secondLevelItems": [
-        { "title": "О компании", "thirdLevel": false },
+        { "title": "О компании", "href": "/about", "thirdLevel": false },
         { "title": "Производство", "thirdLevel": false },
         {
           "title": "История",

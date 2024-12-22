@@ -73,8 +73,8 @@
       "employees": [
         {
           "id": 7,
-          "imgSrc": "./Images/Contacts/male.png",
-          "specialization": "",
+          "imgSrc": "./Images/Contacts/malachov.png",
+          "specialization": "Заместитель директора",
           "fullName": "Владимир Федорович",
           "phoneNumbers": ["+7-911-719-70-59", "+7-812-294-23-03"],
           "email": "pto@em-55.com"
