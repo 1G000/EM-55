@@ -28,8 +28,10 @@ const resetForm = () => {
 <template>
   <UiSection
     class="form-section"
-    :background="
-      $q.screen.width > 767 ? sectionBackground : sectionBackgroundMobile
+    :style="
+      $q.screen.width > 767
+        ? { background: sectionBackground }
+        : { background: sectionBackgroundMobile }
     "
     :padding="$q.screen.width > 1024 ? '100px 60px' : '40px 20px'"
   >
