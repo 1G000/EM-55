@@ -5,6 +5,9 @@ import UiSection from "./UiSection.vue";
 const name = ref(null);
 const age = ref(null);
 const accept = ref(false);
+const privacyDialog = ref(false);
+const sectionBackground = `url('/images/Form/form-background.jpg')`;
+
 const submitForm = () => {
   // $q.notify({
   //   color: 'green-4',
@@ -22,24 +25,35 @@ const resetForm = () => {
 };
 </script>
 <template>
-  <UiSection>
-    <div class="q-pa-md" style="display: flex; gap: 20px">
+  <UiSection
+    class="form-section"
+    :background="sectionBackground"
+    :padding="$q.screen > 1024 ? '100px 60px' : '40px 20px'"
+  >
+    <div class="q-pa-md form-section__content">
       <q-list padding class="form__text-content">
-        <q-item style="display: flex">
-          На связи <span style="padding-left: 5px">Электромонтаж 55</span>
+        <q-item class="form-section__title">
+          На связи
+          <span class="form-section__title form-section__title-accent"
+            >Электромонтаж 55</span
+          >
         </q-item>
 
         <q-item>
-          <q-item-section>
+          <q-item-section class="form-section__text">
             Оставьте свои данные и мы свяжемся с Вами в ближайшее время.
           </q-item-section>
         </q-item>
       </q-list>
       <q-form @submit="submitForm" class="q-gutter-md form__wrapper" ref="form">
         <q-input
-          outlined
+          color="black"
+          bg-color="white"
+          label-color="grey-6"
+          filled
+          class="input-wrapper"
           v-model="name"
-          placeholder="Ваше имя"
+          label="Ваше имя"
           lazy-rules
           :rules="[
             (val) =>
@@ -48,10 +62,14 @@ const resetForm = () => {
         ></q-input>
 
         <q-input
-          outlined
+          color="black"
+          bg-color="white"
+          label-color="grey-6"
+          filled
+          class="input-wrapper"
           type="tel"
           v-model="age"
-          placeholder="+7 (_ _ _) _ _ _-_ _-_ _"
+          label="Ваш телефон"
           mask="+7 (###) ###-##-##"
           lazy-rules
           :rules="[
@@ -59,34 +77,145 @@ const resetForm = () => {
               (val !== null && val !== '') || 'Поле обязательно для заполнения',
           ]"
         ></q-input>
-
         <q-checkbox
           v-model="accept"
+          dark
+          bg-color="white"
+          color="primary"
+          size="lg"
+          class="input-wrapper"
           label="Отправляя данные, я принимаю условия"
-          ><span class="form__privacy-link"
+          ><span class="form__privacy-link" @click="privacyDialog = true"
             >Пользовательского соглашения</span
           ></q-checkbox
         >
 
-        <div>
-          <q-btn
-            label="Отправить"
-            type="submit"
-            unelevated
-            color="primary"
-          ></q-btn>
+        <div class="form__button-wrapper">
+          <q-btn type="submit" unelevated class="form__button" color="primary"
+            >Отправить</q-btn
+          >
         </div>
       </q-form>
     </div>
+    <q-dialog v-model="privacyDialog">
+      <q-card>
+        <q-card-section>
+          <div class="text-h6">Пользовательское соглашение</div>
+        </q-card-section>
+
+        <q-separator />
+
+        <q-card-section style="max-height: 50vh" class="scroll">
+          <p v-for="n in 15" :key="n">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum
+            repellendus sit voluptate voluptas eveniet porro. Rerum blanditiis
+            perferendis totam, ea at omnis vel numquam exercitationem aut, natus
+            minima, porro labore.
+          </p>
+        </q-card-section>
+
+        <q-separator />
+
+        <q-card-actions align="right">
+          <q-btn flat label="Закрыть" color="primary" v-close-popup />
+        </q-card-actions>
+      </q-card>
+    </q-dialog>
   </UiSection>
 </template>
 
 <style scoped>
+.form__text-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0px;
+}
+.form-section__content {
+  display: flex;
+  gap: 56px;
+  color: var(--color-white);
+}
+.form-section__title,
+.form-section__title-accent {
+  font-family: Montserrat-bold, serif;
+  font-size: clamp(1rem, 2.3vw, 2rem);
+  font-weight: 800;
+  display: flex;
+  text-align: center;
+}
+.form-section__title-accent {
+  padding-left: 5px;
+  background: var(--text-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.form-section__text {
+  font-family: Montserrat-regular, serif;
+  font-size: clamp(0.8rem, 2vw, 1.2rem);
+  font-weight: 400;
+  line-height: 21.6px;
+  text-align: center;
+}
 .form__wrapper,
 .form__text-content {
   width: 50%;
 }
 .form__privacy-link {
   padding-left: 5px;
+  cursor: pointer;
+  transition: 0.3s linear;
+}
+.form__privacy-link:hover {
+  color: var(--q-accent);
+}
+.input-wrapper {
+  font-family: Montserrat-bold, serif;
+  font-size: clamp(0.8rem, 2vw, 1.2rem);
+  font-weight: 800;
+}
+::placeholder {
+  color: grey;
+}
+.form__button-wrapper {
+  display: flex;
+  justify-content: center;
+}
+.form__button {
+  width: 410px;
+  height: 60px;
+  text-transform: none;
+  border-radius: 8px;
+  font-family: Montserrat-bold, serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 21.6px;
+  transition: 0.3s linear;
+}
+.q-btn.form__button:hover {
+  color: var(--q-secondary);
+}
+@media screen and (max-width: 767px) {
+  .form-section__content {
+    flex-direction: column;
+    width: 100vw;
+    align-items: center;
+    padding: 0;
+  }
+  .form-section__title,
+  .form-section__title-accent {
+    display: flex;
+    flex-direction: column;
+  }
+  .section {
+    margin: 0;
+    padding: 40px 0;
+  }
+  .form__wrapper,
+  .form__text-content {
+    width: 90%;
+  }
 }
 </style>

@@ -15,6 +15,8 @@
 :root {
   --background-light-accent: #d4ab6d1a;
   --color-black: #000000;
+  --color-white: #ffffff;
+  --text-gradient: linear-gradient(79.79deg, #d4ad6f 11.83%, #ffffff 105.26%)
 }
 
 * {
@@ -82,7 +84,6 @@ a {
 }
 
 
-
 .btn {
   font-family: Montserrat-bold, serif;
   font-size: 16px;
@@ -111,4 +112,32 @@ a {
 
 .q-menu {
   max-height: 100%;
+}
+
+.q-item {
+  min-height: 40px;
+}
+
+.q-field__control {
+  color: var(--color-white);
+
+}
+
+.q-field--filled .q-field__control {
+  border-radius: 8px;
+}
+
+.q-field--filled .q-field__control:after {
+  height: 0;
+}
+
+.q-checkbox__bg {
+  border-radius: 4px;
+}
+
+.q-checkbox__label {
+  font-family: Montserrat-regular, serif;
+  font-size: clamp(0.6rem, 2vw, 0.8rem);
+  font-weight: 400;
+
 }
