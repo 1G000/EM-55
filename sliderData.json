@@ -7,8 +7,12 @@
       "subtitle": "Коллектив организации Электромонтаж&nbsp;55 от&nbsp;души поздравляет Вас&nbsp;с&nbsp;Новым годом и&nbsp;Рождеством!",
       "textcontent": "На&nbsp;протяжении 30&nbsp;лет мы изготавливаем электротехническое оборудование и&nbsp;выполняем все&nbsp;виды электромонтажных работ",
       "buttons": [
-        { "btnTitle": "Написать нам", "style": "btn__left" },
-        { "btnTitle": "О компании", "style": "btn__right" }
+        { "btnTitle": "Написать нам", "style": "btn__left", "href": "/about" },
+        {
+          "btnTitle": "О компании",
+          "style": "btn__right",
+          "href": "about"
+        }
       ]
     },
     {
@@ -18,8 +22,8 @@
       "subtitle": "Выполняем все&nbsp;виды электромонтажных работ",
       "textcontent": "Ремонт кабельных линий напряжением 0,4кВ - 10кВ, поиск места повреждения&nbsp;КЛ, все&nbsp;виды испытаний, восстановление нарушенного благоустройства ",
       "buttons": [
-        { "btnTitle": "Услуги", "style": "btn__left" },
-        { "btnTitle": "О компании", "style": "btn__right" }
+        { "btnTitle": "Услуги", "style": "btn__left", "href": "" },
+        { "btnTitle": "О компании", "style": "btn__right", "href": "/about" }
       ]
     },
     {
@@ -30,7 +34,7 @@
       "textcontent": "Изготавливаем БКТП, КТПН, КСО, УВР, ГРЩ&nbsp;под&nbsp;Ваши нужды ",
       "buttons": [
         { "btnTitle": "Оборудование", "style": "btn__left" },
-        { "btnTitle": "О компании", "style": "btn__right" }
+        { "btnTitle": "О компании", "style": "btn__right", "href": "/about" }
       ]
     }
   ]
