@@ -100,7 +100,7 @@
         {
           "id": 9,
           "imgSrc": "./Images/Contacts/male.png",
-          "specialization": "",
+          "specialization": "Начальник производства",
           "fullName": "Роман Александрович",
           "phoneNumbers": ["+7-911-724-50-02"],
           "email": "production@em-55.com"

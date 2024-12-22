@@ -36,31 +36,62 @@
           <div>
             <h6 class="advantage__text"><strong>Почтовый адрес:</strong></h6>
             <span class="advantage__text"
-              >194223, г. Санкт-Петербург, проспект Тореза, д. 44, корп. 2, лит.
-              А, п. 12Н</span
+              ><a
+                :href="`https://yandex.ru/maps/?mode=search&text=${encodeURIComponent(
+                  '194223, г. СПб, проспект Тореза, д. 44, корп. 2, лит. А, п. 12Н'
+                )}`"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                194223, г. СПб, проспект Тореза, д. 44, корп. 2, лит. А, п. 12Н
+              </a></span
             >
           </div>
           <div>
             <h6 class="advantage__text"><strong>Фактический адрес:</strong></h6>
-            <span class="advantage__text"
-              >194223, г. Санкт-Петербург, проспект Тореза, д. 44, корп. 2, лит.
-              А, п. 12Н</span
-            >
+            <span class="advantage__text">
+              <a
+                :href="`https://yandex.ru/maps/?mode=search&text=${encodeURIComponent(
+                  '194223, г. СПб, проспект Тореза, д. 44, корп. 2, лит. А, п. 12Н'
+                )}`"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                194223, г. СПб, проспект Тореза, д. 44, корп. 2, лит. А, п. 12Н
+              </a>
+            </span>
           </div>
           <div>
             <h6 class="advantage__text"><strong>Юридический адрес:</strong></h6>
-            <span class="advantage__text"
-              >194223, г. Санкт-Петербург, проспект Тореза, д. 44, корп. 2, лит.
-              А, п. 12Н</span
-            >
+            <span class="advantage__text">
+              <a
+                :href="`https://yandex.ru/maps/?mode=search&text=${encodeURIComponent(
+                  '194223, г. СПб, проспект Тореза, д. 44, корп. 2, лит. А, п. 12Н'
+                )}`"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                194223, г. СПб, проспект Тореза, д. 44, корп. 2, лит. А, п. 12Н
+              </a>
+            </span>
           </div>
         </div>
         <div class="text__content-section">
-          <h5 class="advantage__title">ПРОИЗВОДСТВО</h5>
+          <h5 class="advantage__title">Завод "ЭЛЕКТРОМОНТАЖ-55"</h5>
           <span class="advantage__text"
             ><strong>Режим работы:</strong><br />
             <span class="green__text">Пн-Пт: 7:00 - 16:00, </span>
             <span class="red__text">Сб-Вс: выходные</span></span
+          >
+          <span class="advantage__text"
+            ><a
+              :href="`https://yandex.ru/maps/?mode=search&text=${encodeURIComponent(
+                '197183, г. СПб, Полевая Сабировская ул, д. 46 литера К'
+              )}`"
+              target="_blank"
+              rel="noopener noreferrer"
+              >197183, г. СПб, Полевая Сабировская ул, д. 46 литера К</a
+            ></span
           >
         </div>
         <div class="text__content-section">

@@ -50,12 +50,12 @@
       "secondLevel": true,
       "expandedFirstLevel": false,
       "secondLevelItems": [
+        { "title": "Каталоги", "thirdLevel": false },
         { "title": "Сертификаты", "thirdLevel": false },
         { "title": "Опросные листы", "thirdLevel": false },
-        { "title": "Инструкции", "thirdLevel": false },
-        { "title": "Каталоги", "thirdLevel": false },
         { "title": "Сроки поставки", "thirdLevel": false },
         { "title": "Доставка", "thirdLevel": false },
+        { "title": "Инструкции", "thirdLevel": false },
         { "title": "Вопрос-ответ", "thirdLevel": false },
         { "title": "Сервис", "thirdLevel": false }
       ]
@@ -65,14 +65,14 @@
       "secondLevel": true,
       "expandedFirstLevel": false,
       "secondLevelItems": [
-        { "title": "Отдел продаж", "thirdLevel": false },
-        { "title": "Комплексные услуги", "thirdLevel": false },
-        { "title": "Проектирование", "thirdLevel": false },
         { "title": "Производство", "thirdLevel": false },
-        { "title": "Комплектация", "thirdLevel": false },
+        { "title": "Проектирование", "thirdLevel": false },
+        { "title": "Отдел продаж", "thirdLevel": false },
+        { "title": "Строительные работы", "thirdLevel": false },
         { "title": "Монтаж", "thirdLevel": false },
         { "title": "Наладочные работы", "thirdLevel": false },
         { "title": "Сдача и подключение", "thirdLevel": false },
+        { "title": "Комплексные услуги", "thirdLevel": false },
         { "title": "Ремонт кабельных линий", "thirdLevel": false },
         { "title": "Опреление места повреждения", "thirdLevel": false },
         { "title": "Аренда спецтехники", "thirdLevel": false }
