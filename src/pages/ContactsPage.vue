@@ -57,4 +57,10 @@ onMounted(async () => {
   color: black;
   background-color: #d4ab6d1a;
 }
+
+@media screen and (max-width: 500px) {
+  .page__title {
+    font-size: 14px;
+  }
+}
 </style>

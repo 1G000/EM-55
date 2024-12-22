@@ -26,7 +26,7 @@ import UiSection from "./UiSection.vue";
         <div class="advantage__text-content">
           <h4 class="advantage__title">Доверие и надежность</h4>
           <p class="advantage__text">
-            Лицензии Северо-Западного управления Ростехнадзора и Мэрии СПб
+            Лицензии, сертификаты, аттестация и протоколы НТЦ
           </p>
         </div>
       </div>

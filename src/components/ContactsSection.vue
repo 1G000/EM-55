@@ -27,78 +27,80 @@
           <h3 class="heading__three">"ЭЛЕКТРОМОНТАЖ 55"</h3>
         </div>
         <div class="text__content-section">
-          <h5 class="advantage__title">ОФИС</h5>
-          <span class="advantage__text">
-            <strong>Режим работы:</strong><br />
-            <span class="green__text">Пн-Пт: 8:00 - 18:00, </span>
+          <h5 class="heading__five">ОФИС</h5>
+          <span class="heading__six">
+            Режим работы:<br />
+            <span class="green__text">Пн-Пт: 8:00 - 18:00</span>,
             <span class="red__text">Сб-Вс: выходные</span></span
           >
           <div>
-            <h6 class="advantage__text"><strong>Почтовый адрес:</strong></h6>
-            <span class="advantage__text"
-              ><a
-                :href="`https://yandex.ru/maps/?mode=search&text=${encodeURIComponent(
-                  '194223, г. СПб, проспект Тореза, д. 44, корп. 2, лит. А, п. 12Н'
-                )}`"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                194223, г. СПб, проспект Тореза, д. 44, корп. 2, лит. А, п. 12Н
-              </a></span
+            <h6 class="heading__six">Почтовый адрес:</h6>
+            <a
+              class="contact__text"
+              :href="`https://yandex.ru/maps/?mode=search&text=${encodeURIComponent(
+                '194223, г. СПб, проспект Тореза, д. 44, корп. 2, лит. А, п. 12Н'
+              )}`"
+              target="_blank"
+              rel="noopener noreferrer"
             >
+              194223, г. СПб, проспект Тореза, д. 44, корп. 2, лит. А, п. 12Н
+            </a>
           </div>
           <div>
-            <h6 class="advantage__text"><strong>Фактический адрес:</strong></h6>
-            <span class="advantage__text">
-              <a
-                :href="`https://yandex.ru/maps/?mode=search&text=${encodeURIComponent(
-                  '194223, г. СПб, проспект Тореза, д. 44, корп. 2, лит. А, п. 12Н'
-                )}`"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                194223, г. СПб, проспект Тореза, д. 44, корп. 2, лит. А, п. 12Н
-              </a>
-            </span>
+            <h6 class="heading__six">Фактический адрес:</h6>
+
+            <a
+              class="contact__text"
+              :href="`https://yandex.ru/maps/?mode=search&text=${encodeURIComponent(
+                '194223, г. СПб, проспект Тореза, д. 44, корп. 2, лит. А, п. 12Н'
+              )}`"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              194223, г. СПб, проспект Тореза, д. 44, корп. 2, лит. А, п. 12Н
+            </a>
           </div>
           <div>
-            <h6 class="advantage__text"><strong>Юридический адрес:</strong></h6>
-            <span class="advantage__text">
-              <a
-                :href="`https://yandex.ru/maps/?mode=search&text=${encodeURIComponent(
-                  '194223, г. СПб, проспект Тореза, д. 44, корп. 2, лит. А, п. 12Н'
-                )}`"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                194223, г. СПб, проспект Тореза, д. 44, корп. 2, лит. А, п. 12Н
-              </a>
-            </span>
+            <h6 class="heading__six">Юридический адрес:</h6>
+
+            <a
+              class="contact__text"
+              :href="`https://yandex.ru/maps/?mode=search&text=${encodeURIComponent(
+                '194223, г. СПб, проспект Тореза, д. 44, корп. 2, лит. А, п. 12Н'
+              )}`"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              194223, г. СПб, проспект Тореза, д. 44, корп. 2, лит. А, п. 12Н
+            </a>
           </div>
         </div>
         <div class="text__content-section">
-          <h5 class="advantage__title">Завод "ЭЛЕКТРОМОНТАЖ-55"</h5>
-          <span class="advantage__text"
-            ><strong>Режим работы:</strong><br />
-            <span class="green__text">Пн-Пт: 7:00 - 16:00, </span>
+          <h5 class="heading__five">Завод "ЭЛЕКТРОМОНТАЖ-55"</h5>
+          <span class="heading__six"
+            >Режим работы:<br />
+            <span class="green__text">Пн-Пт: 7:00 - 16:00</span>,
             <span class="red__text">Сб-Вс: выходные</span></span
           >
-          <span class="advantage__text"
-            ><a
+          <div>
+            <h5 class="heading__six">Адрес:</h5>
+
+            <a
+              class="contact__text"
               :href="`https://yandex.ru/maps/?mode=search&text=${encodeURIComponent(
                 '197183, г. СПб, Полевая Сабировская ул, д. 46 литера К'
               )}`"
               target="_blank"
               rel="noopener noreferrer"
               >197183, г. СПб, Полевая Сабировская ул, д. 46 литера К</a
-            ></span
-          >
+            >
+          </div>
         </div>
         <div class="text__content-section">
-          <h5 class="advantage__title">ПРОИЗВОДСТВЕННО-РЕМОНТНАЯ БАЗА</h5>
-          <span class="advantage__text"
-            ><strong>Режим работы:</strong><br />
-            <span class="green__text">Пт-Сб: 7:00 - 17:00, </span>
+          <h5 class="heading__five">ПРОИЗВОДСТВЕННО-РЕМОНТНАЯ БАЗА</h5>
+          <span class="heading__six"
+            >Режим работы:<br />
+            <span class="green__text">Пт-Сб: 7:00 - 17:00</span>,
             <span class="red__text">Вс: выходной</span></span
           >
         </div>
@@ -158,7 +160,7 @@
   align-items: center;
   gap: 20px;
   width: 100%;
-  height: 650px;
+  height: 750px;
 }
 
 .map__frame {
@@ -174,7 +176,7 @@
 
 .map__section-map {
   display: flex;
-  width: 60%;
+  width: 65%;
   height: 100%;
 }
 
@@ -183,8 +185,8 @@
   flex-direction: column;
   align-items: center;
   gap: 30px;
-  padding: 20px;
-  width: 40%;
+
+  width: 35%;
   height: 100%;
   border-radius: 8px;
   background-color: var(--q-light);
@@ -195,14 +197,6 @@
   flex-direction: column;
   width: 100%;
   gap: 10px;
-}
-
-.advantage__title {
-  text-align: center;
-}
-
-.advantage__text {
-  text-align: left;
 }
 
 .text__content {
@@ -219,11 +213,45 @@
 
 .green__text {
   color: #488866;
-  font-weight: 700;
 }
 
 .contacts__section-info {
   width: 100%;
+}
+
+.contact__text {
+  font-family: Montserrat-regular, serif;
+  font-size: 14px;
+  color: black;
+  line-height: 25px;
+  text-align: center;
+}
+
+.contact__text:visited,
+.contact__text:active {
+  color: black;
+}
+
+@media (hover: hover) {
+  .contact__text:hover {
+    cursor: pointer;
+    color: var(--q-primary);
+  }
+}
+
+.heading__five {
+  font-family: Montserrat-bold, serif;
+  font-size: 18px;
+  color: black;
+  line-height: 25px;
+  text-align: center;
+}
+
+.heading__six {
+  font-family: Montserrat-bold, serif;
+  font-size: 16px;
+  color: black;
+  line-height: 25px;
 }
 
 .contacts__section-info-item {
@@ -240,6 +268,7 @@
 .value {
   width: 65%;
 }
+
 .item {
   width: 35%;
 }
@@ -278,19 +307,27 @@
   }
 }
 
-@media screen and (max-width: 1200px) {
-  .map__section-map {
-    width: 35%;
+@media screen and (min-width: 1400px) {
+  .map__section {
+    height: 700px;
   }
-  .map__section-contacts {
-    width: 65%;
+}
+
+@media screen and (max-width: 1400px) {
+  .map__section {
+    height: 750px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .map__section {
+    height: 850px;
   }
 }
 
 @media screen and (max-width: 975px) {
   .map__section {
     flex-direction: column-reverse;
-    height: 900px;
   }
 
   .map__section-map {
@@ -298,6 +335,13 @@
   }
   .map__section-contacts {
     width: 100%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .map__section {
+    height: 1050px;
+    padding: 5px;
   }
 }
 </style>

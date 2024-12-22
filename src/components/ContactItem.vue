@@ -112,13 +112,14 @@ defineProps({
   flex-wrap: wrap;
 }
 
+.q-img--menu {
+  border-radius: 8px;
+}
+
 .q-item {
   max-width: 100%;
   display: flex;
   gap: 10px;
-}
-
-.q-item__section {
 }
 
 .q-item__section--main {
@@ -212,6 +213,17 @@ defineProps({
   .contact__item-specialization,
   .contact__item-name {
     text-align: center;
+  }
+}
+
+a {
+  color: black;
+}
+
+@media (hover: hover) {
+  a:hover {
+    cursor: pointer;
+    color: var(--q-primary);
   }
 }
 </style>

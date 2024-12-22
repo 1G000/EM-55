@@ -26,7 +26,11 @@ defineProps({
               clickable
             >
               <template v-if="!subitem.thirdLevel">
-                <q-item-section>{{ subitem.title }}</q-item-section>
+                <q-item-section
+                  ><router-link class="link" :to="subitem.href">{{
+                    subitem.title
+                  }}</router-link></q-item-section
+                >
               </template>
               <template v-else>
                 <q-item-section>{{ subitem.title }}</q-item-section>
@@ -83,7 +87,9 @@ defineProps({
 }
 
 .navigation__button,
-.nav-text {
+.nav-text,
+.link {
+  color: white;
   font-family: "Montserrat", sans-serif;
   font-size: clamp(16px, 1vw, 20px);
   font-weight: 500;
@@ -105,9 +111,11 @@ defineProps({
   font-size: clamp(16px, 1vw, 20px);
   padding: 10px 12px !important;
 }
-.submenu-item:hover {
+.submenu-item:hover,
+.link:hover {
   color: var(--q-secondary) !important;
 }
+
 @media (max-width: 1280px) {
   .navigation {
     width: 100%;
