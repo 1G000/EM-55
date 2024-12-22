@@ -1,1 +1,0 @@
-import{_ as e}from"./plugin-vue_export-helper.21dcd24c.js";import{F as r,I as o}from"./index.40d8529a.js";const t={};function c(a,n){return r(),o("h1",null,"ti pidor")}var f=e(t,[["render",c]]);export{f as default};
