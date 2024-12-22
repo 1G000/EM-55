@@ -6,8 +6,8 @@ const name = ref(null);
 const age = ref(null);
 const accept = ref(false);
 const privacyDialog = ref(false);
-const sectionBackground = `url('/images/Form/form-background.jpg')`;
-const sectionBackgroundMobile = `url('/images/Form/form-background-mobile.jpg')`;
+const sectionBackground = `url('./Images/Form/form-background.jpg')`;
+const sectionBackgroundMobile = `url('./Images/Form/form-background-mobile.jpg')`;
 
 const submitForm = () => {
   // $q.notify({
