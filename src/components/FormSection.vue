@@ -159,7 +159,7 @@ const resetForm = () => {
 
 .form-section__text {
   font-family: Montserrat-regular, serif;
-  font-size: clamp(0.8rem, 2vw, 1.2rem);
+  font-size: clamp(1rem, 2vw, 1.2rem);
   font-weight: 400;
   line-height: 21.6px;
   text-align: center;
@@ -167,6 +167,7 @@ const resetForm = () => {
 .form__wrapper,
 .form__text-content {
   width: 50%;
+  gap: 20px;
 }
 .form__privacy-link {
   padding-left: 5px;
@@ -212,8 +213,9 @@ const resetForm = () => {
   .form-section__title,
   .form-section__title-accent {
     display: flex;
-    flex-direction: column;
+    padding-bottom: 0;
   }
+
   .section {
     margin: 0;
     padding: 40px 0;
@@ -221,6 +223,7 @@ const resetForm = () => {
   .form__wrapper,
   .form__text-content {
     width: 90%;
+    gap: 0;
   }
 }
 </style>

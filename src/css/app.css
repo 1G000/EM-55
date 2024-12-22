@@ -115,7 +115,8 @@ a {
 }
 
 .q-item {
-  min-height: 40px;
+  min-height: 20px;
+  padding: 0;
 }
 
 .q-field__control {
