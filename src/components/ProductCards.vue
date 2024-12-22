@@ -22,7 +22,7 @@ const production = [
   },
   {
     title: "Низковольтные комплектные устройства",
-    imgSrc: "./Images/Production/product-4.webp",
+    imgSrc: "./Images/Production/product-4.jpg",
   },
 ];
 </script>

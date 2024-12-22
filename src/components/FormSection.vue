@@ -7,6 +7,7 @@ const age = ref(null);
 const accept = ref(false);
 const privacyDialog = ref(false);
 const sectionBackground = `url('/images/Form/form-background.jpg')`;
+const sectionBackgroundMobile = `url('/images/Form/form-background-mobile.jpg')`;
 
 const submitForm = () => {
   // $q.notify({
@@ -27,8 +28,10 @@ const resetForm = () => {
 <template>
   <UiSection
     class="form-section"
-    :background="sectionBackground"
-    :padding="$q.screen > 1024 ? '100px 60px' : '40px 20px'"
+    :background="
+      $q.screen.width > 767 ? sectionBackground : sectionBackgroundMobile
+    "
+    :padding="$q.screen.width > 1024 ? '100px 60px' : '40px 20px'"
   >
     <div class="q-pa-md form-section__content">
       <q-list padding class="form__text-content">
@@ -200,7 +203,7 @@ const resetForm = () => {
 @media screen and (max-width: 767px) {
   .form-section__content {
     flex-direction: column;
-    width: 100vw;
+    width: 100%;
     align-items: center;
     padding: 0;
   }
