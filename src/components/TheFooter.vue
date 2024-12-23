@@ -50,6 +50,7 @@
   gap: 20px;
   padding: 20px 80px 40px 80px;
   justify-content: space-between;
+  margin-top: 100px;
 }
 .footer__logo {
   width: 217px;
