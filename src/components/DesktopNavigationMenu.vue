@@ -24,13 +24,10 @@ defineProps({
               v-for="subitem in item.secondLevelItems"
               :key="subitem"
               clickable
+              :to="subitem.href"
             >
               <template v-if="!subitem.thirdLevel">
-                <q-item-section
-                  ><router-link class="link" :to="subitem.href">{{
-                    subitem.title
-                  }}</router-link></q-item-section
-                >
+                <q-item-section>{{ subitem.title }}</q-item-section>
               </template>
               <template v-else>
                 <q-item-section>{{ subitem.title }}</q-item-section>

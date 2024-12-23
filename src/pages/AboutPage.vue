@@ -16,7 +16,7 @@
     </p>
     <div class="photo__section">
       <picture class="picture__container"
-        ><img src="/public/Images/Contacts/selin.png" alt="" class="picture"
+        ><img src="./Images/Contacts/selin.png" alt="" class="picture"
       /></picture>
       <div class="picture__container-titles">
         <h3 class="heading_three">Генеральный директор «Электромонтаж-55»</h3>
