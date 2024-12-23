@@ -24,7 +24,8 @@ const sectionTitle = "Контакты";
           ><iframe
             src="https://yandex.ru/map-widget/v1/?ll=30.347165%2C60.008496&mode=search&ol=geo&ouri=ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgg1NzQ0NDUwORJR0KDQvtGB0YHQuNGPLCDQodCw0L3QutGCLdCf0LXRgtC10YDQsdGD0YDQsywg0L_RgNC-0YHQv9C10LrRgiDQotC-0YDQtdC30LAsIDQ00LoyIgoN_8byQRWzCHBC&z=17.05"
             allowfullscreen="true"
-            style="position: relative; border-radius: 8px"
+            style="border-radius: 8px; width: 100%; height: 675px"
+            :style="$q.screen.width > 1160 ? 'height: 675px' : 'height: 500px'"
             class="map__frame--frame"
           ></iframe>
         </div>
@@ -202,7 +203,6 @@ const sectionTitle = "Контакты";
 .map__section {
   display: flex;
   width: 100%;
-  margin-bottom: 150px;
 }
 .map__content-wrapper {
   display: flex;
@@ -339,24 +339,6 @@ const sectionTitle = "Контакты";
   }
 }
 
-@media screen and (min-width: 1400px) {
-  .map__section {
-    height: 700px;
-  }
-}
-
-@media screen and (max-width: 1400px) {
-  .map__section {
-    height: 750px;
-  }
-}
-
-@media screen and (max-width: 1200px) {
-  .map__section {
-    height: 1100px;
-  }
-}
-
 @media screen and (max-width: 1160px) {
   .map__content-wrapper {
     flex-direction: column-reverse;
@@ -367,10 +349,6 @@ const sectionTitle = "Контакты";
   }
   .map__section-contacts {
     width: 100%;
-  }
-
-  .map__section-map {
-    min-height: 400px;
   }
 }
 </style>
