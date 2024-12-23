@@ -4,6 +4,7 @@ defineOptions({
 });
 
 import TheHeader from "src/components/TheHeader.vue";
+import TheFooter from "src/components/TheFooter.vue";
 import { ref, onMounted } from "vue";
 
 const navItems = ref(null);
@@ -28,6 +29,7 @@ onMounted(async () => {
     <main class="main">
       <router-view />
     </main>
+    <TheFooter />
   </q-layout>
 </template>
 
