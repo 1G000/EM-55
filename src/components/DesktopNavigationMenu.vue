@@ -12,6 +12,7 @@ defineProps({
     <div v-for="item in navItems" :key="item">
       <template v-if="item.secondLevel">
         <q-btn-dropdown
+          :menu-offset="[0, 8]"
           square
           :label="item.label"
           fab
@@ -87,12 +88,12 @@ defineProps({
 .nav-text,
 .link {
   color: white;
-  font-family: "Montserrat", sans-serif;
-  font-size: clamp(16px, 1vw, 20px);
+  font-size: clamp(0.9rem, 1.7vw, 1rem);
+  font-family: Montserrat-regular, serif;
   font-weight: 500;
-  line-height: 19.5px;
+  line-height: 17.07px;
   text-transform: none;
-  padding: 4px 10px;
+  padding: 4px 5px 4px 5px;
   transition: 0.3s linear;
 }
 .navigation__button:hover {
@@ -105,7 +106,9 @@ defineProps({
   min-height: 55px;
 }
 .submenu-item {
-  font-size: clamp(16px, 1vw, 20px);
+  font-family: Montserrat-regular, serif;
+  font-size: clamp(0.9rem, 2vw, 1.1rem);
+  font-weight: 500;
   padding: 10px 12px !important;
 }
 .submenu-item:hover,
@@ -118,7 +121,7 @@ defineProps({
     width: 100%;
   }
   .nav-text {
-    padding-left: 24px;
+    padding-left: 5px;
   }
 }
 </style>

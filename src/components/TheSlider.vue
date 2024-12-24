@@ -109,7 +109,7 @@ const selectedImgSrc = computed(() => (slide) => {
 }
 
 .q-carousel {
-  height: calc(100vh - 135px - 75px - 40px);
+  height: calc(100vh - 135px - 80px - 40px);
 }
 
 .text-overlay {
@@ -218,7 +218,7 @@ const selectedImgSrc = computed(() => (slide) => {
 }
 @media screen and (max-width: 1110px) {
   .q-carousel {
-    height: calc(100vh - 205px - 75px - 40px);
+    height: calc(100vh - 205px - 80px - 40px);
   }
 }
 @media screen and (max-width: 768px) {
@@ -255,7 +255,7 @@ const selectedImgSrc = computed(() => (slide) => {
 }
 @media screen and (max-width: 767px) {
   .q-carousel {
-    height: calc(100vh - 75px);
+    height: calc(100vh - 80px);
   }
   :deep(.q-carousel__navigation) {
     bottom: 60px;

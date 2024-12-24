@@ -17,6 +17,7 @@
   --color-black: #000000;
   --color-white: #ffffff;
   --text-gradient: linear-gradient(79.79deg, #d4ad6f 11.83%, #ffffff 105.26%);
+  --footer-bottom-text-color: #b4b4b4;
 }
 
 * {
@@ -73,10 +74,6 @@ a {
 
 .q-menu {
   border-radius: 8px;
-  /* border-top-left-radius: 0;
-  border-top-right-radius: 0;
-  border-bottom-left-radius: 8px;
-  border-bottom-right-radius: 8px; */
 }
 
 .q-list--separator > .q-item-type + .q-item-type {
@@ -96,7 +93,16 @@ a {
   padding: 10px 40px;
   transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
-
+.q-btn--fab .q-icon,
+.q-btn--fab-mini .q-icon {
+  font-size: 16px;
+}
+.q-btn {
+  min-height: 42px;
+}
+.q-btn .q-icon {
+  font-size: 24px;
+}
 @media (hover: hover) {
   .btn:hover {
     cursor: pointer;

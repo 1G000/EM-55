@@ -11,6 +11,8 @@ defineProps({
 import MobileNavigation from "src/components/MobileNavigation.vue";
 import ToolbarContactButton from "./ToolbarContactButton.vue";
 import DesktopNavigationMenu from "./DesktopNavigationMenu.vue";
+import LogoSvg from "./icons/LogoSvg.vue";
+import RIcon from "./icons/RIcon.vue";
 import { ref } from "vue";
 
 const showMobileMenu = ref(false);
@@ -20,32 +22,34 @@ const showMobileMenu = ref(false);
   <q-header unelevated class="header">
     <div class="container">
       <router-link to="/" class="logo__container">
-        <img
+        <LogoSvg class="header-logo" />
+        <RIcon class="r-icon" />
+        <!-- <img
           src="../assets/logo.png"
           width="10px"
           height="auto"
           class="navbar__logo"
-        />
+        /> -->
         <h1 class="logo__text">Электромонтаж 55</h1>
       </router-link>
       <div class="first-line"></div>
       <div class="second-line"></div>
       <q-toolbar class="toolbar">
         <q-toolbar-title
-          v-if="$q.screen.width > 1450 || $q.screen.width < 1215"
+          v-if="$q.screen.width > 1600 || $q.screen.width < 1245"
           class="nav__title"
         >
           Оборудование для<br />
           трансформаторных подстанций
         </q-toolbar-title>
         <DesktopNavigationMenu
-          v-if="$q.screen.width > 1215"
+          v-if="$q.screen.width > 1244"
           :navItems="navItems"
         />
         <ToolbarContactButton />
         <!-- Кнопка бургера -->
         <q-icon
-          v-if="$q.screen.width <= 1215"
+          v-if="$q.screen.width <= 1244"
           name="menu"
           size="34px"
           color="primary"
@@ -85,7 +89,7 @@ const showMobileMenu = ref(false);
   align-items: center;
   max-width: 1920px;
   margin: 0 auto;
-  padding: 10px 0;
+  padding: 5px 0;
 }
 .logo__container {
   width: 180px;
@@ -94,8 +98,13 @@ const showMobileMenu = ref(false);
   align-items: center;
   justify-content: center;
   text-decoration: none;
+  position: relative;
 }
-
+.r-icon {
+  position: absolute;
+  top: 10px;
+  right: 4px;
+}
 .navbar__logo {
   width: 100px;
   height: auto;
@@ -126,7 +135,6 @@ const showMobileMenu = ref(false);
   background-color: var(--q-primary);
   clip-path: polygon(17px 0, 100% 0, 100% 100%, 0 100%);
   height: 55px;
-  padding-left: 2px;
   padding-right: 0;
   margin-left: -10px;
 }
@@ -140,8 +148,11 @@ const showMobileMenu = ref(false);
 }
 
 .nav__title {
-  color: white;
+  font-family: Montserrat-regular, serif;
+  color: var(--color-white);
   font-size: 10px;
+  font-weight: normal;
+  margin-right: 10px;
 }
 
 .burger-icon {
@@ -166,19 +177,32 @@ const showMobileMenu = ref(false);
   width: 40px;
   height: 40px;
 }
-@media (max-width: 1215px) {
+@media (max-width: 1244px) {
   .toolbar {
     justify-content: end;
   }
 }
-@media (max-width: 1215px) {
+@media (max-width: 1244px) {
   .nav__title {
     margin-right: auto;
   }
 }
-@media (max-width: 556px) {
+@media (max-width: 600px) {
   .nav__title {
     display: none;
+  }
+}
+@media (max-width: 370px) {
+  .header-logo {
+    width: 120px;
+    height: auto;
+  }
+  .container {
+    padding-top: 10px;
+  }
+  .r-icon {
+    top: 3px;
+    right: 0px;
   }
 }
 </style>
