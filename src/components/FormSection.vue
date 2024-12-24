@@ -223,7 +223,10 @@ const resetForm = () => {
   .form__wrapper,
   .form__text-content {
     width: 90%;
-    gap: 0;
+    gap: 10px;
+  }
+  .form-section__text {
+    margin-top: -23px;
   }
 }
 </style>
