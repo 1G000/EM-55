@@ -9,11 +9,11 @@
         { "title": "Производство", "thirdLevel": false },
         {
           "title": "История",
+          "href": "/history",
           "thirdLevel": false,
           "expandedSecondLevel": false,
           "thirdLevelItems": [
-            { "title": "История 1" },
-            { "title": "История 1" }
+            { "title": "История 1", "href": "/about", "thirdLevel": false }
           ]
         },
         {
