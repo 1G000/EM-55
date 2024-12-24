@@ -18,7 +18,7 @@ const expanded = ref(false);
 const secondLevelItemsCopy = reactive(props.secondLevelItems);
 
 const closeAllExpansions = () => {
-  expanded.value = false;
+  // expanded.value = false;
   secondLevelItemsCopy.forEach((item) => {
     item.expandedSecondLevel = false;
   });
@@ -42,7 +42,11 @@ const closeAllExpansions = () => {
     >
       <q-card-section
         v-if="!item.thirdLevel"
-        @click="closeAllExpansions"
+        @click="
+          {
+            (expanded = false), closeAllExpansions, $router.push(item.href);
+          }
+        "
         class="cursor-pointer"
       >
         {{ item.title }}
