@@ -6,123 +6,156 @@
       <img width="217px" height="103px" src="../assets/logo-white.png" />
     </q-avatar>
 
-    <div class="footer__content">
-      <q-list dense padding class="flex text-white footer__content-top">
-        <q-item clickable v-ripple>
-          <q-item-section> О компании </q-item-section>
-        </q-item>
+    <!-- <div class="footer__content"> -->
+    <q-list dense padding class="flex text-white footer__content-top">
+      <q-item clickable v-ripple>
+        <q-item-section class="footer__content-top-item">
+          О компании
+        </q-item-section>
+      </q-item>
 
-        <q-item clickable v-ripple>
-          <q-item-section> Продукция </q-item-section>
-        </q-item>
+      <q-item clickable v-ripple>
+        <q-item-section class="footer__content-top-item">
+          Продукция
+        </q-item-section>
+      </q-item>
 
-        <q-item clickable v-ripple>
-          <q-item-section> Услуги </q-item-section>
-        </q-item>
-        <q-item clickable v-ripple>
-          <q-item-section> Деятельность </q-item-section>
-        </q-item>
+      <q-item clickable v-ripple>
+        <q-item-section class="footer__content-top-item">
+          Услуги
+        </q-item-section>
+      </q-item>
+      <q-item clickable v-ripple>
+        <q-item-section class="footer__content-top-item">
+          Деятельность
+        </q-item-section>
+      </q-item>
 
-        <q-item clickable v-ripple>
-          <q-item-section> Вакансии </q-item-section>
-        </q-item>
-      </q-list>
+      <q-item clickable v-ripple>
+        <q-item-section class="footer__content-top-item">
+          Вакансии
+        </q-item-section>
+      </q-item>
+    </q-list>
 
-      <div class="flex text-white footer__content-bottom">
-        <q-item-section align="center"
-          >(с) Общество с ограниченной ответственностью «ЭЛЕКТРОМОНТАЖ
-          55»</q-item-section
-        >
-        <q-item-section align="center"
-          >Политика конфиденциальности</q-item-section
-        >
-      </div>
+    <div class="flex text-white footer__content-bottom">
+      <q-item-section class="footer__company-name" align="center"
+        >(с) Общество с ограниченной ответственностью «ЭЛЕКТРОМОНТАЖ
+        55»</q-item-section
+      >
+      <q-item-section class="footer__privacy" align="center"
+        >Политика конфиденциальности</q-item-section
+      >
     </div>
+    <!-- </div> -->
   </footer>
 </template>
 
 <style scoped>
 .footer {
   background-color: var(--q-primary);
-  display: flex;
-  flex-direction: row;
-  align-items: center;
   gap: 20px;
-  padding: 20px 80px 40px 80px;
-  justify-content: space-between;
+  padding: 20px 40px 40px 40px;
+  max-width: 1920px;
+  justify-content: end;
+  align-items: center;
+  display: grid;
+  grid-template-columns: 2fr 4fr;
+  grid-template-rows: auto auto;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 100px;
 }
 .footer__logo {
   width: 217px;
   height: 103px;
+  grid-row: span 2;
 }
 
 .footer__content {
-  display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 32px;
 }
-
-.footer__content-bottom {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
+.footer__content-top {
   font-family: Montserrat-regular, serif;
-  font-size: 16px;
+  justify-content: space-around;
+  font-size: clamp(0.9rem, 2vw, 1rem);
+  font-weight: 500;
+  line-height: 17.07px;
+}
+.footer__content-bottom {
+  font-family: Montserrat-regular, serif;
+  font-size: clamp(0.8rem, 2vw, 0.9rem);
+  align-items: flex-start;
+  margin-left: 100px;
+  gap: 80px;
 }
 
 .footer__content-bottom .q-item__section {
-  color: #b4b4b4;
+  color: var(--footer-bottom-text-color);
+  font-size: 0.9rem;
+  width: 550px;
 }
 
-.footer__content-top {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: space-around;
-  gap: 80px;
-  font-family: Montserrat-regular, serif;
-  font-size: 16px;
+.footer__privacy {
+  text-align: start;
+  cursor: pointer;
+  text-decoration: underline;
+  transition: 0.3s linear;
 }
-
-@media (max-width: 1330px) {
-  .footer__content-top {
-    gap: 10px;
+.footer__content-top-item {
+  transition: 0.3s linear;
+}
+@media (hover: hover) {
+  .footer__privacy:hover {
+    color: var(--q-accent);
+  }
+  .footer__content-top-item:hover {
+    color: var(--q-accent);
   }
 }
 
-@media (max-width: 1060px) {
-  .footer__content-top,
+@media (max-width: 1340px) {
+  .footer {
+    grid-template-columns: 1fr 4fr;
+  }
+}
+@media (max-width: 1000px) {
+  .footer {
+    grid-template-columns: 1fr 1fr;
+  }
   .footer__content-bottom {
-    font-size: 14px;
+    grid-column: span 2;
+    gap: 0;
+    align-items: center;
   }
+  .footer__content-bottom,
+  .footer__content-top {
+    flex-direction: column;
+    margin-left: 0px;
+  }
+  .footer__content-bottom .q-item__section {
+    width: auto;
+  }
+}
+@media (max-width: 500px) {
   .footer {
     padding: 20px 20px 40px 20px;
+    gap: 0;
   }
 }
-
-@media (max-width: 1060px) {
-  .footer__content-top,
-  .footer__content-bottom {
-    flex-direction: column;
-  }
-  .footer__content {
-    flex-direction: row;
-    gap: 10px;
-  }
-  .footer__content-bottom {
-    align-items: center;
-    gap: 40px;
-  }
+@media (max-width: 400px) {
   .footer__logo {
-    transform: scale(0.8);
+    width: 132px;
+    height: auto;
+  }
+  .footer__content-bottom .q-item__section {
+    width: 250px;
   }
 }
-
-@media (max-width: 645px) {
-  .footer__content-bottom-hidden {
-    display: flex;
+/* @media (max-width: 360px) {
+  .footer__logo {
+    width: 140px;
+    height: auto;
   }
-}
+} */
 </style>

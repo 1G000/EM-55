@@ -16,7 +16,7 @@ defineOptions({
     transition-show="fade"
     icon="phone"
     square
-    :label="$q.screen.width <= 1215 ? '' : '+7 (812) 294–20–13'"
+    :label="$q.screen.width <= 800 ? '' : '+7 (812) 294–20–13'"
     dropdown-icon="keyboard_arrow_down"
   >
     <q-list
