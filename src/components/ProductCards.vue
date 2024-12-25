@@ -2,9 +2,7 @@
 import ProductCard from "./ProductCard.vue";
 import UiSection from "./UiSection.vue";
 import UiSectionTitle from "./UiSectionTitle.vue";
-import { ref } from "vue";
 
-const typeOfSection = ref("production");
 const sectionTitle = "Продукция";
 const production = [
   {
@@ -28,7 +26,7 @@ const production = [
 </script>
 
 <template>
-  <UiSection :margin="`0 20px`">
+  <UiSection :margin="`0 20px`" id="production">
     <UiSectionTitle :title-text="sectionTitle" />
     <div class="card__container">
       <ProductCard
@@ -40,8 +38,6 @@ const production = [
     </div>
   </UiSection>
 </template>
-
-
 
 <style scoped>
 .card__container {

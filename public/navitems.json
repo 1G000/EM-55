@@ -6,7 +6,7 @@
       "expandedFirstLevel": false,
       "secondLevelItems": [
         { "title": "О компании", "href": "/about", "thirdLevel": false },
-        { "title": "Производство", "thirdLevel": false },
+        { "title": "Производство", "thirdLevel": false, "href": "/sorry" },
         {
           "title": "История",
           "href": "/history",
@@ -18,6 +18,8 @@
         },
         {
           "title": "Галерея",
+          "href": "/sorry",
+
           "thirdLevel": false,
           "expandedSecondLevel": false,
           "thirdLevelItems": [
@@ -26,38 +28,40 @@
             { "title": "2024" }
           ]
         },
-        { "title": "Отзывы", "thirdLevel": false },
-        { "title": "Вакансии", "thirdLevel": false },
-        { "title": "Наши партнёры", "thirdLevel": false },
-        { "title": "Реквизиты", "thirdLevel": false }
+        { "title": "Отзывы", "thirdLevel": false, "href": "/sorry" },
+        { "title": "Вакансии", "thirdLevel": false, "href": "/sorry" },
+        { "title": "Наши партнёры", "thirdLevel": false, "href": "/sorry" },
+        { "title": "Реквизиты", "thirdLevel": false, "href": "/sorry" }
       ]
     },
     {
       "label": "Оборудование",
+
       "secondLevel": true,
       "expandedFirstLevel": false,
       "secondLevelItems": [
-        { "title": "БКТП", "thirdLevel": false },
-        { "title": "КТПН", "thirdLevel": false },
-        { "title": "КСО", "thirdLevel": false },
-        { "title": "УВР", "thirdLevel": false },
-        { "title": "ГРЩ", "thirdLevel": false },
-        { "title": "КЛ", "thirdLevel": false }
+        { "title": "БКТП", "thirdLevel": false, "href": "/sorry" },
+        { "title": "КТПН", "thirdLevel": false, "href": "/sorry" },
+        { "title": "КСО", "thirdLevel": false, "href": "/sorry" },
+        { "title": "УВР", "thirdLevel": false, "href": "/sorry" },
+        { "title": "ГРЩ", "thirdLevel": false, "href": "/sorry" },
+        { "title": "КЛ", "thirdLevel": false, "href": "/sorry" }
       ]
     },
     {
       "label": "Сопровождение",
+
       "secondLevel": true,
       "expandedFirstLevel": false,
       "secondLevelItems": [
-        { "title": "Каталоги", "thirdLevel": false },
-        { "title": "Сертификаты", "thirdLevel": false },
-        { "title": "Опросные листы", "thirdLevel": false },
-        { "title": "Сроки поставки", "thirdLevel": false },
-        { "title": "Доставка", "thirdLevel": false },
-        { "title": "Инструкции", "thirdLevel": false },
-        { "title": "Вопрос-ответ", "thirdLevel": false },
-        { "title": "Сервис", "thirdLevel": false }
+        { "title": "Каталоги", "thirdLevel": false, "href": "/sorry" },
+        { "title": "Сертификаты", "thirdLevel": false, "href": "/sorry" },
+        { "title": "Опросные листы", "thirdLevel": false, "href": "/sorry" },
+        { "title": "Сроки поставки", "thirdLevel": false, "href": "/sorry" },
+        { "title": "Доставка", "thirdLevel": false, "href": "/sorry" },
+        { "title": "Инструкции", "thirdLevel": false, "href": "/sorry" },
+        { "title": "Вопрос-ответ", "thirdLevel": false, "href": "/sorry" },
+        { "title": "Сервис", "thirdLevel": false, "href": "/sorry" }
       ]
     },
     {
@@ -65,28 +69,49 @@
       "secondLevel": true,
       "expandedFirstLevel": false,
       "secondLevelItems": [
-        { "title": "Производство", "thirdLevel": false },
-        { "title": "Проектирование", "thirdLevel": false },
-        { "title": "Отдел продаж", "thirdLevel": false },
-        { "title": "Строительные работы", "thirdLevel": false },
-        { "title": "Монтаж", "thirdLevel": false },
-        { "title": "Наладочные работы", "thirdLevel": false },
-        { "title": "Сдача и подключение", "thirdLevel": false },
-        { "title": "Комплексные услуги", "thirdLevel": false },
-        { "title": "Ремонт кабельных линий", "thirdLevel": false },
-        { "title": "Опреление места повреждения", "thirdLevel": false },
-        { "title": "Аренда спецтехники", "thirdLevel": false }
+        { "title": "Производство", "thirdLevel": false, "href": "/sorry" },
+        { "title": "Проектирование", "thirdLevel": false, "href": "/sorry" },
+        { "title": "Отдел продаж", "thirdLevel": false, "href": "/sorry" },
+        {
+          "title": "Строительные работы",
+          "thirdLevel": false,
+          "href": "/sorry"
+        },
+        { "title": "Монтаж", "thirdLevel": false, "href": "/sorry" },
+        { "title": "Наладочные работы", "thirdLevel": false, "href": "/sorry" },
+        {
+          "title": "Сдача и подключение",
+          "thirdLevel": false,
+          "href": "/sorry"
+        },
+        {
+          "title": "Комплексные услуги",
+          "thirdLevel": false,
+          "href": "/sorry"
+        },
+        {
+          "title": "Ремонт кабельных линий",
+          "thirdLevel": false,
+          "href": "/sorry"
+        },
+        {
+          "title": "Опреление места повреждения",
+          "thirdLevel": false,
+          "href": "/sorry"
+        },
+        { "title": "Аренда спецтехники", "thirdLevel": false, "href": "/sorry" }
       ]
     },
     { "label": "Вакансии", "expandedFirstLevel": false, "secondLevel": false },
     {
       "label": "Деятельность",
+      "href": "/sorry",
       "secondLevel": true,
       "expandedFirstLevel": false,
       "secondLevelItems": [
-        { "title": "СМР", "thirdLevel": false },
-        { "title": "ПИР", "thirdLevel": false },
-        { "title": "КЛЮЧ", "thirdLevel": false }
+        { "title": "СМР", "thirdLevel": false, "href": "/sorry" },
+        { "title": "ПИР", "thirdLevel": false, "href": "/sorry" },
+        { "title": "КЛЮЧ", "thirdLevel": false, "href": "/sorry" }
       ]
     }
   ]

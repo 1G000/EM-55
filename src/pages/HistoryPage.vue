@@ -1,5 +1,9 @@
 <template>
-  <UiSection class="history__section" :margin="`20px`" :background="`white`">
+  <UiSection
+    class="content__wrapper"
+    :padding="'64px 40px 0 40px'"
+    :background="`white`"
+  >
     <UiSectionTitle :title-text="sectionTitle" />
     <div class="container">
       <div class="q-py-md left-side">
@@ -92,11 +96,21 @@
         </q-timeline>
       </div>
       <div class="q-px-lg q-py-md right-side">
+        <picture class="picture__container"
+          ><img
+            src="Images/team.png"
+            alt="картинка"
+            class="picture"
+            width="100%"
+          />
+        </picture>
         <p class="text">
           В состав ООО «Электромонтаж-55» входят три структурных подразделения:
-          электромонтажное производство (ЭП ЭМ-55) Завод Электромонтаж-55,
-          управление наладочных работ (УНР-422) и управление пуско-наладочных
-          работ (УПНР-427).
+          <strong
+            >электромонтажное производство (ЭП ЭМ-55) Завод Электромонтаж
+            55</strong
+          >, <strong>управление наладочных работ (УНР-422)</strong> и
+          <strong>управление пуско-наладочных работ (УПНР-427).</strong>
         </p>
         <p class="text">
           Всё изготавливаемое ООО «Электромонтаж-55» электротехническое
@@ -124,40 +138,54 @@
         </p>
         <ul>
           <li class="text bold">
-            - на кирпичных и крупнопанельных жилых домах (с общим количеством
+            <ListIcon />
+            на кирпичных и крупнопанельных жилых домах (с общим количеством
             квартир более 2 млн.)
           </li>
-          <li class="text bold">- на школах (более 600 школ)</li>
-          <li class="text bold">на детских садах (более 800 детских садов)</li>
+          <li class="text bold"><ListIcon /> на школах (более 600 школ)</li>
           <li class="text bold">
-            - на объектах здравоохранения (более 200 поликлиник, 20 больниц)
+            <ListIcon /> на детских садах (более 800 детских садов)
           </li>
           <li class="text bold">
-            - на стадионах им. Кирова (теперь на этом месте новый комплекс
-            «Газпром Аре́на») и Петровский на спортивно-концертном комплексе
-            «Петербургский» на 25 тыс. мест (теперь на этом месте новый комплекс
-            «СКА Арена».)
+            <ListIcon /> на объектах здравоохранения (более 200 поликлиник, 20
+            больниц)
           </li>
-          <li class="text bold">- на дворце спорта «Юбилейный»</li>
-          <li class="text bold">на концертном зале «Октябрьский»</li>
           <li class="text bold">
-            - на гостиницах «Спутник», «Советская»(нов. название «А́зимут Отель
-            Санкт-Петербург»), «Ленинград» (нов. название Отель
+            <ListIcon /> на стадионах им. Кирова (теперь на этом месте новый
+            комплекс «Газпром Аре́на») и Петровский
+          </li>
+          <li class="text bold">
+            <ListIcon />на спортивно-концертном комплексе «Петербургский» на 25
+            тыс. мест (теперь на этом месте новый комплекс «СКА Арена».)
+          </li>
+          <li class="text bold"><ListIcon /> на дворце спорта «Юбилейный»</li>
+          <li class="text bold">
+            <ListIcon /> на концертном зале «Октябрьский»
+          </li>
+          <li class="text bold">
+            <ListIcon /> на гостиницах «Спутник», «Советская»(нов. название
+            «А́зимут Отель Санкт-Петербург»), «Ленинград» (нов. название Отель
             Санкт-Петербург), «Октябрьская» и др.
           </li>
-          <li class="text bold">- на объектах аэропорта «Пулково»</li>
-          <li class="text bold">- на птицефабриках, овощехранилищах и др.</li>
           <li class="text bold">
-            - на предприятиях торговли и общественного питания
+            <ListIcon /> на объектах аэропорта «Пулково»
+          </li>
+          <li class="text bold">
+            <ListIcon /> на птицефабриках, овощехранилищах и др.
+          </li>
+          <li class="text bold">
+            <ListIcon /> на предприятиях торговли и общественного питания
           </li>
         </ul>
 
         <p class="text">
-          На распределительных подстанциях (более 400) и трансформаторных
-          подстанциях (более 4000), что составляет порядка 75-80% всех
-          действующих подстанций Санкт-Петербурга на период 2014 года проложено
-          более 500 тыс. км. кабеля 0,4-10 кВ, а на квартальных котельных (более
-          50 тыс. км.)
+          <strong
+            >На распределительных подстанциях (более 400) и трансформаторных
+            подстанциях (более 4000), что составляет порядка 75-80% всех
+            действующих подстанций Санкт-Петербурга на период 2014 года
+            проложено более 500 тыс. км. кабеля 0,4-10 кВ, а на квартальных
+            котельных (более 50 тыс. км.)</strong
+          >
         </p>
       </div>
     </div>
@@ -167,17 +195,15 @@
 <script setup>
 import UiSection from "src/components/UiSection.vue";
 import UiSectionTitle from "src/components/UiSectionTitle.vue";
+import ListIcon from "src/components/icons/ListIcon.vue";
 
-const sectionTitle = 'История "ООО ЭЛЕКТРОМОНТАЖ 55"';
+const sectionTitle = 'История "ООО ЭЛЕКТРОМОНТАЖ"';
 </script>
 
 <style scoped>
-.history__section {
-  width: 100%;
-}
-
 .container {
   display: flex;
+  justify-content: space-between;
 }
 
 .left-side {
@@ -188,7 +214,8 @@ const sectionTitle = 'История "ООО ЭЛЕКТРОМОНТАЖ 55"';
 
 .right-side {
   width: 55%;
-  padding-right: 40px;
+  padding-right: 0px;
+  padding-left: 10px;
 }
 
 .text {
@@ -196,7 +223,6 @@ const sectionTitle = 'История "ООО ЭЛЕКТРОМОНТАЖ 55"';
   font-size: clamp(1.1rem, 1vw, 1.2rem);
   font-family: Montserrat-regular, serif;
   line-height: 30px;
-  text-align: justify;
 }
 
 .small {
@@ -207,6 +233,21 @@ const sectionTitle = 'История "ООО ЭЛЕКТРОМОНТАЖ 55"';
 .bold {
   text-align: left;
   text-indent: 0px;
+}
+.picture__container {
+  margin: 0 auto;
+}
+.picture {
+  object-fit: cover;
+  border-radius: 8px;
+}
+li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.icon {
+  min-width: 20px;
 }
 
 @media (max-width: 768px) {

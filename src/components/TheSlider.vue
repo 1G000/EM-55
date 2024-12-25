@@ -37,6 +37,7 @@
                 :key="buttonIndex"
                 :class="button.style"
                 ref="button"
+                :href="button.href"
                 v-on="{
                   mousemove: supportsHover
                     ? handleMouseMove.bind(_, buttonIndex)

@@ -19,25 +19,25 @@
         </q-item-section>
       </q-item>
 
-      <q-item clickable v-ripple>
+      <q-item clickable v-ripple to="/sorry">
         <q-item-section class="footer__content-top-item">
           Продукция
         </q-item-section>
       </q-item>
 
-      <q-item clickable v-ripple>
+      <q-item clickable v-ripple to="/sorry">
         <q-item-section class="footer__content-top-item">
           Услуги
         </q-item-section>
       </q-item>
 
-      <q-item clickable v-ripple>
+      <q-item clickable v-ripple to="/sorry">
         <q-item-section class="footer__content-top-item">
           Деятельность
         </q-item-section>
       </q-item>
 
-      <q-item clickable v-ripple>
+      <q-item clickable v-ripple to="/sorry">
         <q-item-section class="footer__content-top-item">
           Вакансии
         </q-item-section>
