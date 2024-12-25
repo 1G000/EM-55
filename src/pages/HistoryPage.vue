@@ -254,10 +254,13 @@ li {
   .container {
     flex-direction: column;
   }
+  .content__wrapper {
+    padding: 64px 10px 0 10px;
+  }
 
   .left-side {
     width: 100%;
-    padding-right: 40px;
+    padding-left: 0px;
   }
 
   .right-side {
