@@ -7,9 +7,15 @@
     </q-avatar>
 
     <q-list dense padding class="flex text-white footer__content-top">
-      <q-item clickable v-ripple>
+      <q-item clickable v-ripple to="/about">
         <q-item-section class="footer__content-top-item">
           О компании
+        </q-item-section>
+      </q-item>
+
+      <q-item clickable v-ripple to="/history">
+        <q-item-section class="footer__content-top-item">
+          История
         </q-item-section>
       </q-item>
 
@@ -24,6 +30,7 @@
           Услуги
         </q-item-section>
       </q-item>
+
       <q-item clickable v-ripple>
         <q-item-section class="footer__content-top-item">
           Деятельность
@@ -101,6 +108,7 @@
   transition: 0.3s linear;
 }
 .footer__content-top-item {
+  color: white;
   transition: 0.3s linear;
 }
 @media (hover: hover) {

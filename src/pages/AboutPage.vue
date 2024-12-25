@@ -40,7 +40,7 @@ const data = {
     },
     {
       id: 2,
-      text: "<span style='font-weight: bold;'>С&nbsp;уважением,&nbsp;Евгений&nbsp;Селин, Руководитель&nbsp;группы&nbsp;компаний&nbsp;«ГРАНИТ», Генеральный&nbsp;директор&nbsp;«Электромонтаж-55»</span>",
+      text: "<span class='sincerely' style='font-weight: bold;'>С&nbsp;уважением,&nbsp;Евгений&nbsp;Селин, Руководитель&nbsp;группы&nbsp;компаний&nbsp;«ГРАНИТ», Генеральный&nbsp;директор&nbsp;«Электромонтаж-55»</span>",
     },
     {
       id: 3,
@@ -185,6 +185,7 @@ const data = {
     padding: 0;
   }
 }
+
 @media (max-width: 970px) {
   .content__bottom {
     flex-wrap: wrap;
@@ -206,6 +207,24 @@ const data = {
     align-items: center;
     justify-content: center;
     text-align: center;
+  }
+}
+@media (max-width: 768px) {
+  .content__bottom-left {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding-right: 0px;
+  }
+  .content__quote-wrapper {
+    width: 100%;
+  }
+
+  .picture__container {
+    width: 300px;
+  }
+  img {
+    width: 300px;
   }
 }
 </style>
