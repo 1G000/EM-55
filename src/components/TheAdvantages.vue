@@ -65,9 +65,10 @@ import UiSection from "./UiSection.vue";
 .advantage__item {
   display: flex;
   gap: 30px;
-  max-width: 555px;
+  max-width: 496px;
   min-width: 300px;
   flex-grow: 1;
+  /* align-items: self-start; */
 }
 
 .advantage__ico {
@@ -82,32 +83,25 @@ import UiSection from "./UiSection.vue";
   gap: 10px;
 }
 .advantage__title {
-  font-size: clamp(1rem, 1vw, 1.1rem);
+  font-size: clamp(1rem, 1.1vw, 1.1rem);
   font-family: Montserrat-bold, serif;
   line-height: 20px;
 }
 .advantage__text {
   font-family: Montserrat-regular, serif;
-  font-size: clamp(0.9rem, 1vw, 1rem);
+  font-size: clamp(0.9rem, 1.1vw, 1rem);
   padding-bottom: 0;
 }
 
 .advantage__ico {
   min-width: 70px;
 }
-@media (max-width: 1725px) {
-  .advantage__item {
-    max-width: 506px;
-  }
-}
 
 @media (max-width: 1284px) {
   .advantage__item {
     max-width: 336px;
   }
-  .advantage__item:nth-child(1) {
-    max-width: 310px;
-  }
+
   .advantages__items {
     justify-content: space-between;
     padding: 15px 25px;
@@ -117,37 +111,19 @@ import UiSection from "./UiSection.vue";
   }
 }
 
-@media screen and (max-width: 1110px) {
+@media screen and (max-width: 1285px) {
   .advantages__section {
     height: 205px;
   }
-  /* .advantages__items {
-    flex-direction: column;
-    height: auto;
-    width: 100%;
-    max-width: 100%;
-    align-items: start;
-    max-width: 607px;
-    padding: 20px;
-    gap: 10;
-  } */
   .advantages__items {
     align-items: start;
   }
-  .advantage__item,
-  .advantage__item:nth-child(1) {
+  .advantage__item {
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 207px;
+    max-width: 350px;
     min-width: 0;
-  }
-  .advantage__item:nth-child(3) {
-    min-width: 200px;
-    max-width: 247px;
-  }
-  .advantage__item:nth-child(1) .advantage__text-content {
-    max-width: 223px;
   }
   .advantage__text-content {
     text-align: center;
@@ -156,12 +132,19 @@ import UiSection from "./UiSection.vue";
     height: 50px;
   }
 }
-@media (max-width: 830px) {
+@media (max-width: 960px) {
   .advantages__items {
     padding: 15px 10px;
   }
+  .advantage__item,
+  .advantage__item:nth-child(1) {
+    max-width: 235px;
+  }
+  .advantage__item:nth-child(3) {
+    max-width: 258px;
+  }
 }
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 845px) {
   .advantages__section {
     height: auto;
   }
@@ -171,12 +154,13 @@ import UiSection from "./UiSection.vue";
     width: 100%;
     max-width: 100%;
     align-items: start;
-    max-width: 607px;
+    max-width: 645px;
     padding: 20px;
-    gap: 10;
+    gap: 40px;
   }
   .advantage__item,
-  .advantage__item:nth-child(1) {
+  .advantage__item:nth-child(1),
+  .advantage__item:nth-child(3) {
     flex-direction: row;
     align-items: center;
     max-width: 100%;
@@ -192,6 +176,11 @@ import UiSection from "./UiSection.vue";
 @media (max-width: 500px) {
   .advantages__items {
     gap: 30px;
+  }
+}
+@media (max-width: 350px) {
+  .advantage__text {
+    font-size: 12px;
   }
 }
 </style>

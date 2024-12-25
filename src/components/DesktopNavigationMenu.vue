@@ -107,7 +107,7 @@ defineProps({
 }
 .submenu-item {
   font-family: Montserrat-regular, serif;
-  font-size: clamp(0.9rem, 2vw, 1.1rem);
+  font-size: clamp(0.9rem, 1.7vw, 1rem);
   font-weight: 500;
   padding: 10px 12px !important;
 }

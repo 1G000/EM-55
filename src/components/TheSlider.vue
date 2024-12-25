@@ -216,7 +216,7 @@ const selectedImgSrc = computed(() => (slide) => {
     cursor: pointer;
   }
 }
-@media screen and (max-width: 1110px) {
+@media screen and (max-width: 1285px) {
   .q-carousel {
     height: calc(100vh - 205px - 80px - 40px);
   }
@@ -258,7 +258,7 @@ const selectedImgSrc = computed(() => (slide) => {
     height: calc(100vh - 80px);
   }
   :deep(.q-carousel__navigation) {
-    bottom: 60px;
+    bottom: 80px;
   }
 }
 @media screen and (max-width: 430px) {

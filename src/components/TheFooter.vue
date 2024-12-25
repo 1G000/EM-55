@@ -6,7 +6,6 @@
       <img width="217px" height="103px" src="../assets/logo-white.png" />
     </q-avatar>
 
-    <!-- <div class="footer__content"> -->
     <q-list dense padding class="flex text-white footer__content-top">
       <q-item clickable v-ripple>
         <q-item-section class="footer__content-top-item">
@@ -47,7 +46,6 @@
         >Политика конфиденциальности</q-item-section
       >
     </div>
-    <!-- </div> -->
   </footer>
 </template>
 
