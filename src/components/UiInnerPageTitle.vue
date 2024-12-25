@@ -12,7 +12,6 @@ defineProps({
   </h2>
 </template>
 
-
 <style scoped>
 .inner__title {
   align-self: flex-start;
