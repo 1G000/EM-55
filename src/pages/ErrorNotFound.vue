@@ -1,14 +1,21 @@
 <template>
-  <div class="fullscreen text-center q-pa-md flex flex-center text">
-    <div>
-      <div style="font-size: 30vh">404</div>
-
-      <div class="text-h2" style="opacity: 0.4">
-        Извините, сайт находится в разработке<br />
-        Информация скоро появится
-      </div>
-
-      <q-btn class="q-mt-xl btn" unelevated to="/" label="На главную" no-caps />
+  <div class="q-pa-md">
+    <div class="row items-start q-gutter-md">
+      <q-card flat class="col">
+        <q-responsive :ratio="16 / 9">
+          <q-card-section class="border-radius-none flex flex-center">
+            <q-item class="page404__wrapper">
+              <q-item-section>
+                <q-item-label class="page404__text"
+                  >Потерпите немного, скоро здесь будет красиво :)</q-item-label
+                >
+              </q-item-section>
+              <img src="/Images/500.jpg" />
+              <q-btn class="btn" unelevated to="/" label="На главную" no-caps />
+            </q-item>
+          </q-card-section>
+        </q-responsive>
+      </q-card>
     </div>
   </div>
 </template>
@@ -20,7 +27,15 @@ defineOptions({
 </script>
 
 <style scoped>
-.text {
+.page404__wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.page404__text {
+  text-align: center;
+  font-size: clamp(1.1rem, 1vw, 1.2rem);
+  font-family: Montserrat-bold, serif;
   color: var(--q-primary);
 }
 

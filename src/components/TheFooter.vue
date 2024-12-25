@@ -1,4 +1,14 @@
-<script setup></script>
+<script setup>
+const props = defineProps({
+  scrollToAnchor: {
+    type: Function,
+    required: true,
+  },
+});
+const handleScroll = (nameOfSection) => {
+  props.scrollToAnchor(nameOfSection);
+};
+</script>
 
 <template>
   <footer class="footer">
@@ -19,13 +29,13 @@
         </q-item-section>
       </q-item>
 
-      <q-item clickable v-ripple to="/sorry">
+      <q-item clickable v-ripple @click="handleScroll('product')">
         <q-item-section class="footer__content-top-item">
           Продукция
         </q-item-section>
       </q-item>
 
-      <q-item clickable v-ripple to="/sorry">
+      <q-item clickable v-ripple @click="handleScroll('service')">
         <q-item-section class="footer__content-top-item">
           Услуги
         </q-item-section>

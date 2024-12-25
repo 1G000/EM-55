@@ -62,50 +62,9 @@ const sectionTitle = "Контакты";
                 194223, г. СПб, проспект Тореза, д. 44, корп. 2, лит. А, п. 12Н
               </a>
             </div>
-            <!-- <div>
-              <h6 class="heading__six">Почтовый адрес:</h6>
-              <a
-                class="contact__text"
-                :href="`https://yandex.ru/maps/?mode=search&text=${encodeURIComponent(
-                  '194223, г. СПб, проспект Тореза, д. 44, корп. 2, лит. А, п. 12Н'
-                )}`"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                194223, г. СПб, проспект Тореза, д. 44, корп. 2, лит. А, п. 12Н
-              </a>
-            </div>
-            <div>
-              <h6 class="heading__six">Фактический адрес:</h6>
-
-              <a
-                class="contact__text"
-                :href="`https://yandex.ru/maps/?mode=search&text=${encodeURIComponent(
-                  '194223, г. СПб, проспект Тореза, д. 44, корп. 2, лит. А, п. 12Н'
-                )}`"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                194223, г. СПб, проспект Тореза, д. 44, корп. 2, лит. А, п. 12Н
-              </a>
-            </div>
-            <div>
-              <h6 class="heading__six">Юридический адрес:</h6>
-
-              <a
-                class="contact__text"
-                :href="`https://yandex.ru/maps/?mode=search&text=${encodeURIComponent(
-                  '194223, г. СПб, проспект Тореза, д. 44, корп. 2, лит. А, п. 12Н'
-                )}`"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                194223, г. СПб, проспект Тореза, д. 44, корп. 2, лит. А, п. 12Н
-              </a>
-            </div> -->
           </div>
           <div class="text__content-section">
-            <h5 class="heading__five">Завод «ЭЛЕКТРОМОНТАЖ-55»</h5>
+            <h5 class="heading__five">Завод «ЭЛЕКТРОМОНТАЖ 55»</h5>
             <div>
               <h6 class="heading__six">Режим работы:</h6>
               <p class="green__text">
@@ -150,50 +109,6 @@ const sectionTitle = "Контакты";
               >
             </div>
           </div>
-
-          <!-- <div class="contacts__section-info"> -->
-          <!-- <div class="contacts__section-info-item">
-            <span class="item">Режим работы:</span
-            ><span>Пн-Пт: 8:00 - 18:00 Сб-Вс: выходные</span>
-          </div>
-        </div>
-        <div class="contacts__section-info-item">
-          <span class="item">Почтовый адрес: </span
-          ><span class="value"
-            >194223, г. Санкт-Петербург,проспект Тореза, д. 44, корп. 2, лит. А,
-            п. 12Н</span
-          >
-        </div>
-        <div class="contacts__section-info-item">
-          <span class="item">Фактический адрес:</span
-          ><span class="value"
-            >194223,г. Санкт-Петербург, проспект Тореза, д. 44, корп. 2, лит. А,
-            п. 12Н</span
-          >
-        </div>
-
-        <div class="contacts__section-info-item">
-          <span class="item">Юридический адрес: </span
-          ><span class="value">
-            194223, г. Санкт-Петербург,проспект Тореза, д. 44, корп. 2, лит. А,
-            п. 12Н</span
-          >
-        </div>
-
-        <div class="contacts__section-info-item">
-          <span class="item">Производство: </span
-          ><span class="value">
-            197183, г. Санкт-Петербург, Полевая Сабировская ул, д. 46 литера К
-          </span>
-        </div>
-
-        <div class="contacts__section-info-item">
-          <span class="item">Производственно-ремонтная база: </span
-          ><span class="value">
-            188641, Ленинградская область, Всеволожский район, поселок
-            Ковалево, производственная зона "Ковалево"
-          </span>
-        </div> -->
         </div>
         <button class="btn">Написать нам</button>
       </div>

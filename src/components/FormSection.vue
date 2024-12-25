@@ -200,8 +200,8 @@ const resetForm = () => {
   line-height: 21.6px;
   transition: 0.3s linear;
 }
-.q-btn.form__button:hover {
-  color: var(--q-secondary);
+.form__button:hover {
+  color: var(--q-accent) !important;
 }
 @media screen and (max-width: 767px) {
   .form-section__content {

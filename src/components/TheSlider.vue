@@ -1,60 +1,3 @@
-<template>
-  <div class="q-md">
-    <q-carousel
-      animated
-      v-model="slide"
-      transition-prev="slide-right"
-      transition-next="slide-left"
-      infinite
-      :autoplay-speed="5000"
-      control-color="secondary"
-      swipeable
-      navigation
-    >
-      <q-carousel-slide
-        v-for="(slideData, index) in slideData"
-        :key="index"
-        :name="index + 1"
-        class="slide"
-        :img-src="selectedImgSrc(slideData)"
-      >
-        <div class="carousel-wrapper">
-          <div class="text-overlay">
-            <div class="text-overlay__text">
-              <h2 class="slide__title" v-html="slideData.title"></h2>
-              <h3 class="slide__subtitle" v-html="slideData.subtitle"></h3>
-              <span
-                class="slide__textcontent"
-                v-html="slideData.textcontent"
-              ></span>
-            </div>
-            <div
-              v-if="slideData.buttons && slideData.buttons.length > 0"
-              class="buttons__container"
-            >
-              <q-btn
-                v-for="(button, buttonIndex) in slideData.buttons"
-                :key="buttonIndex"
-                :class="button.style"
-                ref="button"
-                :href="button.href"
-                v-on="{
-                  mousemove: supportsHover
-                    ? handleMouseMove.bind(_, buttonIndex)
-                    : null,
-                  mouseleave: supportsHover ? handleMouseLeave : null,
-                }"
-              >
-                {{ button.btnTitle }}
-              </q-btn>
-            </div>
-          </div>
-        </div>
-      </q-carousel-slide>
-    </q-carousel>
-  </div>
-</template>
-
 <script setup>
 import { ref, onMounted, computed } from "vue";
 
@@ -101,7 +44,73 @@ const handleMouseLeave = (event) => {
 const selectedImgSrc = computed(() => (slide) => {
   return window.innerWidth < 430 ? slide.imgSmallSrc : slide.imgSrc;
 });
+const props = defineProps({
+  scrollToAnchor: {
+    type: Function,
+    required: true,
+  },
+});
+const handleScroll = (nameOfSection) => {
+  props.scrollToAnchor(nameOfSection);
+};
 </script>
+<template>
+  <div class="q-md">
+    <q-carousel
+      animated
+      v-model="slide"
+      transition-prev="slide-right"
+      transition-next="slide-left"
+      infinite
+      :autoplay-speed="5000"
+      control-color="secondary"
+      swipeable
+      navigation
+    >
+      <q-carousel-slide
+        v-for="(slideData, index) in slideData"
+        :key="index"
+        :name="index + 1"
+        class="slide"
+        :img-src="selectedImgSrc(slideData)"
+      >
+        <div class="carousel-wrapper">
+          <div class="text-overlay">
+            <div class="text-overlay__text">
+              <h2 class="slide__title" v-html="slideData.title"></h2>
+              <h3 class="slide__subtitle" v-html="slideData.subtitle"></h3>
+              <span
+                class="slide__textcontent"
+                v-html="slideData.textcontent"
+              ></span>
+            </div>
+            <div
+              v-if="slideData.buttons && slideData.buttons.length > 0"
+              class="buttons__container"
+            >
+              <q-btn
+                v-for="(button, buttonIndex) in slideData.buttons"
+                :key="buttonIndex"
+                :class="button.style"
+                ref="button"
+                @click="handleScroll('form')"
+                :href="button.href"
+                v-on="{
+                  mousemove: supportsHover
+                    ? handleMouseMove.bind(_, buttonIndex)
+                    : null,
+                  mouseleave: supportsHover ? handleMouseLeave : null,
+                }"
+              >
+                {{ button.btnTitle }}
+              </q-btn>
+            </div>
+          </div>
+        </div>
+      </q-carousel-slide>
+    </q-carousel>
+  </div>
+</template>
 
 <style scoped>
 .q-md {
