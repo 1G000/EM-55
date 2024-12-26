@@ -17,7 +17,7 @@ const sectionTitle = "Строительно-монтажные работы";
       <q-img src="/Images/Gallery/2.png"> </q-img>
     </div>
     <div class="col-6">
-      <q-img src="/Images/Gallery/2.png"> </q-img>
+      <q-img src="/Images/Gallery/3.png"> </q-img>
     </div>
   </UiSection>
 </template>
