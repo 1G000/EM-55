@@ -130,8 +130,8 @@ const sectionTitle = "Контакты";
 .map__section {
   display: flex;
   width: 100%;
-  padding-left: 0px;
-  padding-right: 0px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 .map__content-wrapper {
   display: flex;

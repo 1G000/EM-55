@@ -75,7 +75,13 @@ const downloadFile = (url) => {
         </q-btn-dropdown>
       </template>
       <template v-else>
-        <q-btn square fab class="navigation__button" :label="item.label" />
+        <q-btn
+          square
+          fab
+          class="navigation__button"
+          :label="item.label"
+          :to="item.href"
+        />
       </template>
     </div>
   </div>

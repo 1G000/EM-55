@@ -18,7 +18,7 @@
         },
         {
           "title": "Галерея",
-          "href": "/sorry",
+          "href": "/gallery",
           "thirdLevel": false,
           "expandedSecondLevel": false,
           "thirdLevelItems": [
@@ -116,11 +116,10 @@
     },
     {
       "label": "Деятельность",
-      "href": "/sorry",
       "secondLevel": true,
       "expandedFirstLevel": false,
       "secondLevelItems": [
-        { "title": "СМР", "thirdLevel": false, "href": "/sorry" },
+        { "title": "СМР", "thirdLevel": false, "href": "/smr" },
         { "title": "ПИР", "thirdLevel": false, "href": "/sorry" },
         { "title": "КЛЮЧ", "thirdLevel": false, "href": "/sorry" }
       ]

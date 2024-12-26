@@ -1,5 +1,6 @@
 <script setup>
 import { ref, reactive } from "vue";
+import { downloadFile } from "src/composobles/downloadFile";
 
 const props = defineProps({
   label: {
@@ -18,11 +19,12 @@ const props = defineProps({
 const expanded = ref(false);
 const secondLevelItemsCopy = reactive(props.secondLevelItems);
 
-const closeAllExpansions = () => {
+const closeAllExpansions = (url) => {
   // expanded.value = false;
   secondLevelItemsCopy.forEach((item) => {
     item.expandedSecondLevel = false;
   });
+  downloadFile(url);
 };
 </script>
 
@@ -60,12 +62,12 @@ const closeAllExpansions = () => {
         expand-icon-class="text-black"
       >
         <q-card
-          v-for="(thirdLevelItem, index) in item.thirdLevelItems"
+          v-for="thirdLevelItem in item.thirdLevelItems"
           :key="thirdLevelItem.title"
           class="q-pl-lg bg-white"
         >
           <q-card-section
-            @click="closeAllExpansions(index)"
+            @click="closeAllExpansions(thirdLevelItem.href)"
             class="subtext-hover cursor-pointer"
           >
             {{ thirdLevelItem.title }}

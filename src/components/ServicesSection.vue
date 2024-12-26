@@ -10,16 +10,17 @@ const sectionTitle = "Услуги";
 const services = [
   {
     title: "Ремонт кабельных линий напряжением 0,4/6/10 кВт",
-    imgSrc: "./Images/Services/1.webp",
+    imgSrc: "./Images/Services/31.jpg",
+  },
+
+  {
+    title: "Электромонтажные работы любой сложности",
+    imgSrc: "./Images/Services/3.png",
   },
   {
     title:
       "Поиск места повреждения на кабельных линиях напряжением 0,4/6/10 кВт",
     imgSrc: "./Images/Services/2.webp",
-  },
-  {
-    title: "Электромонтажные работы любой сложности",
-    imgSrc: "./Images/Services/3.webp",
   },
   {
     title: "Восстановление нарушенного благоустройства",
