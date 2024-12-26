@@ -7,11 +7,15 @@
       "subtitle": "Коллектив организации Электромонтаж&nbsp;55 от&nbsp;души поздравляет Вас&nbsp;с&nbsp;Новым годом и&nbsp;Рождеством!",
       "textcontent": "На&nbsp;протяжении 30&nbsp;лет мы изготавливаем электротехническое оборудование и&nbsp;выполняем все&nbsp;виды электромонтажных работ",
       "buttons": [
-        { "btnTitle": "Написать нам", "style": "btn__left" },
+        {
+          "btnTitle": "Написать нам",
+          "style": "btn__left",
+          "to": { "path": "/", "hash": "#form" }
+        },
         {
           "btnTitle": "О компании",
           "style": "btn__right",
-          "href": "/#/about"
+          "to": { "path": "/about" }
         }
       ]
     },
@@ -22,11 +26,15 @@
       "subtitle": "Выполняем все&nbsp;виды электромонтажных работ",
       "textcontent": "Ремонт кабельных линий напряжением 0,4кВ - 10кВ, поиск места повреждения&nbsp;КЛ, все&nbsp;виды испытаний, восстановление нарушенного благоустройства ",
       "buttons": [
-        { "btnTitle": "Услуги", "style": "btn__left" },
+        {
+          "btnTitle": "Услуги",
+          "style": "btn__left",
+          "to": { "path": "/", "hash": "#service" }
+        },
         {
           "btnTitle": "О компании",
           "style": "btn__right",
-          "href": "/#/about"
+          "to": { "path": "/about" }
         }
       ]
     },
@@ -37,8 +45,16 @@
       "subtitle": "Производим электрооборудование напряжением 0,4кВ - 10кВ",
       "textcontent": "Изготавливаем БКТП, КТПН, КСО, УВР, ГРЩ&nbsp;под&nbsp;Ваши нужды ",
       "buttons": [
-        { "btnTitle": "Оборудование", "style": "btn__left" },
-        { "btnTitle": "О компании", "style": "btn__right", "href": "/#/about" }
+        {
+          "btnTitle": "Продукция",
+          "style": "btn__left",
+          "to": { "path": "/", "hash": "#production" }
+        },
+        {
+          "btnTitle": "О компании",
+          "style": "btn__right",
+          "to": { "path": "/about" }
+        }
       ]
     }
   ]
