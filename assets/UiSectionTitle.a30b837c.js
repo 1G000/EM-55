@@ -1,1 +1,0 @@
-import{_ as e}from"./plugin-vue_export-helper.b84bce0f.js";import{F as _,I as i,M as o}from"./index.1e85c33f.js";const s={class:"section__title"},c={__name:"UiSectionTitle",props:{titleText:{type:String}},setup(t){return(r,a)=>(_(),i("h2",s,o(t.titleText),1))}};var p=e(c,[["__scopeId","data-v-fb402156"]]);export{p as U};
