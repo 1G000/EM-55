@@ -10,7 +10,7 @@
                   >Потерпите немного, скоро здесь будет красиво :)</q-item-label
                 >
               </q-item-section>
-              <img src="/Images/500.jpg" />
+              <img src="../assets/500.jpg" />
               <q-btn class="btn" unelevated to="/" label="На главную" no-caps />
             </q-item>
           </q-card-section>
