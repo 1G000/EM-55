@@ -166,7 +166,17 @@ const complex = {
       </div>
       <p class="complex__text-long">{{ complex.sectionTextSecond }}</p>
     </div>
-    <button class="btn">Заказать оборудование</button>
+    <div class="complex__button-wrapper">
+      <q-btn
+        unelevated
+        style="width: 350px"
+        class="complex__button"
+        color="primary"
+        :to="{ path: '/', hash: '#form' }"
+      >
+        Заказать оборудование
+      </q-btn>
+    </div>
   </UiSection>
 </template>
 
@@ -187,7 +197,24 @@ const complex = {
   align-self: center;
   gap: 30px;
 }
-
+.complex__button-wrapper {
+  display: flex;
+  justify-content: center;
+}
+.complex__button {
+  width: 350px;
+  height: 60px;
+  text-transform: none;
+  border-radius: 8px;
+  font-family: Montserrat-bold, serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 21.6px;
+  transition: 0.3s linear;
+}
+.complex__button:hover {
+  color: var(--q-accent) !important;
+}
 @media screen and (max-width: 1170px) {
   .complex__container {
     grid-template-columns: repeat(2, 1fr);

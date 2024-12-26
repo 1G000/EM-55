@@ -28,7 +28,7 @@ const services = [
 ];
 </script>
 <template>
-  <UiSection :margin="`0 20px`">
+  <UiSection :margin="`0 20px`" id="service">
     <UiSectionTitle :title-text="sectionTitle" />
     <div class="service-card__container">
       <ProductCard
@@ -40,8 +40,6 @@ const services = [
     </div>
   </UiSection>
 </template>
-
-
 
 <style scoped>
 .service-card__container {

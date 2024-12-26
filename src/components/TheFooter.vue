@@ -1,14 +1,4 @@
-<script setup>
-const props = defineProps({
-  scrollToAnchor: {
-    type: Function,
-    required: true,
-  },
-});
-const handleScroll = (nameOfSection) => {
-  props.scrollToAnchor(nameOfSection);
-};
-</script>
+<script setup></script>
 
 <template>
   <footer class="footer">
@@ -29,13 +19,13 @@ const handleScroll = (nameOfSection) => {
         </q-item-section>
       </q-item>
 
-      <q-item clickable v-ripple @click="handleScroll('product')">
+      <q-item clickable v-ripple :to="{ path: '/', hash: '#production' }">
         <q-item-section class="footer__content-top-item">
           Продукция
         </q-item-section>
       </q-item>
 
-      <q-item clickable v-ripple @click="handleScroll('service')">
+      <q-item clickable v-ripple :to="{ path: '/', hash: '#service' }">
         <q-item-section class="footer__content-top-item">
           Услуги
         </q-item-section>
@@ -156,7 +146,7 @@ const handleScroll = (nameOfSection) => {
 @media (max-width: 500px) {
   .footer {
     padding: 20px 20px 40px 20px;
-    gap: 0;
+    column-gap: 0;
   }
 }
 @media (max-width: 400px) {
@@ -168,10 +158,10 @@ const handleScroll = (nameOfSection) => {
     width: 250px;
   }
 }
-/* @media (max-width: 360px) {
+@media (max-width: 360px) {
   .footer__logo {
     width: 140px;
     height: auto;
   }
-} */
+}
 </style>

@@ -69,7 +69,7 @@ const data = {
       <q-item class="content__bottom-left q-pl-none">
         <picture class="picture__container"
           ><img
-            src="Images/Contacts/selin.png"
+            src="Images/Contacts/selin.jpg"
             alt="картинка"
             class="picture"
           />

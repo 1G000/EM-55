@@ -110,7 +110,17 @@ const sectionTitle = "Контакты";
             </div>
           </div>
         </div>
-        <button class="btn">Написать нам</button>
+        <div class="contact__button-wrapper">
+          <q-btn
+            unelevated
+            style="width: 350px"
+            class="contact__button"
+            color="primary"
+            :to="{ path: '/', hash: '#form' }"
+          >
+            Написать нам
+          </q-btn>
+        </div>
       </div>
     </div>
   </UiSection>
@@ -244,7 +254,24 @@ const sectionTitle = "Контакты";
 .item {
   width: 35%;
 }
-
+.contact__button-wrapper {
+  display: flex;
+  justify-content: center;
+}
+.contact__button {
+  width: 350px;
+  height: 60px;
+  text-transform: none;
+  border-radius: 8px;
+  font-family: Montserrat-bold, serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 21.6px;
+  transition: 0.3s linear;
+}
+.contact__button:hover {
+  color: var(--q-accent) !important;
+}
 @media screen and (max-width: 1620px) {
   .map__section-map {
     width: 50%;

@@ -28,6 +28,7 @@ const resetForm = () => {
 <template>
   <UiSection
     class="form-section"
+    id="form"
     :style="
       $q.screen.width > 767
         ? { background: sectionBackground }

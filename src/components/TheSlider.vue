@@ -44,15 +44,6 @@ const handleMouseLeave = (event) => {
 const selectedImgSrc = computed(() => (slide) => {
   return window.innerWidth < 430 ? slide.imgSmallSrc : slide.imgSrc;
 });
-const props = defineProps({
-  scrollToAnchor: {
-    type: Function,
-    required: true,
-  },
-});
-const handleScroll = (nameOfSection) => {
-  props.scrollToAnchor(nameOfSection);
-};
 </script>
 <template>
   <div class="q-md">
@@ -93,8 +84,7 @@ const handleScroll = (nameOfSection) => {
                 :key="buttonIndex"
                 :class="button.style"
                 ref="button"
-                @click="handleScroll('form')"
-                :href="button.href"
+                :to="button.to"
                 v-on="{
                   mousemove: supportsHover
                     ? handleMouseMove.bind(_, buttonIndex)
@@ -161,7 +151,7 @@ const handleScroll = (nameOfSection) => {
 .slide__subtitle {
   font-family: Montserrat-regular, serif;
   font-weight: 500;
-  font-size: 28px;
+  font-size: 25px;
   line-height: 1.2em;
   color: white;
 }
@@ -191,7 +181,6 @@ const handleScroll = (nameOfSection) => {
   width: 222px;
   height: 56px;
   border-radius: 8px;
-  padding: 10px 40px;
   transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
@@ -202,12 +191,7 @@ const handleScroll = (nameOfSection) => {
   width: 222px;
   height: 56px;
   border-radius: 8px;
-  padding: 10px 40px;
   transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
-}
-
-.slider__switcher {
-  border-radius: 8px;
 }
 
 :deep(.q-carousel__navigation) {
@@ -219,11 +203,6 @@ const handleScroll = (nameOfSection) => {
     border: none;
     color: #86002a;
     background-color: #e5c696;
-  }
-
-  .btn__right:hover,
-  .btn__left:hover {
-    cursor: pointer;
   }
 }
 @media screen and (max-width: 1285px) {

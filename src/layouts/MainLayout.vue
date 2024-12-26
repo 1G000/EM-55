@@ -6,18 +6,9 @@ defineOptions({
 import TheHeader from "src/components/TheHeader.vue";
 import TheFooter from "src/components/TheFooter.vue";
 
-import { ref, onMounted, provide } from "vue";
+import { ref, onMounted } from "vue";
 
 const navItems = ref(null);
-const scrollToRef = ref(null);
-
-provide("scrollToRef", scrollToRef);
-
-const scrollToAnchor = (section) => {
-  if (scrollToRef.value) {
-    scrollToRef.value(section);
-  }
-};
 
 onMounted(async () => {
   try {
@@ -39,7 +30,7 @@ onMounted(async () => {
     <main class="main">
       <router-view />
     </main>
-    <TheFooter :scrollToAnchor="scrollToAnchor" />
+    <TheFooter />
   </q-layout>
 </template>
 
