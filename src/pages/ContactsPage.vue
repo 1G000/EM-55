@@ -44,7 +44,7 @@ onMounted(async () => {
   justify-content: center;
   max-width: 1920px;
   width: 100%;
-  padding: 20px 20px;
+  padding: 0 40px 20px 40px;
   gap: 40px;
 }
 
@@ -61,6 +61,9 @@ onMounted(async () => {
 @media screen and (max-width: 500px) {
   .page__title {
     font-size: 14px;
+  }
+  .container {
+    padding: 0 20px 20px 20px;
   }
 }
 </style>

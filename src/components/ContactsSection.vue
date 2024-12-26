@@ -5,7 +5,7 @@ const sectionTitle = "Контакты";
 </script>
 
 <template>
-  <UiSection :padding="`0 20px`" class="map__section">
+  <UiSection :padding="`64px 0px`" class="map__section">
     <UiSectionTitle :title-text="sectionTitle" />
     <div class="map__content-wrapper">
       <div class="map__section-map">
@@ -130,6 +130,8 @@ const sectionTitle = "Контакты";
 .map__section {
   display: flex;
   width: 100%;
+  padding-left: 0px;
+  padding-right: 0px;
 }
 .map__content-wrapper {
   display: flex;

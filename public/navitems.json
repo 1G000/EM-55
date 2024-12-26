@@ -19,7 +19,6 @@
         {
           "title": "Галерея",
           "href": "/sorry",
-
           "thirdLevel": false,
           "expandedSecondLevel": false,
           "thirdLevelItems": [
@@ -54,7 +53,14 @@
       "secondLevel": true,
       "expandedFirstLevel": false,
       "secondLevelItems": [
-        { "title": "Каталоги", "thirdLevel": false, "href": "/sorry" },
+        {
+          "title": "Каталоги",
+          "thirdLevel": true,
+          "thirdLevelItems": [
+            { "title": "Каталог 1", "href": "./Catalog/catalog_1.pdf" },
+            { "title": "Каталог 2", "href": "./Catalog/catalog_2.pdf" }
+          ]
+        },
         { "title": "Сертификаты", "thirdLevel": false, "href": "/sorry" },
         { "title": "Опросные листы", "thirdLevel": false, "href": "/sorry" },
         { "title": "Сроки поставки", "thirdLevel": false, "href": "/sorry" },
@@ -102,7 +108,12 @@
         { "title": "Аренда спецтехники", "thirdLevel": false, "href": "/sorry" }
       ]
     },
-    { "label": "Вакансии", "expandedFirstLevel": false, "secondLevel": false },
+    {
+      "label": "Вакансии",
+      "href": "/sorry",
+      "expandedFirstLevel": false,
+      "secondLevel": false
+    },
     {
       "label": "Деятельность",
       "href": "/sorry",

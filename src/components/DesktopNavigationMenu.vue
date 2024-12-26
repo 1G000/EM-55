@@ -5,6 +5,10 @@ defineProps({
     require: true,
   },
 });
+
+const downloadFile = (url) => {
+  window.location.href = url;
+};
 </script>
 
 <template>
@@ -43,9 +47,10 @@ defineProps({
                       dense
                       clickable
                       class="bg-primary text-white q-px-auto q-py-md submenu-item"
+                      @click="downloadFile(level.href)"
                     >
                       <q-item-section>{{ level.title }}</q-item-section>
-                      <q-item-section side>
+                      <!-- <q-item-section side>
                         <q-icon name="keyboard_arrow_right" color="white" />
                       </q-item-section>
                       <q-menu auto-close anchor="top end" self="top start">
@@ -60,7 +65,7 @@ defineProps({
                             <q-item-section>Четвертый уровень</q-item-section>
                           </q-item>
                         </q-list>
-                      </q-menu>
+                      </q-menu> -->
                     </q-item>
                   </q-list>
                 </q-menu>

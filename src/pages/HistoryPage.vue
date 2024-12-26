@@ -36,7 +36,7 @@
           </q-timeline-entry>
 
           <q-timeline-entry
-            title="Восстановление треста в составе Главэлектромонтажа"
+            title="Восстановление треста в составе «Главэлектромонтажа»"
             subtitle="18 Мая 1954 года"
             side="left"
             icon="done_all"
@@ -204,7 +204,7 @@ import UiSection from "src/components/UiSection.vue";
 import UiSectionTitle from "src/components/UiSectionTitle.vue";
 import ListIcon from "src/components/icons/ListIcon.vue";
 
-const sectionTitle = "История «ООО Электромонтаж»";
+const sectionTitle = "История «ООО Электромонтаж 55»";
 </script>
 
 <style scoped>
