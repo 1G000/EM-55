@@ -30,7 +30,11 @@
         { "title": "Отзывы", "thirdLevel": false, "href": "/sorry" },
         { "title": "Вакансии", "thirdLevel": false, "href": "/sorry" },
         { "title": "Наши партнёры", "thirdLevel": false, "href": "/sorry" },
-        { "title": "Реквизиты", "thirdLevel": false, "href": "/sorry" }
+        {
+          "title": "Реквизиты",
+          "thirdLevel": false,
+          "href": "/payment-information"
+        }
       ]
     },
     {

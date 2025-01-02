@@ -18,7 +18,6 @@
 import { ref, onMounted } from "vue";
 import ContactItem from "src/components/ContactItem.vue";
 import ContactsSection from "src/components/ContactsSection.vue";
-import ProductCards from "src/components/ProductCards.vue";
 
 const contactsData = ref(null);
 
