@@ -1,90 +1,136 @@
 <script setup>
-import { ref } from "vue";
-const expanded = ref(false);
+import { ref, defineProps, toRefs } from "vue";
+
+const props = defineProps({
+  vacancies: {
+    type: Array,
+    required: true,
+  },
+});
+const { vacancies } = toRefs(props);
+const expanded = ref(props.vacancies.map(() => false));
+
+const toggleExpand = (index) => {
+  expanded.value[index] = !expanded.value[index];
+};
 </script>
 
 <template>
-  <q-card class="my-card" flat bordered>
+  <q-card
+    v-for="(vacancy, index) in vacancies"
+    :key="index"
+    class="my-card"
+    flat
+    bordered
+  >
     <q-card-section>
-      <h3>Инженер-сметчик</h3>
-      <span
-        >На постоянную работу в офис требуется инженер сметно-договорного отдела
-        (наружные сети электроснабжения, монтаж оборудования, строительство
-        сетевых сооружений, ПИР, изыскания) знание А0.Высшее образование.</span
-      >
+      <h4 class="title">{{ vacancy.title }}</h4>
+      <span class="description">{{ vacancy.description }}</span>
       <q-card-actions>
-        <span>от 85 000 рублей на руки</span>
+        <span class="salary">{{ vacancy.salary }}</span>
         <q-space></q-space>
         <q-btn
+          class="hide__btn"
           color="primary"
           flat
           dense
-          :icon="expanded ? 'keyboard_arrow_up' : 'keyboard_arrow_down'"
-          @click="expanded = !expanded"
+          :icon="expanded[index] ? 'keyboard_arrow_up' : 'keyboard_arrow_down'"
+          @click="toggleExpand(index)"
         >
-          <span>{{ expanded ? "Скрыть" : "Подробнее" }}</span>
+          <span>{{ expanded[index] ? "Скрыть" : "Подробнее" }}</span>
         </q-btn>
       </q-card-actions>
     </q-card-section>
 
     <q-slide-transition>
-      <div v-show="expanded">
-        <q-separator></q-separator>
+      <div v-show="expanded[index]">
+        <q-separator color="primary"></q-separator>
 
         <q-card-section>
-          <div class="text-h5 text-orange-9 q-mt-sm q-mb-xs">Обязанности</div>
+          <h5>Мы предлагаем:</h5>
           <ul>
-            <li>Составление смет (ЛС,ССР)</li>
-            <li>Составление, согласование договоров</li>
-            <li>
-              подсчет объемов работ и материалов для составления и/или проверки
-              смет
-            </li>
-            <li>Согласование смет и замечаний по ним у Заказчика/Подрядчика</li>
-            <li>Ведение накопительных ведомостей, расчет единичных расценок</li>
-            <li>Формирование, подписание выполнений (КС2,КС3, П1)</li>
-          </ul>
-          <div class="text-h5 text-orange-9 q-mt-sm q-mb-xs">Требования</div>
-          <ul>
-            <li>Высшее образование</li>
-            <li>Умение работы в ГРАНД-Смета SmetaWIZARD, А0</li>
-            <li>
-              Знание сметно-нормативных баз ТЕР-2001, ГОСЭТАЛОН2012, ФЕР, ТСНБ
-              ЛО
-            </li>
-            <li>Опыт работы более 1 года</li>
-            <li>
-              Опыт работы в сфере электроснабжения/электрообеспечения
-              приветствуется
-            </li>
-            <li>
-              Ответственность, коммуникабельность, исполнительность, серьезный
-              подход к работе
+            <li v-for="(item, i) in vacancy.details.conditions" :key="i">
+              {{ item }}
             </li>
           </ul>
+          <h5>В Ваши обязанности будет входить:</h5>
+          <ul>
+            <li v-for="(item, i) in vacancy.details.responsibilities" :key="i">
+              {{ item }}
+            </li>
+          </ul>
+          <h5>Наши ожидания от кандидата:</h5>
 
-          <div class="text-h5 text-orange-9 q-mt-sm q-mb-xs">Условия</div>
           <ul>
-            <li>
-              Работа на территории работодателя (офис) ст. м. пл. Мужества
-            </li>
-            <li>Оформление по ТК РФ</li>
-            <li>График работы 5/2 с 9-18 или с 8-17 (суб, воск выходной)</li>
-            <li>Карьерный рост</li>
-            <li>
-              Оклад и занимаемая должность устанавливается по результатам
-              собеседования на основании оценки фактических навыков и знаний.
+            <li v-for="(item, i) in vacancy.details.requirements" :key="i">
+              {{ item }}
             </li>
           </ul>
         </q-card-section>
       </div>
     </q-slide-transition>
+    <hr />
   </q-card>
 </template>
 
 <style scoped>
 .my-card {
+  /* border-radius: 8px;
+  border-color: var(--q-primary); */
+  border: none;
+}
+.q-card__section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.q-card__actions {
+  /* background-color: var(--background-light-accent); */
+}
+
+.title {
+  font-family: Montserrat-bold, serif;
+  font-size: clamp(1.2rem, 2.3vw, 2rem);
+  line-height: 1em;
+}
+.description {
+  font-family: Montserrat-regular, serif;
+  font-size: clamp(0.8rem, 2.3vw, 1.2rem);
+  line-height: 1em;
+}
+.salary {
+  font-family: Montserrat-bold, serif;
+  color: var(--q-primary);
+  font-size: clamp(1rem, 2.3vw, 1.6rem);
+  line-height: 1em;
+}
+li {
+  list-style: disc;
+  margin-left: 40px;
+}
+.q-btn {
+  width: 150px;
   border-radius: 8px;
-  border-color: var(--q-primary);
+  border: 1px solid var(--q-primary);
+}
+.hide__btn :deep(.q-icon),
+.hide__btn span {
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.hide__btn span {
+  font-family: Montserrat-bold, serif;
+  font-size: 14px;
+  line-height: 1em;
+}
+
+@media (hover: hover) {
+  .hide__btn:hover {
+    background-color: var(--q-primary);
+  }
+  .hide__btn:hover :deep(.q-icon),
+  .hide__btn:hover span {
+    color: var(--q-secondary);
+  }
 }
 </style>
