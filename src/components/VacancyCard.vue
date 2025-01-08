@@ -44,7 +44,11 @@ const toggleExpand = (index) => {
 
     <q-slide-transition>
       <div v-show="expanded[index]">
-        <q-separator color="primary"></q-separator>
+        <div class="row">
+          <div class="col-6">
+            <q-separator color="primary" />
+          </div>
+        </div>
 
         <q-card-section>
           <h5>Мы предлагаем:</h5>
@@ -66,6 +70,14 @@ const toggleExpand = (index) => {
               {{ item }}
             </li>
           </ul>
+          <div class="btns__container">
+            <q-btn class="hide__btn" color="primary" flat dense>
+              <span>Откликнуться</span>
+            </q-btn>
+            <q-btn class="hide__btn" color="primary" flat dense to="/contacts">
+              <span>Контакты</span>
+            </q-btn>
+          </div>
         </q-card-section>
       </div>
     </q-slide-transition>
@@ -75,8 +87,6 @@ const toggleExpand = (index) => {
 
 <style scoped>
 .my-card {
-  /* border-radius: 8px;
-  border-color: var(--q-primary); */
   border: none;
 }
 .q-card__section {
@@ -107,6 +117,12 @@ const toggleExpand = (index) => {
 li {
   list-style: disc;
   margin-left: 40px;
+  font-family: Montserrat-regular, serif;
+  font-size: clamp(0.8rem, 2.3vw, 1.2rem);
+}
+h5 {
+  font-family: Montserrat-bold, serif;
+  font-size: clamp(0.9rem, 2.3vw, 1.3rem);
 }
 .q-btn {
   width: 150px;
@@ -122,6 +138,11 @@ li {
   font-family: Montserrat-bold, serif;
   font-size: 14px;
   line-height: 1em;
+}
+.btns__container {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
 }
 
 @media (hover: hover) {

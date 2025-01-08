@@ -31,13 +31,13 @@
         </q-item-section>
       </q-item>
 
-      <q-item clickable v-ripple to="/sorry">
+      <q-item clickable v-ripple to="/contacts">
         <q-item-section class="footer__content-top-item">
-          Деятельность
+          Контакты
         </q-item-section>
       </q-item>
 
-      <q-item clickable v-ripple to="/sorry">
+      <q-item clickable v-ripple to="/vacancies">
         <q-item-section class="footer__content-top-item">
           Вакансии
         </q-item-section>
