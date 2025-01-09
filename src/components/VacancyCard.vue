@@ -23,9 +23,11 @@ const toggleExpand = (index) => {
     flat
     bordered
   >
-    <q-card-section>
-      <h4 class="title">{{ vacancy.title }}</h4>
-      <span class="description">{{ vacancy.description }}</span>
+    <q-card-section class="top__section">
+      <div class="right__side">
+        <h4 class="title">{{ vacancy.title }}</h4>
+        <span class="description">{{ vacancy.description }}</span>
+      </div>
       <q-card-actions>
         <span class="salary">{{ vacancy.salary }}</span>
         <q-space></q-space>
@@ -92,12 +94,20 @@ const toggleExpand = (index) => {
 .q-card__section {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  padding: 20px 50px;
+}
+.top__section {
+  flex-direction: row;
+  gap: 60px;
 }
 .q-card__actions {
   /* background-color: var(--background-light-accent); */
 }
-
+.right__side {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
 .title {
   font-family: Montserrat-bold, serif;
   font-size: clamp(1.2rem, 2.3vw, 2rem);
@@ -106,12 +116,13 @@ const toggleExpand = (index) => {
 .description {
   font-family: Montserrat-regular, serif;
   font-size: clamp(0.8rem, 2.3vw, 1.2rem);
-  line-height: 1em;
+  line-height: 1.5em;
+  max-width: 75%;
 }
 .salary {
   font-family: Montserrat-bold, serif;
   color: var(--q-primary);
-  font-size: clamp(1rem, 2.3vw, 1.6rem);
+  font-size: clamp(0.8rem, 2.3vw, 1.4rem);
   line-height: 1em;
 }
 li {
@@ -130,7 +141,8 @@ h5 {
   border: 1px solid var(--q-primary);
 }
 .hide__btn :deep(.q-icon),
-.hide__btn span {
+.hide__btn span,
+.hide__btn {
   transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
