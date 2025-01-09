@@ -1,4 +1,39 @@
 <script setup>
+defineProps({
+  modelValue: {
+    type: Boolean,
+    require: true,
+  },
+});
+defineEmits(["update:modelValue"]);
 </script>
 
-<template>//</template>
+<template>
+  <q-dialog
+    :model-value="modelValue"
+    @update:model-value="$emit('update:modelValue', $event)"
+  >
+    <q-card>
+      <q-card-section>
+        <div class="text-h6">Пользовательское соглашение</div>
+      </q-card-section>
+
+      <q-separator />
+
+      <q-card-section style="max-height: 50vh" class="scroll">
+        <p v-for="n in 15" :key="n">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum
+          repellendus sit voluptate voluptas eveniet porro. Rerum blanditiis
+          perferendis totam, ea at omnis vel numquam exercitationem aut, natus
+          minima, porro labore.
+        </p>
+      </q-card-section>
+
+      <q-separator />
+
+      <q-card-actions align="right">
+        <q-btn flat label="Закрыть" color="primary" v-close-popup />
+      </q-card-actions>
+    </q-card>
+  </q-dialog>
+</template>

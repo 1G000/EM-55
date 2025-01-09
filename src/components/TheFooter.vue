@@ -1,4 +1,9 @@
-<script setup></script>
+<script setup>
+import { ref } from "vue";
+import PrivacyDialog from "./PrivacyDialog.vue";
+
+const privacyDialog = ref(false);
+</script>
 
 <template>
   <footer class="footer">
@@ -49,10 +54,14 @@
         >(с) Общество с ограниченной ответственностью «ЭЛЕКТРОМОНТАЖ
         55»</q-item-section
       >
-      <q-item-section class="footer__privacy" align="center"
+      <q-item-section
+        class="footer__privacy cursor-pointer"
+        align="center"
+        @click="privacyDialog = true"
         >Политика конфиденциальности</q-item-section
       >
     </div>
+    <PrivacyDialog v-model="privacyDialog" />
   </footer>
 </template>
 
