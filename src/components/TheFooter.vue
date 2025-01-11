@@ -1,4 +1,11 @@
-<script setup></script>
+<script setup>
+import { useRouter } from "vue-router";
+const router = useRouter();
+
+const openPrivacyPage = () => {
+  window.open(router.resolve("/privacy").href, "_blank");
+};
+</script>
 
 <template>
   <footer class="footer">
@@ -31,13 +38,13 @@
         </q-item-section>
       </q-item>
 
-      <q-item clickable v-ripple to="/sorry">
+      <q-item clickable v-ripple to="/contacts">
         <q-item-section class="footer__content-top-item">
-          Деятельность
+          Контакты
         </q-item-section>
       </q-item>
 
-      <q-item clickable v-ripple to="/sorry">
+      <q-item clickable v-ripple to="/vacancies">
         <q-item-section class="footer__content-top-item">
           Вакансии
         </q-item-section>
@@ -49,7 +56,10 @@
         >(с) Общество с ограниченной ответственностью «ЭЛЕКТРОМОНТАЖ
         55»</q-item-section
       >
-      <q-item-section class="footer__privacy" align="center"
+      <q-item-section
+        class="footer__privacy cursor-pointer"
+        align="center"
+        @click="openPrivacyPage"
         >Политика конфиденциальности</q-item-section
       >
     </div>

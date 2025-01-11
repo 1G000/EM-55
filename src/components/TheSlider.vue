@@ -12,8 +12,8 @@ onMounted(async () => {
     }
     slideData.value = (await response.json()).sliderData;
   } catch (error) {
-    console.error("Error fetching navItems:", error);
-    navItems.value = [];
+    console.error("Error fetching sliderData:", error);
+    slideData.value = [];
   }
 });
 

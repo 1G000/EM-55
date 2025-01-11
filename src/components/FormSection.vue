@@ -1,14 +1,21 @@
 <script setup>
 import { ref } from "vue";
 import UiSection from "./UiSection.vue";
+// import PrivacyDialog from "./PrivacyDialog.vue";
+import { useRouter } from "vue-router";
+const router = useRouter();
+
+const openPrivacyPage = () => {
+  window.open(router.resolve("/privacy").href, "_blank");
+};
 
 const name = ref(null);
-const age = ref(null);
+const tel = ref(null);
+const files = ref(null);
 const accept = ref(false);
-const privacyDialog = ref(false);
+// const privacyDialog = ref(false);
 const sectionBackground = `url('./Images/Form/form-background.jpg')`;
 const sectionBackgroundMobile = `url('./Images/Form/form-background-mobile.jpg')`;
-
 const submitForm = () => {
   // $q.notify({
   //   color: 'green-4',
@@ -21,7 +28,8 @@ const submitForm = () => {
 
 const resetForm = () => {
   name.value = null;
-  age.value = null;
+  tel.value = null;
+  files.value = null;
   accept.value = false;
 };
 </script>
@@ -31,8 +39,8 @@ const resetForm = () => {
     id="form"
     :style="
       $q.screen.width > 767
-        ? { background: sectionBackground }
-        : { background: sectionBackgroundMobile }
+        ? { backgroundImage: sectionBackground }
+        : { backgroundImage: sectionBackgroundMobile }
     "
     :padding="$q.screen.width > 1024 ? '100px 60px' : '40px 20px'"
   >
@@ -74,7 +82,7 @@ const resetForm = () => {
           filled
           class="input-wrapper"
           type="tel"
-          v-model="age"
+          v-model="tel"
           label="Ваш телефон"
           mask="+7 (###) ###-##-##"
           lazy-rules
@@ -83,6 +91,25 @@ const resetForm = () => {
               (val !== null && val !== '') || 'Поле обязательно для заполнения',
           ]"
         ></q-input>
+        <q-file
+          color="black"
+          bg-color="white"
+          label-color="grey-6"
+          filled
+          multiple
+          max-files="3"
+          max-file-size="10485760"
+          accept=".jpg, .png, application/pdf, application/vnd.openxmlformats-officedocument.wordprocessingml.document, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+          use-chips
+          append
+          label="jpg, pdf, png, doc, docx, xlsx до 10Мб, макс 3 файла"
+          class="input-wrapper"
+          v-model="files"
+        >
+          <template v-slot:prepend>
+            <q-icon color="secondary" name="attach_file" />
+          </template>
+        </q-file>
         <q-checkbox
           v-model="accept"
           dark
@@ -90,9 +117,9 @@ const resetForm = () => {
           color="primary"
           size="lg"
           class="input-wrapper"
-          label="Отправляя данные, я принимаю условия"
-          ><span class="form__privacy-link" @click="privacyDialog = true"
-            >Пользовательского соглашения</span
+          label="Я даю свое согласие на обработку и использование моих персональных данных и соглашаюсь с условиям"
+          ><span class="form__privacy-link" @click="openPrivacyPage"
+            >Политики конфиденциальности</span
           ></q-checkbox
         >
 
@@ -103,30 +130,7 @@ const resetForm = () => {
         </div>
       </q-form>
     </div>
-    <q-dialog v-model="privacyDialog">
-      <q-card>
-        <q-card-section>
-          <div class="text-h6">Пользовательское соглашение</div>
-        </q-card-section>
-
-        <q-separator />
-
-        <q-card-section style="max-height: 50vh" class="scroll">
-          <p v-for="n in 15" :key="n">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum
-            repellendus sit voluptate voluptas eveniet porro. Rerum blanditiis
-            perferendis totam, ea at omnis vel numquam exercitationem aut, natus
-            minima, porro labore.
-          </p>
-        </q-card-section>
-
-        <q-separator />
-
-        <q-card-actions align="right">
-          <q-btn flat label="Закрыть" color="primary" v-close-popup />
-        </q-card-actions>
-      </q-card>
-    </q-dialog>
+    <!-- <PrivacyDialog v-model="privacyDialog" /> -->
   </UiSection>
 </template>
 
@@ -138,9 +142,15 @@ const resetForm = () => {
   justify-content: center;
   gap: 0px;
 }
+.form-section {
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 .form-section__content {
   display: flex;
   gap: 56px;
+  /* align-items: center;
+  justify-content: center; */
   color: var(--color-white);
 }
 .form-section__title,

@@ -28,7 +28,7 @@
           ]
         },
         { "title": "Отзывы", "thirdLevel": false, "href": "/sorry" },
-        { "title": "Вакансии", "thirdLevel": false, "href": "/sorry" },
+        { "title": "Вакансии", "thirdLevel": false, "href": "/vacancies" },
         { "title": "Наши партнёры", "thirdLevel": false, "href": "/sorry" },
         {
           "title": "Реквизиты",
@@ -114,7 +114,7 @@
     },
     {
       "label": "Вакансии",
-      "href": "/sorry",
+      "href": "/vacancies",
       "expandedFirstLevel": false,
       "secondLevel": false
     },

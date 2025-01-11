@@ -39,7 +39,7 @@
                 <a
                   v-for="(phone, phoneIndex) in employee.phoneNumbers"
                   :key="phoneIndex"
-                  :href="`tel:${phone}`"
+                  :href="`tel:${phone.replace(/-/g, '')}`"
                   class="contact-phone__numbers"
                   target="_blank"
                 >

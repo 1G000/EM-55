@@ -63,8 +63,9 @@ const paymentInfoData = [
     </div>
 
     <a class="download__link" href="/public/paymentinfo.docx"
-      >Скачать реквизиты</a
-    >
+      ><span>Скачать реквизиты</span
+      ><q-icon color="gray" name="download"></q-icon
+    ></a>
   </UiSection>
 </template>
 
@@ -78,6 +79,9 @@ const paymentInfoData = [
   font-family: Montserrat-bold, serif;
   text-transform: uppercase;
   font-size: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 @media (hover: hover) {
