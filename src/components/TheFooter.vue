@@ -1,8 +1,10 @@
 <script setup>
-import { ref } from "vue";
-import PrivacyDialog from "./PrivacyDialog.vue";
+import { useRouter } from "vue-router";
+const router = useRouter();
 
-const privacyDialog = ref(false);
+const openPrivacyPage = () => {
+  window.open(router.resolve("/privacy").href, "_blank");
+};
 </script>
 
 <template>
@@ -57,11 +59,10 @@ const privacyDialog = ref(false);
       <q-item-section
         class="footer__privacy cursor-pointer"
         align="center"
-        @click="privacyDialog = true"
+        @click="openPrivacyPage"
         >Политика конфиденциальности</q-item-section
       >
     </div>
-    <PrivacyDialog v-model="privacyDialog" />
   </footer>
 </template>
 

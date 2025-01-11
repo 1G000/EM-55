@@ -1,4 +1,5 @@
 <script setup>
+import PrivacyContent from "./PrivacyContent.vue";
 defineProps({
   modelValue: {
     type: Boolean,
@@ -15,18 +16,13 @@ defineEmits(["update:modelValue"]);
   >
     <q-card>
       <q-card-section>
-        <div class="text-h6">Пользовательское соглашение</div>
+        <div class="text-h6">Политика конфиденциальности</div>
       </q-card-section>
 
       <q-separator />
 
       <q-card-section style="max-height: 50vh" class="scroll">
-        <p v-for="n in 15" :key="n">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum
-          repellendus sit voluptate voluptas eveniet porro. Rerum blanditiis
-          perferendis totam, ea at omnis vel numquam exercitationem aut, natus
-          minima, porro labore.
-        </p>
+        <PrivacyContent />
       </q-card-section>
 
       <q-separator />

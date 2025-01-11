@@ -1,13 +1,19 @@
 <script setup>
 import { ref } from "vue";
 import UiSection from "./UiSection.vue";
-import PrivacyDialog from "./PrivacyDialog.vue";
+// import PrivacyDialog from "./PrivacyDialog.vue";
+import { useRouter } from "vue-router";
+const router = useRouter();
+
+const openPrivacyPage = () => {
+  window.open(router.resolve("/privacy").href, "_blank");
+};
 
 const name = ref(null);
-const age = ref(null);
+const tel = ref(null);
 const files = ref(null);
 const accept = ref(false);
-const privacyDialog = ref(false);
+// const privacyDialog = ref(false);
 const sectionBackground = `url('./Images/Form/form-background.jpg')`;
 const sectionBackgroundMobile = `url('./Images/Form/form-background-mobile.jpg')`;
 const submitForm = () => {
@@ -22,7 +28,7 @@ const submitForm = () => {
 
 const resetForm = () => {
   name.value = null;
-  age.value = null;
+  tel.value = null;
   files.value = null;
   accept.value = false;
 };
@@ -76,7 +82,7 @@ const resetForm = () => {
           filled
           class="input-wrapper"
           type="tel"
-          v-model="age"
+          v-model="tel"
           label="Ваш телефон"
           mask="+7 (###) ###-##-##"
           lazy-rules
@@ -111,9 +117,9 @@ const resetForm = () => {
           color="primary"
           size="lg"
           class="input-wrapper"
-          label="Отправляя данные, я принимаю условия"
-          ><span class="form__privacy-link" @click="privacyDialog = true"
-            >Пользовательского соглашения</span
+          label="Я даю свое согласие на обработку и использование моих персональных данных и соглашаюсь с условиям"
+          ><span class="form__privacy-link" @click="openPrivacyPage"
+            >Политики конфиденциальности</span
           ></q-checkbox
         >
 
@@ -124,7 +130,7 @@ const resetForm = () => {
         </div>
       </q-form>
     </div>
-    <PrivacyDialog v-model="privacyDialog" />
+    <!-- <PrivacyDialog v-model="privacyDialog" /> -->
   </UiSection>
 </template>
 

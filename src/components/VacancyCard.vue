@@ -1,5 +1,6 @@
 <script setup>
 import { ref, defineProps, toRefs } from "vue";
+import ResponseVacancyFormDialog from "./ResponseVacancyFormDialog.vue";
 
 const props = defineProps({
   vacancies: {
@@ -9,7 +10,7 @@ const props = defineProps({
 });
 const { vacancies } = toRefs(props);
 const expanded = ref(props.vacancies.map(() => false));
-
+const responseDialog = ref(false);
 const toggleExpand = (index) => {
   expanded.value[index] = !expanded.value[index];
 };
@@ -23,6 +24,7 @@ const toggleExpand = (index) => {
     flat
     bordered
   >
+    <ResponseVacancyFormDialog :vacancy="vacancy" v-model="responseDialog" />
     <q-card-section class="top__section">
       <div class="right__side">
         <h4 class="title">{{ vacancy.title }}</h4>
@@ -73,7 +75,13 @@ const toggleExpand = (index) => {
             </li>
           </ul>
           <div class="btns__container">
-            <q-btn class="hide__btn" color="primary" flat dense>
+            <q-btn
+              class="hide__btn"
+              color="primary"
+              flat
+              dense
+              @click="responseDialog = true"
+            >
               <span>Откликнуться</span>
             </q-btn>
             <q-btn class="hide__btn" color="primary" flat dense to="/contacts">
