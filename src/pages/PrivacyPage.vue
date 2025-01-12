@@ -2,7 +2,7 @@
 import UiSection from "src/components/UiSection.vue";
 import UiSectionTitle from "src/components/UiSectionTitle.vue";
 import PrivacyContent from "src/components/PrivacyContent.vue";
-const sectionTitle = "Политика конфиденциальности";
+const sectionTitle = "Политика в отношении обработки персональных данных";
 </script>
 
 <template>
