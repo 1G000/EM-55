@@ -61,8 +61,7 @@ const paymentInfoData = [
         :value="item.value"
       />
     </div>
-
-    <a class="download__link" href="/public/paymentinfo.docx"
+    <a class="download__link" href="./paymentinfo.docx"
       ><span>Скачать реквизиты</span
       ><q-icon color="gray" name="download"></q-icon
     ></a>
