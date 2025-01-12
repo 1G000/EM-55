@@ -49,7 +49,7 @@ const sectionTitle = "Вакансии";
       </div>
       <div>
         <picture class="picture__container"
-          ><img src="Images/team.png" alt="картинка" class="picture" />
+          ><img src="Images/team.jpg" alt="картинка" class="picture" />
         </picture>
         <JoinTeam v-if="$q.screen.width < 768" />
       </div>
@@ -68,6 +68,7 @@ const sectionTitle = "Вакансии";
 .picture {
   object-fit: cover;
   border-radius: 8px;
+  padding-top: 40px;
 }
 .left__side {
   width: 70%;

@@ -103,7 +103,7 @@
       <div class="q-px-lg q-py-md right-side">
         <picture class="picture__container"
           ><img
-            src="Images/team.png"
+            src="Images/team.jpg"
             alt="картинка"
             class="picture"
             width="100%"
