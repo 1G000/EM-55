@@ -10,7 +10,7 @@ const props = defineProps({
 });
 const { vacancies } = toRefs(props);
 const expanded = ref(props.vacancies.map(() => false));
-const responseDialog = ref(false);
+const responseDialog = ref(props.vacancies.map(() => false));
 const toggleExpand = (index) => {
   expanded.value[index] = !expanded.value[index];
 };
@@ -24,7 +24,10 @@ const toggleExpand = (index) => {
     flat
     bordered
   >
-    <ResponseVacancyFormDialog :vacancy="vacancy" v-model="responseDialog" />
+    <ResponseVacancyFormDialog
+      :vacancy-title="vacancy.title"
+      v-model="responseDialog[index]"
+    />
     <q-card-section class="top__section">
       <div class="right__side">
         <h4 class="title">{{ vacancy.title }}</h4>
@@ -80,7 +83,7 @@ const toggleExpand = (index) => {
               color="primary"
               flat
               dense
-              @click="responseDialog = true"
+              @click="responseDialog[index] = true"
             >
               <span>Откликнуться</span>
             </q-btn>

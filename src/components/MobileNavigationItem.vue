@@ -1,6 +1,8 @@
 <script setup>
 import { ref, reactive } from "vue";
 import { downloadFile } from "src/composobles/downloadFile";
+import { useRouter } from "vue-router";
+const router = useRouter();
 
 const props = defineProps({
   label: {
@@ -26,12 +28,15 @@ const closeAllExpansions = (url) => {
   });
   downloadFile(url);
 };
+const goToVacancyPage = (label) => {
+  return label === "Вакансии" ? router.push("/vacancies") : false;
+};
 </script>
 
 <template>
   <q-expansion-item
     class="navigation-list"
-    @click.stop
+    @click.stop="goToVacancyPage(label)"
     v-model="expanded"
     :label="label"
     active-class="navigation-list-active"
