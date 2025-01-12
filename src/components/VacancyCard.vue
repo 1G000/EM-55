@@ -111,9 +111,6 @@ const toggleExpand = (index) => {
   flex-direction: row;
   gap: 60px;
 }
-.q-card__actions {
-  /* background-color: var(--background-light-accent); */
-}
 .right__side {
   display: flex;
   flex-direction: column;
@@ -133,7 +130,7 @@ const toggleExpand = (index) => {
 .salary {
   font-family: Montserrat-bold, serif;
   color: var(--q-primary);
-  font-size: clamp(0.8rem, 2.3vw, 1.4rem);
+  font-size: clamp(1rem, 2.3vw, 1.4rem);
   line-height: 1em;
 }
 li {
@@ -175,6 +172,16 @@ h5 {
   .hide__btn:hover :deep(.q-icon),
   .hide__btn:hover span {
     color: var(--q-secondary);
+  }
+}
+@media screen and (max-width: 660px) {
+  .q-card__section {
+    flex-direction: column;
+    padding: 0;
+    padding-bottom: 20px;
+  }
+  .description {
+    max-width: 100%;
   }
 }
 </style>

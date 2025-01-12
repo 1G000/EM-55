@@ -25,7 +25,7 @@ const sectionTitle = "Вакансии";
 <template>
   <UiSection
     class="content__wrapper"
-    :padding="$q.screen.width > 768 ? '64px 40px 0 40px' : '64px 20px 0 20px'"
+    :padding="$q.screen.width > 1000 ? '64px 40px 0 40px' : '64px 20px 0 20px'"
   >
     <UiSectionTitle :title-text="sectionTitle" />
     <div class="picture__section">
@@ -45,13 +45,13 @@ const sectionTitle = "Вакансии";
           КТП, КЛ 209-214, УВР, УВРУ, ГРЩ, ВРУ, ЯВЗ, ШУ, ОЩ, ШСН, ШБП, УКРМ и
           пр.), пройдена аккредитация в ПАО «Ленэнерго».
         </div>
-        <JoinTeam v-if="$q.screen.width > 768" />
+        <JoinTeam v-if="$q.screen.width > 1000" />
       </div>
       <div>
         <picture class="picture__container"
           ><img src="Images/team.jpg" alt="картинка" class="picture" />
         </picture>
-        <JoinTeam v-if="$q.screen.width < 768" />
+        <JoinTeam v-if="$q.screen.width < 1000" />
       </div>
     </div>
     <VacancyCard :vacancies="vacancies" />
@@ -86,5 +86,22 @@ const sectionTitle = "Вакансии";
   line-height: 1.5em;
   padding: 40px;
   border-radius: 8px;
+}
+@media screen and (max-width: 768px) {
+  .text__content {
+    padding: 0;
+  }
+}
+
+@media screen and (max-width: 660px) {
+  .picture__section {
+    flex-direction: column;
+  }
+  .left__side {
+    width: 100%;
+  }
+  .picture {
+    width: 100%;
+  }
 }
 </style>

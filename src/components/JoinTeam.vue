@@ -101,4 +101,11 @@ h3 {
     color: var(--q-primary);
   }
 }
+@media screen and (max-width: 1000px) {
+  .contact {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 30px;
+  }
+}
 </style>
