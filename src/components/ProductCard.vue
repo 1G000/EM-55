@@ -31,7 +31,7 @@ const ratio = computed(() => (props.type === "services" ? 1 / 1 : 4 / 3));
         </div>
       </q-img>
       <q-card-actions>
-        <q-btn class="card__btn" flat color="primary" label="Подробнее" />
+        <q-btn class="card__btn" flat color="primary" :label="buttonText" />
       </q-card-actions>
     </q-card>
   </q-responsive>

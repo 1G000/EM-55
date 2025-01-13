@@ -1,0 +1,70 @@
+<script setup>
+import { defineProps } from "vue";
+
+const props = defineProps({
+  title: {
+    type: String,
+    required: true,
+  },
+  imgSrc: {
+    type: String,
+    required: true,
+  },
+  href: {
+    type: String,
+    required: true,
+  },
+});
+</script>
+
+<template>
+  <q-responsive :ratio="4 / 3" class="partner-card">
+    <q-card
+      class="column partner-card__accent"
+      flat
+      clickable
+      tag="a"
+      :href="href"
+      target="_blank"
+    >
+      <q-img class="col image" :src="imgSrc" />
+
+      <q-card-section class="partner-card__title">
+        <q-item>
+          <q-item-section class="text-primary text-uppercase">{{
+            title
+          }}</q-item-section>
+        </q-item>
+      </q-card-section>
+    </q-card>
+  </q-responsive>
+</template>
+
+
+
+<style scoped>
+.partner-card {
+  width: 360px;
+  transition: 0.3s linear;
+  border-radius: 8px;
+}
+.partner-card__accent {
+  border: 1px solid var(--q-accent);
+  border-radius: 8px;
+}
+.partner-card:hover {
+  -webkit-box-shadow: 0px 5px 10px 2px rgba(120, 121, 122, 0.2);
+  -moz-box-shadow: 0px 5px 10px 2px rgba(120, 121, 122, 0.2);
+  box-shadow: 0px 5px 10px 2px rgba(120, 121, 122, 0.2);
+}
+.partner-card__title {
+  background-color: var(--background-light-accent);
+  border-top: 1px solid #b990511a;
+  padding: 0;
+  padding: 5px;
+  min-height: 60px;
+  font-family: Montserrat-bold, serif;
+  font-size: clamp(0.8rem, 1vw, 1rem);
+  line-height: 15.2px;
+}
+</style>

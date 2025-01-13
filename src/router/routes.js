@@ -46,9 +46,12 @@ const routes = [
   {
     path: "/privacy",
     component: () => import("layouts/MainLayout.vue"),
-    children: [
-      { path: "", component: () => import("pages/PrivacyPage.vue") },
-    ],
+    children: [{ path: "", component: () => import("pages/PrivacyPage.vue") }],
+  },
+  {
+    path: "/partners",
+    component: () => import("layouts/MainLayout.vue"),
+    children: [{ path: "", component: () => import("pages/PartnersPage.vue") }],
   },
 
   // Always leave this as last one,
