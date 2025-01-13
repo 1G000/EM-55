@@ -1,1 +1,0 @@
-import{_ as t}from"./plugin-vue_export-helper.21dcd24c.js";import{L as _,O as r,T as n}from"./index.960ae886.js";const a={class:"inner__title"},i={__name:"UiInnerPageTitle",props:{titleText:{type:String}},setup(e){return(s,o)=>(_(),r("h2",a,n(e.titleText),1))}};var p=t(i,[["__scopeId","data-v-347f88d2"]]);export{p as U};
