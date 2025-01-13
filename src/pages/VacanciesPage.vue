@@ -76,13 +76,12 @@ const sectionTitle = "Вакансии";
   flex-direction: column;
   justify-content: space-between;
 }
-
 .text__content {
   display: flex;
   flex-direction: column;
   gap: 20px;
   font-family: Montserrat-regular, serif;
-  font-size: clamp(0.8rem, 2.3vw, 1.2rem);
+  font-size: clamp(1.1rem, 2.3vw, 1.2rem);
   line-height: 1.5em;
   padding: 40px;
   border-radius: 8px;
@@ -92,7 +91,6 @@ const sectionTitle = "Вакансии";
     padding: 0;
   }
 }
-
 @media screen and (max-width: 660px) {
   .picture__section {
     flex-direction: column;

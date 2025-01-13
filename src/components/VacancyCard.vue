@@ -123,7 +123,7 @@ const toggleExpand = (index) => {
 }
 .description {
   font-family: Montserrat-regular, serif;
-  font-size: clamp(0.8rem, 2.3vw, 1.2rem);
+  font-size: clamp(0.9rem, 2.3vw, 1.2rem);
   line-height: 1.5em;
   max-width: 75%;
 }
@@ -137,7 +137,7 @@ li {
   list-style: disc;
   margin-left: 40px;
   font-family: Montserrat-regular, serif;
-  font-size: clamp(0.8rem, 2.3vw, 1.2rem);
+  font-size: clamp(0.9rem, 2.3vw, 1.2rem);
 }
 h5 {
   font-family: Montserrat-bold, serif;

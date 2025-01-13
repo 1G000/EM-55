@@ -27,7 +27,8 @@ defineProps({
   align-items: center;
   gap: 40px;
   min-height: 40px;
-  padding: 5px 0;
+  padding: 5px 5px;
+  border-radius: 8px;
 }
 
 .row__item-label {

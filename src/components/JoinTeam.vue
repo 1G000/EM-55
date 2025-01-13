@@ -55,14 +55,14 @@
   flex-direction: column;
   gap: 20px;
   font-family: Montserrat-regular, serif;
-  font-size: clamp(0.8rem, 2.3vw, 1.2rem);
+  font-size: clamp(1rem, 2.3vw, 1.2rem);
   line-height: 1.5em;
   padding: 40px;
   border-radius: 8px;
 }
 h3 {
   font-family: Montserrat-bold, serif;
-  font-size: clamp(1.1rem, 2.3vw, 1.8rem);
+  font-size: clamp(1.2rem, 2.3vw, 1.8rem);
   line-height: 1em;
   color: var(--q-primary);
 }
@@ -70,17 +70,16 @@ h3 {
   display: flex;
   align-items: center;
   font-family: Montserrat-regular, serif;
-  font-size: clamp(0.8rem, 2.3vw, 1.2rem);
+  font-size: clamp(1rem, 2.3vw, 1.2rem);
   line-height: 1.3em;
   color: black;
   gap: 10px;
 }
-
 .contact__mail {
   display: flex;
   align-items: center;
   font-family: Montserrat-regular, serif;
-  font-size: clamp(0.8rem, 2.3vw, 1.2rem);
+  font-size: clamp(1rem, 2.3vw, 1.2rem);
   line-height: 1.3em;
   color: black;
   gap: 10px;
@@ -106,6 +105,11 @@ h3 {
     flex-direction: column;
     align-items: flex-start;
     gap: 30px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .join__team {
+    padding: 10px;
   }
 }
 </style>
