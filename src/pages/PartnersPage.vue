@@ -5,31 +5,42 @@ import PartnerCard from "src/components/PartnerCard.vue";
 
 const sectionTitle = "Наши партнёры";
 const partners = [
-  { title: "ПАО 'Россети Ленэнерго'", imgSrc: "./Images/partners/rsle.png" },
   {
-    title: "филиал ПАО 'Россети Ленэнерго' 'Кабельная сеть'",
+    title: "ПАО «Россети Ленэнерго»",
+    imgSrc: "./Images/partners/rsle.png",
+    href: "https://rosseti-lenenergo.ru/",
+  },
+  {
+    title: "Филиал ПАО «Россети Ленэнерго» «Кабельная сеть»",
     imgSrc: "./Images/partners/cabset.png",
+    href: "https://rosseti-lenenergo.ru/",
   },
   {
-    title: "филиал ПАО 'Россети Ленэнерго' 'Северные электрические сети'",
+    title: "Филиал ПАО «Россети Ленэнерго» «Северные электрические сети»",
     imgSrc: "./Images/partners/ses.jpg",
+    href: "https://rosseti-lenenergo.ru/",
   },
-  { title: "филиал ПАО 'Россети Ленэнерго' 'ЭСКЛ'", imgSrc: "" },
-  { title: "Легенда", imgSrc: "" },
-  { title: "КВС", imgSrc: "" },
-  { title: "ЛСР. Недвижимость Северо-Запад", imgSrc: "" },
-  { title: "ЯРД", imgSrc: "" },
-  { title: "ПИК 'Россети Ленэнерго'", imgSrc: "" },
-  { title: "Электромонтаж-110", imgSrc: "" },
-  { title: "Селена Монтаж", imgSrc: "" },
-  { title: "Развитие территории", imgSrc: "" },
-  { title: "МИН", imgSrc: "" },
-  { title: "ЭР-БИ-АЙ-ВОСТОК", imgSrc: "" },
-  { title: "Горный университет", imgSrc: "" },
-  { title: "Гостиница 'Спутник'", imgSrc: "" },
-  { title: "СЛЭП", imgSrc: "" },
-  { title: "ПЭМ", imgSrc: "" },
-  { title: "СМК Энергия", imgSrc: "" },
+  {
+    title: "Филиал ПАО «Россети Ленэнерго» «ЭСКЛ»",
+    imgSrc: "",
+    href: "https://rosseti-lenenergo.ru/",
+  },
+  { title: "Легенда", imgSrc: "", href: "" },
+  { title: "КВС", imgSrc: "", href: "" },
+  { title: "«ЛСР. Недвижимость - Северо-Запад»", imgSrc: "", href: "" },
+  { title: "ЯРД", imgSrc: "", href: "" },
+  { title: "ПИК «Россети Ленэнерго»", imgSrc: "", href: "" },
+  { title: "Электромонтаж-110", imgSrc: "", href: "" },
+  { title: "ПИК «Россети Ленэнерго»", imgSrc: "", href: "" },
+  { title: "«СЕЛЕНА МОНТАЖ", imgSrc: "", href: "" },
+  { title: "Развитие территории", imgSrc: "", href: "" },
+  { title: "МИН", imgSrc: "", href: "" },
+  { title: "ЭР-БИ-АЙ-ВОСТОК", imgSrc: "", href: "" },
+  { title: "Горный университет", imgSrc: "", href: "" },
+  { title: "Гостиница «Спутник»", imgSrc: "", href: "" },
+  { title: "СЛЭП", imgSrc: "", href: "" },
+  { title: "ПЭМ", imgSrc: "", href: "" },
+  { title: "СМК «Энергия»", imgSrc: "", href: "" },
 ];
 
 // 5. "Легенда" застройщик,
@@ -53,20 +64,39 @@ const partners = [
 <template>
   <UiSection
     class="content__wrapper"
-    :padding="$q.screen.width > 768 ? '64px 40px 0 40px' : '64px 20px 0 20px'"
+    :padding="$q.screen.width > 768 ? '64px 40px 0 40px' : '32px 20px 0 20px'"
   >
     <UiInnerPageTitle :title-text="sectionTitle" />
-    <p>
-      Партнёры и заказчики «Электромонтаж-55» знают, что это динамично
+    <p class="partners-page__text">
+      Партнёры и заказчики «Электромонтаж 55» знают, что это динамично
       развивающееся предприятие, способное выполнять комплексные задачи. Все,
-      что делает «Электромонтаж-55», отличается высоким качеством. Сегодня свои
-      объекты «Электромантож-55» доверяют:
+      что делает «Электромонтаж 55», отличается высоким качеством. Сегодня свои
+      объекты «Электромантож 55» доверяют:
     </p>
-    <PartnerCard
-      v-for="(partner, index) in partners"
-      :key="index"
-      :title="partner.title"
-      :imgSrc="partner.imgSrc"
-    />
+    <article class="partner-cards">
+      <PartnerCard
+        v-for="(partner, index) in partners"
+        :key="index"
+        :title="partner.title"
+        :imgSrc="partner.imgSrc"
+        :href="partner.href"
+      />
+    </article>
   </UiSection>
 </template>
+<style scoped>
+.partner-cards {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding-top: 32px;
+  justify-content: center;
+}
+.partners-page__text {
+  font-family: Montserrat-regular, serif;
+  font-size: clamp(1.1rem, 1vw, 1.2rem);
+  line-height: 30px;
+}
+</style>

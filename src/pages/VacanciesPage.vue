@@ -25,7 +25,7 @@ const sectionTitle = "Вакансии";
 <template>
   <UiSection
     class="content__wrapper"
-    :padding="$q.screen.width > 1000 ? '64px 40px 0 40px' : '64px 20px 0 20px'"
+    :padding="$q.screen.width > 1000 ? '64px 40px 0 40px' : '32px 20px 0 20px'"
   >
     <UiSectionTitle :title-text="sectionTitle" />
     <div class="picture__section">

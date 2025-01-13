@@ -53,7 +53,7 @@ const data = {
 <template>
   <UiSection
     class="content__wrapper"
-    :padding="$q.screen.width > 768 ? '64px 40px 0 40px' : '64px 20px 0 20px'"
+    :padding="$q.screen.width > 768 ? '64px 40px 0 40px' : '32px 20px 0 20px'"
   >
     <UiInnerPageTitle :title-text="sectionTitle" />
     <q-item-section class="content__top">
