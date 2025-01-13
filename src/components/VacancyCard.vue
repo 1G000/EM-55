@@ -53,7 +53,7 @@ const toggleExpand = (index) => {
       <div v-show="expanded[index]">
         <div class="row">
           <div class="col-6">
-            <q-separator color="primary" />
+            <q-separator color="primary" class="q-mb-md" />
           </div>
         </div>
 
@@ -114,7 +114,7 @@ const toggleExpand = (index) => {
 .right__side {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 20px;
 }
 .title {
   font-family: Montserrat-bold, serif;
@@ -123,7 +123,8 @@ const toggleExpand = (index) => {
 }
 .description {
   font-family: Montserrat-regular, serif;
-  font-size: clamp(0.9rem, 2.3vw, 1.2rem);
+  font-size: clamp(1rem, 2.3vw, 1.2rem);
+  line-height: 1.5em;
   line-height: 1.5em;
   max-width: 75%;
 }
@@ -137,11 +138,15 @@ li {
   list-style: disc;
   margin-left: 40px;
   font-family: Montserrat-regular, serif;
-  font-size: clamp(0.9rem, 2.3vw, 1.2rem);
+  font-size: clamp(1rem, 2.3vw, 1.2rem);
+  line-height: 1.5em;
+  margin-bottom: 10px;
 }
 h5 {
   font-family: Montserrat-bold, serif;
-  font-size: clamp(0.9rem, 2.3vw, 1.3rem);
+  font-size: clamp(1rem, 2.3vw, 1.2rem);
+  line-height: 1.5em;
+  margin-bottom: 10px;
 }
 .q-btn {
   width: 150px;

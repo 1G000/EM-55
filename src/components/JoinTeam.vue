@@ -2,8 +2,8 @@
   <div class="join__team">
     <h3>Присоединяйся к команде!</h3>
     <div class="contact">
-      <span><b>Руководитель кадровой службы</b></span
-      ><span>Мария Юрьевна</span>
+      <span>Мария Юрьевна</span>
+      <span style="padding-bottom: 20px">Руководитель кадровой службы</span>
       <div class="contact__items">
         <a
           :href="`tel: +79112965058`"
@@ -88,6 +88,7 @@ h3 {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  font-size: clamp(1rem, 2.3vw, 1.2rem);
 }
 .contact__items {
   display: flex;
@@ -104,12 +105,11 @@ h3 {
   .contact {
     flex-direction: column;
     align-items: flex-start;
-    gap: 30px;
   }
 }
 @media screen and (max-width: 600px) {
   .join__team {
-    padding: 10px;
+    padding: 20px 15px;
   }
 }
 </style>
