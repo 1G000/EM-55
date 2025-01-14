@@ -53,9 +53,9 @@ const props = defineProps({
   border-radius: 8px;
 }
 .partner-card:hover {
-  -webkit-box-shadow: 0px 5px 10px 2px rgba(120, 121, 122, 0.2);
-  -moz-box-shadow: 0px 5px 10px 2px rgba(120, 121, 122, 0.2);
-  box-shadow: 0px 5px 10px 2px rgba(120, 121, 122, 0.2);
+  -webkit-box-shadow: 0px 10px 28px 0px #00000012;
+  -moz-box-shadow: 0px 10px 28px 0px #00000012;
+  box-shadow: 0px 10px 28px 0px #00000012;
 }
 .partner-card__title {
   background-color: var(--background-light-accent);

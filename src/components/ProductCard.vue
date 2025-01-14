@@ -6,33 +6,21 @@ const props = defineProps({
     type: Object,
     required: true,
   },
-  type: {
-    type: String,
-    required: true,
-  },
 });
-const buttonText = "Подробнее";
-const elHeight = computed(() => (props.type === "services" ? "100%" : "70px"));
-const elWidth = computed(() => (props.type === "services" ? "180px" : "229px"));
-const clipPathValue = computed(() =>
-  props.type === "services"
-    ? "polygon(16% 0, 41% 20%, 51% 61%,100% 93%,100% 100%,0 100%,0 100%,0 100%,0 100%,0 0)"
-    : "none"
-);
-const ratio = computed(() => (props.type === "services" ? 1 / 1 : 4 / 3));
 </script>
 
 <template>
-  <q-responsive :ratio="ratio" class="col">
-    <q-card class="q-ma-none shadow-0 my-card">
-      <q-img :src="product.imgSrc" :lazy-src="product.imgSrc">
-        <div class="absolute-bottom text__content">
-          <div class="card__text">{{ product.title }}</div>
-        </div>
-      </q-img>
-      <q-card-actions>
-        <q-btn class="card__btn" flat color="primary" :label="buttonText" />
-      </q-card-actions>
+  <q-responsive :ratio="1 / 1" class="col product-card">
+    <q-card
+      class="q-ma-none shadow-0 my-card cursor-pointer column"
+      flat
+      clickable
+    >
+      <q-img class="col" :src="product.imgSrc" :lazy-src="product.imgSrc" />
+
+      <q-card-section class="card__text product-card__text-wrapper q-py-md">
+        <q-item-section class="card__text">{{ product.title }}</q-item-section>
+      </q-card-section>
     </q-card>
   </q-responsive>
 </template>
@@ -41,24 +29,31 @@ const ratio = computed(() => (props.type === "services" ? 1 / 1 : 4 / 3));
 .my-card {
   max-width: 400px;
   border-radius: 8px;
+  transition: 0.3s linear;
+}
+.product-card {
+  border-radius: 8px;
+  transition: 0.3s linear;
 }
 
-.q-card__actions {
+.product-card:hover {
+  -webkit-box-shadow: 0px 3px 10px 0px #00000012;
+  -moz-box-shadow: 0px 3px 10px 0px #00000012;
+  box-shadow: 0px 3px 10px 0px #00000012;
+}
+.product-card__text-wrapper {
   background-color: var(--background-light-accent);
-}
-
-.card__btn:hover {
-  color: var(--color-black);
+  min-height: 76px;
+  display: flex;
+  align-items: center;
 }
 
 .card__text {
-  max-width: v-bind(elWidth);
   font-family: Montserrat-bold, serif;
   font-size: clamp(0.8rem, 1vw, 1rem);
   line-height: 15.2px;
-  background: var(--text-gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: var(--color-black);
+  text-transform: uppercase;
 }
 
 .card__btn {
@@ -67,13 +62,12 @@ const ratio = computed(() => (props.type === "services" ? 1 / 1 : 4 / 3));
 }
 
 .text__content {
-  /* min-height: 130px; */
-  height: v-bind(elHeight);
+  min-height: 130px;
+  height: 70px;
   display: flex;
   align-items: end;
   max-width: 100%;
   background-color: #0e0d0d99;
-  clip-path: v-bind(clipPathValue);
 }
 
 :deep(.q-img__container) {

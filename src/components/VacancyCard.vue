@@ -117,9 +117,9 @@ const toggleExpand = (index) => {
   gap: 20px;
 }
 .title {
+  font-size: clamp(1rem, 1.1vw, 1.1rem);
   font-family: Montserrat-bold, serif;
-  font-size: clamp(1.2rem, 2.3vw, 2rem);
-  line-height: 1em;
+  line-height: 20px;
 }
 .description {
   font-family: Montserrat-regular, serif;

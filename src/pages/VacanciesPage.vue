@@ -83,7 +83,7 @@ const sectionTitle = "Вакансии";
   font-family: Montserrat-regular, serif;
   font-size: clamp(1.1rem, 2.3vw, 1.2rem);
   line-height: 1.5em;
-  padding: 40px;
+  padding: 40px 0;
   border-radius: 8px;
 }
 @media screen and (max-width: 768px) {

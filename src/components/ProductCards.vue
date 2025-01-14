@@ -8,19 +8,23 @@ const production = [
   {
     title: "БКТП/БРТП в бетонной оболочке",
     imgSrc: "./Images/Production/product-1.webp",
+    href: "",
   },
 
   {
     title: "КТП внутренней установки",
     imgSrc: "./Images/Production/product-3.webp",
+    href: "",
   },
   {
     title: "КТПН в металлической оболочке",
     imgSrc: "./Images/Production/product-2.webp",
+    href: "",
   },
   {
     title: "Низковольтные комплектные устройства",
     imgSrc: "./Images/Production/product-4.jpg",
+    href: "",
   },
 ];
 </script>
@@ -33,7 +37,6 @@ const production = [
         v-for="(product, index) in production"
         :key="index"
         :product="product"
-        :type="typeOfSection"
       />
     </div>
   </UiSection>
@@ -66,13 +69,13 @@ const production = [
 }
 @media (max-width: 768px) {
   .card__container {
-    padding: 0 0 42px;
+    padding: 0 0 0px;
   }
 }
-@media (max-width: 460px) {
+@media (max-width: 543px) {
   .card__container {
     grid-template-columns: repeat(1, 1fr);
-    row-gap: 80px;
+    row-gap: 42px;
   }
 }
 </style>

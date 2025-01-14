@@ -3,7 +3,9 @@
     <h3>Присоединяйся к команде!</h3>
     <div class="contact">
       <span>Мария Юрьевна</span>
-      <span style="padding-bottom: 20px">Руководитель кадровой службы</span>
+      <span :style="$q.screen.width < 1510 ? 'padding-bottom: 20px' : ''"
+        >Руководитель кадровой службы</span
+      >
       <div class="contact__items">
         <a
           :href="`tel: +79112965058`"
@@ -87,6 +89,7 @@ h3 {
 .contact {
   display: flex;
   justify-content: space-between;
+  gap: 10px;
   align-items: center;
   font-size: clamp(1rem, 2.3vw, 1.2rem);
 }
@@ -101,7 +104,7 @@ h3 {
     color: var(--q-primary);
   }
 }
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1510px) {
   .contact {
     flex-direction: column;
     align-items: flex-start;
