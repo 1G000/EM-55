@@ -19,13 +19,20 @@ const props = defineProps({
 
 <template>
   <q-responsive :ratio="4 / 3" class="partner-card">
-    <q-card class="column partner-card__accent" flat clickable tag="a" :href="href" target="_blank">
+    <q-card
+      class="column partner-card__accent"
+      flat
+      clickable
+      tag="a"
+      :href="href"
+      target="_blank"
+    >
       <img class="col image" :src="imgSrc" />
       <q-card-section class="partner-card__title">
         <q-item>
-          <q-item-section class="title text-primary text-uppercase">{{
+          <q-item-section class="partner-card__text">{{
             title
-            }}</q-item-section>
+          }}</q-item-section>
         </q-item>
       </q-card-section>
     </q-card>
@@ -46,12 +53,6 @@ const props = defineProps({
   border-radius: 8px;
 }
 
-.partner-card:hover {
-  -webkit-box-shadow: 0px 10px 28px 0px #00000012;
-  -moz-box-shadow: 0px 10px 28px 0px #00000012;
-  box-shadow: 0px 10px 28px 0px #00000012;
-}
-
 .partner-card__title {
   background-color: var(--background-light-accent);
   border-top: 1px solid #b990511a;
@@ -61,14 +62,25 @@ const props = defineProps({
   font-family: Montserrat-bold, serif;
   font-size: clamp(0.8rem, 1vw, 1rem);
   line-height: 15.2px;
+  min-height: 75px;
 }
-
 .image {
   object-fit: contain;
   padding: 20px;
 }
 
-.partner-card__title {
-  min-height: 75px;
+.partner-card__text {
+  color: var(--color-black);
+  text-transform: uppercase;
+}
+@media (hover: hover) {
+  .partner-card:hover {
+    -webkit-box-shadow: 0px -1px 13px 1px rgba(34, 60, 80, 0.2);
+    -moz-box-shadow: 0px -1px 13px 1px rgba(34, 60, 80, 0.2);
+    box-shadow: 0px -1px 13px 1px rgba(34, 60, 80, 0.2);
+  }
+  .partner-card:hover .partner-card__text {
+    color: var(--q-primary);
+  }
 }
 </style>

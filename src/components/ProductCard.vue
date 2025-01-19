@@ -36,11 +36,6 @@ const props = defineProps({
   transition: 0.3s linear;
 }
 
-.product-card:hover {
-  -webkit-box-shadow: 0px 3px 10px 0px #00000012;
-  -moz-box-shadow: 0px 3px 10px 0px #00000012;
-  box-shadow: 0px 3px 10px 0px #00000012;
-}
 .product-card__text-wrapper {
   background-color: var(--background-light-accent);
   min-height: 76px;
@@ -54,6 +49,7 @@ const props = defineProps({
   line-height: 15.2px;
   color: var(--color-black);
   text-transform: uppercase;
+  transition: 0.3s linear;
 }
 
 .card__btn {
@@ -73,7 +69,16 @@ const props = defineProps({
 :deep(.q-img__container) {
   overflow: hidden;
 }
-
+@media (hover: hover) {
+  .product-card:hover {
+    -webkit-box-shadow: 0px -1px 13px 1px rgba(34, 60, 80, 0.2);
+    -moz-box-shadow: 0px -1px 13px 1px rgba(34, 60, 80, 0.2);
+    box-shadow: 0px -1px 13px 1px rgba(34, 60, 80, 0.2);
+  }
+  .product-card:hover .card__text {
+    color: var(--q-primary);
+  }
+}
 @media screen and (max-width: 1440px) {
   .my-card {
     max-width: 300px;

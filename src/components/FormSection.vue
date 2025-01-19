@@ -149,8 +149,6 @@ const resetForm = () => {
 .form-section__content {
   display: flex;
   gap: 56px;
-  /* align-items: center;
-  justify-content: center; */
   color: var(--color-white);
 }
 .form-section__title,
