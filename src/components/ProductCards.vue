@@ -50,6 +50,7 @@ const production = [
   gap: 20px;
   padding-bottom: 42px;
 }
+
 @media (max-width: 1200px) {
   .card__container {
     display: grid;

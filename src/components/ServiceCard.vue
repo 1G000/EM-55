@@ -9,7 +9,12 @@ defineProps({
 
 <template>
   <q-responsive :ratio="1 / 1" class="col">
-    <q-card class="q-ma-none shadow-0 my-card cursor-pointer" clickable>
+    <q-card
+      class="q-ma-none shadow-0 my-card cursor-pointer"
+      clickable
+      @mouseleave="callLeavingAnimation"
+      :class="{ leave: isLeaving }"
+    >
       <q-img :src="service.imgSrc" :lazy-src="service.imgSrc">
         <div class="absolute-bottom text__content">
           <div class="card__text">{{ service.title }}</div>
@@ -20,9 +25,26 @@ defineProps({
 </template>
 
 <style scoped>
+@keyframes moveOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes moveIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 .my-card {
   max-width: 400px;
   border-radius: 8px;
+  transition: 3s linear;
 }
 
 .card__text {
@@ -42,6 +64,7 @@ defineProps({
   align-items: end;
   max-width: 100%;
   background-color: #0e0d0d99;
+  animation: moveIn 0.5s linear;
   clip-path: polygon(
     16% 0,
     41% 20%,
@@ -63,6 +86,12 @@ defineProps({
 @media screen and (max-width: 1440px) {
   .my-card {
     max-width: 300px;
+  }
+}
+@media (hover: hover) {
+  .my-card:hover .text__content {
+    animation: moveOut 0.5s linear;
+    opacity: 0;
   }
 }
 </style>

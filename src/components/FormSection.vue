@@ -14,8 +14,8 @@ const tel = ref(null);
 const files = ref(null);
 const accept = ref(false);
 // const privacyDialog = ref(false);
-const sectionBackground = `url('./Images/Form/form-background.jpg')`;
-const sectionBackgroundMobile = `url('./Images/Form/form-background-mobile.jpg')`;
+const sectionBackground = `url('./Images/Form/form-background.jpg') no-repeat`;
+const sectionBackgroundMobile = `url('./Images/Form/form-background-mobile.jpg') no-repeat`;
 const submitForm = () => {
   // $q.notify({
   //   color: 'green-4',
@@ -37,10 +37,8 @@ const resetForm = () => {
   <UiSection
     class="form-section"
     id="form"
-    :style="
-      $q.screen.width > 767
-        ? { backgroundImage: sectionBackground }
-        : { backgroundImage: sectionBackgroundMobile }
+    :background="
+      $q.screen.width > 767 ? sectionBackground : sectionBackgroundMobile
     "
     :padding="$q.screen.width > 1024 ? '100px 60px' : '40px 20px'"
   >
