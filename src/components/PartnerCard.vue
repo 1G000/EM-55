@@ -19,21 +19,13 @@ const props = defineProps({
 
 <template>
   <q-responsive :ratio="4 / 3" class="partner-card">
-    <q-card
-      class="column partner-card__accent"
-      flat
-      clickable
-      tag="a"
-      :href="href"
-      target="_blank"
-    >
-      <q-img class="col image" :src="imgSrc" />
-
+    <q-card class="column partner-card__accent" flat clickable tag="a" :href="href" target="_blank">
+      <img class="col image" :src="imgSrc" />
       <q-card-section class="partner-card__title">
         <q-item>
-          <q-item-section class="text-primary text-uppercase">{{
+          <q-item-section class="title text-primary text-uppercase">{{
             title
-          }}</q-item-section>
+            }}</q-item-section>
         </q-item>
       </q-card-section>
     </q-card>
@@ -48,15 +40,18 @@ const props = defineProps({
   transition: 0.3s linear;
   border-radius: 8px;
 }
+
 .partner-card__accent {
   border: 1px solid var(--q-accent);
   border-radius: 8px;
 }
+
 .partner-card:hover {
   -webkit-box-shadow: 0px 10px 28px 0px #00000012;
   -moz-box-shadow: 0px 10px 28px 0px #00000012;
   box-shadow: 0px 10px 28px 0px #00000012;
 }
+
 .partner-card__title {
   background-color: var(--background-light-accent);
   border-top: 1px solid #b990511a;
@@ -66,5 +61,14 @@ const props = defineProps({
   font-family: Montserrat-bold, serif;
   font-size: clamp(0.8rem, 1vw, 1rem);
   line-height: 15.2px;
+}
+
+.image {
+  object-fit: contain;
+  padding: 20px;
+}
+
+.partner-card__title {
+  min-height: 75px;
 }
 </style>
