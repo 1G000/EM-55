@@ -185,24 +185,6 @@ const data = {
   border-radius: 8px;
 }
 
-.breadcrumbs {
-  font-family: Montserrat-regular, serif;
-  font-size: clamp(0.9rem, 1vw, 1rem);
-  line-height: 30px;
-  color: var(--q-secondary)
-}
-
-.breadcrumbs a {
-  color: var(--q-secondary)
-}
-
-@media (hover: hover) {
-  .breadcrumbs a:hover {
-    cursor: pointer;
-    color: var(--q-primary)
-  }
-
-}
 
 
 @media (max-width: 1240px) {

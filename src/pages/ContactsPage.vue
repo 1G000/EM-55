@@ -1,15 +1,17 @@
 <template>
   <div class="container">
+    <q-breadcrumbs gutter="xs" class="breadcrumbs">
+      <template v-slot:separator>
+        <q-icon size="1.5em" name="chevron_right"></q-icon>
+      </template>
+      <q-breadcrumbs-el icon="home" label="Главная" to="/"></q-breadcrumbs-el>
+      <q-breadcrumbs-el label="Контакты"></q-breadcrumbs-el>
+    </q-breadcrumbs>
     <ContactsSection />
     <h2 class="page__title">Контактные данные специалистов</h2>
     <section class="contact__section">
-      <ContactItem
-        v-for="contact in contactsData?.contacts || []"
-        :key="contact.title"
-        :title="contact.title"
-        :employees="contact.employees"
-        class="contact__item"
-      />
+      <ContactItem v-for="contact in contactsData?.contacts || []" :key="contact.title" :title="contact.title"
+        :employees="contact.employees" class="contact__item" />
     </section>
   </div>
 </template>
@@ -61,6 +63,7 @@ onMounted(async () => {
   .page__title {
     font-size: 14px;
   }
+
   .container {
     padding: 0 0px 20px 0px;
   }

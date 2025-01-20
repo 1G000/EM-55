@@ -1,18 +1,18 @@
 <template>
-  <UiSection
-    class="content__wrapper"
-    :padding="$q.screen.width > 768 ? '64px 40px 0 40px' : '32px 20px 0 20px'"
-  >
+  <UiSection class="content__wrapper" :padding="$q.screen.width > 768 ? '64px 40px 0 40px' : '32px 20px 0 20px'">
+    <q-breadcrumbs gutter="xs" class="breadcrumbs">
+      <template v-slot:separator>
+        <q-icon size="1.5em" name="chevron_right"></q-icon>
+      </template>
+      <q-breadcrumbs-el icon="home" label="Главная" to="/"></q-breadcrumbs-el>
+      <q-breadcrumbs-el label="История"></q-breadcrumbs-el>
+    </q-breadcrumbs>
     <UiSectionTitle :title-text="sectionTitle" />
     <div class="container">
       <div class="left-side">
         <q-timeline :layout="layout" color="primary">
-          <q-timeline-entry
-            title="Основание Треста «Электромонтаж&nbsp;55»"
-            subtitle="21 Января 1950 года"
-            side="left"
-            icon="done_all"
-          >
+          <q-timeline-entry title="Основание Треста «Электромонтаж&nbsp;55»" subtitle="21 Января 1950 года" side="left"
+            icon="done_all">
             <div class="text small">
               Трест «Электромонтаж 55» образован на основании распоряжения
               Совета Министров СССР № 674-р от 21.01.1950 года. Трест при его
@@ -21,12 +21,8 @@
             </div>
           </q-timeline-entry>
 
-          <q-timeline-entry
-            title="Объединение с трестом «Севзапэлектромонтаж»"
-            subtitle="28 Марта 1953 года"
-            side="right"
-            icon="done_all"
-          >
+          <q-timeline-entry title="Объединение с трестом «Севзапэлектромонтаж»" subtitle="28 Марта 1953 года"
+            side="right" icon="done_all">
             <div class="text small">
               Согласно распоряжению Совета Министров СССР № 5641-р от 28.03.1953
               года трест «Электромонтаж 55» был объединён с трестом
@@ -35,12 +31,8 @@
             </div>
           </q-timeline-entry>
 
-          <q-timeline-entry
-            title="Восстановление треста в составе «Главэлектромонтажа»"
-            subtitle="18 Мая 1954 года"
-            side="left"
-            icon="done_all"
-          >
+          <q-timeline-entry title="Восстановление треста в составе «Главэлектромонтажа»" subtitle="18 Мая 1954 года"
+            side="left" icon="done_all">
             <div class="text small">
               На основании Постановления Совета Министров СССР от 18.05.1954
               года № 941 восстановлен трест «Электромонтаж 55» в составе
@@ -49,13 +41,8 @@
             </div>
           </q-timeline-entry>
 
-          <q-timeline-entry
-            title="Переход в состав
-          Главленинградстроя"
-            subtitle="11 Марта 1957 года"
-            side="right"
-            icon="done_all"
-          >
+          <q-timeline-entry title="Переход в состав
+          Главленинградстроя" subtitle="11 Марта 1957 года" side="right" icon="done_all">
             <div class="text small">
               На основании Постановления Совета Министров СССР от 11.03.1957
               года № 259 трест «Электромонтаж 55» из подчинения
@@ -65,12 +52,8 @@
             </div>
           </q-timeline-entry>
 
-          <q-timeline-entry
-            title="Преобразование в акционерное общество открытого типа"
-            subtitle="01 Июля 1992 года"
-            side="left"
-            icon="done_all"
-          >
+          <q-timeline-entry title="Преобразование в акционерное общество открытого типа" subtitle="01 Июля 1992 года"
+            side="left" icon="done_all">
             <div class="text small">
               В соответствии с Указом Президента Российской Федерации «Об
               организационных мерах по преобразованию государственных
@@ -86,10 +69,7 @@
 
           <q-timeline-entry
             title="Преобразование в общество с ограниченной ответственностью и вход в группу компаний&nbsp;«ГРАНИТ»."
-            subtitle="2015 год - Наши дни"
-            side="right"
-            icon="done_all"
-          >
+            subtitle="2015 год - Наши дни" side="right" icon="done_all">
             <div class="text small">
               С 2015 года ОАО «Электромонтаж&nbsp;55» преобразован в ООО
               «Электромонтаж&nbsp;55», который до настоящего времени является
@@ -101,21 +81,13 @@
         </q-timeline>
       </div>
       <div class="q-px-lg q-py-md right-side">
-        <picture class="picture__container"
-          ><img
-            src="Images/team.jpg"
-            alt="картинка"
-            class="picture"
-            width="100%"
-          />
+        <picture class="picture__container"><img src="Images/team.jpg" alt="картинка" class="picture" width="100%" />
         </picture>
         <p class="text">
           В состав ООО&nbsp;«Электромонтаж&nbsp;55» входят три структурных
           подразделения:
-          <strong
-            >электромонтажное производство (ЭП ЭМ-55) Завод
-            Электромонтаж&nbsp;55</strong
-          >, <strong>управление наладочных работ (УНР-422)</strong> и
+          <strong>электромонтажное производство (ЭП ЭМ-55) Завод
+            Электромонтаж&nbsp;55</strong>, <strong>управление наладочных работ (УНР-422)</strong> и
           <strong>управление пуско-наладочных работ (УПНР-427).</strong>
         </p>
         <p class="text">
@@ -149,7 +121,9 @@
             на кирпичных и крупнопанельных жилых домах (с общим количеством
             квартир более 2 млн.)
           </li>
-          <li class="text bold"><ListIcon /> на школах (более 600 школ)</li>
+          <li class="text bold">
+            <ListIcon /> на школах (более 600 школ)
+          </li>
           <li class="text bold">
             <ListIcon /> на детских садах (более 800 детских садов)
           </li>
@@ -165,7 +139,9 @@
             <ListIcon />на спортивно-концертном комплексе «Петербургский» на 25
             тыс. мест (теперь на этом месте новый комплекс «СКА&nbsp;Арена».)
           </li>
-          <li class="text bold"><ListIcon /> на дворце спорта «Юбилейный»</li>
+          <li class="text bold">
+            <ListIcon /> на дворце спорта «Юбилейный»
+          </li>
           <li class="text bold">
             <ListIcon /> на концертном зале «Октябрьский»
           </li>
@@ -186,13 +162,11 @@
         </ul>
 
         <p class="text">
-          <strong
-            >На распределительных подстанциях (более 400) и трансформаторных
+          <strong>На распределительных подстанциях (более 400) и трансформаторных
             подстанциях (более 4000), что составляет порядка 75-80% всех
             действующих подстанций Санкт-Петербурга на период 2014 года
             проложено более 500 тыс. км. кабеля 0,4-10 кВ, а на квартальных
-            котельных (более 50 тыс. км.)</strong
-          >
+            котельных (более 50 тыс. км.)</strong>
         </p>
       </div>
     </div>
@@ -211,6 +185,7 @@ const sectionTitle = "История «ООО Электромонтаж 55»";
 .content__wrapper {
   gap: 50px;
 }
+
 .container {
   display: flex;
   flex-direction: column;
@@ -244,33 +219,40 @@ const sectionTitle = "История «ООО Электромонтаж 55»";
   text-align: left;
   text-indent: 0px;
 }
+
 .picture__container {
   display: flex;
   justify-content: center;
   margin-bottom: 80px;
   margin-top: -40px;
 }
+
 .picture {
   object-fit: cover;
   border-radius: 8px;
   width: 60%;
 }
+
 .history__list {
   padding-left: 40px;
 }
+
 li {
   display: flex;
   align-items: center;
   gap: 20px;
 }
+
 .icon {
   min-width: 20px;
 }
+
 @media (max-width: 1200px) {
   .container {
     gap: 0;
   }
 }
+
 @media (max-width: 768px) {
   .left-side {
     width: 100%;
@@ -281,6 +263,7 @@ li {
   .picture {
     width: 100%;
   }
+
   .history__list {
     padding-left: 5px;
   }
