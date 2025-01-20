@@ -51,58 +51,40 @@ const data = {
 </script>
 
 <template>
-  <UiSection
-    class="content__wrapper"
-    :padding="$q.screen.width > 768 ? '64px 40px 0 40px' : '32px 20px 0 20px'"
-  >
+  <UiSection class="content__wrapper" :padding="$q.screen.width > 768 ? '64px 40px 0 40px' : '32px 20px 0 20px'">
+    <q-breadcrumbs gutter="xs" class="breadcrumbs">
+      <template v-slot:separator>
+        <q-icon size="1.5em" name="chevron_right"></q-icon>
+      </template>
+      <q-breadcrumbs-el icon="home" label="Главная" to="/"></q-breadcrumbs-el>
+      <q-breadcrumbs-el label="О Компании"></q-breadcrumbs-el>
+    </q-breadcrumbs>
     <UiInnerPageTitle :title-text="sectionTitle" />
     <q-item-section class="content__top">
-      <p
-        v-for="paragragh in data.generalInfo"
-        :key="paragragh.id"
-        v-html="paragragh.text"
-        class="content__top-text"
-      ></p>
+      <p v-for="paragragh in data.generalInfo" :key="paragragh.id" v-html="paragragh.text" class="content__top-text">
+      </p>
     </q-item-section>
 
     <q-item-section class="content__bottom">
       <q-item class="content__bottom-left q-pl-none">
-        <picture class="picture__container"
-          ><img
-            src="Images/Contacts/selin.jpg"
-            alt="картинка"
-            class="picture"
-          />
+        <picture class="picture__container"><img src="Images/Contacts/selin.jpg" alt="картинка" class="picture" />
         </picture>
         <div class="content____quote-wrapper-back">
           <blockquote class="content__quote-wrapper">
             <p class="content__quote-text">{{ data.quoteFirst }}</p>
-            <q-icon
-              class="mdi mdi-format-quote-close content__quote-icon"
-              size="32px"
-              color="primary"
-            ></q-icon>
+            <q-icon class="mdi mdi-format-quote-close content__quote-icon" size="32px" color="primary"></q-icon>
           </blockquote>
 
           <blockquote class="content__quote-wrapper">
-            <q-icon
-              class="mdi mdi-format-quote-open content__quote-icon"
-              size="32px"
-              color="primary"
-            ></q-icon>
+            <q-icon class="mdi mdi-format-quote-open content__quote-icon" size="32px" color="primary"></q-icon>
             <p class="content__quote-text">{{ data.quoteSecond }}</p>
           </blockquote>
         </div>
       </q-item>
 
       <q-item class="content__bottom-right">
-        <p
-          v-for="text in data.managerWords"
-          :key="text.id"
-          v-html="text.text"
-          :class="text.id === 0 || text.id === 2 ? 'q-mb-lg' : ''"
-          class="content__bottom-text"
-        ></p>
+        <p v-for="text in data.managerWords" :key="text.id" v-html="text.text"
+          :class="text.id === 0 || text.id === 2 ? 'q-mb-lg' : ''" class="content__bottom-text"></p>
       </q-item>
     </q-item-section>
   </UiSection>
@@ -112,25 +94,30 @@ const data = {
 .content__wrapper {
   gap: 50px;
 }
+
 .content__top {
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
+
 .content__top-text,
 .content__bottom-text {
   font-family: Montserrat-regular, serif;
   font-size: clamp(1.1rem, 1vw, 1.2rem);
   line-height: 30px;
 }
+
 .content__bottom-text {
   text-align: justify;
 }
+
 .content__bottom-text:nth-child(3) {
   max-width: 445px;
   align-self: flex-end;
   text-align: start;
 }
+
 .content__bottom {
   display: flex;
   flex-direction: row;
@@ -139,12 +126,14 @@ const data = {
   flex-wrap: nowrap;
   margin-left: 0px;
 }
+
 .content__bottom-left,
 .content__bottom-right {
   display: flex;
   flex-direction: column;
   gap: 32px;
 }
+
 .content__bottom-left {
   align-items: center;
   gap: 30px;
@@ -154,6 +143,7 @@ const data = {
   width: 70%;
   gap: 30px;
 }
+
 .content__quote-wrapper {
   display: flex;
   flex-direction: row;
@@ -165,6 +155,7 @@ const data = {
   padding: 20px;
   max-width: 362px;
 }
+
 .content____quote-wrapper-back {
   background-color: var(--background-light-accent);
   border-radius: 8px;
@@ -172,28 +163,53 @@ const data = {
   flex-direction: column;
   gap: 30px;
 }
+
 .content__quote-icon {
   width: 24px;
   height: 24px;
 }
+
 .content__quote-text {
   font-style: italic;
   font-weight: bold;
 }
+
 .picture__container {
   margin: 0 auto;
   max-width: 100%;
 }
+
 .picture {
   width: 100%;
   object-fit: cover;
   border-radius: 8px;
 }
 
+.breadcrumbs {
+  font-family: Montserrat-regular, serif;
+  font-size: clamp(0.9rem, 1vw, 1rem);
+  line-height: 30px;
+  color: var(--q-secondary)
+}
+
+.breadcrumbs a {
+  color: var(--q-secondary)
+}
+
+@media (hover: hover) {
+  .breadcrumbs a:hover {
+    cursor: pointer;
+    color: var(--q-primary)
+  }
+
+}
+
+
 @media (max-width: 1240px) {
   .content__bottom {
     gap: 20px;
   }
+
   .content__bottom-right {
     gap: 24px;
     padding: 0;
@@ -205,16 +221,20 @@ const data = {
     flex-wrap: wrap;
     gap: 60px;
   }
+
   .content__bottom-left {
     flex-direction: row;
     width: 100%;
   }
+
   .content__bottom-right {
     width: 100%;
   }
+
   .picture__container {
     width: 500px;
   }
+
   .content__quote-wrapper {
     flex-direction: row;
     align-items: center;
@@ -222,6 +242,7 @@ const data = {
     text-align: center;
   }
 }
+
 @media (max-width: 768px) {
   .content__bottom-left {
     flex-direction: column;
@@ -229,6 +250,7 @@ const data = {
     width: 100%;
     padding-right: 0px;
   }
+
   .content__quote-wrapper {
     width: 100%;
   }
@@ -236,6 +258,7 @@ const data = {
   .picture__container {
     width: 300px;
   }
+
   img {
     width: 300px;
   }
