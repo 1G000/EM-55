@@ -14,8 +14,8 @@ const tel = ref(null);
 const files = ref(null);
 const accept = ref(false);
 // const privacyDialog = ref(false);
-const sectionBackground = `url('./Images/Form/form-background.jpg') no-repeat`;
-const sectionBackgroundMobile = `url('./Images/Form/form-background-mobile.jpg') no-repeat`;
+const sectionBackground = `url('./Images/Form/form-background.jpg')`;
+const sectionBackgroundMobile = `url('./Images/Form/form-background-mobile.jpg')`;
 const submitForm = () => {
   // $q.notify({
   //   color: 'green-4',
