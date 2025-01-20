@@ -105,10 +105,14 @@ const partners = [
 </script>
 
 <template>
-  <UiSection
-    class="content__wrapper"
-    :padding="$q.screen.width > 768 ? '64px 40px 0 40px' : '32px 20px 0 20px'"
-  >
+  <UiSection class="content__wrapper" :padding="$q.screen.width > 768 ? '64px 40px 0 40px' : '32px 20px 0 20px'">
+    <q-breadcrumbs gutter="xs" class="breadcrumbs">
+      <template v-slot:separator>
+        <q-icon size="1.5em" name="chevron_right"></q-icon>
+      </template>
+      <q-breadcrumbs-el icon="home" label="Главная" to="/"></q-breadcrumbs-el>
+      <q-breadcrumbs-el label="Партнёры"></q-breadcrumbs-el>
+    </q-breadcrumbs>
     <UiInnerPageTitle :title-text="sectionTitle" />
     <p class="partners-page__text">
       Партнёры и заказчики «Электромонтаж 55» знают, что это динамично
@@ -120,13 +124,8 @@ const partners = [
     </p>
 
     <article class="partner-cards">
-      <PartnerCard
-        v-for="(partner, index) in partners"
-        :key="index"
-        :title="partner.title"
-        :imgSrc="partner.imgSrc"
-        :href="partner.href"
-      />
+      <PartnerCard v-for="(partner, index) in partners" :key="index" :title="partner.title" :imgSrc="partner.imgSrc"
+        :href="partner.href" />
     </article>
   </UiSection>
 </template>
@@ -137,6 +136,7 @@ const partners = [
   grid-gap: 20px;
   justify-items: center;
 }
+
 .partners-page__text {
   font-family: Montserrat-regular, serif;
   font-size: clamp(1.1rem, 1vw, 1.2rem);
