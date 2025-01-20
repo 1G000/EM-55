@@ -21,31 +21,22 @@ const showMobileMenu = ref(false);
 <template>
   <q-header unelevated class="header">
     <div class="container">
+      <div class="left-part-of-toolbar"></div>
+      <div class="first-line-left"></div>
+      <div class="second-line-left"></div>
       <router-link to="/" class="logo__container">
         <LogoSvg class="header-logo" />
         <RIcon class="r-icon" />
-        <!-- <img
-          src="../assets/logo.png"
-          width="10px"
-          height="auto"
-          class="navbar__logo"
-        /> -->
         <h1 class="logo__text">Электромонтаж 55</h1>
       </router-link>
       <div class="first-line"></div>
       <div class="second-line"></div>
       <q-toolbar class="toolbar">
-        <q-toolbar-title
-          v-if="$q.screen.width > 1600 || $q.screen.width < 1245"
-          class="nav__title"
-        >
-          Оборудование для<br />
-          трансформаторных подстанций
+        <!-- v-if="$q.screen.width > 1600 || $q.screen.width < 1245"
+        /> -->
+        <q-toolbar-title class="nav__title">
+          Оборудование для трансформаторных подстанций
         </q-toolbar-title>
-        <DesktopNavigationMenu
-          v-if="$q.screen.width > 1244"
-          :navItems="navItems"
-        />
         <ToolbarContactButton />
         <!-- Кнопка бургера -->
         <q-icon
@@ -77,6 +68,7 @@ const showMobileMenu = ref(false);
         </transition>
       </q-drawer>
     </div>
+    <DesktopNavigationMenu v-if="$q.screen.width > 1244" :navItems="navItems" />
   </q-header>
 </template>
 
@@ -90,6 +82,13 @@ const showMobileMenu = ref(false);
   max-width: 1920px;
   margin: 0 auto;
   padding: 5px 0;
+}
+.left-part-of-toolbar {
+  background-color: var(--q-primary);
+  clip-path: polygon(0% 0%, 100% 0, 73% 100%, 0% 100%);
+  width: 69px;
+  height: 55px;
+  margin-right: -10px;
 }
 .logo__container {
   width: 180px;
@@ -114,17 +113,29 @@ const showMobileMenu = ref(false);
   display: none;
 }
 .first-line,
-.second-line {
+.second-line,
+.first-line-left,
+.second-line-left {
   width: 12px;
   height: 55px;
   flex-shrink: 0;
   background-color: var(--q-accent);
   transform: skew(-17deg, 0deg);
 }
+
 .second-line {
   width: 14px;
   background-color: var(--q-secondary);
 }
+.second-line-left {
+  width: 12px;
+  background-color: var(--q-secondary);
+}
+.second-line-left {
+  border-bottom-right-radius: 2px;
+  border-top-right-radius: 2px;
+}
+
 .first-line {
   border-bottom-left-radius: 2px;
   border-top-left-radius: 2px;
@@ -150,9 +161,10 @@ const showMobileMenu = ref(false);
 .nav__title {
   font-family: Montserrat-regular, serif;
   color: var(--color-white);
-  font-size: 10px;
+  font-size: 1rem;
   font-weight: normal;
   margin-right: 10px;
+  text-transform: none;
 }
 
 .burger-icon {
