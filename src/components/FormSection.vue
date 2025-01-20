@@ -141,8 +141,8 @@ const resetForm = () => {
   gap: 0px;
 }
 .form-section {
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
 }
 .form-section__content {
   display: flex;
