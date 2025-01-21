@@ -1,11 +1,26 @@
 <script setup>
-defineProps({
+import { computed } from "vue";
+import { useQuasar } from "quasar";
+
+const q = useQuasar();
+
+const props = defineProps({
   navItems: {
     type: Array,
     require: true,
   },
 });
 
+const updatedNavItems = computed(() => {
+  console.log(q.screen.width);
+
+  if (q.screen.width < 1060) {
+    return props.navItems.slice(0, -4);
+  } else if (q.screen.width < 1230) {
+    return props.navItems.slice(0, -2);
+  }
+  return props.navItems;
+});
 const downloadFile = (url) => {
   window.location.href = url;
 };
@@ -13,10 +28,10 @@ const downloadFile = (url) => {
 
 <template>
   <nav class="navigation nav-text">
-    <div v-for="item in navItems" :key="item">
+    <div v-for="item in updatedNavItems" :key="item">
       <template v-if="item.secondLevel">
         <q-btn-dropdown
-          :menu-offset="[0, 8]"
+          :menu-offset="[0, 5]"
           square
           :label="item.label"
           fab
@@ -38,7 +53,12 @@ const downloadFile = (url) => {
                 <q-item-section side>
                   <q-icon name="mdi-menu-right" color="primary" />
                 </q-item-section>
-                <q-menu anchor="top end" self="top start" class="shadow-3">
+                <q-menu
+                  anchor="top right"
+                  self="top left"
+                  :offset="[1, 0]"
+                  class="shadow-0"
+                >
                   <q-list dense separator>
                     <q-item
                       v-for="level in subitem.thirdLevelItems"
@@ -87,15 +107,13 @@ const downloadFile = (url) => {
 </template>
 
 <style scoped>
-.navigation {
+.navigation.nav-text {
   display: flex;
   align-items: center;
-  justify-content: center;
+  padding-left: 20px;
+  padding-right: 20px;
+  justify-content: space-between;
   gap: 40px;
-}
-.navigation.nav-text {
-  padding-left: 40px;
-  padding-right: 40px;
 }
 .navigation__button,
 .nav-text,
@@ -135,12 +153,14 @@ const downloadFile = (url) => {
   color: var(--q-primary) !important;
 }
 
-@media (max-width: 1280px) {
-  .navigation {
-    width: 100%;
+@media (max-width: 1370px) {
+  .navigation.nav-text {
+    gap: 20px;
   }
-  .nav-text {
-    padding-left: 5px;
+}
+@media (max-width: 1230px) {
+  .navigation.nav-text {
+    padding-left: 60px;
   }
 }
 </style>

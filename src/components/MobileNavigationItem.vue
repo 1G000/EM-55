@@ -31,6 +31,9 @@ const closeAllExpansions = (url) => {
 const goToVacancyPage = (label) => {
   return label === "Вакансии" ? router.push("/vacancies") : false;
 };
+const hideLabel = (label) => {
+  return ["Вакансии", "Партнёры", "Контакты"].includes(label);
+};
 </script>
 
 <template>
@@ -40,7 +43,7 @@ const goToVacancyPage = (label) => {
     v-model="expanded"
     :label="label"
     active-class="navigation-list-active"
-    :hide-expand-icon="label === 'Вакансии'"
+    :hide-expand-icon="hideLabel(label)"
     expand-icon-class="text-black"
   >
     <q-card

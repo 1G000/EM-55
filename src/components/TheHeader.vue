@@ -1,4 +1,11 @@
 <script setup>
+import MobileNavigation from "src/components/MobileNavigation.vue";
+import ToolbarContactButton from "./ToolbarContactButton.vue";
+import DesktopNavigationMenu from "./DesktopNavigationMenu.vue";
+import LogoSvg from "./icons/LogoSvg.vue";
+import RIcon from "./icons/RIcon.vue";
+import { ref } from "vue";
+
 defineOptions({
   name: "TheHeader",
 });
@@ -8,12 +15,6 @@ defineProps({
     require: true,
   },
 });
-import MobileNavigation from "src/components/MobileNavigation.vue";
-import ToolbarContactButton from "./ToolbarContactButton.vue";
-import DesktopNavigationMenu from "./DesktopNavigationMenu.vue";
-import LogoSvg from "./icons/LogoSvg.vue";
-import RIcon from "./icons/RIcon.vue";
-import { ref } from "vue";
 
 const showMobileMenu = ref(false);
 </script>
@@ -32,43 +33,50 @@ const showMobileMenu = ref(false);
       <div class="first-line"></div>
       <div class="second-line"></div>
       <q-toolbar class="toolbar">
-        <!-- v-if="$q.screen.width > 1600 || $q.screen.width < 1245"
-        /> -->
         <q-toolbar-title class="nav__title">
           Оборудование для трансформаторных подстанций
         </q-toolbar-title>
         <ToolbarContactButton />
-        <!-- Кнопка бургера -->
-        <q-icon
-          v-if="$q.screen.width <= 1244"
-          name="menu"
-          size="34px"
-          color="primary"
-          class="burger-icon"
-          @click="showMobileMenu = !showMobileMenu"
-        />
       </q-toolbar>
-      <q-drawer
-        side="right"
-        :breakpoint="1215"
-        v-model="showMobileMenu"
-        style="position: absolute; top: 0; right: 0; background-color: white"
-      >
-        <div class="close-icon-wrapper">
-          <q-icon
-            name="close"
-            size="32px"
-            class="close-cross"
-            @click="showMobileMenu = false"
-          />
-        </div>
-        <!-- Выплывающее меню -->
-        <transition>
-          <MobileNavigation :navItems="navItems" />
-        </transition>
-      </q-drawer>
     </div>
-    <DesktopNavigationMenu v-if="$q.screen.width > 1244" :navItems="navItems" />
+    <div class="header__navbar">
+      <DesktopNavigationMenu
+        v-if="$q.screen.width > 600"
+        :navItems="navItems"
+      />
+      <q-icon
+        v-if="$q.screen.width <= 1230"
+        name="menu"
+        size="34px"
+        color="primary"
+        class="burger-icon"
+        @click="showMobileMenu = !showMobileMenu"
+      />
+    </div>
+    <q-drawer
+      side="right"
+      :breakpoint="1215"
+      v-model="showMobileMenu"
+      style="position: absolute; top: 0; right: 0; background-color: white"
+    >
+      <div class="drawer__contacts">
+        <a href="tel:+78122942013" class="links text-bold"
+          >+7 (812) 294-20-13</a
+        >
+      </div>
+      <div class="close-icon-wrapper">
+        <q-icon
+          name="close"
+          size="32px"
+          class="close-cross"
+          @click="showMobileMenu = false"
+        />
+      </div>
+      <!-- Выплывающее меню -->
+      <transition>
+        <MobileNavigation :navItems="navItems" />
+      </transition>
+    </q-drawer>
   </q-header>
 </template>
 
@@ -81,7 +89,7 @@ const showMobileMenu = ref(false);
   align-items: center;
   max-width: 1920px;
   margin: 0 auto;
-  padding: 5px 0;
+  padding: 5px 0 0 0;
 }
 .left-part-of-toolbar {
   background-color: var(--q-primary);
@@ -157,11 +165,15 @@ const showMobileMenu = ref(false);
   font-weight: 600;
   user-select: none;
 }
-
+.header__navbar {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
 .nav__title {
   font-family: Montserrat-regular, serif;
   color: var(--color-white);
-  font-size: 1rem;
+  font-size: clamp(0.8rem, 1.7vw, 1rem);
   font-weight: normal;
   margin-right: 10px;
   text-transform: none;
@@ -173,8 +185,9 @@ const showMobileMenu = ref(false);
   padding: 2px 4px;
   border-radius: 8px;
   color: var(--q-accent);
-  background-color: var(--q-accent);
+  background-color: transparent;
   margin-right: 14px;
+  margin-top: -4px;
 }
 .close-icon-wrapper {
   display: flex;
@@ -183,22 +196,46 @@ const showMobileMenu = ref(false);
 .close-cross {
   cursor: pointer;
   color: var(--q-primary);
-  padding: 18px 14px;
+  padding: 10px 14px 18px 14px;
   display: flex;
   justify-content: end;
   width: 40px;
   height: 40px;
 }
+.drawer__contacts {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--q-primary);
+  height: 55px;
+  margin-top: 13px;
+  font-size: clamp(1rem, 1.7vw, 1.3rem);
+}
+.links {
+  color: var(--q-accent);
+  font-size: 1.2rem;
+  font-family: Montserrat-regular, serif;
+  font-style: bold;
+  line-height: 17.07px;
+  text-transform: none;
+  transition: 0.3s linear;
+}
 @media (max-width: 1244px) {
   .toolbar {
     justify-content: end;
   }
-}
-@media (max-width: 1244px) {
   .nav__title {
     margin-right: auto;
+    max-width: 400px;
+    text-wrap: balance;
   }
 }
+@media (max-width: 1230px) {
+  .header__navbar {
+    justify-content: space-between;
+  }
+}
+
 @media (max-width: 600px) {
   .nav__title {
     display: none;

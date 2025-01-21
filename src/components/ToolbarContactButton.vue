@@ -1,10 +1,13 @@
 <script setup>
+import { ref } from "vue";
+
 defineOptions({
   name: "ToolbarContactButton",
 });
 const call = (phoneNumber) => {
   window.location.href = `tel:${phoneNumber}`;
 };
+const isHovered = ref(false);
 </script>
 
 <template>
@@ -12,11 +15,14 @@ const call = (phoneNumber) => {
     <q-btn
       ref="button"
       class="q-mr-md contact-button text-bold"
+      :class="{ 'wobble-hor-bottom': isHovered }"
       color="transparent"
       unelevated
       text-color="accent"
       icon="phone"
       square
+      @mouseenter="isHovered = true"
+      @mouseleave="isHovered = false"
       :label="$q.screen.width <= 800 ? '' : '+7 (812) 294–20–13'"
     />
     <q-menu
@@ -44,10 +50,10 @@ const call = (phoneNumber) => {
           </q-item-section>
           <q-item-section>
             <q-item-label class="text-bold">Приемная:</q-item-label>
-            <q-item-label
-              ><a href="tel:+78122942013" class="links text-bold"
+            <q-item-label>
+              <!-- <a href="tel:+78122942013" class="links text-bold"
                 >+7 (812) 294-20-13</a
-              >
+              > -->
               <a href="tel:+78122942303" class="links text-bold"
                 >+7 (812) 294-23-03</a
               ><a href="mailto:referent@em-55.com" class="links"
@@ -99,7 +105,7 @@ const call = (phoneNumber) => {
             <q-avatar icon="mdi-tools" size="xl" text-color="secondary" />
           </q-item-section>
           <q-item-section>
-            <q-item-label class="text-bold"
+            <q-item-label class="text-bold" style="max-width: 250px"
               >Производственно-технический отдел:</q-item-label
             >
             <q-item-label
@@ -161,17 +167,21 @@ const call = (phoneNumber) => {
 </template>
 
 <style scoped>
+.wobble-hor-bottom {
+  -webkit-animation: wobble-hor-bottom 0.8s both;
+  animation: wobble-hor-bottom 0.8s both;
+}
 .contact-button {
   font-size: clamp(1rem, 1.7vw, 1.3rem);
   padding-top: 5px;
 }
-.contact-button::v-deep .q-icon {
+.contact-button :deep(.q-icon) {
   color: var(--q-accent);
 }
 .contact-button-inner {
   font-size: clamp(16px, 1vw, 20px);
 }
-.contact-button-inner::v-deep .q-icon {
+.contact-button-inner :deep(.q-icon) {
   color: var(--q-primary);
 }
 .contact-list {
@@ -185,5 +195,64 @@ const call = (phoneNumber) => {
 }
 .links:hover {
   color: var(--q-secondary);
+}
+
+@-webkit-keyframes wobble-hor-bottom {
+  0%,
+  100% {
+    -webkit-transform: translateX(0%);
+    transform: translateX(0%);
+    -webkit-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+  }
+  15% {
+    -webkit-transform: translateX(-30px) rotate(-6deg);
+    transform: translateX(-30px) rotate(-6deg);
+  }
+  30% {
+    -webkit-transform: translateX(15px) rotate(6deg);
+    transform: translateX(15px) rotate(6deg);
+  }
+  45% {
+    -webkit-transform: translateX(-15px) rotate(-3.6deg);
+    transform: translateX(-15px) rotate(-3.6deg);
+  }
+  60% {
+    -webkit-transform: translateX(9px) rotate(2.4deg);
+    transform: translateX(9px) rotate(2.4deg);
+  }
+  75% {
+    -webkit-transform: translateX(-6px) rotate(-1.2deg);
+    transform: translateX(-6px) rotate(-1.2deg);
+  }
+}
+@keyframes wobble-hor-bottom {
+  0%,
+  100% {
+    -webkit-transform: translateX(0%);
+    transform: translateX(0%);
+    -webkit-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+  }
+  15% {
+    -webkit-transform: translateX(-30px) rotate(-6deg);
+    transform: translateX(-30px) rotate(-6deg);
+  }
+  30% {
+    -webkit-transform: translateX(15px) rotate(6deg);
+    transform: translateX(15px) rotate(6deg);
+  }
+  45% {
+    -webkit-transform: translateX(-15px) rotate(-3.6deg);
+    transform: translateX(-15px) rotate(-3.6deg);
+  }
+  60% {
+    -webkit-transform: translateX(9px) rotate(2.4deg);
+    transform: translateX(9px) rotate(2.4deg);
+  }
+  75% {
+    -webkit-transform: translateX(-6px) rotate(-1.2deg);
+    transform: translateX(-6px) rotate(-1.2deg);
+  }
 }
 </style>

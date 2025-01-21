@@ -113,12 +113,6 @@
       ]
     },
     {
-      "label": "Вакансии",
-      "href": "/vacancies",
-      "expandedFirstLevel": false,
-      "secondLevel": false
-    },
-    {
       "label": "Деятельность",
       "secondLevel": true,
       "expandedFirstLevel": false,
@@ -128,6 +122,13 @@
         { "title": "КЛЮЧ", "thirdLevel": false, "href": "/sorry" }
       ]
     },
+    {
+      "label": "Вакансии",
+      "href": "/vacancies",
+      "expandedFirstLevel": false,
+      "secondLevel": false
+    },
+
     {
       "label": "Партнёры",
       "href": "/partners",
