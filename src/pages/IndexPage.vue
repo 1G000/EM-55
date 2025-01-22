@@ -6,6 +6,7 @@ import ComplexServiceSection from "src/components/ComplexServiceSection.vue";
 import ServicesSection from "src/components/ServicesSection.vue";
 import ContactsSection from "src/components/ContactsSection.vue";
 import FormSection from "src/components/FormSection.vue";
+import PartnersSection from "src/components/PartnersSection.vue";
 
 defineOptions({
   name: "IndexPage",
@@ -20,6 +21,7 @@ defineOptions({
     <ComplexServiceSection />
     <ServicesSection />
     <FormSection />
+    <PartnersSection />
     <ContactsSection />
   </div>
 </template>
