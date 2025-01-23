@@ -1,30 +1,26 @@
 <script setup>
-import { ref } from "vue";
-
 defineOptions({
   name: "ToolbarContactButton",
 });
 const call = (phoneNumber) => {
   window.location.href = `tel:${phoneNumber}`;
 };
-const isHovered = ref(false);
 </script>
 
 <template>
   <div>
     <q-btn
       ref="button"
-      class="q-mr-md contact-button text-bold"
-      :class="{ 'wobble-hor-bottom': isHovered }"
+      class="q-mr-md contact-button text-bold contact-hover"
       color="transparent"
       unelevated
       text-color="accent"
       icon="phone"
+      icon-right="mdi-menu-down"
       square
-      @mouseenter="isHovered = true"
-      @mouseleave="isHovered = false"
-      :label="$q.screen.width <= 800 ? '' : '+7 (812) 294–20–13'"
+      :label="$q.screen.width <= 940 ? '' : '+7 (812) 294–20–13'"
     />
+
     <q-menu
       ref="menu"
       :target="button"
@@ -32,19 +28,26 @@ const isHovered = ref(false);
       transition-show="fade"
       transition-hide="fade"
     >
-      <q-list id="myId" separator class="text-black q-py-md contact-list">
-        <q-btn
-          ref="button"
-          class="q-mr-md contact-button-inner text-bold"
-          color="transparent"
-          unelevated
-          text-color="primary"
-          icon="phone"
-          square
-          :label="'+7 (812) 294–20–13'"
-          @click="call"
-          v-close-popup
-        /><q-item clickable v-close-popup>
+      <q-list
+        id="myId"
+        separator
+        class="text-black q-pt-0 q-pb-md contact-list"
+      >
+        <div class="bg-primary q-pt-xs q-pb-xs">
+          <q-btn
+            ref="button"
+            class="contact-button-inner text-bold"
+            color="transparent"
+            unelevated
+            text-color="accent"
+            icon="phone"
+            square
+            :label="'+7 (812) 294–20–13'"
+            @click="call"
+            v-close-popup
+          />
+        </div>
+        <q-item clickable v-close-popup>
           <q-item-section avatar>
             <q-avatar icon="mdi-email-fast" size="xl" text-color="secondary" />
           </q-item-section>
@@ -167,23 +170,32 @@ const isHovered = ref(false);
 </template>
 
 <style scoped>
-.wobble-hor-bottom {
-  -webkit-animation: wobble-hor-bottom 0.8s both;
-  animation: wobble-hor-bottom 0.8s both;
-}
 .contact-button {
-  font-size: clamp(1rem, 1.7vw, 1.3rem);
+  font-size: 1.3rem;
+  /* font-size: clamp(1rem, 1.7vw, 1.3rem); */
   padding-top: 5px;
+  font-family: Montserrat-regular, serif;
 }
 .contact-button :deep(.q-icon) {
   color: var(--q-accent);
 }
 .contact-button-inner {
-  font-size: clamp(16px, 1vw, 20px);
+  font-size: 1.3rem;
+  /* font-size: clamp(1rem, 1.7vw, 1.3rem); */
+  padding: 4px 5px 4px 55px;
+  color: var(--q-accent);
+  font-family: Montserrat-regular, serif;
 }
 .contact-button-inner :deep(.q-icon) {
-  color: var(--q-primary);
+  color: var(--q-accent);
+  padding-bottom: 2px;
 }
+.contact-hover {
+  transition: 0.3s linear;
+  border: 1px solid transparent;
+  border-radius: 8px;
+}
+
 .contact-list {
   font-size: clamp(16px, 1vw, 20px);
 }
@@ -196,63 +208,15 @@ const isHovered = ref(false);
 .links:hover {
   color: var(--q-secondary);
 }
-
-@-webkit-keyframes wobble-hor-bottom {
-  0%,
-  100% {
-    -webkit-transform: translateX(0%);
-    transform: translateX(0%);
-    -webkit-transform-origin: 50% 50%;
-    transform-origin: 50% 50%;
-  }
-  15% {
-    -webkit-transform: translateX(-30px) rotate(-6deg);
-    transform: translateX(-30px) rotate(-6deg);
-  }
-  30% {
-    -webkit-transform: translateX(15px) rotate(6deg);
-    transform: translateX(15px) rotate(6deg);
-  }
-  45% {
-    -webkit-transform: translateX(-15px) rotate(-3.6deg);
-    transform: translateX(-15px) rotate(-3.6deg);
-  }
-  60% {
-    -webkit-transform: translateX(9px) rotate(2.4deg);
-    transform: translateX(9px) rotate(2.4deg);
-  }
-  75% {
-    -webkit-transform: translateX(-6px) rotate(-1.2deg);
-    transform: translateX(-6px) rotate(-1.2deg);
+@media (max-width: 940px) {
+  .contact-hover {
+    border: 1px solid var(--q-accent);
+    margin: 5px 20px 5px 0;
   }
 }
-@keyframes wobble-hor-bottom {
-  0%,
-  100% {
-    -webkit-transform: translateX(0%);
-    transform: translateX(0%);
-    -webkit-transform-origin: 50% 50%;
-    transform-origin: 50% 50%;
-  }
-  15% {
-    -webkit-transform: translateX(-30px) rotate(-6deg);
-    transform: translateX(-30px) rotate(-6deg);
-  }
-  30% {
-    -webkit-transform: translateX(15px) rotate(6deg);
-    transform: translateX(15px) rotate(6deg);
-  }
-  45% {
-    -webkit-transform: translateX(-15px) rotate(-3.6deg);
-    transform: translateX(-15px) rotate(-3.6deg);
-  }
-  60% {
-    -webkit-transform: translateX(9px) rotate(2.4deg);
-    transform: translateX(9px) rotate(2.4deg);
-  }
-  75% {
-    -webkit-transform: translateX(-6px) rotate(-1.2deg);
-    transform: translateX(-6px) rotate(-1.2deg);
+@media (hover: hover) {
+  .contact-hover:hover {
+    border: 1px solid var(--q-accent);
   }
 }
 </style>

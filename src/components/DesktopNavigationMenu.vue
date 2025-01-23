@@ -8,15 +8,14 @@ const props = defineProps({
   navItems: {
     type: Array,
     require: true,
+    default: () => [],
   },
 });
 
 const updatedNavItems = computed(() => {
-  console.log(q.screen.width);
-
   if (q.screen.width < 1060) {
     return props.navItems.slice(0, -4);
-  } else if (q.screen.width < 1230) {
+  } else if (q.screen.width <= 1230) {
     return props.navItems.slice(0, -2);
   }
   return props.navItems;

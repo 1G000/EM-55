@@ -33,7 +33,7 @@ const showMobileMenu = ref(false);
       <div class="first-line"></div>
       <div class="second-line"></div>
       <q-toolbar class="toolbar">
-        <q-toolbar-title class="nav__title">
+        <q-toolbar-title class="nav__title" v-if="$q.screen.width > 767">
           Оборудование для трансформаторных подстанций
         </q-toolbar-title>
         <ToolbarContactButton />
@@ -41,9 +41,12 @@ const showMobileMenu = ref(false);
     </div>
     <div class="header__navbar">
       <DesktopNavigationMenu
-        v-if="$q.screen.width > 600"
+        v-if="$q.screen.width > 767"
         :navItems="navItems"
       />
+      <div class="nav__title-mobile" v-if="$q.screen.width < 767">
+        Оборудование для трансформаторных подстанций
+      </div>
       <q-icon
         v-if="$q.screen.width <= 1230"
         name="menu"
@@ -53,9 +56,10 @@ const showMobileMenu = ref(false);
         @click="showMobileMenu = !showMobileMenu"
       />
     </div>
+    <!-- Выплывающее меню -->
     <q-drawer
       side="right"
-      :breakpoint="1215"
+      :breakpoint="1240"
       v-model="showMobileMenu"
       style="position: absolute; top: 0; right: 0; background-color: white"
     >
@@ -72,7 +76,6 @@ const showMobileMenu = ref(false);
           @click="showMobileMenu = false"
         />
       </div>
-      <!-- Выплывающее меню -->
       <transition>
         <MobileNavigation :navItems="navItems" />
       </transition>
@@ -178,6 +181,18 @@ const showMobileMenu = ref(false);
   margin-right: 10px;
   text-transform: none;
 }
+.nav__title-mobile {
+  color: var(--color-black);
+  padding-left: 16px;
+  font-family: Montserrat-regular, serif;
+  font-size: clamp(0.8rem, 1.7vw, 1rem);
+  font-weight: normal;
+  margin-right: 10px;
+  text-transform: none;
+  display: flex;
+  align-items: center;
+  text-wrap: balance;
+}
 
 .burger-icon {
   cursor: pointer;
@@ -187,7 +202,7 @@ const showMobileMenu = ref(false);
   color: var(--q-accent);
   background-color: transparent;
   margin-right: 14px;
-  margin-top: -4px;
+  /* margin-top: -4px; */
 }
 .close-icon-wrapper {
   display: flex;
@@ -196,7 +211,7 @@ const showMobileMenu = ref(false);
 .close-cross {
   cursor: pointer;
   color: var(--q-primary);
-  padding: 10px 14px 18px 14px;
+  padding: 10px 18px 18px 14px;
   display: flex;
   justify-content: end;
   width: 40px;
@@ -226,7 +241,7 @@ const showMobileMenu = ref(false);
   }
   .nav__title {
     margin-right: auto;
-    max-width: 400px;
+    max-width: 350px;
     text-wrap: balance;
   }
 }
@@ -241,7 +256,7 @@ const showMobileMenu = ref(false);
     display: none;
   }
 }
-@media (max-width: 370px) {
+@media (max-width: 430px) {
   .header-logo {
     width: 120px;
     height: auto;

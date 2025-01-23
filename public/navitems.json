@@ -123,12 +123,11 @@
       ]
     },
     {
-      "label": "Вакансии",
-      "href": "/vacancies",
-      "expandedFirstLevel": false,
-      "secondLevel": false
+      "label": "Контакты",
+      "href": "/contacts",
+      "secondLevel": false,
+      "expandedFirstLevel": false
     },
-
     {
       "label": "Партнёры",
       "href": "/partners",
@@ -136,10 +135,10 @@
       "expandedFirstLevel": false
     },
     {
-      "label": "Контакты",
-      "href": "/contacts",
-      "secondLevel": false,
-      "expandedFirstLevel": false
+      "label": "Вакансии",
+      "href": "/vacancies",
+      "expandedFirstLevel": false,
+      "secondLevel": false
     }
   ]
 }
