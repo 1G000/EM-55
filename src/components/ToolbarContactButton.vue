@@ -24,7 +24,7 @@ const call = (phoneNumber) => {
     <q-menu
       ref="menu"
       :target="button"
-      :offset="[0, -48]"
+      :offset="[0, -50]"
       transition-show="fade"
       transition-hide="fade"
     >
@@ -33,7 +33,7 @@ const call = (phoneNumber) => {
         separator
         class="text-black q-pt-0 q-pb-md contact-list"
       >
-        <div class="bg-primary q-pt-xs q-pb-xs">
+        <div class="bg-primary q-pb-xs" style="padding-top: 6px">
           <q-btn
             ref="button"
             class="contact-button-inner text-bold"
@@ -43,7 +43,7 @@ const call = (phoneNumber) => {
             icon="phone"
             square
             :label="'+7 (812) 294–20–13'"
-            @click="call"
+            @click="call('+78122942013')"
             v-close-popup
           />
         </div>

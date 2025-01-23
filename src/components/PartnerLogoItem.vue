@@ -1,6 +1,4 @@
 <script setup>
-import { defineProps } from "vue";
-
 const props = defineProps({
   imgSrc: {
     type: String,
@@ -15,13 +13,18 @@ const props = defineProps({
 
 <template>
   <q-responsive class="partner-card">
-    <q-card class="column partner-card__accent" flat clickable tag="a" :href="href" target="_blank">
+    <q-card
+      class="column partner-card__accent"
+      flat
+      clickable
+      tag="a"
+      :href="href"
+      target="_blank"
+    >
       <img class="col image" :src="imgSrc" />
     </q-card>
   </q-responsive>
 </template>
-
-
 
 <style scoped>
 .partner-card {

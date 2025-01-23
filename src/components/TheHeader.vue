@@ -268,5 +268,10 @@ const showMobileMenu = ref(false);
     top: 3px;
     right: 0px;
   }
+
+  .header__navbar {
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
 }
 </style>

@@ -129,7 +129,7 @@ const downloadFile = (url) => {
 .nav-text {
   padding: 0 0 4px 0;
 }
-.navigation__button::v-deep .q-btn-dropdown__arrow {
+.navigation__button :deep(q-btn-dropdown__arrow) {
   color: var(--q-primary);
 }
 .navigation__button:hover {
