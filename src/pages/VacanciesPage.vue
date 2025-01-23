@@ -23,10 +23,14 @@ const sectionTitle = "Вакансии";
 </script>
 
 <template>
-  <UiSection
-    class="content__wrapper"
-    :padding="$q.screen.width > 1000 ? '64px 40px 0 40px' : '32px 20px 0 20px'"
-  >
+  <UiSection class="content__wrapper" :padding="$q.screen.width > 1000 ? '64px 40px 0 40px' : '32px 20px 0 20px'">
+    <q-breadcrumbs gutter="xs" class="breadcrumbs">
+      <template v-slot:separator>
+        <q-icon size="1.5em" name="chevron_right"></q-icon>
+      </template>
+      <q-breadcrumbs-el icon="home" label="Главная" to="/"></q-breadcrumbs-el>
+      <q-breadcrumbs-el label="Вакансии"></q-breadcrumbs-el>
+    </q-breadcrumbs>
     <UiSectionTitle :title-text="sectionTitle" />
     <div class="picture__section">
       <div class="left__side">
@@ -48,8 +52,7 @@ const sectionTitle = "Вакансии";
         <JoinTeam v-if="$q.screen.width > 1000" />
       </div>
       <div>
-        <picture class="picture__container"
-          ><img src="Images/team.jpg" alt="картинка" class="picture" />
+        <picture class="picture__container"><img src="Images/team.jpg" alt="картинка" class="picture" />
         </picture>
         <JoinTeam v-if="$q.screen.width < 1000" />
       </div>
@@ -65,17 +68,20 @@ const sectionTitle = "Вакансии";
   width: 100%;
   margin-bottom: 30px;
 }
+
 .picture {
   object-fit: cover;
   border-radius: 8px;
   padding-top: 40px;
 }
+
 .left__side {
   width: 70%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
+
 .text__content {
   display: flex;
   flex-direction: column;
@@ -86,18 +92,22 @@ const sectionTitle = "Вакансии";
   padding: 40px 0;
   border-radius: 8px;
 }
+
 @media screen and (max-width: 768px) {
   .text__content {
     padding: 0;
   }
 }
+
 @media screen and (max-width: 660px) {
   .picture__section {
     flex-direction: column;
   }
+
   .left__side {
     width: 100%;
   }
+
   .picture {
     width: 100%;
   }

@@ -2,89 +2,8 @@
 import UiSection from "../components/UiSection.vue";
 import UiInnerPageTitle from "src/components/UiInnerPageTitle.vue";
 import PartnerCard from "src/components/PartnerCard.vue";
-
+import { partners } from "src/data/partners";
 const sectionTitle = "Наши партнёры";
-const partners = [
-  {
-    title: "ПАО «Россети Ленэнерго»",
-    imgSrc: "./Images/partners/rsle.png",
-    href: "https://rosseti-lenenergo.ru/",
-  },
-  {
-    title: "Филиал ПАО «Россети Ленэнерго» «Кабельная сеть»",
-    imgSrc: "./Images/partners/cabset.png",
-    href: "https://rosseti-lenenergo.ru/about/filials/kabel/",
-  },
-  {
-    title: "Филиал ПАО «Россети Ленэнерго» «Северные электрические сети»",
-    imgSrc: "./Images/partners/ses.jpg",
-    href: "https://rosseti-lenenergo.ru/about/filials/severnye/",
-  },
-  {
-    title: "Филиал ПАО «Россети Ленэнерго» «ЭСКЛ»",
-    imgSrc: "./Images/partners/rsle.png",
-    href: "https://rosseti-lenenergo.ru/about/filials/OAO_Energoservisnaya_kompaniya_Lenenergo/",
-  },
-  {
-    title: "Легенда",
-    imgSrc: "./Images/partners/legenda.png",
-    href: "https://legenda-dom.ru/",
-  },
-  {
-    title: "КВС",
-    imgSrc: "./Images/partners/kvs.svg",
-    href: "https://kvsspb.ru/",
-  },
-  {
-    title: "«ЛСР. Недвижимость - Северо-Запад»",
-    imgSrc: "./Images/partners/lsr.png",
-    href: "https://www.lsr.ru/spb/",
-  },
-  {
-    title: "ЯРД",
-    imgSrc: "./Images/partners/yard.png",
-    href: "https://yard.ru/",
-  },
-  {
-    title: "ПИК",
-    imgSrc: "./Images/partners/pik.png",
-    href: "https://www.pik.ru/",
-  },
-  {
-    title: "Электромонтаж-110",
-    imgSrc: "./Images/partners/em110.png",
-    href: "https://em-110.ru/",
-  },
-  {
-    title: "СЕЛЕНА МОНТАЖ",
-    imgSrc: "./Images/partners/selena.svg",
-    href: "https://380-220.com/",
-  },
-  { title: "Развитие территории", imgSrc: "", href: "" },
-  { title: "МИН", imgSrc: "", href: "" },
-  { title: "ЭР-БИ-АЙ-ВОСТОК", imgSrc: "", href: "" },
-  {
-    title: "Горный университет",
-    imgSrc: "./Images/partners/gorniy.png",
-    href: "https://spmi.ru/",
-  },
-  {
-    title: "Гостиница «Спутник»",
-    imgSrc: "./Images/partners/sputnik.png",
-    href: "https://sputnik-hotel.ru/",
-  },
-  { title: "СЛЭП", imgSrc: "", href: "" },
-  {
-    title: "ПЭМ",
-    imgSrc: "./Images/partners/pem.png",
-    href: "http://pem-spb.ru/",
-  },
-  {
-    title: "СМК «Энергия»",
-    imgSrc: "./Images/partners/smk.png",
-    href: "https://smk-e.ru/",
-  },
-];
 
 // 5. "Легенда" застройщик,
 // 6. "КВС" Застройщик,
@@ -105,10 +24,14 @@ const partners = [
 </script>
 
 <template>
-  <UiSection
-    class="content__wrapper"
-    :padding="$q.screen.width > 768 ? '64px 40px 0 40px' : '32px 20px 0 20px'"
-  >
+  <UiSection class="content__wrapper" :padding="$q.screen.width > 768 ? '64px 40px 0 40px' : '32px 20px 0 20px'">
+    <q-breadcrumbs gutter="xs" class="breadcrumbs">
+      <template v-slot:separator>
+        <q-icon size="1.5em" name="chevron_right"></q-icon>
+      </template>
+      <q-breadcrumbs-el icon="home" label="Главная" to="/"></q-breadcrumbs-el>
+      <q-breadcrumbs-el label="Партнёры"></q-breadcrumbs-el>
+    </q-breadcrumbs>
     <UiInnerPageTitle :title-text="sectionTitle" />
     <p class="partners-page__text">
       Партнёры и заказчики «Электромонтаж 55» знают, что это динамично
@@ -120,13 +43,8 @@ const partners = [
     </p>
 
     <article class="partner-cards">
-      <PartnerCard
-        v-for="(partner, index) in partners"
-        :key="index"
-        :title="partner.title"
-        :imgSrc="partner.imgSrc"
-        :href="partner.href"
-      />
+      <PartnerCard v-for="(partner, index) in partners" :key="index" :title="partner.title" :imgSrc="partner.imgSrc"
+        :href="partner.href" />
     </article>
   </UiSection>
 </template>
@@ -137,6 +55,7 @@ const partners = [
   grid-gap: 20px;
   justify-items: center;
 }
+
 .partners-page__text {
   font-family: Montserrat-regular, serif;
   font-size: clamp(1.1rem, 1vw, 1.2rem);
