@@ -29,7 +29,7 @@
         },
         { "title": "Отзывы", "thirdLevel": false, "href": "/sorry" },
         { "title": "Вакансии", "thirdLevel": false, "href": "/vacancies" },
-        { "title": "Наши партнёры", "thirdLevel": false, "href": "/partners" },
+
         {
           "title": "Реквизиты",
           "thirdLevel": false,
@@ -113,12 +113,6 @@
       ]
     },
     {
-      "label": "Вакансии",
-      "href": "/vacancies",
-      "expandedFirstLevel": false,
-      "secondLevel": false
-    },
-    {
       "label": "Деятельность",
       "secondLevel": true,
       "expandedFirstLevel": false,
@@ -127,6 +121,24 @@
         { "title": "ПИР", "thirdLevel": false, "href": "/sorry" },
         { "title": "КЛЮЧ", "thirdLevel": false, "href": "/sorry" }
       ]
+    },
+    {
+      "label": "Контакты",
+      "href": "/contacts",
+      "secondLevel": false,
+      "expandedFirstLevel": false
+    },
+    {
+      "label": "Партнёры",
+      "href": "/partners",
+      "secondLevel": false,
+      "expandedFirstLevel": false
+    },
+    {
+      "label": "Вакансии",
+      "href": "/vacancies",
+      "expandedFirstLevel": false,
+      "secondLevel": false
     }
   ]
 }

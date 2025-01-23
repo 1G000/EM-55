@@ -1,31 +1,44 @@
 <script setup>
-defineProps({
+import { computed } from "vue";
+import { useQuasar } from "quasar";
+
+const q = useQuasar();
+
+const props = defineProps({
   navItems: {
     type: Array,
     require: true,
+    default: () => [],
   },
 });
 
+const updatedNavItems = computed(() => {
+  if (q.screen.width < 1060) {
+    return props.navItems.slice(0, -4);
+  } else if (q.screen.width <= 1230) {
+    return props.navItems.slice(0, -2);
+  }
+  return props.navItems;
+});
 const downloadFile = (url) => {
   window.location.href = url;
 };
 </script>
 
 <template>
-  <div class="navigation nav-text">
-    <div v-for="item in navItems" :key="item">
+  <nav class="navigation nav-text">
+    <div v-for="item in updatedNavItems" :key="item">
       <template v-if="item.secondLevel">
         <q-btn-dropdown
-          :menu-offset="[0, 8]"
+          :menu-offset="[0, 5]"
           square
           :label="item.label"
           fab
-          dropdown-icon="keyboard_arrow_down"
           class="navigation__button"
         >
           <q-list dense separator>
             <q-item
-              class="bg-primary text-white submenu-item"
+              class="text-black submenu-item"
               v-for="subitem in item.secondLevelItems"
               :key="subitem"
               clickable
@@ -37,16 +50,21 @@ const downloadFile = (url) => {
               <template v-else>
                 <q-item-section>{{ subitem.title }}</q-item-section>
                 <q-item-section side>
-                  <q-icon name="keyboard_arrow_right" color="white" />
+                  <q-icon name="mdi-menu-right" color="primary" />
                 </q-item-section>
-                <q-menu anchor="top end" self="top start">
+                <q-menu
+                  anchor="top right"
+                  self="top left"
+                  :offset="[1, 0]"
+                  class="shadow-0"
+                >
                   <q-list dense separator>
                     <q-item
                       v-for="level in subitem.thirdLevelItems"
                       :key="level"
                       dense
                       clickable
-                      class="bg-primary text-white q-px-auto q-py-md submenu-item"
+                      class="text-black q-px-auto q-py-md submenu-item"
                       @click="downloadFile(level.href)"
                     >
                       <q-item-section>{{ level.title }}</q-item-section>
@@ -84,21 +102,22 @@ const downloadFile = (url) => {
         />
       </template>
     </div>
-  </div>
+  </nav>
 </template>
 
 <style scoped>
-.navigation {
+.navigation.nav-text {
   display: flex;
   align-items: center;
+  padding-left: 20px;
+  padding-right: 20px;
   justify-content: space-between;
-  width: 80%;
+  gap: 40px;
 }
-
 .navigation__button,
 .nav-text,
 .link {
-  color: white;
+  color: var(--color-black);
   font-size: clamp(0.9rem, 1.7vw, 1rem);
   font-family: Montserrat-regular, serif;
   font-weight: 500;
@@ -107,8 +126,14 @@ const downloadFile = (url) => {
   padding: 4px 5px 4px 5px;
   transition: 0.3s linear;
 }
+.nav-text {
+  padding: 0 0 4px 0;
+}
+.navigation__button::v-deep .q-btn-dropdown__arrow {
+  color: var(--q-primary);
+}
 .navigation__button:hover {
-  color: var(--q-secondary);
+  color: var(--q-primary);
 }
 .q-btn:before {
   box-shadow: none !important;
@@ -124,15 +149,17 @@ const downloadFile = (url) => {
 }
 .submenu-item:hover,
 .link:hover {
-  color: var(--q-secondary) !important;
+  color: var(--q-primary) !important;
 }
 
-@media (max-width: 1280px) {
-  .navigation {
-    width: 100%;
+@media (max-width: 1370px) {
+  .navigation.nav-text {
+    gap: 20px;
   }
-  .nav-text {
-    padding-left: 5px;
+}
+@media (max-width: 1230px) {
+  .navigation.nav-text {
+    padding-left: 60px;
   }
 }
 </style>

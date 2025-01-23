@@ -2,6 +2,7 @@
 import { ref, reactive } from "vue";
 import { downloadFile } from "src/composobles/downloadFile";
 import { useRouter } from "vue-router";
+
 const router = useRouter();
 
 const props = defineProps({
@@ -29,7 +30,22 @@ const closeAllExpansions = (url) => {
   downloadFile(url);
 };
 const goToVacancyPage = (label) => {
-  return label === "Вакансии" ? router.push("/vacancies") : false;
+  switch (label) {
+    case "Вакансии":
+      router.push("/vacancies");
+      break;
+    case "Партнёры":
+      router.push("/partners");
+      break;
+    case "Контакты":
+      router.push("/contacts");
+      break;
+    default:
+      return false;
+  }
+};
+const hideLabel = (label) => {
+  return ["Вакансии", "Партнёры", "Контакты"].includes(label);
 };
 </script>
 
@@ -40,7 +56,7 @@ const goToVacancyPage = (label) => {
     v-model="expanded"
     :label="label"
     active-class="navigation-list-active"
-    :hide-expand-icon="label === 'Вакансии'"
+    :hide-expand-icon="hideLabel(label)"
     expand-icon-class="text-black"
   >
     <q-card
