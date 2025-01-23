@@ -1,0 +1,1 @@
+import{ah as i,a as r,ai as a,g as s}from"./index.36bdb06c.js";function l(){let e=null;const n=s();function t(){e!==null&&(clearTimeout(e),e=null)}return i(t),r(t),{removeTimeout:t,registerTimeout(o,u){t(),a(n)===!1&&(e=setTimeout(()=>{e=null,o()},u))}}}export{l as u};
