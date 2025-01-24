@@ -15,9 +15,9 @@ const updatedNavItems = computed(() => {
   if (q.screen.width < 768) {
     return props.navItems;
   } else if (q.screen.width < 1060) {
-    return props.navItems.slice(-4);
+    return props.navItems?.slice(-4);
   }
-  return props.navItems.slice(-2);
+  return props.navItems?.slice(-2);
 });
 </script>
 

@@ -1,8 +1,10 @@
 <script setup>
-import { ref } from "vue";
+import { ref, computed } from "vue";
 import UiSection from "./UiSection.vue";
-// import PrivacyDialog from "./PrivacyDialog.vue";
 import { useRouter } from "vue-router";
+import { useQuasar } from "quasar";
+
+const q = useQuasar();
 const router = useRouter();
 
 const openPrivacyPage = () => {
@@ -13,9 +15,12 @@ const name = ref(null);
 const tel = ref(null);
 const files = ref(null);
 const accept = ref(false);
-// const privacyDialog = ref(false);
-const sectionBackground = `url('../Images/Form/form-background.jpg')`;
-const sectionBackgroundMobile = `url('../Images/Form/form-background-mobile.jpg')`;
+const currentBackground = computed(() => {
+  if (q.screen.width > 767) {
+    return `url('../Images/Form/form-background.jpg')`;
+  }
+  return `url('../Images/Form/form-background-mobile.jpg')`;
+});
 const submitForm = () => {
   // $q.notify({
   //   color: 'green-4',
@@ -128,7 +133,6 @@ const resetForm = () => {
         </div>
       </q-form>
     </div>
-    <!-- <PrivacyDialog v-model="privacyDialog" /> -->
   </UiSection>
 </template>
 
@@ -141,6 +145,7 @@ const resetForm = () => {
   gap: 0px;
 }
 .form-section {
+  background: v-bind(currentBackground);
   background-repeat: no-repeat !important;
   background-size: cover !important;
 }

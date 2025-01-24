@@ -14,9 +14,9 @@ const props = defineProps({
 
 const updatedNavItems = computed(() => {
   if (q.screen.width < 1060) {
-    return props.navItems.slice(0, -4);
+    return props.navItems?.slice(0, -4);
   } else if (q.screen.width <= 1230) {
-    return props.navItems.slice(0, -2);
+    return props.navItems?.slice(0, -2);
   }
   return props.navItems;
 });
@@ -109,10 +109,11 @@ const downloadFile = (url) => {
 .navigation.nav-text {
   display: flex;
   align-items: center;
-  padding-left: 20px;
+  padding-left: 85px;
   padding-right: 20px;
   justify-content: space-between;
   gap: 40px;
+  max-width: 1280px;
 }
 .navigation__button,
 .nav-text,

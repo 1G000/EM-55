@@ -71,7 +71,7 @@ const showMobileMenu = ref(false);
       <div class="close-icon-wrapper">
         <q-icon
           name="close"
-          size="32px"
+          size="34px"
           class="close-cross"
           @click="showMobileMenu = false"
         />
@@ -170,8 +170,8 @@ const showMobileMenu = ref(false);
 }
 .header__navbar {
   display: flex;
-  justify-content: center;
-  align-content: center;
+  justify-content: space-between;
+  align-items: center;
 }
 .nav__title {
   font-family: Montserrat-regular, serif;
@@ -202,7 +202,7 @@ const showMobileMenu = ref(false);
   color: var(--q-accent);
   background-color: transparent;
   margin-right: 14px;
-  /* margin-top: -4px; */
+  margin-top: -4px;
 }
 .close-icon-wrapper {
   display: flex;
@@ -211,7 +211,7 @@ const showMobileMenu = ref(false);
 .close-cross {
   cursor: pointer;
   color: var(--q-primary);
-  padding: 10px 18px 18px 14px;
+  padding: 5px 18px 15px 14px;
   display: flex;
   justify-content: end;
   width: 40px;
@@ -272,6 +272,9 @@ const showMobileMenu = ref(false);
   .header__navbar {
     padding-top: 5px;
     padding-bottom: 5px;
+  }
+  .burger-icon {
+    margin-top: 0;
   }
 }
 </style>
