@@ -20,7 +20,7 @@ const showMobileMenu = ref(false);
 </script>
 
 <template>
-  <q-header unelevated class="header">
+  <q-header unelevated class="header shadow-2">
     <div class="container">
       <div class="left-part-of-toolbar"></div>
       <div class="first-line-left"></div>
@@ -28,7 +28,7 @@ const showMobileMenu = ref(false);
       <router-link to="/" class="logo__container">
         <LogoSvg class="header-logo" />
         <RIcon class="r-icon" />
-        <h1 class="logo__text">Электромонтаж 55</h1>
+        <!-- <h1 class="logo__text">Электромонтаж 55</h1> -->
       </router-link>
       <div class="first-line"></div>
       <div class="second-line"></div>
@@ -86,6 +86,7 @@ const showMobileMenu = ref(false);
 <style scoped>
 .header {
   background-color: rgb(255, 255, 255);
+  border-bottom: 1px solid #86002a1a;
 }
 .container {
   display: flex;
@@ -120,10 +121,6 @@ const showMobileMenu = ref(false);
 .navbar__logo {
   width: 100px;
   height: auto;
-}
-
-.logo__text {
-  display: none;
 }
 .first-line,
 .second-line,
@@ -170,9 +167,9 @@ const showMobileMenu = ref(false);
   max-width: 1920px;
   margin: 0 auto;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  padding: 5px 0 5px 70px;
+  padding: 0;
 }
 .nav__title {
   font-family: Montserrat-regular, serif;
@@ -190,6 +187,7 @@ const showMobileMenu = ref(false);
   text-transform: none;
   align-items: center;
   text-wrap: balance;
+  max-width: 270px;
 }
 
 .burger-icon {
@@ -246,7 +244,7 @@ const showMobileMenu = ref(false);
   .header__navbar {
     justify-content: space-between;
     padding-right: 10px;
-    padding-left: 50px;
+    padding-left: 70px;
     gap: 30px;
   }
   .toolbar {
@@ -257,21 +255,18 @@ const showMobileMenu = ref(false);
   .left-part-of-toolbar {
     width: 30px;
   }
+  .header__navbar {
+    padding-left: 16px;
+    padding-bottom: 5px;
+  }
 }
 
 @media (max-width: 430px) {
-  .r-icon {
-    top: 3px;
-    right: 0px;
-  }
   .burger-icon {
     margin-top: 0;
   }
 }
 @media (max-width: 458px) {
-  .header__navbar {
-    padding-left: 25px;
-  }
   .toolbar {
     padding-right: 16px;
   }

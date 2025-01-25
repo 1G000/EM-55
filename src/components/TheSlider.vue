@@ -47,25 +47,51 @@ const selectedImgSrc = computed(() => (slide) => {
 </script>
 <template>
   <div class="q-md">
-    <q-carousel animated v-model="slide" transition-prev="slide-right" transition-next="slide-left" infinite
-      :autoplay-speed="5000" control-color="secondary" swipeable navigation>
-      <q-carousel-slide v-for="(slideData, index) in slideData" :key="index" :name="index + 1" class="slide"
-        :img-src="selectedImgSrc(slideData)">
+    <q-carousel
+      animated
+      v-model="slide"
+      transition-prev="slide-right"
+      transition-next="slide-left"
+      infinite
+      :autoplay-speed="5000"
+      control-color="secondary"
+      swipeable
+      navigation
+    >
+      <q-carousel-slide
+        v-for="(slideData, index) in slideData"
+        :key="index"
+        :name="index + 1"
+        class="slide"
+        :img-src="selectedImgSrc(slideData)"
+      >
         <div class="carousel-wrapper">
           <div class="text-overlay">
             <div class="text-overlay__text">
               <h2 class="slide__title" v-html="slideData.title"></h2>
               <h3 class="slide__subtitle" v-html="slideData.subtitle"></h3>
-              <span class="slide__textcontent" v-html="slideData.textcontent"></span>
+              <span
+                class="slide__textcontent"
+                v-html="slideData.textcontent"
+              ></span>
             </div>
-            <div v-if="slideData.buttons && slideData.buttons.length > 0" class="buttons__container">
-              <q-btn v-for="(button, buttonIndex) in slideData.buttons" :key="buttonIndex" :class="button.style"
-                ref="button" :to="button.to" v-on="{
+            <div
+              v-if="slideData.buttons && slideData.buttons.length > 0"
+              class="buttons__container"
+            >
+              <q-btn
+                v-for="(button, buttonIndex) in slideData.buttons"
+                :key="buttonIndex"
+                :class="button.style"
+                ref="button"
+                :to="button.to"
+                v-on="{
                   mousemove: supportsHover
                     ? handleMouseMove.bind(_, buttonIndex)
                     : null,
                   mouseleave: supportsHover ? handleMouseLeave : null,
-                }">
+                }"
+              >
                 {{ button.btnTitle }}
               </q-btn>
             </div>
@@ -83,7 +109,7 @@ const selectedImgSrc = computed(() => (slide) => {
 }
 
 .q-carousel {
-  height: calc(100vh - 135px - 80px - 40px);
+  height: calc(100vh - 135px - 75px - 36px);
 }
 
 .text-overlay {
@@ -97,6 +123,7 @@ const selectedImgSrc = computed(() => (slide) => {
   padding: 80px 60px;
   align-items: flex-start;
   gap: 40px;
+  max-width: 1920px;
 }
 
 .text-overlay__text {
@@ -112,6 +139,7 @@ const selectedImgSrc = computed(() => (slide) => {
   background-position: bottom center;
   background-repeat: no-repeat;
   width: 100vw;
+  max-width: 1920px;
 }
 
 .slide__title {
@@ -184,7 +212,7 @@ const selectedImgSrc = computed(() => (slide) => {
 
 @media screen and (max-width: 1285px) {
   .q-carousel {
-    height: calc(100vh - 205px - 80px - 40px);
+    height: calc(100vh - 205px - 55px - 36px - 20px);
   }
 }
 
@@ -220,12 +248,12 @@ const selectedImgSrc = computed(() => (slide) => {
     height: 50px;
   }
 }
-
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 845px) {
   .q-carousel {
-    height: calc(100vh - 80px);
+    height: calc(100vh - 75px);
   }
-
+}
+@media screen and (max-width: 767px) {
   :deep(.q-carousel__navigation) {
     bottom: 80px;
   }

@@ -17,9 +17,9 @@ const files = ref(null);
 const accept = ref(false);
 const currentBackground = computed(() => {
   if (q.screen.width > 767) {
-    return `url('../Images/Form/form-background.jpg')`;
+    return `url('../Images/Form/form-background-new.jpg')`;
   }
-  return `url('../Images/Form/form-background-mobile.jpg')`;
+  return `url('../Images/Form/form-background-mobile-new.jpg')`;
 });
 const submitForm = () => {
   // $q.notify({

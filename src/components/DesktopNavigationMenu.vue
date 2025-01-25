@@ -30,13 +30,13 @@ const downloadFile = (url) => {
     <div v-for="item in updatedNavItems" :key="item">
       <template v-if="item.secondLevel">
         <q-btn-dropdown
-          :menu-offset="[0, 10]"
+          :menu-offset="[0, 6]"
           square
           :label="item.label"
           fab
           class="navigation__button"
         >
-          <q-list dense separator class="q-px-sm list-shadow">
+          <q-list dense separator class="q-pl-sm q-pr-xl list-shadow">
             <q-item
               class="text-black submenu-item"
               v-for="subitem in item.secondLevelItems"
@@ -55,7 +55,7 @@ const downloadFile = (url) => {
                 <q-menu
                   anchor="top right"
                   self="top left"
-                  :offset="[10, 0]"
+                  :offset="[6, 0]"
                   class="list-shadow"
                 >
                   <q-list dense separator class="q-px-sm list-shadow">

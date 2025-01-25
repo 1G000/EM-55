@@ -51,40 +51,65 @@ const data = {
 </script>
 
 <template>
-  <UiSection class="content__wrapper" :padding="$q.screen.width > 768 ? '64px 40px 0 40px' : '32px 20px 0 20px'">
-    <q-breadcrumbs gutter="xs" class="breadcrumbs">
-      <template v-slot:separator>
-        <q-icon size="1.5em" name="chevron_right"></q-icon>
-      </template>
-      <q-breadcrumbs-el icon="home" label="Главная" to="/"></q-breadcrumbs-el>
-      <q-breadcrumbs-el label="О Компании"></q-breadcrumbs-el>
-    </q-breadcrumbs>
+  <q-breadcrumbs gutter="xs" class="breadcrumbs">
+    <template v-slot:separator>
+      <q-icon size="1.5em" name="chevron_right"></q-icon>
+    </template>
+    <q-breadcrumbs-el icon="home" label="Главная" to="/"></q-breadcrumbs-el>
+    <q-breadcrumbs-el label="О компании"></q-breadcrumbs-el>
+  </q-breadcrumbs>
+  <UiSection
+    class="content__wrapper"
+    :padding="$q.screen.width > 768 ? '64px 40px 0 40px' : '32px 20px 0 20px'"
+  >
     <UiInnerPageTitle :title-text="sectionTitle" />
     <q-item-section class="content__top">
-      <p v-for="paragragh in data.generalInfo" :key="paragragh.id" v-html="paragragh.text" class="content__top-text">
-      </p>
+      <p
+        v-for="paragragh in data.generalInfo"
+        :key="paragragh.id"
+        v-html="paragragh.text"
+        class="content__top-text"
+      ></p>
     </q-item-section>
 
     <q-item-section class="content__bottom">
       <q-item class="content__bottom-left q-pl-none">
-        <picture class="picture__container"><img src="Images/Contacts/selin.jpg" alt="картинка" class="picture" />
+        <picture class="picture__container"
+          ><img
+            src="Images/Contacts/selin.jpg"
+            alt="картинка"
+            class="picture"
+          />
         </picture>
         <div class="content____quote-wrapper-back">
           <blockquote class="content__quote-wrapper">
             <p class="content__quote-text">{{ data.quoteFirst }}</p>
-            <q-icon class="mdi mdi-format-quote-close content__quote-icon" size="32px" color="primary"></q-icon>
+            <q-icon
+              class="mdi mdi-format-quote-close content__quote-icon"
+              size="32px"
+              color="primary"
+            ></q-icon>
           </blockquote>
 
           <blockquote class="content__quote-wrapper">
-            <q-icon class="mdi mdi-format-quote-open content__quote-icon" size="32px" color="primary"></q-icon>
+            <q-icon
+              class="mdi mdi-format-quote-open content__quote-icon"
+              size="32px"
+              color="primary"
+            ></q-icon>
             <p class="content__quote-text">{{ data.quoteSecond }}</p>
           </blockquote>
         </div>
       </q-item>
 
       <q-item class="content__bottom-right">
-        <p v-for="text in data.managerWords" :key="text.id" v-html="text.text"
-          :class="text.id === 0 || text.id === 2 ? 'q-mb-lg' : ''" class="content__bottom-text"></p>
+        <p
+          v-for="text in data.managerWords"
+          :key="text.id"
+          v-html="text.text"
+          :class="text.id === 0 || text.id === 2 ? 'q-mb-lg' : ''"
+          class="content__bottom-text"
+        ></p>
       </q-item>
     </q-item-section>
   </UiSection>
@@ -184,8 +209,6 @@ const data = {
   object-fit: cover;
   border-radius: 8px;
 }
-
-
 
 @media (max-width: 1240px) {
   .content__bottom {

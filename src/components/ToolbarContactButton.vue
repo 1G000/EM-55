@@ -24,7 +24,7 @@ const call = (phoneNumber) => {
     <q-menu
       ref="menu"
       :target="button"
-      :offset="[0, -46]"
+      :offset="$q.screen.width > 860 ? [0, -46] : [0, -44]"
       transition-show="fade"
       transition-hide="fade"
     >
@@ -175,27 +175,20 @@ const call = (phoneNumber) => {
   transition: 0.3s linear;
   border: 1px solid var(--q-accent);
   border-radius: 8px;
-  padding: 0px 2px 0px 6px;
+  padding: 2px 2px 2px 6px;
 }
 .contact-button :deep(.q-icon) {
   color: var(--q-accent);
 }
 .contact-button-inner {
   font-size: 1.3rem;
-  padding: 4px 5px 4px 45px;
+  padding: 2px 5px 4px 45px;
   color: var(--q-accent);
   font-family: Montserrat-regular, serif;
 }
 .contact-button-inner :deep(.q-icon) {
   color: var(--q-accent);
 }
-/* .contact-hover {
-  transition: 0.3s linear;
-  border: 1px solid transparent;
-  border-radius: 8px;
-  padding: 0px 2px 0px 6px;
-} */
-
 .contact-list {
   font-size: clamp(16px, 1vw, 20px);
 }
@@ -208,14 +201,14 @@ const call = (phoneNumber) => {
 .links:hover {
   color: var(--q-secondary);
 }
-/* @media (max-width: 940px) {
-  .contact-hover {
-    border: 1px solid var(--q-accent);
-  }
-} */
 @media (hover: hover) {
   .contact-hover:hover {
     border: 1px solid transparent;
+  }
+}
+@media (max-width: 860px) {
+  .contact-button {
+    padding: 6px 2px 6px 6px;
   }
 }
 </style>

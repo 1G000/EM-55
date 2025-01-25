@@ -188,6 +188,7 @@ a {
   font-size: clamp(0.9rem, 1vw, 1rem);
   line-height: 30px;
   color: var(--q-primary);
+  padding: 60px 0 0 40px;
 }
 
 .breadcrumbs a {
@@ -200,4 +201,3 @@ a {
     color: var(--q-primary);
   }
 }
-
