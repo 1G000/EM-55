@@ -30,13 +30,13 @@ const downloadFile = (url) => {
     <div v-for="item in updatedNavItems" :key="item">
       <template v-if="item.secondLevel">
         <q-btn-dropdown
-          :menu-offset="[0, 5]"
+          :menu-offset="[0, 10]"
           square
           :label="item.label"
           fab
           class="navigation__button"
         >
-          <q-list dense separator>
+          <q-list dense separator class="q-px-sm list-shadow">
             <q-item
               class="text-black submenu-item"
               v-for="subitem in item.secondLevelItems"
@@ -55,10 +55,10 @@ const downloadFile = (url) => {
                 <q-menu
                   anchor="top right"
                   self="top left"
-                  :offset="[1, 0]"
-                  class="shadow-0"
+                  :offset="[10, 0]"
+                  class="list-shadow"
                 >
-                  <q-list dense separator>
+                  <q-list dense separator class="q-px-sm list-shadow">
                     <q-item
                       v-for="level in subitem.thirdLevelItems"
                       :key="level"
@@ -109,8 +109,6 @@ const downloadFile = (url) => {
 .navigation.nav-text {
   display: flex;
   align-items: center;
-  padding-left: 85px;
-  padding-right: 20px;
   justify-content: space-between;
   gap: 40px;
   max-width: 1280px;
@@ -148,6 +146,9 @@ const downloadFile = (url) => {
   font-weight: 500;
   padding: 10px 12px !important;
 }
+.list-shadow {
+  box-shadow: 0px -4px 10px 0px #d4ab6d14;
+}
 .submenu-item:hover,
 .link:hover {
   color: var(--q-primary) !important;
@@ -159,8 +160,5 @@ const downloadFile = (url) => {
   }
 }
 @media (max-width: 1230px) {
-  .navigation.nav-text {
-    padding-left: 60px;
-  }
 }
 </style>

@@ -1,30 +1,30 @@
 <script setup>
-defineOptions({
-  name: "ToolbarContactButton",
-});
+// import { ref } from "vue";
+
 const call = (phoneNumber) => {
   window.location.href = `tel:${phoneNumber}`;
 };
+// const button = ref(null);
 </script>
 
 <template>
   <div>
     <q-btn
-      ref="button"
-      class="q-mr-md contact-button text-bold contact-hover"
+      id="button"
+      class="contact-button text-bold contact-hover"
       color="transparent"
       unelevated
       text-color="accent"
       icon="phone"
       icon-right="mdi-menu-down"
       square
-      :label="$q.screen.width <= 940 ? '' : '+7 (812) 294–20–13'"
+      :label="$q.screen.width <= 860 ? '' : '+7 (812) 294–20–13'"
     />
 
     <q-menu
       ref="menu"
       :target="button"
-      :offset="[0, -50]"
+      :offset="[0, -46]"
       transition-show="fade"
       transition-hide="fade"
     >
@@ -35,7 +35,6 @@ const call = (phoneNumber) => {
       >
         <div class="bg-primary q-pb-xs" style="padding-top: 6px">
           <q-btn
-            ref="button"
             class="contact-button-inner text-bold"
             color="transparent"
             unelevated
@@ -108,7 +107,7 @@ const call = (phoneNumber) => {
             <q-avatar icon="mdi-tools" size="xl" text-color="secondary" />
           </q-item-section>
           <q-item-section>
-            <q-item-label class="text-bold" style="max-width: 250px"
+            <q-item-label class="text-bold" style="max-width: 210px"
               >Производственно-технический отдел:</q-item-label
             >
             <q-item-label
@@ -172,29 +171,30 @@ const call = (phoneNumber) => {
 <style scoped>
 .contact-button {
   font-size: 1.3rem;
-  /* font-size: clamp(1rem, 1.7vw, 1.3rem); */
-  padding-top: 5px;
   font-family: Montserrat-regular, serif;
+  transition: 0.3s linear;
+  border: 1px solid var(--q-accent);
+  border-radius: 8px;
+  padding: 0px 2px 0px 6px;
 }
 .contact-button :deep(.q-icon) {
   color: var(--q-accent);
 }
 .contact-button-inner {
   font-size: 1.3rem;
-  /* font-size: clamp(1rem, 1.7vw, 1.3rem); */
-  padding: 4px 5px 4px 55px;
+  padding: 4px 5px 4px 45px;
   color: var(--q-accent);
   font-family: Montserrat-regular, serif;
 }
 .contact-button-inner :deep(.q-icon) {
   color: var(--q-accent);
-  padding-bottom: 2px;
 }
-.contact-hover {
+/* .contact-hover {
   transition: 0.3s linear;
   border: 1px solid transparent;
   border-radius: 8px;
-}
+  padding: 0px 2px 0px 6px;
+} */
 
 .contact-list {
   font-size: clamp(16px, 1vw, 20px);
@@ -208,15 +208,14 @@ const call = (phoneNumber) => {
 .links:hover {
   color: var(--q-secondary);
 }
-@media (max-width: 940px) {
+/* @media (max-width: 940px) {
   .contact-hover {
     border: 1px solid var(--q-accent);
-    margin: 5px 20px 5px 0;
   }
-}
+} */
 @media (hover: hover) {
   .contact-hover:hover {
-    border: 1px solid var(--q-accent);
+    border: 1px solid transparent;
   }
 }
 </style>

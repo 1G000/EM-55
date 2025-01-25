@@ -46,7 +46,9 @@ export default {
 .q-separator {
   background-color: var(--q-primary);
 }
-
+.q-separator--horizontal {
+  height: 2px;
+}
 .card__text {
   min-height: 155px;
 }

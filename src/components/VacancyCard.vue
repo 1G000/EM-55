@@ -1,5 +1,5 @@
 <script setup>
-import { ref, defineProps, toRefs } from "vue";
+import { ref, toRefs } from "vue";
 import ResponseVacancyFormDialog from "./ResponseVacancyFormDialog.vue";
 
 const props = defineProps({
