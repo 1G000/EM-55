@@ -42,7 +42,11 @@ module.exports = configure(function (/* ctx */) {
         browser: ["es2019", "edge88", "firefox78", "chrome87", "safari13.1"],
         node: "node20",
       },
-
+      viteOptions: {
+        define: {
+          "import.meta.env.BASE_URL": JSON.stringify("/EM-55/"),
+        },
+      },
       vueRouterMode: "history", // available values: 'hash', 'history'
       // vueRouterBase,
       // vueDevtools,
@@ -103,7 +107,7 @@ module.exports = configure(function (/* ctx */) {
       // directives: [],
 
       // Quasar plugins
-      plugins: ['Notify'],
+      plugins: ["Notify"],
     },
 
     // animations: 'all', // --- includes all animations
