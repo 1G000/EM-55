@@ -3,6 +3,8 @@ import { ref, computed } from "vue";
 import UiSection from "./UiSection.vue";
 import { useRouter } from "vue-router";
 import { useQuasar } from "quasar";
+import background from "../assets/images/form-background-new.jpg";
+import backgroundMobile from "../assets/images/form-background-mobile-new.jpg";
 
 const q = useQuasar();
 const router = useRouter();
@@ -17,9 +19,9 @@ const files = ref(null);
 const accept = ref(false);
 const currentBackground = computed(() => {
   if (q.screen.width > 767) {
-    return `url('/EM-55/src/assets/images/form-background-new.jpg')`;
+    return `url(${background}`;
   }
-  return `url('/EM-55/src/assets/images/form-background-mobile-new.jpg')`;
+  return `url(${backgroundMobile})`;
 });
 const submitForm = () => {
   // $q.notify({
