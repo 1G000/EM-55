@@ -1,6 +1,6 @@
 export const sliderData = [
   {
-    imgSrc: `${import.meta.env.BASE_URL}src/assets/hero-jpg-1.jpg`,
+    imgSrc: `${import.meta.env.BASE_URL}assets/hero-jpg-1.jpg`,
     // imgSmallSrc: "./Images/Slider/slide-mobile.jpg",
     title: "ЭЛЕКТРОМОНТАЖ&nbsp;55",
     textcontent:
