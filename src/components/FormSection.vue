@@ -1,6 +1,6 @@
 <script setup>
 import { ref, computed } from "vue";
-import UiSection from "./UiSection.vue";
+// import UiSection from "./UiSection.vue";
 import { useRouter } from "vue-router";
 import { useQuasar } from "quasar";
 import background from "../assets/form-background-new.jpg";
@@ -41,7 +41,7 @@ const resetForm = () => {
 };
 </script>
 <template>
-  <UiSection
+  <div
     class="form-section"
     id="form"
     :background="
@@ -135,7 +135,7 @@ const resetForm = () => {
         </div>
       </q-form>
     </div>
-  </UiSection>
+  </div>
 </template>
 
 <style scoped>
