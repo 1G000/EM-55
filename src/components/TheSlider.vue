@@ -29,7 +29,9 @@ const handleMouseLeave = (event) => {
 };
 
 const selectedImgSrc = computed(() => (slide) => {
-  return window.innerWidth < 430 ? slide.imgSmallSrc : slide.imgSrc;
+  const smallImg = `${import.meta.env.BASE_URL}${slide.imgSmallSrc}`;
+  const bigImg = `${import.meta.env.BASE_URL}${slide.imgSrc}`;
+  return window.innerWidth < 430 ? smallImg : bigImg;
 });
 </script>
 <template>
