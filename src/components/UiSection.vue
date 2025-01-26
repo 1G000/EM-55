@@ -25,7 +25,6 @@ const sectionMargin = computed(() => (props.margin ? props.margin : "0"));
   </section>
 </template>
 
-
 <style scoped>
 .section {
   padding: v-bind(sectionPadding);

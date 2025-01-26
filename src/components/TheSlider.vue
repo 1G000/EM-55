@@ -1,7 +1,7 @@
 <script setup>
 import { ref, computed } from "vue";
 import { sliderData as slideData } from "src/data/sliderData";
-
+import sliderImgDesk from "../assets/hero-jpg-1.jpg";
 let slide = ref(1);
 
 //hover
@@ -29,9 +29,9 @@ const handleMouseLeave = (event) => {
 };
 
 const selectedImgSrc = computed(() => (slide) => {
-  const smallImg = `${import.meta.env.BASE_URL}${slide.imgSmallSrc}`;
-  const bigImg = `${import.meta.env.BASE_URL}${slide.imgSrc}`;
-  return window.innerWidth < 430 ? smallImg : bigImg;
+  const smallImg = slide.imgSmallSrc;
+  // const bigImg = slide.imgSrc;
+  return window.innerWidth < 430 ? smallImg : sliderImgDesk;
 });
 </script>
 <template>

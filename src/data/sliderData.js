@@ -1,7 +1,7 @@
 export const sliderData = [
   {
-    imgSrc: `${import.meta.env.BASE_URL}assets/hero-jpg-1.jpg`,
-    // imgSmallSrc: "./Images/Slider/slide-mobile.jpg",
+    imgSrc: `../assets/hero-jpg-1.jpg`,
+    imgSmallSrc: "../assets/hero-jpg-1.jpg",
     title: "ЭЛЕКТРОМОНТАЖ&nbsp;55",
     textcontent:
       "На&nbsp;протяжении 30&nbsp;лет мы изготавливаем электротехническое оборудование и&nbsp;выполняем все&nbsp;виды электромонтажных работ",
