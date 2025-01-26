@@ -1,21 +1,8 @@
 <script setup>
-import { ref, onMounted, computed } from "vue";
+import { ref, computed } from "vue";
+import { sliderData as slideData } from "src/data/sliderData";
 
 let slide = ref(1);
-const slideData = ref([]);
-
-onMounted(async () => {
-  try {
-    const response = await fetch("./sliderData.json");
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
-    slideData.value = (await response.json()).sliderData;
-  } catch (error) {
-    console.error("Error fetching sliderData:", error);
-    slideData.value = [];
-  }
-});
 
 //hover
 
