@@ -1,6 +1,6 @@
 <script setup>
 import { ref, computed } from "vue";
-// import UiSection from "./UiSection.vue";
+import UiSection from "./UiSection.vue";
 import { useRouter } from "vue-router";
 import { useQuasar } from "quasar";
 import background from "../assets/form-background-new.jpg";
@@ -41,12 +41,10 @@ const resetForm = () => {
 };
 </script>
 <template>
-  <div
+  <UiSection
     class="form-section"
     id="form"
-    :background="
-      $q.screen.width > 767 ? sectionBackground : sectionBackgroundMobile
-    "
+    :background="currentBackground"
     :padding="$q.screen.width > 1024 ? '100px 60px' : '40px 20px'"
   >
     <div class="q-pa-md form-section__content">
@@ -135,7 +133,7 @@ const resetForm = () => {
         </div>
       </q-form>
     </div>
-  </div>
+  </UiSection>
 </template>
 
 <style scoped>
@@ -147,7 +145,7 @@ const resetForm = () => {
   gap: 0px;
 }
 .form-section {
-  background: v-bind(currentBackground);
+  /* background: v-bind(currentBackground); */
   background-repeat: no-repeat !important;
   background-size: cover !important;
 }
