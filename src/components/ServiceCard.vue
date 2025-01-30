@@ -8,90 +8,61 @@ defineProps({
 </script>
 
 <template>
-  <q-responsive :ratio="1 / 1" class="col">
+  <q-responsive :ratio="1 / 1" class="col service-card">
     <q-card
-      class="q-ma-none shadow-0 my-card cursor-pointer"
+      class="q-ma-none shadow-0 my-card cursor-pointer column"
+      flat
       clickable
-      @mouseleave="callLeavingAnimation"
-      :class="{ leave: isLeaving }"
     >
-      <q-img :src="service.imgSrc" :lazy-src="service.imgSrc">
-        <div class="absolute-bottom text__content">
-          <div class="card__text">{{ service.title }}</div>
-        </div>
-      </q-img>
+      <q-img class="col" :src="service.imgSrc" :lazy-src="service.imgSrc" />
+      <q-card-section class="card__text service-card__text-wrapper q-py-md">
+        <q-item-section class="card__text">{{ service.title }}</q-item-section>
+      </q-card-section>
     </q-card>
   </q-responsive>
 </template>
 
 <style scoped>
-@keyframes moveOut {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-@keyframes moveIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
 .my-card {
   max-width: 400px;
   border-radius: 8px;
-  transition: 3s linear;
+  transition: 0.3s linear;
 }
-
+.service-card {
+  border-radius: 8px;
+  transition: 0.3s linear;
+}
 .card__text {
-  max-width: 180px;
   font-family: Montserrat-bold, serif;
   font-size: clamp(0.8rem, 1vw, 1rem);
   line-height: 15.2px;
-  background: var(--text-gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: var(--color-black);
+  text-transform: uppercase;
+  transition: 0.3s linear;
 }
-
-.text__content {
-  min-height: 130px;
-  height: 100%;
+.service-card__text-wrapper {
+  background-color: var(--background-light-accent);
+  min-height: 76px;
   display: flex;
-  align-items: end;
-  max-width: 100%;
-  background-color: #0e0d0d99;
-  animation: moveIn 0.5s linear;
-  clip-path: polygon(
-    16% 0,
-    41% 20%,
-    51% 61%,
-    100% 93%,
-    100% 100%,
-    0 100%,
-    0 100%,
-    0 100%,
-    0 100%,
-    0 0
-  );
+  align-items: center;
 }
 
 :deep(.q-img__container) {
   overflow: hidden;
 }
-
+@media (hover: hover) {
+  .service-card:hover {
+    -webkit-box-shadow: 0px -1px 13px 1px rgba(34, 60, 80, 0.2);
+    -moz-box-shadow: 0px -1px 13px 1px rgba(34, 60, 80, 0.2);
+    box-shadow: 0px -1px 13px 1px rgba(34, 60, 80, 0.2);
+  }
+  .service-card:hover .card__text {
+    color: var(--q-primary);
+  }
+}
 @media screen and (max-width: 1440px) {
   .my-card {
     max-width: 300px;
-  }
-}
-@media (hover: hover) {
-  .my-card:hover .text__content {
-    animation: moveOut 0.5s linear;
-    opacity: 0;
   }
 }
 </style>

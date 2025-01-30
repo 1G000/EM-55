@@ -1,7 +1,50 @@
 <script setup>
 import { ref, computed } from "vue";
+import { useQuasar } from "quasar";
+
+const q = useQuasar();
 import { sliderData as slideData } from "src/data/sliderData";
-import sliderImgDesk from "../assets/hero-jpg-1.jpg";
+import sliderImg0DeskBig from "../assets/slider-1920.jpg";
+import sliderImg0Desk from "../assets/slider-1440.jpg";
+import sliderImg0TabletBig from "../assets/slider-1024.jpg";
+import sliderImg0Tablet from "../assets/slider-768.jpg";
+import sliderImg0Mobile from "../assets/slider-376.jpg";
+
+import sliderImg1DeskBig from "../assets/slider-2-1920.jpg";
+import sliderImg1Desk from "../assets/slider-2-1440.jpg";
+import sliderImg1TabletBig from "../assets/slider-2-1024.jpg";
+import sliderImg1Tablet from "../assets/slider-2-768.jpg";
+import sliderImg1Mobile from "../assets/slider-2-376.jpg";
+
+import sliderImg2DeskBig from "../assets/slider-3-1920.jpg";
+import sliderImg2Desk from "../assets/slider-3-1440.jpg";
+import sliderImg2TabletBig from "../assets/slider-3-1024.jpg";
+import sliderImg2Tablet from "../assets/slider-3-768.jpg";
+import sliderImg2Mobile from "../assets/slider-3-376.jpg";
+
+const sliderImages = [
+  {
+    deskBig: sliderImg0DeskBig,
+    desk: sliderImg0Desk,
+    tabletBig: sliderImg0TabletBig,
+    tablet: sliderImg0Tablet,
+    mobile: sliderImg0Mobile,
+  },
+  {
+    deskBig: sliderImg1DeskBig,
+    desk: sliderImg1Desk,
+    tabletBig: sliderImg1TabletBig,
+    tablet: sliderImg1Tablet,
+    mobile: sliderImg1Mobile,
+  },
+  {
+    deskBig: sliderImg2DeskBig,
+    desk: sliderImg2Desk,
+    tabletBig: sliderImg2TabletBig,
+    tablet: sliderImg2Tablet,
+    mobile: sliderImg2Mobile,
+  },
+];
 let slide = ref(1);
 
 //hover
@@ -10,7 +53,7 @@ const supportsHover = computed(() => {
   return window.matchMedia("(hover: hover)").matches;
 });
 
-const handleMouseMove = (color, event) => {
+const handleMouseMove = (_, event) => {
   const button = event.currentTarget;
   const x = event.offsetX;
   const y = event.offsetY;
@@ -28,77 +71,80 @@ const handleMouseLeave = (event) => {
   button.style.backgroundImage = "";
 };
 
-const selectedImgSrc = computed(() => (slide) => {
-  const smallImg = slide.imgSmallSrc;
-  // const bigImg = slide.imgSrc;
-  return window.innerWidth < 430 ? smallImg : sliderImgDesk;
+const selectedImgSrc = computed(() => (index) => {
+  const images = sliderImages[index];
+  const width = q.screen.width;
+  return width <= 376
+    ? images.mobile
+    : width <= 768
+    ? images.tablet
+    : width <= 1024
+    ? images.tabletBig
+    : width <= 1440
+    ? images.desk
+    : images.deskBig;
 });
 </script>
 <template>
-  <div class="q-md">
-    <q-carousel
-      animated
-      v-model="slide"
-      transition-prev="slide-right"
-      transition-next="slide-left"
-      infinite
-      :autoplay-speed="5000"
-      control-color="secondary"
-      swipeable
-      navigation
+  <q-carousel
+    animated
+    v-model="slide"
+    transition-prev="slide-right"
+    transition-next="slide-left"
+    infinite
+    :autoplay-speed="5000"
+    control-color="secondary"
+    swipeable
+    navigation
+  >
+    <q-carousel-slide
+      v-for="(slideData, index) in slideData"
+      :key="index"
+      :name="index + 1"
+      class="slide"
+      :img-src="selectedImgSrc(index)"
     >
-      <q-carousel-slide
-        v-for="(slideData, index) in slideData"
-        :key="index"
-        :name="index + 1"
-        class="slide"
-        :img-src="selectedImgSrc(slideData)"
-      >
-        <div class="carousel-wrapper">
-          <div class="text-overlay">
-            <div class="text-overlay__text">
-              <h2 class="slide__title" v-html="slideData.title"></h2>
-              <h3 class="slide__subtitle" v-html="slideData.subtitle"></h3>
-              <span
-                class="slide__textcontent"
-                v-html="slideData.textcontent"
-              ></span>
-            </div>
-            <div
-              v-if="slideData.buttons && slideData.buttons.length > 0"
-              class="buttons__container"
+      <div class="carousel-wrapper">
+        <div class="text-overlay">
+          <div class="text-overlay__text">
+            <h2 class="slide__title" v-html="slideData.title"></h2>
+            <h3 class="slide__subtitle" v-html="slideData.subtitle"></h3>
+            <span
+              class="slide__textcontent"
+              v-html="slideData.textcontent"
+            ></span>
+          </div>
+          <div
+            v-if="slideData.buttons && slideData.buttons.length > 0"
+            class="buttons__container"
+          >
+            <q-btn
+              v-for="(button, buttonIndex) in slideData.buttons"
+              :key="buttonIndex"
+              :class="button.style"
+              ref="button"
+              :to="button.to"
+              v-on="{
+                mousemove: supportsHover
+                  ? handleMouseMove.bind(_, buttonIndex)
+                  : null,
+                mouseleave: supportsHover ? handleMouseLeave : null,
+              }"
             >
-              <q-btn
-                v-for="(button, buttonIndex) in slideData.buttons"
-                :key="buttonIndex"
-                :class="button.style"
-                ref="button"
-                :to="button.to"
-                v-on="{
-                  mousemove: supportsHover
-                    ? handleMouseMove.bind(_, buttonIndex)
-                    : null,
-                  mouseleave: supportsHover ? handleMouseLeave : null,
-                }"
-              >
-                {{ button.btnTitle }}
-              </q-btn>
-            </div>
+              {{ button.btnTitle }}
+            </q-btn>
           </div>
         </div>
-      </q-carousel-slide>
-    </q-carousel>
-  </div>
+      </div>
+    </q-carousel-slide>
+  </q-carousel>
 </template>
 
 <style scoped>
-.q-md {
-  max-width: 1920px;
-  /* padding: 0 20px; */
-}
-
 .q-carousel {
-  height: calc(100vh - 135px - 75px - 36px);
+  height: calc(100vh - 135px - 75px - 36px - 40px);
+  margin-top: 36px;
+  max-width: 1920px;
 }
 
 .text-overlay {
@@ -127,8 +173,8 @@ const selectedImgSrc = computed(() => (slide) => {
   background-size: cover;
   background-position: bottom center;
   background-repeat: no-repeat;
-  width: 100vw;
   max-width: 1920px;
+  /* border-radius: 8px; */
 }
 
 .slide__title {

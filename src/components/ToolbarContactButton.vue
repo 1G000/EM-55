@@ -9,43 +9,21 @@ const call = (phoneNumber) => {
 
 <template>
   <div>
-    <q-btn
+    <q-btn-dropdown
       id="button"
       class="contact-button text-bold contact-hover"
       color="transparent"
       unelevated
       text-color="accent"
       icon="phone"
-      icon-right="mdi-menu-down"
       square
-      :label="$q.screen.width <= 860 ? '' : '+7 (812) 294–20–13'"
-    />
-
-    <q-menu
-      ref="menu"
-      :target="button"
-      :offset="$q.screen.width > 860 ? [0, -46] : [0, -44]"
-      transition-show="fade"
-      transition-hide="fade"
+      :menu-offset="[0, 10]"
     >
       <q-list
         id="myId"
         separator
         class="text-black q-pt-0 q-pb-md contact-list"
       >
-        <div class="bg-primary q-pb-xs" style="padding-top: 6px">
-          <q-btn
-            class="contact-button-inner text-bold"
-            color="transparent"
-            unelevated
-            text-color="accent"
-            icon="phone"
-            square
-            :label="'+7 (812) 294–20–13'"
-            @click="call('+78122942013')"
-            v-close-popup
-          />
-        </div>
         <q-item clickable v-close-popup>
           <q-item-section avatar>
             <q-avatar icon="mdi-email-fast" size="xl" text-color="secondary" />
@@ -53,12 +31,19 @@ const call = (phoneNumber) => {
           <q-item-section>
             <q-item-label class="text-bold">Приемная:</q-item-label>
             <q-item-label>
-              <!-- <a href="tel:+78122942013" class="links text-bold"
+              <a
+                v-if="$q.screen.width <= 500"
+                href="tel:+78122942013"
+                class="links"
                 >+7 (812) 294-20-13</a
-              > -->
-              <a href="tel:+78122942303" class="links text-bold"
+              >
+              <a
+                v-if="$q.screen.width <= 500"
+                href="tel:+78122942303"
+                class="links"
                 >+7 (812) 294-23-03</a
-              ><a href="mailto:referent@em-55.com" class="links"
+              >
+              <a href="mailto:referent@em-55.com" class="links"
                 >referent@em-55.com</a
               ></q-item-label
             >
@@ -152,19 +137,8 @@ const call = (phoneNumber) => {
             >
           </q-item-section>
         </q-item>
-        <!-- <router-link to="/contacts">
-        <q-item-section class="q-mt-sm">
-          <q-btn
-            class="q-py-sm text-bold contact-btn"
-            size="md"
-            color="accent"
-            text-color="primary"
-            label="Контакты"
-          />
-        </q-item-section>
-      </router-link> -->
       </q-list>
-    </q-menu>
+    </q-btn-dropdown>
   </div>
 </template>
 
@@ -175,7 +149,7 @@ const call = (phoneNumber) => {
   transition: 0.3s linear;
   border: 1px solid var(--q-accent);
   border-radius: 8px;
-  padding: 2px 2px 2px 6px;
+  padding: 6px 2px 6px 6px;
 }
 .contact-button :deep(.q-icon) {
   color: var(--q-accent);
@@ -206,9 +180,9 @@ const call = (phoneNumber) => {
     border: 1px solid transparent;
   }
 }
-@media (max-width: 860px) {
+/* @media (max-width: 860px) {
   .contact-button {
     padding: 6px 2px 6px 6px;
   }
-}
+} */
 </style>

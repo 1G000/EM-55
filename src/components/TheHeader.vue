@@ -20,7 +20,7 @@ const showMobileMenu = ref(false);
 </script>
 
 <template>
-  <q-header unelevated class="header shadow-2">
+  <q-header unelevated class="header">
     <div class="container">
       <div class="left-part-of-toolbar"></div>
       <div class="first-line-left"></div>
@@ -28,7 +28,6 @@ const showMobileMenu = ref(false);
       <router-link to="/" class="logo__container">
         <LogoSvg class="header-logo" />
         <RIcon class="r-icon" />
-        <!-- <h1 class="logo__text">Электромонтаж 55</h1> -->
       </router-link>
       <div class="first-line"></div>
       <div class="second-line"></div>
@@ -36,10 +35,18 @@ const showMobileMenu = ref(false);
         <q-toolbar-title class="nav__title" v-if="$q.screen.width > 767">
           Оборудование для трансформаторных подстанций
         </q-toolbar-title>
-        <ToolbarContactButton />
+        <div class="tel-wrapper">
+          <q-toolbar-title class="tel-toolbar" v-if="$q.screen.width > 500"
+            ><a href="tel:+78122942013" class="links-tel">+7 (812) 294–20–13</a
+            ><a href="tel:+78122942303" class="links-tel"
+              >+7 (812) 294–23–03</a
+            ></q-toolbar-title
+          >
+          <ToolbarContactButton />
+        </div>
       </q-toolbar>
     </div>
-    <div class="header__navbar">
+    <div class="header__navbar shadow-1">
       <DesktopNavigationMenu
         v-if="$q.screen.width > 767"
         :navItems="navItems"
@@ -64,9 +71,7 @@ const showMobileMenu = ref(false);
       style="position: absolute; top: 0; right: 0; background-color: white"
     >
       <div class="drawer__contacts">
-        <a href="tel:+78122942013" class="links text-bold"
-          >+7 (812) 294-20-13</a
-        >
+        <a href="tel:+78122942013" class="links">+7 (812) 294-20-13</a>
       </div>
       <div class="close-icon-wrapper">
         <q-icon
@@ -86,14 +91,13 @@ const showMobileMenu = ref(false);
 <style scoped>
 .header {
   background-color: rgb(255, 255, 255);
-  border-bottom: 1px solid #86002a1a;
 }
 .container {
   display: flex;
   align-items: center;
   max-width: 1920px;
   margin: 0 auto;
-  padding: 5px 0 0 0;
+  padding: 5px 0px 0 0px;
 }
 .left-part-of-toolbar {
   background-color: var(--q-primary);
@@ -163,6 +167,30 @@ const showMobileMenu = ref(false);
   font-weight: 600;
   user-select: none;
 }
+.tel-wrapper {
+  display: flex;
+  gap: 18px;
+  padding: 0;
+}
+.tel-toolbar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
+  padding-left: 0;
+}
+.links-tel {
+  color: var(--color-white);
+  font-size: 0.9rem;
+  font-family: Montserrat-regular, serif;
+  font-style: normal;
+  line-height: normal;
+  transition: 0.3s linear;
+  font-weight: 500;
+  padding: 0;
+}
+
 .header__navbar {
   max-width: 1920px;
   margin: 0 auto;
@@ -170,14 +198,20 @@ const showMobileMenu = ref(false);
   justify-content: center;
   align-items: center;
   padding: 0;
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+  -webkit-box-shadow: 0px 3px 6px -2px rgba(26, 28, 30, 0.2);
+  -moz-box-shadow: 0px 3px 6px -2px rgba(26, 28, 30, 0.2);
+  box-shadow: 0px 3px 6px -2px rgba(26, 28, 30, 0.2);
 }
 .nav__title {
   font-family: Montserrat-regular, serif;
   color: var(--color-white);
-  font-size: 1rem;
+  font-size: clamp(0.8rem, 1.5vw, 1rem);
   font-weight: normal;
   text-transform: none;
   text-wrap: balance;
+  line-height: normal;
 }
 .nav__title-mobile {
   color: var(--color-black);
@@ -230,6 +264,7 @@ const showMobileMenu = ref(false);
   text-transform: none;
   transition: 0.3s linear;
 }
+
 @media (max-width: 1244px) {
   .toolbar {
     justify-content: end;
@@ -251,6 +286,11 @@ const showMobileMenu = ref(false);
     padding-right: 16px;
   }
 }
+@media (max-width: 850px) {
+  .nav__title {
+    max-width: 280px;
+  }
+}
 @media (max-width: 767px) {
   .left-part-of-toolbar {
     width: 30px;
@@ -269,6 +309,11 @@ const showMobileMenu = ref(false);
 @media (max-width: 458px) {
   .toolbar {
     padding-right: 16px;
+  }
+}
+@media (hover: hover) {
+  .links-tel:hover {
+    color: var(--q-accent);
   }
 }
 </style>

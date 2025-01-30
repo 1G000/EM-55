@@ -30,7 +30,7 @@ const downloadFile = (url) => {
     <div v-for="item in updatedNavItems" :key="item">
       <template v-if="item.secondLevel">
         <q-btn-dropdown
-          :menu-offset="[0, 6]"
+          :menu-offset="[0, 5]"
           square
           :label="item.label"
           fab
