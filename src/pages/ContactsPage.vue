@@ -1,25 +1,11 @@
-<template>
-  <div class="container">
-    <q-breadcrumbs gutter="xs" class="breadcrumbs">
-      <template v-slot:separator>
-        <q-icon size="1.5em" name="chevron_right"></q-icon>
-      </template>
-      <q-breadcrumbs-el icon="home" label="Главная" to="/"></q-breadcrumbs-el>
-      <q-breadcrumbs-el label="Контакты"></q-breadcrumbs-el>
-    </q-breadcrumbs>
-    <ContactsSection />
-    <h2 class="page__title">Контактные данные специалистов</h2>
-    <section class="contact__section">
-      <ContactItem v-for="contact in contactsData?.contacts || []" :key="contact.title" :title="contact.title"
-        :employees="contact.employees" class="contact__item" />
-    </section>
-  </div>
-</template>
-
 <script setup>
 import { ref, onMounted } from "vue";
 import ContactItem from "src/components/ContactItem.vue";
 import ContactsSection from "src/components/ContactsSection.vue";
+import BreadCrumbs from "src/components/BreadCrumbs.vue";
+import UiSection from "src/components/UiSection.vue";
+import UiSectionTitle from "src/components/UiSectionTitle.vue";
+const sectionTitle = "Контакты";
 
 const contactsData = ref(null);
 
@@ -36,6 +22,28 @@ onMounted(async () => {
   }
 });
 </script>
+
+<template>
+  <UiSection
+    class="content__wrapper"
+    :padding="$q.screen.width > 768 ? '64px 40px 0 40px' : '32px 20px 0 20px'"
+  >
+    <BreadCrumbs :page-route="sectionTitle" />
+    <UiSectionTitle :title-text="sectionTitle" />
+    <ContactsSection />
+
+    <h2 class="page__title">Контактные данные специалистов</h2>
+    <section class="contact__section">
+      <ContactItem
+        v-for="contact in contactsData?.contacts || []"
+        :key="contact.title"
+        :title="contact.title"
+        :employees="contact.employees"
+        class="contact__item"
+      />
+    </section>
+  </UiSection>
+</template>
 
 <style scoped>
 .container {

@@ -11,10 +11,11 @@ export const partners = [
     href: "https://legenda-dom.ru/",
   },
   {
-    title: "КВС",
-    imgSrc: "./Images/partners/kvs.svg",
-    href: "https://kvsspb.ru/",
+    title: "ПИК",
+    imgSrc: "./Images/partners/pik.png",
+    href: "https://www.pik.ru/",
   },
+
   {
     title: "«ЛСР. Недвижимость - Северо-Запад»",
     imgSrc: "./Images/partners/lsr.png",
@@ -26,9 +27,9 @@ export const partners = [
     href: "https://yard.ru/",
   },
   {
-    title: "ПИК",
-    imgSrc: "./Images/partners/pik.png",
-    href: "https://www.pik.ru/",
+    title: "КВС",
+    imgSrc: "./Images/partners/kvs.svg",
+    href: "https://kvsspb.ru/",
   },
   {
     title: "Электромонтаж-110",

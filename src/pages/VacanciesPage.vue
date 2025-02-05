@@ -3,6 +3,7 @@ import UiSection from "src/components/UiSection.vue";
 import UiSectionTitle from "src/components/UiSectionTitle.vue";
 import VacancyCard from "src/components/VacancyCard.vue";
 import JoinTeam from "src/components/JoinTeam.vue";
+import BreadCrumbs from "src/components/BreadCrumbs.vue";
 import { ref, onMounted } from "vue";
 const vacancies = ref([]);
 
@@ -23,15 +24,12 @@ const sectionTitle = "Вакансии";
 </script>
 
 <template>
-  <UiSection class="content__wrapper" :padding="$q.screen.width > 1000 ? '64px 40px 0 40px' : '32px 20px 0 20px'">
-    <q-breadcrumbs gutter="xs" class="breadcrumbs">
-      <template v-slot:separator>
-        <q-icon size="1.5em" name="chevron_right"></q-icon>
-      </template>
-      <q-breadcrumbs-el icon="home" label="Главная" to="/"></q-breadcrumbs-el>
-      <q-breadcrumbs-el label="Вакансии"></q-breadcrumbs-el>
-    </q-breadcrumbs>
-    <UiSectionTitle :title-text="sectionTitle" />
+  <UiSection
+    class="content__wrapper"
+    :padding="$q.screen.width > 1000 ? '64px 40px 0 40px' : '32px 20px 0 20px'"
+  >
+    <BreadCrumbs :page-route="sectionTitle" />
+    <UiSectionTitle tag="h1" :title-text="sectionTitle" />
     <div class="picture__section">
       <div class="left__side">
         <div class="text__content">
@@ -52,7 +50,8 @@ const sectionTitle = "Вакансии";
         <JoinTeam v-if="$q.screen.width > 1000" />
       </div>
       <div>
-        <picture class="picture__container"><img src="Images/team.jpg" alt="картинка" class="picture" />
+        <picture class="picture__container"
+          ><img src="Images/team.jpg" alt="картинка" class="picture" />
         </picture>
         <JoinTeam v-if="$q.screen.width < 1000" />
       </div>

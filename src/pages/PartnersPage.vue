@@ -1,7 +1,8 @@
 <script setup>
 import UiSection from "../components/UiSection.vue";
-import UiInnerPageTitle from "src/components/UiInnerPageTitle.vue";
+import UiSectionTitle from "src/components/UiSectionTitle.vue";
 import PartnerCard from "src/components/PartnerCard.vue";
+import BreadCrumbs from "src/components/BreadCrumbs.vue";
 import { partners } from "src/data/partners";
 const sectionTitle = "Наши партнёры";
 
@@ -24,15 +25,12 @@ const sectionTitle = "Наши партнёры";
 </script>
 
 <template>
-  <UiSection class="content__wrapper" :padding="$q.screen.width > 768 ? '64px 40px 0 40px' : '32px 20px 0 20px'">
-    <q-breadcrumbs gutter="xs" class="breadcrumbs">
-      <template v-slot:separator>
-        <q-icon size="1.5em" name="chevron_right"></q-icon>
-      </template>
-      <q-breadcrumbs-el icon="home" label="Главная" to="/"></q-breadcrumbs-el>
-      <q-breadcrumbs-el label="Партнёры"></q-breadcrumbs-el>
-    </q-breadcrumbs>
-    <UiInnerPageTitle :title-text="sectionTitle" />
+  <UiSection
+    class="content__wrapper"
+    :padding="$q.screen.width > 768 ? '64px 40px 0 40px' : '32px 20px 0 20px'"
+  >
+    <BreadCrumbs :page-route="sectionTitle" />
+    <UiSectionTitle tag="h1" :title-text="sectionTitle" />
     <p class="partners-page__text">
       Партнёры и заказчики «Электромонтаж 55» знают, что это динамично
       развивающееся предприятие, способное выполнять комплексные задачи. Все,
@@ -43,8 +41,13 @@ const sectionTitle = "Наши партнёры";
     </p>
 
     <article class="partner-cards">
-      <PartnerCard v-for="(partner, index) in partners" :key="index" :title="partner.title" :imgSrc="partner.imgSrc"
-        :href="partner.href" />
+      <PartnerCard
+        v-for="(partner, index) in partners"
+        :key="index"
+        :title="partner.title"
+        :imgSrc="partner.imgSrc"
+        :href="partner.href"
+      />
     </article>
   </UiSection>
 </template>

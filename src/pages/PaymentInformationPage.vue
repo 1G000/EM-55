@@ -2,6 +2,7 @@
 import UiSection from "src/components/UiSection.vue";
 import UiSectionTitle from "src/components/UiSectionTitle.vue";
 import PaymentInfoItem from "src/components/PaymentInfoItem.vue";
+import BreadCrumbs from "src/components/BreadCrumbs.vue";
 
 const sectionTitle = "Реквизиты организации";
 
@@ -43,21 +44,29 @@ const paymentInfoData = [
 </script>
 
 <template>
-  <UiSection class="content__wrapper" :padding="$q.screen.width > 768 ? '64px 40px 0 40px' : '32px 20px 0 20px'">
-    <q-breadcrumbs gutter="xs" class="breadcrumbs">
-      <template v-slot:separator>
-        <q-icon size="1.5em" name="chevron_right"></q-icon>
-      </template>
-      <q-breadcrumbs-el icon="home" label="Главная" to="/"></q-breadcrumbs-el>
-      <q-breadcrumbs-el label="Реквизиты"></q-breadcrumbs-el>
-    </q-breadcrumbs>
-    <UiSectionTitle :title-text="sectionTitle" />
+  <UiSection
+    class="content__wrapper"
+    :padding="$q.screen.width > 768 ? '64px 40px 0 40px' : '32px 20px 0 20px'"
+  >
+    <BreadCrumbs :page-route="sectionTitle" />
+    <UiSectionTitle tag="h1" :title-text="sectionTitle" />
 
-    <div v-for="items in paymentInfoData" :key="items" class="payment__info-section">
-      <PaymentInfoItem v-for="(item, index) in items" :key="index" :label="item.label" :value="item.value" />
+    <div
+      v-for="items in paymentInfoData"
+      :key="items"
+      class="payment__info-section"
+    >
+      <PaymentInfoItem
+        v-for="(item, index) in items"
+        :key="index"
+        :label="item.label"
+        :value="item.value"
+      />
     </div>
-    <a class="download__link" href="./paymentinfo.docx"><span>Скачать реквизиты</span><q-icon color="gray"
-        name="download"></q-icon></a>
+    <a class="download__link" href="./paymentinfo.docx"
+      ><span>Скачать реквизиты</span
+      ><q-icon color="gray" name="download"></q-icon
+    ></a>
   </UiSection>
 </template>
 

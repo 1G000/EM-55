@@ -16,13 +16,14 @@ defineOptions({
 <template>
   <TheSlider />
   <div class="content__wrapper">
+    <h1 class="hidden">"Электромонтаж-55"</h1>
     <TheAdvantages />
     <ProductCards />
     <ComplexServiceSection />
     <ServicesSection />
     <FormSection />
     <PartnersSection />
-    <ContactsSection />
+    <ContactsSection padding="0 20px" />
   </div>
 </template>
 

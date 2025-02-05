@@ -1,12 +1,10 @@
 <script setup>
 import UiSection from "./UiSection.vue";
-import UiSectionTitle from "./UiSectionTitle.vue";
 const sectionTitle = "Контакты";
 </script>
 
 <template>
-  <UiSection :padding="`64px 0px`" class="map__section">
-    <UiSectionTitle :title-text="sectionTitle" />
+  <UiSection class="map__section">
     <div class="map__content-wrapper">
       <div class="map__section-map">
         <div
@@ -130,8 +128,6 @@ const sectionTitle = "Контакты";
 .map__section {
   display: flex;
   width: 100%;
-  padding-left: 20px;
-  padding-right: 20px;
 }
 .map__content-wrapper {
   display: flex;

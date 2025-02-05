@@ -3,15 +3,19 @@ defineProps({
   titleText: {
     type: String,
   },
+  tag: {
+    type: String,
+    default: "h2",
+    validator: (value) => ["h1", "h2"].includes(value),
+  },
 });
 </script>
 
 <template>
-  <h2 class="section__title">
+  <component :is="tag" class="section__title">
     {{ titleText }}
-  </h2>
+  </component>
 </template>
-
 
 <style scoped>
 .section__title {

@@ -1,6 +1,7 @@
 <script setup>
 import UiSection from "../components/UiSection.vue";
-import UiInnerPageTitle from "src/components/UiInnerPageTitle.vue";
+import UiSectionTitle from "src/components/UiSectionTitle.vue";
+import BreadCrumbs from "src/components/BreadCrumbs.vue";
 
 const sectionTitle = "О компании";
 const data = {
@@ -51,18 +52,12 @@ const data = {
 </script>
 
 <template>
-  <q-breadcrumbs gutter="xs" class="breadcrumbs">
-    <template v-slot:separator>
-      <q-icon size="1.5em" name="chevron_right"></q-icon>
-    </template>
-    <q-breadcrumbs-el icon="home" label="Главная" to="/"></q-breadcrumbs-el>
-    <q-breadcrumbs-el label="О компании"></q-breadcrumbs-el>
-  </q-breadcrumbs>
   <UiSection
     class="content__wrapper"
     :padding="$q.screen.width > 768 ? '64px 40px 0 40px' : '32px 20px 0 20px'"
   >
-    <UiInnerPageTitle :title-text="sectionTitle" />
+    <BreadCrumbs :page-route="sectionTitle" />
+    <UiSectionTitle :title-text="sectionTitle" tag="h1" />
     <q-item-section class="content__top">
       <p
         v-for="paragragh in data.generalInfo"
