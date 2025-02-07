@@ -148,7 +148,7 @@
       "expandedFirstLevel": false,
       "secondLevel": true,
       "secondLevelItems": [
-        { "title": "Студентам и выпускникам", "href": "/vacancies" },
+        { "title": "Студентам и выпускникам", "href": "/students" },
         { "title": "Вакансии", "href": "/vacancies" }
       ]
     }

@@ -113,8 +113,9 @@ const call = (phoneNumber) => {
           </q-item-section>
           <q-item-section>
             <q-item-label class="text-bold">Кадровая служба</q-item-label>
-            <q-item-label
-              ><a href="tel:+79112965058" class="links">+7 (911) 296-50-58</a>
+            <q-item-label>
+              <a href="tel:+78122494411" class="links">+7 (812) 249-44-11</a>
+              <a href="tel:+79112965058" class="links">+7 (911) 296-50-58</a>
               <a href="mailto:personal@em-55.com" class="links"
                 >personal@em-55.com</a
               ></q-item-label

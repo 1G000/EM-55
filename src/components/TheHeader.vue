@@ -35,7 +35,11 @@ const showMobileMenu = ref(false);
         <q-toolbar-title class="nav__title" v-if="$q.screen.width > 767">
           Оборудование для трансформаторных подстанций
         </q-toolbar-title>
+
         <div class="tel-wrapper">
+          <q-icon name="telegram" class="icon" size="30px" alt="telegram">
+            <q-tooltip>Telegram</q-tooltip>
+          </q-icon>
           <q-toolbar-title class="tel-toolbar" v-if="$q.screen.width > 500"
             ><a href="tel:+78122942013" class="links-tel">+7 (812) 294–20–13</a
             ><a href="tel:+78122942303" class="links-tel"
@@ -121,6 +125,10 @@ const showMobileMenu = ref(false);
   position: absolute;
   top: 10px;
   right: 4px;
+}
+.icon {
+  align-self: center;
+  transition: 0.3s linear;
 }
 .navbar__logo {
   width: 100px;
@@ -314,6 +322,12 @@ const showMobileMenu = ref(false);
 @media (hover: hover) {
   .links-tel:hover {
     color: var(--q-accent);
+  }
+}
+@media (hover: hover) {
+  .icon:hover {
+    color: var(--q-accent);
+    cursor: pointer;
   }
 }
 </style>
