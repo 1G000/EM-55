@@ -108,8 +108,9 @@ const toggleExpand = (index) => {
   padding: 20px 50px;
 }
 .top__section {
+  display: flex;
   flex-direction: row;
-  gap: 60px;
+  justify-content: space-between !important;
 }
 .right__side {
   display: flex;

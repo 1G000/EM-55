@@ -48,8 +48,8 @@ module.exports = configure(function (/* ctx */) {
       // vueOptionsAPI: false,
 
       // rebuildCache: true, // rebuilds Vite/linter/etc cache on startup
-
-      publicPath: "/EM-55/",
+      publicPath: "/",
+      // publicPath: "/EM-55/",
       // analyze: true,
       // env: {},
       // rawDefine: {}

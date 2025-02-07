@@ -18,13 +18,20 @@
         },
         {
           "title": "Галерея",
-          "href": "/gallery",
-          "thirdLevel": false,
+
+          "thirdLevel": true,
           "expandedSecondLevel": false,
           "thirdLevelItems": [
-            { "title": "2022" },
-            { "title": "2023" },
-            { "title": "2024" }
+            { "title": "За все время", "href": "/gallery" },
+            { "title": "2016", "href": "/gallery" },
+            { "title": "2017", "href": "/gallery" },
+            { "title": "2018", "href": "/gallery" },
+            { "title": "2019", "href": "/gallery" },
+            { "title": "2020", "href": "/gallery" },
+            { "title": "2021", "href": "/gallery" },
+            { "title": "2022", "href": "/gallery" },
+            { "title": "2023", "href": "/gallery" },
+            { "title": "2024", "href": "/gallery" }
           ]
         },
         { "title": "Отзывы", "thirdLevel": false, "href": "/sorry" },
@@ -117,6 +124,7 @@
       "secondLevel": true,
       "expandedFirstLevel": false,
       "secondLevelItems": [
+        { "title": "Карта объектов", "thirdLevel": false, "href": "/smr" },
         { "title": "СМР", "thirdLevel": false, "href": "/smr" },
         { "title": "ПИР", "thirdLevel": false, "href": "/sorry" },
         { "title": "КЛЮЧ", "thirdLevel": false, "href": "/sorry" }
@@ -135,10 +143,14 @@
       "expandedFirstLevel": false
     },
     {
-      "label": "Вакансии",
-      "href": "/vacancies",
+      "label": "Карьера",
+
       "expandedFirstLevel": false,
-      "secondLevel": false
+      "secondLevel": true,
+      "secondLevelItems": [
+        { "title": "Студентам и выпускникам", "href": "/vacancies" },
+        { "title": "Вакансии", "href": "/vacancies" }
+      ]
     }
   ]
 }

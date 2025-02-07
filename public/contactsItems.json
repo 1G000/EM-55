@@ -21,7 +21,7 @@
           "imgSrc": "./Images/Contacts/female.png",
           "specialization": "Руководитель кадровой службы",
           "fullName": "Мария Юрьевна",
-          "phoneNumbers": ["+7-911-296-50-58"],
+          "phoneNumbers": ["+7-812-249-44-11", "+7-911-296-50-58"],
           "email": "personal@em-55.com"
         }
       ]
@@ -34,7 +34,7 @@
           "imgSrc": "./Images/Contacts/male.png",
           "specialization": "Старший менеджер",
           "fullName": "Дмитрий Антонович",
-          "phoneNumbers": ["+7-911-908-50-52", "+7-812-294-23-03"],
+          "phoneNumbers": ["+7-812-294-23-03", "+7-911-908-50-52"],
           "email": "sale1@em-55.com"
         },
         {
@@ -42,7 +42,7 @@
           "imgSrc": "./Images/Contacts/male.png",
           "specialization": "Отдел низковольтного оборудования",
           "fullName": "Александр Николаевич",
-          "phoneNumbers": ["+7-911-734-90-01", "+7-812-294-23-03"],
+          "phoneNumbers": ["+7-812-294-23-03", "+7-911-734-90-01"],
           "email": "yan@em-55.com"
         },
         {
@@ -50,7 +50,7 @@
           "imgSrc": "./Images/Contacts/female.png",
           "specialization": "Отдел высоковольтного оборудования",
           "fullName": "Татьяна Гавриловна",
-          "phoneNumbers": ["+7-911-734-90-01", "+7-812-294-23-03"],
+          "phoneNumbers": ["+7-812-294-23-03", "+7-911-734-90-01"],
           "email": "kgt@em-55.com"
         }
       ]
@@ -76,7 +76,7 @@
           "imgSrc": "./Images/Contacts/malachov.png",
           "specialization": "Заместитель директора",
           "fullName": "Владимир Федорович",
-          "phoneNumbers": ["+7-911-719-70-59", "+7-812-294-23-03"],
+          "phoneNumbers": ["+7-812-294-23-03", "+7-911-719-70-59"],
           "email": "pto@em-55.com"
         }
       ]
