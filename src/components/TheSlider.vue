@@ -143,7 +143,6 @@ const selectedImgSrc = computed(() => (index) => {
 <style scoped>
 .q-carousel {
   height: calc(100vh - 135px - 75px - 36px - 40px);
-  margin-top: 36px;
   max-width: 1920px;
 }
 
@@ -283,9 +282,9 @@ const selectedImgSrc = computed(() => (index) => {
     height: 50px;
   }
 }
-@media screen and (max-width: 845px) {
+@media screen and (max-width: 1024px) {
   .q-carousel {
-    height: calc(100vh - 75px);
+    height: calc(100vh - 75px - 36px);
   }
 }
 @media screen and (max-width: 767px) {

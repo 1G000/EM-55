@@ -32,13 +32,13 @@ const call = (phoneNumber) => {
             <q-item-label class="text-bold">Приемная:</q-item-label>
             <q-item-label>
               <a
-                v-if="$q.screen.width <= 500"
+                v-if="$q.screen.width <= 560"
                 href="tel:+78122942013"
                 class="links"
                 >+7 (812) 294-20-13</a
               >
               <a
-                v-if="$q.screen.width <= 500"
+                v-if="$q.screen.width <= 560"
                 href="tel:+78122942303"
                 class="links"
                 >+7 (812) 294-23-03</a
