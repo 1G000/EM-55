@@ -51,7 +51,6 @@ const sectionTitle = "Студентам и выпускникам";
           v-if="$q.screen.width < 1000"
           title="Начни карьеру в стабильной компании!"
         />
-        <!-- Начни свою карьеру в ЭЛЕКТРОМОНТАЖ 55 -->
       </div>
     </div>
     <VacancyCard :vacancies="vacancies" />

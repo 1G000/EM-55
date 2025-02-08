@@ -6,7 +6,31 @@ defineOptions({
 import TheHeader from "src/components/TheHeader.vue";
 import TheFooter from "src/components/TheFooter.vue";
 
-import { ref, onMounted } from "vue";
+import { ref, onMounted, onBeforeUnmount } from "vue";
+const showScrollButton = ref(false);
+
+// Функция для прокрутки наверх
+const scrollToTop = () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+};
+
+// Функция для отслеживания прокрутки
+const handleScroll = () => {
+  showScrollButton.value = window.scrollY > window.innerHeight;
+};
+
+//слушатель события прокрутки при монтировании компонента
+onMounted(() => {
+  window.addEventListener("scroll", handleScroll);
+});
+
+// Удаляем слушатель события прокрутки перед уничтожением компонента
+onBeforeUnmount(() => {
+  window.removeEventListener("scroll", handleScroll);
+});
 
 const navItems = ref(null);
 
@@ -31,6 +55,15 @@ onMounted(async () => {
       <router-view />
     </main>
     <TheFooter />
+    <q-page-sticky position="bottom-right" :offset="[18, 18]">
+      <q-btn
+        round
+        color="primary"
+        icon="arrow_upward"
+        @click="scrollToTop"
+        v-if="showScrollButton"
+      />
+    </q-page-sticky>
   </q-layout>
 </template>
 
