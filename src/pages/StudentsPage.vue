@@ -40,6 +40,11 @@ const sectionTitle = "Студентам и выпускникам";
         </div>
         <JoinTeam
           title="Начни карьеру в стабильной компании!"
+          name="Мария Юрьевна"
+          jobTitle="Руководитель кадровой службы"
+          phoneNumber="+7-911-296-50-58"
+          phone="+79112965058"
+          mail="personal@em-55.com"
           v-if="$q.screen.width > 1000"
         />
       </div>
@@ -50,6 +55,11 @@ const sectionTitle = "Студентам и выпускникам";
         <JoinTeam
           v-if="$q.screen.width < 1000"
           title="Начни карьеру в стабильной компании!"
+          name="Мария Юрьевна"
+          jobTitle="Руководитель кадровой службы"
+          phoneNumber="+7-911-296-50-58"
+          phone="+79112965058"
+          mail="personal@em-55.com"
         />
       </div>
     </div>

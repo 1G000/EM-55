@@ -228,6 +228,57 @@ const routes = [
     component: () => import("layouts/MainLayout.vue"),
     children: [{ path: "", component: () => import("pages/SmrPage.vue") }],
   },
+  ,
+  {
+    path: "/rent",
+    component: () => import("layouts/MainLayout.vue"),
+    children: [
+      {
+        path: "",
+        component: () => import("pages/RentPage.vue"),
+        meta: {
+          title:
+            "Аренда спецтехники | ЭЛЕКТРОМОНТАЖ 55 - Производство электрооборудования в Санкт-Петербурге",
+          metaTags: [
+            {
+              name: "description",
+              content: "Аренда спецтехники",
+            },
+            {
+              name: "keywords",
+              content:
+                "Аренда спецтехники, подъемный кран, Кабелепрокладочная машина, автокран, экскаватор, погрузчик, самосвал",
+            },
+            {
+              property: "og:title",
+              content:
+                "Аренда спецтехники | ЭЛЕКТРОМОНТАЖ 55 - Производство электрооборудования в Санкт-Петербурге",
+            },
+            {
+              property: "og:description",
+              content: "Аренда спецтехники",
+            },
+            {
+              property: "og:image",
+              content: "https://em-55.ru/assets/logo-white.94e19ee4.png",
+            },
+            {
+              property: "og:url",
+              content: "https://em-55.ru/history",
+            },
+            {
+              property: "og:type",
+              content: "website",
+            },
+            {
+              name: "robots",
+              content: "index, follow",
+            },
+          ],
+        },
+      },
+    ],
+  },
   {
     path: "/gallery",
     component: () => import("layouts/MainLayout.vue"),
