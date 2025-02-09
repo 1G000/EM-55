@@ -47,13 +47,28 @@ const sectionTitle = "Вакансии";
           КТП, КЛ 209-214, УВР, УВРУ, ГРЩ, ВРУ, ЯВЗ, ШУ, ОЩ, ШСН, ШБП, УКРМ и
           пр.), пройдена аккредитация в ПАО «Ленэнерго».
         </div>
-        <JoinTeam v-if="$q.screen.width > 1000" />
+        <JoinTeam
+          v-if="$q.screen.width > 1000"
+          name="Мария Юрьевна"
+          jobTitle="Руководитель кадровой службы"
+          phoneNumber="+7-911-296-50-58"
+          phone="+79112965058"
+          mail="personal@em-55.com"
+        />
       </div>
       <div>
         <picture class="picture__container"
           ><img src="Images/team.jpg" alt="картинка" class="picture" />
         </picture>
-        <JoinTeam v-if="$q.screen.width < 1000" />
+        <JoinTeam
+          v-if="$q.screen.width < 1000"
+          name="Мария Юрьевна"
+          jobTitle="Руководитель кадровой службы"
+          phoneNumber="+7-911-296-50-58"
+          ,
+          phone="+79112965058"
+          mail="personal@em-55.com"
+        />
       </div>
     </div>
     <VacancyCard :vacancies="vacancies" />

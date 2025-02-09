@@ -5,6 +5,26 @@ const props = defineProps({
     required: true,
     default: "Присоединяйся к команде!",
   },
+  name: {
+    type: String,
+    required: true,
+  },
+  jobTitle: {
+    type: String,
+    required: true,
+  },
+  phoneNumber: {
+    type: String,
+    required: true,
+  },
+  phone: {
+    type: String,
+    required: true,
+  },
+  mail: {
+    type: String,
+    required: true,
+  },
   text: {
     type: String,
     required: true,
@@ -29,13 +49,13 @@ const props = defineProps({
   <div class="join__team">
     <h3>{{ title }}</h3>
     <div class="contact">
-      <span>Мария Юрьевна</span>
-      <span :style="$q.screen.width < 1510 ? 'padding-bottom: 20px' : ''"
-        >Руководитель кадровой службы</span
-      >
+      <span>{{ name }}</span>
+      <span :style="$q.screen.width < 1510 ? 'padding-bottom: 20px' : ''">{{
+        jobTitle
+      }}</span>
       <div class="contact__items">
         <a
-          :href="`https://t.me/+79112965058`"
+          :href="`https://t.me/${phone}`"
           class="contact-phone__numbers"
           target="_blank"
         >
@@ -44,7 +64,7 @@ const props = defineProps({
           Написать в Telegram
         </a>
         <a
-          :href="`tel: +79112965058`"
+          :href="`tel: ${phone}`"
           class="contact-phone__numbers"
           target="_blank"
         >
@@ -60,13 +80,9 @@ const props = defineProps({
               fill="#86002A"
             />
           </svg>
-          +7-911-296-50-58
+          {{ phoneNumber }}
         </a>
-        <a
-          :href="`mailto:personal@em-55.com`"
-          target="_blank"
-          class="contact__mail"
-        >
+        <a :href="`mailto:${mail}`" target="_blank" class="contact__mail">
           <svg
             width="23"
             height="18"
@@ -79,7 +95,7 @@ const props = defineProps({
               fill="#86002A"
             />
           </svg>
-          personal@em-55.com
+          {{ mail }}
         </a>
       </div>
     </div>
