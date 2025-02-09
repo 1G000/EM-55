@@ -37,15 +37,40 @@ const showMobileMenu = ref(false);
         </q-toolbar-title>
 
         <div class="tel-wrapper">
-          <q-icon name="telegram" class="icon" size="30px" alt="telegram">
-            <q-tooltip>Telegram</q-tooltip>
-          </q-icon>
-          <q-toolbar-title class="tel-toolbar" v-if="$q.screen.width > 500"
+          <q-toolbar-title class="tel-toolbar" v-if="$q.screen.width > 560"
             ><a href="tel:+78122942013" class="links-tel">+7 (812) 294–20–13</a
             ><a href="tel:+78122942303" class="links-tel"
               >+7 (812) 294–23–03</a
             ></q-toolbar-title
           >
+          <svg
+            width="64"
+            height="39"
+            viewBox="0 0 64 39"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <rect
+              x="0.5"
+              y="0.5"
+              width="63"
+              height="37"
+              rx="7.5"
+              stroke="#E5C696"
+            />
+            <path
+              d="M27.0267 26.849C26.3116 26.849 26.4332 26.5942 26.1865 25.9515L24.084 19.4203L40.2688 10.3574"
+              fill="#CCA971"
+            />
+            <path
+              d="M27.0273 26.8479C27.5791 26.8479 27.8228 26.6097 28.1309 26.3271L31.0735 23.6263L27.4029 21.5371"
+              fill="#D1B180"
+            />
+            <path
+              d="M27.4022 21.5388L36.2964 27.7412C37.3115 28.2698 38.0438 27.996 38.2967 26.8519L41.9172 10.7486C42.2878 9.34598 41.3507 8.70958 40.3796 9.12569L19.1205 16.863C17.6694 17.4124 17.678 18.1766 18.856 18.517L24.3116 20.1243L36.9418 12.6033C37.5381 12.262 38.0854 12.4454 37.6363 12.8217"
+              fill="#E5C696"
+            />
+          </svg>
           <ToolbarContactButton />
         </div>
       </q-toolbar>
@@ -294,9 +319,14 @@ const showMobileMenu = ref(false);
     padding-right: 16px;
   }
 }
+@media (max-width: 885px) {
+  .nav__title {
+    max-width: 276px;
+  }
+}
 @media (max-width: 850px) {
   .nav__title {
-    max-width: 280px;
+    display: none;
   }
 }
 @media (max-width: 767px) {

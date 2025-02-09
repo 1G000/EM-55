@@ -36,7 +36,7 @@ const downloadFile = (url) => {
           fab
           class="navigation__button"
         >
-          <q-list dense separator class="q-pl-sm q-pr-xl list-shadow">
+          <q-list dense separator class="q-px-sm list-shadow">
             <q-item
               class="text-black submenu-item"
               v-for="subitem in item.secondLevelItems"
@@ -55,7 +55,7 @@ const downloadFile = (url) => {
                 <q-menu
                   anchor="top right"
                   self="top left"
-                  :offset="[6, 0]"
+                  :offset="[8, 0]"
                   class="list-shadow"
                 >
                   <q-list dense separator class="q-px-sm list-shadow">

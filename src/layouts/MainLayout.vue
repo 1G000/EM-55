@@ -69,7 +69,7 @@ onMounted(async () => {
 
 <style scoped>
 .main {
-  padding-top: 75px;
+  padding-top: calc(75px + 36px);
   margin-left: auto;
   margin-right: auto;
   max-width: 1920px;
