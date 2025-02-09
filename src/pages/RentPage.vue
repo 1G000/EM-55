@@ -10,7 +10,7 @@ const specialCars = [
   {
     id: 1,
     title: "Кабелепрокладочная машина на базе ГАЗ-66 с лебедкой",
-    imgSrc: "/src/assets/specialCars/gaz66.jpg",
+    imgSrc: "../assets/specialCars/gaz66.jpg",
     price: [
       "3500,00 р. в час в т.ч. НДС 20%",
       "28000,00 р. в смену (1+7 часов) в т.ч. НДС 20%",
@@ -21,7 +21,7 @@ const specialCars = [
   {
     id: 2,
     title: "КМУ на базе КАМАЗ с установкой FASSI 110",
-    imgSrc: "/src/assets/specialCars/kamaz.jpg",
+    imgSrc: "../assets/specialCars/kamaz.jpg",
     description: "",
     price: [
       "3000,00 р. в час в т.ч. НДС 20%",
@@ -37,7 +37,7 @@ const specialCars = [
   {
     id: 3,
     title: "Экскаватор погрузчик CAT-428",
-    imgSrc: "/src/assets/specialCars/cat428.jpg",
+    imgSrc: "../assets/specialCars/cat428.jpg",
     price: [
       "3500,00 р. в час в т.ч. НДС 20%",
       "28000,00 р. в смену (1+7 часов) в т.ч. НДС 20%",
@@ -51,7 +51,7 @@ const specialCars = [
   {
     id: 4,
     title: "Асфальтоукладчик тротуарный Bitelli BB621C",
-    imgSrc: "/src/assets/specialCars/bitelli621.jpg",
+    imgSrc: "../assets/specialCars/bitelli621.jpg",
     price: [
       "4000,00 р. в час в т.ч. НДС 20%",
       "32000,00 р. в смену (1+7 часов) в т.ч. НДС 20%",
@@ -74,7 +74,7 @@ const specialCars = [
   {
     id: 5,
     title: "Тандемный асфальтовый каток Dynapac CC800",
-    imgSrc: "/src/assets/specialCars/DynapacCC800.jpg",
+    imgSrc: "../assets/specialCars/DynapacCC800.jpg",
     price: [
       "3000,00 р. в час в т.ч. НДС 20%",
       "24000,00 р. в смену (1+7 часов) в т.ч. НДС 20%",
@@ -96,13 +96,11 @@ const specialCars = [
   {
     id: 6,
     title: "Автокран 16 тонн. На базе, а/м МАЗ",
-
     price: [
       "3000,00 р. в час в т.ч. НДС 20%",
       "24000,00 р. в смену (1+7 часов) в т.ч. НДС 20%",
     ],
   },
-
   {
     id: 7,
     title: "Самосвал 16 тонн. На базе, а/м КАМАЗ",
