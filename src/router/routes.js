@@ -509,6 +509,54 @@ const routes = [
       },
     ],
   },
+  {
+    path: "/electrical-laboratory",
+    component: () => import("layouts/MainLayout.vue"),
+    children: [
+      {
+        path: "",
+        component: () => import("pages/ElectricalLaboratoryPage.vue"),
+        meta: {
+          title:
+            "Реквизиты | ЭЛЕКТРОМОНТАЖ 55 - Производство электрооборудования",
+          metaTags: [
+            {
+              name: "description",
+              content:
+                "Официальные реквизиты компании ЭЛЕКТРОМОНТАЖ 55: ИНН, КПП, юридический адрес, банковские реквизиты для оплаты счетов.",
+            },
+            {
+              name: "keywords",
+              content:
+                "реквизиты, ИНН, КПП, юридический адрес, банковские реквизиты, ЭЛЕКТРОМОНТАЖ 55, Санкт-Петербург",
+            },
+            {
+              property: "og:title",
+              content:
+                "Реквизиты | ЭЛЕКТРОМОНТАЖ 55 - Производство электрооборудования",
+            },
+            {
+              property: "og:description",
+              content:
+                "Официальные реквизиты компании ЭЛЕКТРОМОНТАЖ 55: ИНН, КПП, юридический адрес, банковские реквизиты для оплаты счетов.",
+            },
+            {
+              property: "og:url",
+              content: "https://em-55.ru/payment-information",
+            },
+            {
+              property: "og:type",
+              content: "website",
+            },
+            {
+              name: "robots",
+              content: "noindex, nofollow",
+            },
+          ],
+        },
+      },
+    ],
+  },
 
   {
     path: "/:catchAll(.*)*",
