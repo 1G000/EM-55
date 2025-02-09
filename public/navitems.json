@@ -90,6 +90,11 @@
         { "title": "Проектирование", "thirdLevel": false, "href": "/sorry" },
         { "title": "Отдел продаж", "thirdLevel": false, "href": "/sorry" },
         {
+          "title": "Электролаборатория",
+          "thirdLevel": false,
+          "href": "/electrical-laboratory"
+        },
+        {
           "title": "Строительные работы",
           "thirdLevel": false,
           "href": "/sorry"
