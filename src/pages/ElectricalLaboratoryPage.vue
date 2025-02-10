@@ -59,7 +59,7 @@ const handleTouchEnd = () => {
     >
       <q-img :src="structureImg" :style="imageStyle" ref="image"></q-img>
     </div>
-    <a class="download__link" href="./labor-protection.docx"
+    <!-- <a class="download__link" href="./labor-protection.docx"
       ><span>Скачать инструкцию по охране труда</span
       ><q-icon color="gray" name="download"></q-icon
     ></a>
@@ -70,7 +70,7 @@ const handleTouchEnd = () => {
     <a class="download__link" href="./resolution.rtf"
       ><span>Скачать Положение об электролаборатории </span
       ><q-icon color="gray" name="download"></q-icon
-    ></a>
+    ></a> -->
   </UiSection>
 </template>
 <style scoped>
