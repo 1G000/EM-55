@@ -20,8 +20,8 @@ export default route(function (/* { store, ssrContext } */) {
   const createHistory = process.env.SERVER
     ? createMemoryHistory
     : process.env.VUE_ROUTER_MODE === "history"
-    ? createWebHistory
-    : createWebHashHistory;
+      ? createWebHistory
+      : createWebHashHistory;
 
   const Router = createRouter({
     routes,
@@ -42,25 +42,30 @@ export default route(function (/* { store, ssrContext } */) {
 
   Router.beforeEach((to, from, next) => {
     // Set the page title
-    if (to.meta.title) {
-      document.title = to.meta.title;
-    } else {
-      document.title = process.env.APP_NAME || "Quasar App"; // Default title
+    if (process.client) {
+      if (to.meta.title) {
+        document.title = to.meta.title;
+      } else {
+        document.title = process.env.APP_NAME || "Quasar App"; // Default title
+      }
     }
 
     // Handle meta tags
-    const existingMetaTags = document.querySelectorAll("meta[data-q-router]");
-    existingMetaTags.forEach((tag) => tag.remove());
-
+    if (process.client) {
+      const existingMetaTags = document.querySelectorAll("meta[data-q-router]");
+      existingMetaTags.forEach((tag) => tag.remove());
+    }
     if (to.meta.metaTags) {
-      to.meta.metaTags.forEach((tag) => {
-        const metaTag = document.createElement("meta");
-        Object.keys(tag).forEach((key) => {
-          metaTag.setAttribute(key, tag[key]);
+      if (process.client) {
+        to.meta.metaTags.forEach((tag) => {
+          const metaTag = document.createElement("meta");
+          Object.keys(tag).forEach((key) => {
+            metaTag.setAttribute(key, tag[key]);
+          });
+          metaTag.setAttribute("data-q-router", ""); // Use a Quasar-specific attribute
+          document.head.appendChild(metaTag);
         });
-        metaTag.setAttribute("data-q-router", ""); // Use a Quasar-specific attribute
-        document.head.appendChild(metaTag);
-      });
+      }
     }
 
     next();

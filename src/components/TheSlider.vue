@@ -50,7 +50,10 @@ let slide = ref(1);
 //hover
 
 const supportsHover = computed(() => {
-  return window.matchMedia("(hover: hover)").matches;
+  if (process.client) {
+    return window.matchMedia("(hover: hover)").matches;
+  }
+  return false;
 });
 
 const handleMouseMove = (_, event) => {
@@ -109,10 +112,7 @@ const selectedImgSrc = computed(() => (index) => {
           <div class="text-overlay__text">
             <h2 class="slide__title" v-html="slideData.title"></h2>
             <h3 class="slide__subtitle" v-html="slideData.subtitle"></h3>
-            <span
-              class="slide__textcontent"
-              v-html="slideData.textcontent"
-            ></span>
+            <span class="slide__textcontent" v-html="slideData.textcontent"></span>
           </div>
           <div
             v-if="slideData.buttons && slideData.buttons.length > 0"
@@ -125,9 +125,7 @@ const selectedImgSrc = computed(() => (index) => {
               ref="button"
               :to="button.to"
               v-on="{
-                mousemove: supportsHover
-                  ? handleMouseMove.bind(_, buttonIndex)
-                  : null,
+                mousemove: supportsHover ? handleMouseMove.bind(_, buttonIndex) : null,
                 mouseleave: supportsHover ? handleMouseLeave : null,
               }"
             >

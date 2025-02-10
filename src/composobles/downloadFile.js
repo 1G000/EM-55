@@ -1,3 +1,6 @@
 export const downloadFile = (url) => {
-  window.location.href = url;
+  if (process.client) {
+    window.location.href = url;
+  }
+
 };

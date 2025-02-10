@@ -3,7 +3,9 @@ import { useRouter } from "vue-router";
 const router = useRouter();
 
 const openPrivacyPage = () => {
-  window.open(router.resolve("/privacy").href, "_blank");
+  if (process.client) {
+    window.open(router.resolve("/privacy").href, "_blank");
+  }
 };
 </script>
 

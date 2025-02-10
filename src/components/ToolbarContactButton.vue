@@ -2,7 +2,9 @@
 // import { ref } from "vue";
 
 const call = (phoneNumber) => {
-  window.location.href = `tel:${phoneNumber}`;
+  if (process.client) {
+    window.location.href = `tel:${phoneNumber}`;
+  }
 };
 // const button = ref(null);
 </script>

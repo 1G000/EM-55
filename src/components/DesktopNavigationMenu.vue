@@ -21,7 +21,9 @@ const updatedNavItems = computed(() => {
   return props.navItems;
 });
 const downloadFile = (url) => {
-  window.location.href = url;
+  if (process.client) {
+    window.location.href = url;
+  }
 };
 </script>
 

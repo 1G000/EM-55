@@ -10,7 +10,9 @@ const q = useQuasar();
 const router = useRouter();
 
 const openPrivacyPage = () => {
-  window.open(router.resolve("/privacy").href, "_blank");
+  if (process.client) {
+    window.open(router.resolve("/privacy").href, "_blank");
+  }
 };
 
 const name = ref(null);

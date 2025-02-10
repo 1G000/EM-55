@@ -44,7 +44,9 @@ const resetForm = () => {
   accept.value = false;
 };
 const openPrivacyPage = () => {
-  window.open(router.resolve("/privacy").href, "_blank");
+  if (process.client) {
+    window.open(router.resolve("/privacy").href, "_blank");
+  }
 };
 const closeDialog = () => {
   emit("update:modelValue", false);

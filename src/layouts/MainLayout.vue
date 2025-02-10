@@ -11,25 +11,33 @@ const showScrollButton = ref(false);
 
 // Функция для прокрутки наверх
 const scrollToTop = () => {
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth",
-  });
+  if (process.client) {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }
 };
 
 // Функция для отслеживания прокрутки
 const handleScroll = () => {
-  showScrollButton.value = window.scrollY > window.innerHeight;
+  if (process.client) {
+    showScrollButton.value = window.scrollY > window.innerHeight;
+  }
 };
 
 //слушатель события прокрутки при монтировании компонента
 onMounted(() => {
-  window.addEventListener("scroll", handleScroll);
+  if (process.client) {
+    window.addEventListener("scroll", handleScroll);
+  }
 });
 
 // Удаляем слушатель события прокрутки перед уничтожением компонента
 onBeforeUnmount(() => {
-  window.removeEventListener("scroll", handleScroll);
+  if (process.client) {
+    window.removeEventListener("scroll", handleScroll);
+  }
 });
 
 const navItems = ref(null);
