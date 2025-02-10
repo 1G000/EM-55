@@ -72,7 +72,11 @@
             { "title": "Каталог 2", "href": "./Catalog/catalog_2.pdf" }
           ]
         },
-        { "title": "Сертификаты", "thirdLevel": false, "href": "/sorry" },
+        {
+          "title": "Сертификаты",
+          "thirdLevel": false,
+          "href": "/certificates"
+        },
         { "title": "Опросные листы", "thirdLevel": false, "href": "/sorry" },
         { "title": "Сроки поставки", "thirdLevel": false, "href": "/sorry" },
         { "title": "Доставка", "thirdLevel": false, "href": "/sorry" },
