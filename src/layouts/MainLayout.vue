@@ -58,6 +58,7 @@ onMounted(async () => {
     <q-page-sticky position="bottom-right" :offset="[18, 18]">
       <q-btn
         round
+        style="width: 60px; height: 60px"
         color="primary"
         icon="arrow_upward"
         @click="scrollToTop"
