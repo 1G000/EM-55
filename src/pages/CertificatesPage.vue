@@ -8,39 +8,39 @@ const sectionTitle = "Сертификаты";
 const certsDobr = [
   {
     title: "Протокол исследования Камеры сборные одностороннего обслуживания",
-    href: "/public/Certificates/1/ПИ_№21085_ВНИ_22_от_07_09_2022_Камеры_сборные_одностороннего_обслуживания (1).pdf",
+    href: "/Certificates/1/ПИ_№21085_ВНИ_22_от_07_09_2022_Камеры_сборные_одностороннего_обслуживания (1).pdf",
   },
   {
     title: "Декларация Камеры сборные одностороннего обслуживания",
-    href: "/public/Certificates/1/Декларация КСО.pdf",
+    href: "/Certificates/1/Декларация КСО.pdf",
   },
   {
     title: "Добровольный сертификат Камеры сборные одностороннего обслуживания",
-    href: "/public/Certificates/1/Добровольный сертификат КСО.pdf",
+    href: "/Certificates/1/Добровольный сертификат КСО.pdf",
   },
 ];
 
 const certsSootv = [
   {
     title: "Сертификат соответствия БКРТП",
-    href: "/public/Certificates/2/БКРТП сертификат.pdf",
+    href: "/Certificates/2/БКРТП сертификат.pdf",
   },
   {
     title: "Сертификат соответствия БКТП",
-    href: "/public/Certificates/2/БКТП сертификат.pdf",
+    href: "/Certificates/2/БКТП сертификат.pdf",
   },
   {
     title: "Сертификат соответствия КСО",
-    href: "/public/Certificates/2/КСО сертификат.pdf",
+    href: "/Certificates/2/КСО сертификат.pdf",
   },
   {
     title: "Сертификат соответствия КТП",
-    href: "/public/Certificates/2/КТП сертификат.pdf",
+    href: "/Certificates/2/КТП сертификат.pdf",
   },
 
   {
     title: "Сертификат соответствия ШСН, ШБП, ШБПЗС, ЩГП",
-    href: "/public/Certificates/2/ШСН,ШБП,ШБПЗС,ЩГП.pdf",
+    href: "/Certificates/2/ШСН,ШБП,ШБПЗС,ЩГП.pdf",
   },
 ];
 
@@ -48,15 +48,15 @@ const certsSRO = [
   {
     title:
       "Строительство, реконструкция, капитальный ремонт, снос объектов капитального строительства",
-    href: "/public/Certificates/3-SRO/1.pdf",
+    href: "/Certificates/3-SRO/1.pdf",
   },
   {
     title: "Подготовка проектной документации",
-    href: "/public/Certificates/3-SRO/2.pdf",
+    href: "/Certificates/3-SRO/2.pdf",
   },
   {
     title: "Инженерные изыскания",
-    href: "/public/Certificates/3-SRO/3.pdf",
+    href: "/Certificates/3-SRO/3.pdf",
   },
 ];
 </script>
