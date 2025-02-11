@@ -4,11 +4,7 @@ const props = defineProps({
     type: String,
     required: true,
   },
-  imgSrc: {
-    type: String,
-    required: true,
-  },
-  href: {
+  pdfSrc: {
     type: String,
     required: true,
   },
@@ -16,66 +12,59 @@ const props = defineProps({
 </script>
 
 <template>
-  <q-responsive :ratio="4 / 3" class="partner-card">
-    <q-card
-      class="column partner-card__accent"
-      flat
-      clickable
-      tag="a"
-      :href="href"
-      target="_blank"
-    >
-      <img class="col image" :src="imgSrc" />
-      <q-card-section class="partner-card__title">
-        <q-item>
-          <q-item-section class="partner-card__text">{{
-            title
-          }}</q-item-section>
-        </q-item>
-      </q-card-section>
-    </q-card>
-  </q-responsive>
+  <q-card
+    class="pdf-card"
+    flat
+    clickable
+    tag="a"
+    :href="pdfSrc"
+    target="_blank"
+  >
+    <div class="pdf-card__content">
+      <q-icon name="picture_as_pdf" class="pdf-card__icon" />
+      <span class="pdf-card__title">{{ title }}</span>
+    </div>
+  </q-card>
 </template>
 
 <style scoped>
-.partner-card {
-  width: 360px;
-  transition: 0.3s linear;
-  border-radius: 8px;
-}
-
-.partner-card__accent {
+.pdf-card {
+  width: 100%;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
   border: 1px solid var(--q-accent);
   border-radius: 8px;
+  transition: 0.3s linear;
+  text-decoration: none;
 }
 
-.partner-card__title {
-  background-color: var(--background-light-accent);
-  border-top: 1px solid #b990511a;
-  padding: 0;
-  padding: 5px;
-  min-height: 60px;
+.pdf-card__content {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.pdf-card__icon {
+  font-size: 32px;
+  color: var(--q-primary);
+}
+
+.pdf-card__title {
   font-family: Montserrat-bold, serif;
-  font-size: clamp(0.8rem, 1vw, 1rem);
-  line-height: 15.2px;
-  min-height: 75px;
-}
-.image {
-  object-fit: contain;
-  padding: 20px;
-}
-
-.partner-card__text {
+  font-size: clamp(0.8rem, 1.1vw, 0.9rem);
   color: var(--color-black);
   text-transform: uppercase;
 }
+
 @media (hover: hover) {
-  .partner-card:hover {
-    -webkit-box-shadow: 0px -1px 13px 1px rgba(34, 60, 80, 0.2);
-    -moz-box-shadow: 0px -1px 13px 1px rgba(34, 60, 80, 0.2);
-    box-shadow: 0px -1px 13px 1px rgba(34, 60, 80, 0.2);
+  .pdf-card:hover {
+    -webkit-box-shadow: 0px -1px 13px 1px rgba(34, 60, 80, 0.2) !important;
+    -moz-box-shadow: 0px -1px 13px 1px rgba(34, 60, 80, 0.2) !important;
+    box-shadow: 0px -1px 13px 1px rgba(34, 60, 80, 0.2) !important;
   }
-  .partner-card:hover .partner-card__text {
+  .pdf-card:hover .pdf-card__title {
     color: var(--q-primary);
   }
 }

@@ -7,37 +7,56 @@ const sectionTitle = "Сертификаты";
 
 const certsDobr = [
   {
-    title: "Камеры сборные одностороннего обслуживания",
-    imgSrc: "src/assets/Certificates/1.png",
-    href: "../assets/Certificates/1.pdf",
+    title: "Протокол исследования Камеры сборные одностороннего обслуживания",
+    href: "/public/Certificates/1/ПИ_№21085_ВНИ_22_от_07_09_2022_Камеры_сборные_одностороннего_обслуживания (1).pdf",
   },
   {
-    title: "Декларация КСО",
-    imgSrc: "src/assets/Certificates/2.png",
-    href: "../assets/Certificates/1.pdf",
+    title: "Декларация Камеры сборные одностороннего обслуживания",
+    href: "/public/Certificates/1/Декларация КСО.pdf",
   },
   {
-    title: "Добровольный сертификат КСО",
-    imgSrc: "src/assets/Certificates/3.png",
-    href: "../assets/Certificates/1.pdf",
+    title: "Добровольный сертификат Камеры сборные одностороннего обслуживания",
+    href: "/public/Certificates/1/Добровольный сертификат КСО.pdf",
   },
 ];
 
 const certsSootv = [
   {
-    title: "БКРТП сертификат",
-    imgSrc: "src/assets/Certificates/4.png",
-    href: "../assets/Certificates/1.pdf",
+    title: "Сертификат соответствия БКРТП",
+    href: "/public/Certificates/2/БКРТП сертификат.pdf",
   },
   {
-    title: "Декларация КСО",
-    imgSrc: "src/assets/Certificates/2.png",
-    href: "../assets/Certificates/1.pdf",
+    title: "Сертификат соответствия БКТП",
+    href: "/public/Certificates/2/БКТП сертификат.pdf",
   },
   {
-    title: "Добровольный сертификат КСО",
-    imgSrc: "src/assets/Certificates/3.png",
-    href: "../assets/Certificates/1.pdf",
+    title: "Сертификат соответствия КСО",
+    href: "/public/Certificates/2/КСО сертификат.pdf",
+  },
+  {
+    title: "Сертификат соответствия КТП",
+    href: "/public/Certificates/2/КТП сертификат.pdf",
+  },
+
+  {
+    title: "Сертификат соответствия ШСН, ШБП, ШБПЗС, ЩГП",
+    href: "/public/Certificates/2/ШСН,ШБП,ШБПЗС,ЩГП.pdf",
+  },
+];
+
+const certsSRO = [
+  {
+    title:
+      "Строительство, реконструкция, капитальный ремонт, снос объектов капитального строительства",
+    href: "/public/Certificates/3-SRO/1.pdf",
+  },
+  {
+    title: "Подготовка проектной документации",
+    href: "/public/Certificates/3-SRO/2.pdf",
+  },
+  {
+    title: "Инженерные изыскания",
+    href: "/public/Certificates/3-SRO/3.pdf",
   },
 ];
 </script>
@@ -49,7 +68,7 @@ const certsSootv = [
   >
     <BreadCrumbs :page-route="sectionTitle" />
     <UiSectionTitle tag="h1" :title-text="sectionTitle" />
-    <h2>Добровольная сертификация</h2>
+    <h2 class="second__title">Добровольная сертификация</h2>
     <article class="partner-cards">
       <PartnerCard
         v-for="(cert, index) in certsDobr"
@@ -59,10 +78,20 @@ const certsSootv = [
         :href="cert.href"
       />
     </article>
-    <h2>Сертификаты соответствия</h2>
+    <h2 class="second__title">Сертификаты соответствия</h2>
     <article class="partner-cards">
       <PartnerCard
         v-for="(cert, index) in certsSootv"
+        :key="index"
+        :title="cert.title"
+        :imgSrc="cert.imgSrc"
+        :href="cert.href"
+      />
+    </article>
+    <h2 class="second__title">СРО</h2>
+    <article class="partner-cards">
+      <PartnerCard
+        v-for="(cert, index) in certsSRO"
         :key="index"
         :title="cert.title"
         :imgSrc="cert.imgSrc"
@@ -73,26 +102,15 @@ const certsSootv = [
 </template>
 <style scoped>
 .partner-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  grid-gap: 20px;
-  justify-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
-.partners-page__text {
+.second__title {
+  align-self: flex-start;
   font-family: Montserrat-regular, serif;
-  font-size: clamp(1.1rem, 1vw, 1.2rem);
-  line-height: 30px;
-}
-.partner-card :deep(img) {
-  width: 100%;
-  height: 500px;
-  object-fit: contain;
-  padding: 0;
-}
-.partner-card {
-  height: auto;
-  height: 500px;
-  width: 300px;
+  font-size: clamp(1.3rem, 2.3vw, 1.7rem);
+  line-height: 1em;
 }
 </style>
