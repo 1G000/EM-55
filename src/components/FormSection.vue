@@ -12,32 +12,40 @@ const router = useRouter();
 const openPrivacyPage = () => {
   window.open(router.resolve("/privacy").href, "_blank");
 };
-
-const name = ref(null);
-const tel = ref(null);
-const files = ref(null);
 const accept = ref(false);
+const textMessage = ref("Данные успешно отправлены.");
 const currentBackground = computed(() => {
   if (q.screen.width > 767) {
     return `url(${background}`;
   }
   return `url(${backgroundMobile})`;
 });
-const submitForm = () => {
-  // $q.notify({
-  //   color: 'green-4',
-  //   textColor: 'white',
-  //   icon: 'cloud_done',
-  //   message: 'Submitted'
-  // })
-  resetForm();
-};
 
-const resetForm = () => {
-  name.value = null;
-  tel.value = null;
-  files.value = null;
+const userData = ref({ clientName: null, clientTel: null, clientFiles: null });
+
+const resetUserData = () => {
+  for (const key of Object.keys(userData.value)) {
+    userData.value[key] = "";
+  }
   accept.value = false;
+};
+const submitForm = async (evt) => {
+  const formData = new FormData(evt.target);
+  const response = await fetch("send.php", {
+    method: "POST",
+    body: formData,
+  });
+  if (!response.ok) {
+    textMessage.value = "Что-то пошло не так!";
+  } else {
+    q.notify({
+      color: response.ok ? "green" : "red",
+      textColor: "white",
+      icon: "announcement",
+      message: textMessage.value,
+    });
+  }
+  resetUserData();
 };
 </script>
 <template>
@@ -69,13 +77,10 @@ const resetForm = () => {
           label-color="grey-6"
           filled
           class="input-wrapper"
-          v-model="name"
+          v-model="userData.clientName"
           label="Ваше имя"
           lazy-rules
-          :rules="[
-            (val) =>
-              (val && val.length > 0) || 'Поле обязательно для заполнения',
-          ]"
+          :rules="[(val) => (val && val.length > 0) || 'Поле обязательно для заполнения']"
         ></q-input>
 
         <q-input
@@ -85,13 +90,12 @@ const resetForm = () => {
           filled
           class="input-wrapper"
           type="tel"
-          v-model="tel"
+          v-model="userData.clientTel"
           label="Ваш телефон"
           mask="+7 (###) ###-##-##"
           lazy-rules
           :rules="[
-            (val) =>
-              (val !== null && val !== '') || 'Поле обязательно для заполнения',
+            (val) => (val !== null && val !== '') || 'Поле обязательно для заполнения',
           ]"
         ></q-input>
         <q-file
@@ -107,7 +111,7 @@ const resetForm = () => {
           append
           label="jpg, pdf, png, doc, docx, xlsx до 10Мб, макс 3 файла"
           class="input-wrapper"
-          v-model="files"
+          v-model="userData.clientFiles"
         >
           <template v-slot:prepend>
             <q-icon color="secondary" name="attach_file" />
@@ -127,7 +131,12 @@ const resetForm = () => {
         >
 
         <div class="form__button-wrapper">
-          <q-btn type="submit" unelevated class="form__button" color="primary"
+          <q-btn
+            type="submit"
+            unelevated
+            :disabled="!accept"
+            class="form__button"
+            color="primary"
             >Отправить</q-btn
           >
         </div>
