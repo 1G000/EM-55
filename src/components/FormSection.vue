@@ -29,8 +29,15 @@ const resetUserData = () => {
   }
   accept.value = false;
 };
-const submitForm = async (evt) => {
-  const formData = new FormData(evt.target);
+const submitForm = async () => {
+  const formData = new FormData();
+  formData.append("clientName", userData.value.clientName);
+  formData.append("clientTel", userData.value.clientTel);
+
+  userData.value.clientFiles.forEach((file, index) => {
+    formData.append(`clientFiles[${index}]`, file);
+  });
+
   const response = await fetch("send.php", {
     method: "POST",
     body: formData,
