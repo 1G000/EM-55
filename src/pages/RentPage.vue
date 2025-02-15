@@ -1,16 +1,24 @@
 <script setup>
+import { ref, computed } from "vue";
 import UiSection from "../components/UiSection.vue";
 import UiSectionTitle from "src/components/UiSectionTitle.vue";
 import CarCard from "src/components/CarCard.vue";
 import BreadCrumbs from "src/components/BreadCrumbs.vue";
 import JoinTeam from "src/components/JoinTeam.vue";
+import EquipmentRentFormDialog from "src/components/EquipmentRentFormDialog.vue";
+import gazImg from "../assets/specialCars/gaz66.jpg";
+import kamazImg from "../assets/specialCars/kamaz.jpg";
+import catImg from "../assets/specialCars/cat428.jpg";
+import bitelliImg from "../assets/specialCars/bitelli621.jpg";
+import dynapacImg from "../assets/specialCars/DynapacCC800.jpg";
+
 const sectionTitle = "Аренда спецтехники";
 
 const specialCars = [
   {
     id: 1,
     title: "Кабелепрокладочная машина на базе ГАЗ-66 с лебедкой",
-    imgSrc: "../assets/specialCars/gaz66.jpg",
+    imgSrc: gazImg,
     price: [
       "3500,00 р. в час в т.ч. НДС 20%",
       "28000,00 р. в смену (1+7 часов) в т.ч. НДС 20%",
@@ -21,7 +29,7 @@ const specialCars = [
   {
     id: 2,
     title: "КМУ на базе КАМАЗ с установкой FASSI 110",
-    imgSrc: "../assets/specialCars/kamaz.jpg",
+    imgSrc: kamazImg,
     description: "",
     price: [
       "3000,00 р. в час в т.ч. НДС 20%",
@@ -37,7 +45,7 @@ const specialCars = [
   {
     id: 3,
     title: "Экскаватор погрузчик CAT-428",
-    imgSrc: "../assets/specialCars/cat428.jpg",
+    imgSrc: catImg,
     price: [
       "3500,00 р. в час в т.ч. НДС 20%",
       "28000,00 р. в смену (1+7 часов) в т.ч. НДС 20%",
@@ -51,7 +59,7 @@ const specialCars = [
   {
     id: 4,
     title: "Асфальтоукладчик тротуарный Bitelli BB621C",
-    imgSrc: "../assets/specialCars/bitelli621.jpg",
+    imgSrc: bitelliImg,
     price: [
       "4000,00 р. в час в т.ч. НДС 20%",
       "32000,00 р. в смену (1+7 часов) в т.ч. НДС 20%",
@@ -74,7 +82,7 @@ const specialCars = [
   {
     id: 5,
     title: "Тандемный асфальтовый каток Dynapac CC800",
-    imgSrc: "../assets/specialCars/DynapacCC800.jpg",
+    imgSrc: dynapacImg,
     price: [
       "3000,00 р. в час в т.ч. НДС 20%",
       "24000,00 р. в смену (1+7 часов) в т.ч. НДС 20%",
@@ -118,6 +126,7 @@ const specialCars = [
     ],
   },
 ];
+const rentDialog = ref(false);
 </script>
 
 <template>
@@ -129,18 +138,29 @@ const specialCars = [
     <UiSectionTitle tag="h1" :title-text="sectionTitle" />
     <div class="text__content">
       <p>
-        Компания «Электромонтаж 55» предлагает взять в аренду специальную
-        строительную технику из своего автопарка.
+        Компания «Электромонтаж 55» предлагает взять в аренду специальную строительную
+        технику из своего автопарка.
       </p>
       <p>
-        Заполните форму на сайте или отправьте нам заполненный бланк заявки на
-        электронную почту.
+        Заполните форму на сайте или отправьте нам заполненный бланк заявки на электронную
+        почту.
       </p>
     </div>
-    <a class="download__link" href="./rent.docx"
-      ><span>Скачать бланк заявки</span
-      ><q-icon color="gray" name="download"></q-icon
-    ></a>
+    <div class="rent__button-wrapper">
+      <q-btn
+        unelevated
+        style="width: 350px"
+        class="rent__button"
+        color="primary"
+        @click="rentDialog = true"
+      >
+        Заполнить форму
+      </q-btn>
+      <a class="download__link rent__button" href="./rent.docx"
+        ><span>Скачать бланк заявки</span><q-icon color="gray" name="download"></q-icon
+      ></a>
+    </div>
+
     <JoinTeam
       title="Контакт для связи"
       name="Николай Николаевич"
@@ -161,6 +181,7 @@ const specialCars = [
         :characteristics="car.characteristics"
       />
     </article>
+    <EquipmentRentFormDialog v-model="rentDialog" />
   </UiSection>
 </template>
 
@@ -187,17 +208,49 @@ const specialCars = [
   line-height: 30px;
 }
 .download__link {
-  color: black;
-  font-family: Montserrat-bold, serif;
-  text-transform: uppercase;
-  font-size: 16px;
   display: flex;
   align-items: center;
   gap: 10px;
-  margin-top: -30px;
+  background-color: var(--q-primary);
+  justify-content: center;
+}
+.rent__button-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+  padding-bottom: 40px;
+}
+.rent__button {
+  color: var(--color-white);
+  width: 350px;
+  height: 60px;
+  text-transform: none;
+  border-radius: 8px;
+  font-family: Montserrat-bold, serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 21.6px;
+  transition: 0.3s linear;
+}
+@media (max-width: 700px) {
+  .rent__button-wrapper {
+    flex-direction: column;
+    gap: 40px;
+    padding: 0 20px 40px;
+  }
+}
+@media (max-width: 390px) {
+  .rent__button {
+    max-width: 100%;
+  }
 }
 
 @media (hover: hover) {
+  .rent__button:hover {
+    color: var(--q-accent) !important;
+  }
   .download__link:hover {
     color: var(--q-primary);
   }

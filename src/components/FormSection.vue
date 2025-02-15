@@ -29,8 +29,15 @@ const resetUserData = () => {
   }
   accept.value = false;
 };
-const submitForm = async (evt) => {
-  const formData = new FormData(evt.target);
+const submitForm = async () => {
+  const formData = new FormData();
+  formData.append("clientName", userData.value.clientName);
+  formData.append("clientTel", userData.value.clientTel);
+
+  userData.value.clientFiles.forEach((file, index) => {
+    formData.append(`clientFiles[${index}]`, file);
+  });
+
   const response = await fetch("send.php", {
     method: "POST",
     body: formData,
@@ -80,7 +87,10 @@ const submitForm = async (evt) => {
           v-model="userData.clientName"
           label="Ваше имя"
           lazy-rules
-          :rules="[(val) => (val && val.length > 0) || 'Поле обязательно для заполнения']"
+          :rules="[
+            (val) =>
+              (val && val.length > 0) || 'Поле обязательно для заполнения',
+          ]"
         ></q-input>
 
         <q-input
@@ -95,7 +105,8 @@ const submitForm = async (evt) => {
           mask="+7 (###) ###-##-##"
           lazy-rules
           :rules="[
-            (val) => (val !== null && val !== '') || 'Поле обязательно для заполнения',
+            (val) =>
+              (val !== null && val !== '') || 'Поле обязательно для заполнения',
           ]"
         ></q-input>
         <q-file

@@ -1,4 +1,5 @@
 <script setup>
+import EquipmentRentFormDialog from "./EquipmentRentFormDialog.vue";
 import { ref } from "vue";
 
 const props = defineProps({
@@ -29,6 +30,7 @@ const props = defineProps({
 });
 
 const dialogVisible = ref(false);
+const rentDialog = ref(false);
 
 const openDialog = () => {
   dialogVisible.value = true;
@@ -37,22 +39,19 @@ const openDialog = () => {
 const closeDialog = () => {
   dialogVisible.value = false;
 };
+const openRentDialog = () => {
+  dialogVisible.value = false;
+  rentDialog.value = true;
+};
 </script>
 
 <template>
   <q-responsive :ratio="4 / 3" class="partner-card">
-    <q-card
-      class="column partner-card__accent"
-      flat
-      clickable
-      @click="openDialog"
-    >
+    <q-card class="column partner-card__accent" flat clickable @click="openDialog">
       <img class="col image" :src="imgSrc" />
       <q-card-section class="partner-card__title">
         <q-item>
-          <q-item-section class="partner-card__text">{{
-            title
-          }}</q-item-section>
+          <q-item-section class="partner-card__text">{{ title }}</q-item-section>
         </q-item>
       </q-card-section>
     </q-card>
@@ -60,28 +59,31 @@ const closeDialog = () => {
 
   <!-- Диалоговое окно с увеличенной фотографией -->
   <q-dialog v-model="dialogVisible">
-    <q-card style="width: 90vw; max-width: 1200px">
+    <q-card class="q-pa-md" style="width: 90vw; max-width: 1200px; max-height: 80vh">
+      <q-card-section class="q-pb-none" align="right">
+        <q-icon
+          name="close"
+          size="md"
+          color="primary"
+          class="cursor-pointer close-icon"
+          @click="closeDialog"
+        ></q-icon>
+      </q-card-section>
       <!-- Заголовок -->
       <q-card-section class="card__title">
         {{ title }}
       </q-card-section>
-
-      <q-separator />
-
       <!-- Контент: фотография и описание -->
       <q-card-section class="row q-gutter-md q-pa-md">
         <!-- Фотография слева -->
         <div class="col-6">
-          <img
-            :src="imgSrc"
-            style="width: 100%; height: auto; border-radius: 8px"
-          />
+          <img :src="imgSrc" style="width: 100%; height: auto; border-radius: 8px" />
         </div>
 
         <!-- Описание справа -->
         <div class="col-5 description__column">
           <p class="description">{{ description }}</p>
-          <h4 class="price">Технические характеристики</h4>
+          <h4 class="price q-mb-md">Технические характеристики</h4>
           <ul class="characteristics__list price__item">
             <li
               v-for="(characteristic, index) in characteristics"
@@ -91,19 +93,17 @@ const closeDialog = () => {
               {{ characteristic }}
             </li>
           </ul>
-          <h4 class="price">Стоимость аренды</h4>
+          <h4 class="price q-mb-md">Стоимость аренды</h4>
           <p class="price__item">{{ price[0] }}</p>
           <p class="price__item">{{ price[1] }}</p>
-          <q-btn class="form__button" color="primary">Оставить заявку</q-btn>
+          <q-btn class="form__button q-mt-md" color="primary" @click="openRentDialog"
+            >Оставить заявку</q-btn
+          >
         </div>
       </q-card-section>
-
-      <!-- Кнопка закрытия -->
-      <q-card-actions align="right">
-        <q-btn flat label="Закрыть" color="primary" @click="closeDialog" />
-      </q-card-actions>
     </q-card>
   </q-dialog>
+  <EquipmentRentFormDialog v-model="rentDialog" :equipmentTitle="title" />
 </template>
 <style scoped>
 .partner-card {
@@ -155,7 +155,7 @@ const closeDialog = () => {
   width: 200px;
   height: 40px;
   text-transform: none;
-  border-radius: 8px;
+  border-radius: 4px;
   font-family: Montserrat-bold, serif;
   font-size: 1rem;
   font-weight: 400;
@@ -173,7 +173,6 @@ const closeDialog = () => {
 .partner-card__title {
   background-color: var(--background-light-accent);
   border-top: 1px solid #b990511a;
-  padding: 0;
   padding: 5px;
   min-height: 60px;
   font-family: Montserrat-bold, serif;
@@ -231,5 +230,13 @@ const closeDialog = () => {
     max-height: 300px;
     object-fit: cover;
   }
+}
+.close-icon {
+  display: flex;
+  margin-left: auto;
+  transition: 0.3s linear;
+}
+.close-icon:hover {
+  transform: scale(1.2);
 }
 </style>

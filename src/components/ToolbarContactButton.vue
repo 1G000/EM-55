@@ -19,11 +19,7 @@ const call = (phoneNumber) => {
       square
       :menu-offset="[0, 10]"
     >
-      <q-list
-        id="myId"
-        separator
-        class="text-black q-pt-0 q-pb-md contact-list"
-      >
+      <q-list id="myId" separator class="text-black q-pt-0 q-pb-md contact-list">
         <q-item clickable v-close-popup>
           <q-item-section avatar>
             <q-avatar icon="mdi-email-fast" size="xl" text-color="secondary" />
@@ -31,16 +27,10 @@ const call = (phoneNumber) => {
           <q-item-section>
             <q-item-label class="text-bold">Приемная:</q-item-label>
             <q-item-label>
-              <a
-                v-if="$q.screen.width <= 560"
-                href="tel:+78122942013"
-                class="links"
+              <a v-if="$q.screen.width <= 560" href="tel:+78122942013" class="links"
                 >+7 (812) 294-20-13</a
               >
-              <a
-                v-if="$q.screen.width <= 560"
-                href="tel:+78122942303"
-                class="links"
+              <a v-if="$q.screen.width <= 560" href="tel:+78122942303" class="links"
                 >+7 (812) 294-23-03</a
               >
               <a href="mailto:referent@em-55.com" class="links"
@@ -51,31 +41,19 @@ const call = (phoneNumber) => {
         </q-item>
         <q-item clickable v-close-popup @click="onItemClick">
           <q-item-section avatar>
-            <q-avatar
-              icon="mdi-file-document-edit"
-              size="xl"
-              text-color="secondary"
-            />
+            <q-avatar icon="mdi-file-document-edit" size="xl" text-color="secondary" />
           </q-item-section>
           <q-item-section>
-            <q-item-label class="text-bold"
-              >Конструкторский отдел:</q-item-label
-            >
+            <q-item-label class="text-bold">Конструкторский отдел:</q-item-label>
             <q-item-label
               ><a href="tel:+79117349001" class="links">+7 (911) 734-90-01</a>
-              <a href="mailto:ktg@em-55.com" class="links"
-                >ktg@em-55.com</a
-              ></q-item-label
+              <a href="mailto:ktg@em-55.com" class="links">ktg@em-55.com</a></q-item-label
             >
           </q-item-section>
         </q-item>
         <q-item clickable v-close-popup @click="onItemClick">
           <q-item-section avatar>
-            <q-avatar
-              icon="mdi-point-of-sale"
-              size="xl"
-              text-color="secondary"
-            />
+            <q-avatar icon="mdi-point-of-sale" size="xl" text-color="secondary" />
           </q-item-section>
           <q-item-section>
             <q-item-label class="text-bold">Отдел продаж:</q-item-label>
@@ -97,19 +75,13 @@ const call = (phoneNumber) => {
             >
             <q-item-label
               ><a href="tel:+79117197059" class="links">+7 (911) 719-70-59</a>
-              <a href="mailto:pto@em-55.com" class="links"
-                >pto@em-55.com</a
-              ></q-item-label
+              <a href="mailto:pto@em-55.com" class="links">pto@em-55.com</a></q-item-label
             >
           </q-item-section>
         </q-item>
         <q-item clickable v-close-popup @click="onItemClick">
           <q-item-section avatar>
-            <q-avatar
-              icon="mdi-account-search"
-              size="xl"
-              text-color="secondary"
-            />
+            <q-avatar icon="mdi-account-search" size="xl" text-color="secondary" />
           </q-item-section>
           <q-item-section>
             <q-item-label class="text-bold">Кадровая служба</q-item-label>
@@ -154,6 +126,7 @@ const call = (phoneNumber) => {
 }
 .contact-button :deep(.q-icon) {
   color: var(--q-accent);
+  margin-left: 0;
 }
 .contact-button-inner {
   font-size: 1.3rem;

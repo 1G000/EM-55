@@ -43,43 +43,34 @@ const showMobileMenu = ref(false);
               >+7 (812) 294–23–03</a
             ></q-toolbar-title
           >
-          <svg
-            width="64"
-            height="39"
-            viewBox="0 0 64 39"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <rect
-              x="0.5"
-              y="0.5"
-              width="63"
-              height="37"
-              rx="7.5"
-              stroke="#E5C696"
-            />
-            <path
-              d="M27.0267 26.849C26.3116 26.849 26.4332 26.5942 26.1865 25.9515L24.084 19.4203L40.2688 10.3574"
-              fill="#CCA971"
-            />
-            <path
-              d="M27.0273 26.8479C27.5791 26.8479 27.8228 26.6097 28.1309 26.3271L31.0735 23.6263L27.4029 21.5371"
-              fill="#D1B180"
-            />
-            <path
-              d="M27.4022 21.5388L36.2964 27.7412C37.3115 28.2698 38.0438 27.996 38.2967 26.8519L41.9172 10.7486C42.2878 9.34598 41.3507 8.70958 40.3796 9.12569L19.1205 16.863C17.6694 17.4124 17.678 18.1766 18.856 18.517L24.3116 20.1243L36.9418 12.6033C37.5381 12.262 38.0854 12.4454 37.6363 12.8217"
-              fill="#E5C696"
-            />
-          </svg>
+          <div class="header__telegram">
+            <svg
+              width="24"
+              height="19"
+              viewBox="0 0 24 19"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M9.02668 17.8491C8.3116 17.8491 8.43317 17.5943 8.18654 16.9516L6.08398 10.4204L22.2688 1.35754"
+                fill="#D4AC67"
+              />
+              <path
+                d="M9.02734 17.8491C9.5791 17.8491 9.82279 17.611 10.1309 17.3284L13.0735 14.6276L9.4029 12.5383"
+                fill="#BE9145"
+              />
+              <path
+                d="M9.40215 12.5388L18.2964 18.7412C19.3115 19.2698 20.0438 18.996 20.2967 17.8519L23.9172 1.74863C24.2878 0.345979 23.3507 -0.290422 22.3796 0.125686L1.12049 7.86301C-0.330623 8.41244 -0.321979 9.17661 0.856018 9.51703L6.31159 11.1243L18.9418 3.60332C19.5381 3.26204 20.0854 3.44535 19.6363 3.82171"
+                fill="#E2C490"
+              />
+            </svg>
+          </div>
           <ToolbarContactButton />
         </div>
       </q-toolbar>
     </div>
     <div class="header__navbar shadow-1">
-      <DesktopNavigationMenu
-        v-if="$q.screen.width > 767"
-        :navItems="navItems"
-      />
+      <DesktopNavigationMenu v-if="$q.screen.width > 767" :navItems="navItems" />
       <div class="nav__title-mobile" v-if="$q.screen.width < 767">
         Оборудование для трансформаторных подстанций
       </div>
@@ -256,7 +247,14 @@ const showMobileMenu = ref(false);
   text-wrap: balance;
   max-width: 270px;
 }
-
+.header__telegram {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid var(--q-accent);
+  border-radius: 8px;
+  padding: 9px 17px 9px 13px;
+}
 .burger-icon {
   cursor: pointer;
   background: none;
@@ -347,6 +345,11 @@ const showMobileMenu = ref(false);
 @media (max-width: 458px) {
   .toolbar {
     padding-right: 16px;
+  }
+}
+@media (max-width: 390px) {
+  .tel-wrapper {
+    gap: 10px;
   }
 }
 @media (hover: hover) {
