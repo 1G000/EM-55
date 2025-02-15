@@ -72,11 +72,7 @@ const closeDialog = () => {
       </q-card-section>
 
       <q-card-section style="max-height: 80vh">
-        <q-form
-          @submit="submitForm"
-          class="q-gutter-md form__wrapper"
-          ref="form"
-        >
+        <q-form @submit="submitForm" class="q-gutter-md form__wrapper" ref="form">
           <q-input
             color="black"
             bg-color="white"
@@ -87,8 +83,7 @@ const closeDialog = () => {
             label="Ваше имя*"
             lazy-rules
             :rules="[
-              (val) =>
-                (val && val.length > 0) || 'Поле обязательно для заполнения',
+              (val) => (val && val.length > 0) || 'Поле обязательно для заполнения',
             ]"
           ></q-input>
 
@@ -104,9 +99,7 @@ const closeDialog = () => {
             mask="+7 (###) ###-##-##"
             lazy-rules
             :rules="[
-              (val) =>
-                (val !== null && val !== '') ||
-                'Поле обязательно для заполнения',
+              (val) => (val !== null && val !== '') || 'Поле обязательно для заполнения',
             ]"
           ></q-input>
           <q-input
@@ -132,9 +125,7 @@ const closeDialog = () => {
             label="Должность*"
             lazy-rules
             :rules="[
-              (val) =>
-                (val !== null && val !== '') ||
-                'Поле обязательно для заполнения',
+              (val) => (val !== null && val !== '') || 'Поле обязательно для заполнения',
             ]"
           ></q-input>
           <q-input
@@ -204,7 +195,7 @@ const closeDialog = () => {
   transform: scale(1.2);
 }
 .form__button {
-  border-radius: 8px;
+  border-radius: 4px;
 }
 .input-wrapper-spacing {
   margin-top: 34px;

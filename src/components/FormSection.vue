@@ -87,7 +87,10 @@ const submitForm = async () => {
           v-model="userData.clientName"
           label="Ваше имя"
           lazy-rules
-          :rules="[(val) => (val && val.length > 0) || 'Поле обязательно для заполнения']"
+          :rules="[
+            (val) =>
+              (val && val.length > 0) || 'Поле обязательно для заполнения',
+          ]"
         ></q-input>
 
         <q-input
@@ -102,7 +105,8 @@ const submitForm = async () => {
           mask="+7 (###) ###-##-##"
           lazy-rules
           :rules="[
-            (val) => (val !== null && val !== '') || 'Поле обязательно для заполнения',
+            (val) =>
+              (val !== null && val !== '') || 'Поле обязательно для заполнения',
           ]"
         ></q-input>
         <q-file
