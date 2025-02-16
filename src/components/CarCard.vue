@@ -27,6 +27,10 @@ const props = defineProps({
     type: Array,
     required: true,
   },
+  options: {
+    type: Array,
+    require: true,
+  },
 });
 
 const dialogVisible = ref(false);
@@ -103,7 +107,11 @@ const openRentDialog = () => {
       </q-card-section>
     </q-card>
   </q-dialog>
-  <EquipmentRentFormDialog v-model="rentDialog" :equipmentTitle="title" />
+  <EquipmentRentFormDialog
+    v-model="rentDialog"
+    :equipmentTitle="title"
+    :options="props.options"
+  />
 </template>
 <style scoped>
 .partner-card {

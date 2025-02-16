@@ -126,6 +126,9 @@ const specialCars = [
     ],
   },
 ];
+const carOptions = specialCars.map((el) => el.title);
+console.log(carOptions);
+
 const rentDialog = ref(false);
 </script>
 
@@ -179,9 +182,10 @@ const rentDialog = ref(false);
         :description="car.description"
         :price="car.price"
         :characteristics="car.characteristics"
+        :options="carOptions"
       />
     </article>
-    <EquipmentRentFormDialog v-model="rentDialog" />
+    <EquipmentRentFormDialog v-model="rentDialog" :options="carOptions" />
   </UiSection>
 </template>
 
