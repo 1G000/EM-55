@@ -41,13 +41,13 @@ const accept = ref(false);
 const textMessage = ref("Форма успешно отправилась");
 
 const submitForm = async () => {
-  console.log(userEquipmentRentData.value);
-
   const formData = new FormData();
-  Object.values(userEquipmentRentData.value).forEach((key, val) => {
-    formData.append([key], val);
+  Object.entries(userEquipmentRentData.value).forEach(([key, val]) => {
+    formData.append(key, val);
   });
-  const response = await fetch("send.php", {
+  console.log(formData);
+
+  const response = await fetch("equipment.php", {
     method: "POST",
     body: formData,
   });
