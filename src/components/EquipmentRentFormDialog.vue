@@ -14,6 +14,10 @@ const props = defineProps({
     type: String,
     require: false,
   },
+  options: {
+    type: Array,
+    require: true,
+  },
 });
 const emit = defineEmits(["update:modelValue"]);
 
@@ -45,7 +49,6 @@ const submitForm = async () => {
   Object.entries(userEquipmentRentData.value).forEach(([key, val]) => {
     formData.append(key, val);
   });
-  console.log(formData);
 
   const response = await fetch("equipment.php", {
     method: "POST",
@@ -112,23 +115,51 @@ const isValidDateTime = (dateTimeString) => {
       </q-card-section>
 
       <q-card-section style="max-height: 80vh">
-        <q-form @submit="submitForm" class="q-gutter-xs form__wrapper" ref="form">
+        <q-form
+          @submit="submitForm"
+          class="q-gutter-xs form__wrapper"
+          ref="form"
+        >
           <div v-for="el in equipmentRentData" :key="el.id">
             <template v-if="el.type === 'text'">
-              <q-input
+              <q-select
+                v-if="el.model === 'name'"
                 color="black"
                 bg-color="white"
                 label-color="grey-6"
                 outlined
-                class="input-wrapper text-caption"
+                behavior="menu"
+                class="input-wrapper"
                 v-model="userEquipmentRentData[el.model]"
-                :label="el.label === 'Дополнительные данные' ? el.label : el.label + '*'"
+                :options="options"
+                :label="el.label + '*'"
+                lazy-rules
+                :rules="[
+                  (val) =>
+                    (val && val.length > 0) ||
+                    'Поле обязательно для заполнения',
+                ]"
+              />
+              <q-input
+                v-else
+                color="black"
+                bg-color="white"
+                label-color="grey-6"
+                outlined
+                class="input-wrapper"
+                v-model="userEquipmentRentData[el.model]"
+                :label="
+                  el.label === 'Дополнительные данные'
+                    ? el.label
+                    : el.label + '*'
+                "
                 lazy-rules
                 :rules="
                   el.label != 'Дополнительные данные'
                     ? [
                         (val) =>
-                          (val && val.length > 0) || 'Поле обязательно для заполнения',
+                          (val && val.length > 0) ||
+                          'Поле обязательно для заполнения',
                       ]
                     : []
                 "
@@ -163,7 +194,12 @@ const isValidDateTime = (dateTimeString) => {
                           mask="DD-MM-YYYY HH:mm"
                         >
                           <div class="row items-center justify-end">
-                            <q-btn v-close-popup label="Закрыть" color="primary" flat />
+                            <q-btn
+                              v-close-popup
+                              label="Закрыть"
+                              color="primary"
+                              flat
+                            />
                           </div>
                         </q-date>
                       </q-popup-proxy>
@@ -183,7 +219,12 @@ const isValidDateTime = (dateTimeString) => {
                           format24h
                         >
                           <div class="row items-center justify-end">
-                            <q-btn v-close-popup label="Закрыть" color="primary" flat />
+                            <q-btn
+                              v-close-popup
+                              label="Закрыть"
+                              color="primary"
+                              flat
+                            />
                           </div>
                         </q-time>
                       </q-popup-proxy>
@@ -206,7 +247,8 @@ const isValidDateTime = (dateTimeString) => {
                 lazy-rules
                 :rules="[
                   (val) =>
-                    (val !== null && val !== '') || 'Поле обязательно для заполнения',
+                    (val !== null && val !== '') ||
+                    'Поле обязательно для заполнения',
                 ]"
               ></q-input>
             </template>
@@ -235,7 +277,10 @@ const isValidDateTime = (dateTimeString) => {
                 type="number"
                 :label="el.label + '*'"
                 lazy-rules
-                :rules="[(val) => (val && val > 0) || 'Поле обязательно для заполнения']"
+                :rules="[
+                  (val) =>
+                    (val && val > 0) || 'Поле обязательно для заполнения',
+                ]"
               ></q-input>
             </template>
           </div>

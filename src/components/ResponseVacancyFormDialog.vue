@@ -2,7 +2,7 @@
 import { ref, computed } from "vue";
 import { useRouter } from "vue-router";
 import { useQuasar } from "quasar";
-const $q = useQuasar();
+const q = useQuasar();
 
 const props = defineProps({
   modelValue: {
@@ -15,32 +15,57 @@ const props = defineProps({
   },
 });
 const emit = defineEmits(["update:modelValue"]);
-
 const router = useRouter();
-const name = ref(null);
-const telephone = ref(null);
-const email = ref(null);
-const position = computed(() => props.vacancyTitle);
-const coverLetter = ref(null);
-const files = ref(null);
 const accept = ref(false);
+const textMessage = ref("Форма успешно отправилась");
 
-const submitForm = () => {
-  $q.notify({
-    color: "green",
-    textColor: "white",
-    message: "Резюме успешно отправилось",
+const userVacancyData = ref({
+  name: "",
+  tel: "",
+  email: "",
+  position: computed(() => props.vacancyTitle),
+  coverLetter: "",
+  files: null,
+});
+
+const submitForm = async () => {
+  const formData = new FormData();
+  Object.entries(userVacancyData.value).forEach(([key, val]) => {
+    if (key === "files") {
+      userVacancyData.value.files.forEach((file, index) => {
+        formData.append(`files[${index}]`, file);
+      });
+    } else {
+      formData.append(key, val);
+    }
   });
+
+  const response = await fetch("vacancy.php", {
+    method: "POST",
+    body: formData,
+  });
+  if (!response.ok) {
+    textMessage.value = "Что-то пошло не так!";
+  } else {
+    q.notify({
+      color: response.ok ? "green" : "red",
+      textColor: "white",
+      icon: "announcement",
+      message: textMessage,
+    });
+  }
   resetForm();
   closeDialog();
 };
 
 const resetForm = () => {
-  name.value = null;
-  telephone.value = null;
-  files.value = null;
-  email.value = null;
-  coverLetter.value = null;
+  for (const key of Object.keys(userVacancyData.value)) {
+    if (key != "position") {
+      userVacancyData.value[key] = "";
+    } else if (key === "files") {
+      userVacancyData.value[key] = null;
+    }
+  }
   accept.value = false;
 };
 const openPrivacyPage = () => {
@@ -72,14 +97,14 @@ const closeDialog = () => {
       </q-card-section>
 
       <q-card-section style="max-height: 80vh">
-        <q-form @submit="submitForm" class="q-gutter-md form__wrapper" ref="form">
+        <q-form @submit="submitForm" class="q-gutter-xs form__wrapper" ref="form">
           <q-input
             color="black"
             bg-color="white"
             label-color="grey-6"
             outlined
             class="input-wrapper"
-            v-model="name"
+            v-model="userVacancyData.name"
             label="Ваше имя*"
             lazy-rules
             :rules="[
@@ -94,7 +119,7 @@ const closeDialog = () => {
             outlined
             class="input-wrapper"
             type="tel"
-            v-model="telephone"
+            v-model="userVacancyData.tel"
             label="Ваш телефон*"
             mask="+7 (###) ###-##-##"
             lazy-rules
@@ -108,10 +133,16 @@ const closeDialog = () => {
             label-color="grey-6"
             outlined
             class="input-wrapper"
-            v-model="email"
+            v-model="userVacancyData.email"
             type="email"
             label="ivanov@mail.ru"
             lazy-rules
+            :rules="[
+              (val) => (val !== null && val !== '') || 'Поле обязательно для заполнения',
+              (val) =>
+                /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val) ||
+                'Введите корректный электронный адрес',
+            ]"
           ></q-input>
 
           <q-input
@@ -121,7 +152,7 @@ const closeDialog = () => {
             outlined
             class="input-wrapper input-wrapper-spacing"
             type="text"
-            v-model="position"
+            v-model="userVacancyData.position"
             label="Должность*"
             lazy-rules
             :rules="[
@@ -135,7 +166,7 @@ const closeDialog = () => {
             outlined
             class="input-wrapper"
             type="textarea"
-            v-model="coverLetter"
+            v-model="userVacancyData.coverLetter"
             label="Сопроводительное письмо"
             lazy-rules
           ></q-input>
@@ -152,7 +183,7 @@ const closeDialog = () => {
             append
             label="jpg, pdf, doc до 10Мб, макс 3 файла"
             class="input-wrapper input-wrapper-spacing"
-            v-model="files"
+            v-model="userVacancyData.files"
           >
             <template v-slot:prepend>
               <q-icon color="secondary" name="attach_file" />
@@ -198,7 +229,7 @@ const closeDialog = () => {
   border-radius: 4px;
 }
 .input-wrapper-spacing {
-  margin-top: 34px;
+  margin-top: 8px;
 }
 .form__privacy-link {
   padding-left: 5px;
