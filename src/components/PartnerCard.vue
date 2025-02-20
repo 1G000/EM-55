@@ -12,6 +12,10 @@ const props = defineProps({
     type: String,
     required: true,
   },
+  sertHref: {
+    type: String,
+    required: true,
+  },
 });
 </script>
 
@@ -32,6 +36,18 @@ const props = defineProps({
             title
           }}</q-item-section>
         </q-item>
+        <q-item>
+          <q-item-section class="partner-card__text">{{
+            href.slice(8)
+          }}</q-item-section>
+        </q-item>
+        <q-item v-if="sertHref">
+          <q-item-section>
+            <a :href="sertHref" target="_blank" class="partner-card__text"
+              >Посмотреть сертификат</a
+            >
+          </q-item-section>
+        </q-item>
       </q-card-section>
     </q-card>
   </q-responsive>
@@ -40,8 +56,14 @@ const props = defineProps({
 <style scoped>
 .partner-card {
   width: 360px;
+  height: 300px;
   transition: 0.3s linear;
   border-radius: 8px;
+}
+
+.q-item {
+  padding: 0px 16px;
+  min-height: 30px;
 }
 
 .partner-card__accent {
@@ -52,9 +74,7 @@ const props = defineProps({
 .partner-card__title {
   background-color: var(--background-light-accent);
   border-top: 1px solid #b990511a;
-  padding: 0;
   padding: 5px;
-  min-height: 60px;
   font-family: Montserrat-bold, serif;
   font-size: clamp(0.8rem, 1vw, 1rem);
   line-height: 15.2px;

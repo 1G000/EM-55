@@ -2,10 +2,10 @@
 import UiSection from "./UiSection.vue";
 import UiSectionTitle from "./UiSectionTitle.vue";
 import PartnersLogoItem from "./PartnerLogoItem.vue";
-import { partners } from "src/data/partners";
+import { customers } from "src/data/partners";
 
-const sectionTitle = "Сегодня нам доверяют свои объекты:";
-const slicedPartners = partners.slice(0, 4); // Ограничиваем до 4 картинок
+const sectionTitle = "Нашими заказчиками являются:";
+const slicedPartners = customers.slice(0, 4); // Ограничиваем до 4 картинок
 </script>
 
 <template>
@@ -14,10 +14,10 @@ const slicedPartners = partners.slice(0, 4); // Ограничиваем до 4 
     <div class="container">
       <div class="partners__container">
         <PartnersLogoItem
-          v-for="(partner, index) in slicedPartners"
+          v-for="(customer, index) in slicedPartners"
           :key="index"
-          :imgSrc="partner.imgSrc"
-          :href="partner.href"
+          :imgSrc="customer.imgSrc"
+          :href="customer.href"
         />
         <div class="text-card">
           <p>И МНОГИЕ ДРУГИЕ</p>

@@ -3,7 +3,7 @@ import UiSection from "../components/UiSection.vue";
 import UiSectionTitle from "src/components/UiSectionTitle.vue";
 import PartnerCard from "src/components/PartnerCard.vue";
 import BreadCrumbs from "src/components/BreadCrumbs.vue";
-import { partners } from "src/data/partners";
+import { customers, dilers, suppliers } from "src/data/partners";
 const sectionTitle = "Наши партнёры";
 
 // 5. "Легенда" застройщик,
@@ -36,17 +36,35 @@ const sectionTitle = "Наши партнёры";
       развивающееся предприятие, способное выполнять комплексные задачи. Все,
       что делает «Электромонтаж 55», отличается высоким качеством.
     </p>
-    <p class="partners-page__text">
-      Сегодня свои объекты «Электромонтаж 55» доверяют:
-    </p>
-
+    <h2 class="second__title">«Электромонтаж 55» является дилером:</h2>
     <article class="partner-cards">
       <PartnerCard
-        v-for="(partner, index) in partners"
+        v-for="(diler, index) in dilers"
         :key="index"
-        :title="partner.title"
-        :imgSrc="partner.imgSrc"
-        :href="partner.href"
+        :title="diler.title"
+        :imgSrc="diler.imgSrc"
+        :href="diler.href"
+        :sertHref="diler.sertHref"
+      />
+    </article>
+    <h2 class="second__title">Нашими заказчиками являются:</h2>
+    <article class="partner-cards">
+      <PartnerCard
+        v-for="(costumer, index) in customers"
+        :key="index"
+        :title="costumer.title"
+        :imgSrc="costumer.imgSrc"
+        :href="costumer.href"
+      />
+    </article>
+    <h2 class="second__title">Наши поставщики:</h2>
+    <article class="partner-cards">
+      <PartnerCard
+        v-for="(supplier, index) in suppliers"
+        :key="index"
+        :title="supplier.title"
+        :imgSrc="supplier.imgSrc"
+        :href="supplier.href"
       />
     </article>
   </UiSection>
@@ -63,5 +81,11 @@ const sectionTitle = "Наши партнёры";
   font-family: Montserrat-regular, serif;
   font-size: clamp(1.1rem, 1vw, 1.2rem);
   line-height: 30px;
+}
+.second__title {
+  align-self: flex-start;
+  font-family: Montserrat-regular, serif;
+  font-size: clamp(1.3rem, 2.3vw, 1.7rem);
+  line-height: 1em;
 }
 </style>
