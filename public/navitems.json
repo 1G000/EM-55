@@ -134,9 +134,21 @@
       "expandedFirstLevel": false,
       "secondLevelItems": [
         { "title": "Карта объектов", "thirdLevel": false, "href": "/smr" },
-        { "title": "СМР", "thirdLevel": false, "href": "/smr" },
-        { "title": "ПИР", "thirdLevel": false, "href": "/sorry" },
-        { "title": "КЛЮЧ", "thirdLevel": false, "href": "/sorry" }
+        {
+          "title": "Строительно-монтажные работы",
+          "thirdLevel": false,
+          "href": "/smr"
+        },
+        {
+          "title": "Проектно-изыскательские работы",
+          "thirdLevel": false,
+          "href": "/sorry"
+        },
+        {
+          "title": "Комплексные работы «под ключ»",
+          "thirdLevel": false,
+          "href": "/sorry"
+        }
       ]
     },
     {
