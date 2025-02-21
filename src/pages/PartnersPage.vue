@@ -5,23 +5,6 @@ import PartnerCard from "src/components/PartnerCard.vue";
 import BreadCrumbs from "src/components/BreadCrumbs.vue";
 import { customers, dilers, suppliers } from "src/data/partners";
 const sectionTitle = "Наши партнёры";
-
-// 5. "Легенда" застройщик,
-// 6. "КВС" Застройщик,
-// 7. "ЛСР, Недвижимость Северо-Запад" Застройщик,
-// 8. "ЯРД" застройщик,
-// 9. "ПИК" Застройщик,
-// 10. "Электромонтаж-110" -электромонтажная компания,
-// 11. "Селена Монтаж" - электромонтажная компания,
-// 12. "Развитие территории" - электромонтажная компания,
-// 13. "МИН" - электромонтажная компания,
-// 14. "ЭР-БИ-АЙ-ВОСТОК" застройщик,
-// 15. "Горный" - университет
-// 16. "Охта СПА" - курорт,
-// 17. "Гостиница "Спутник" - гостиница,
-// 18. "СЛЭП" - электромонтажная компания,
-// 19. "ПЭМ" - электромонтажная компания,
-// 20. "СМК Энергия" - электромонтажная компания.
 </script>
 
 <template>
@@ -72,9 +55,9 @@ const sectionTitle = "Наши партнёры";
 <style scoped>
 .partner-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fill, 250px);
   grid-gap: 20px;
-  justify-items: center;
+  justify-content: center;
 }
 
 .partners-page__text {
@@ -87,5 +70,14 @@ const sectionTitle = "Наши партнёры";
   font-family: Montserrat-regular, serif;
   font-size: clamp(1.3rem, 2.3vw, 1.7rem);
   line-height: 1em;
+}
+
+@media (max-width: 560px) {
+  .partner-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 20px;
+    justify-items: center;
+  }
 }
 </style>
