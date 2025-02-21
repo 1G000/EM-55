@@ -55,7 +55,7 @@ const sectionTitle = "Наши партнёры";
 <style scoped>
 .partner-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fill, 250px);
+  grid-template-columns: repeat(auto-fill, 350px);
   grid-gap: 20px;
   justify-content: center;
 }
