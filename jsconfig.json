@@ -1,6 +1,12 @@
 {
   "compilerOptions": {
+    "module": "ESNext",
+    "target": "ES2022",
     "baseUrl": "",
+    "typeRoots": [
+      "./node_modules/@types",
+      "./node_modules/@yandex/ymaps3-types"
+    ],
     "paths": {
       "src/*": ["src/*"],
       "app/*": ["*"],
