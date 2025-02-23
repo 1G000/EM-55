@@ -95,7 +95,7 @@ const props = defineProps({
     -moz-box-shadow: 0px -1px 13px 1px rgba(34, 60, 80, 0.2);
     box-shadow: 0px -1px 13px 1px rgba(34, 60, 80, 0.2);
   }
-  .partner-card:hover .partner-card__text {
+  .partner-card__text:hover {
     color: var(--q-primary);
   }
 }

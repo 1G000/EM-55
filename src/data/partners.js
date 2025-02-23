@@ -59,7 +59,6 @@ export const dilers = [
     href: "https://zeto.ru",
     sertHref: "./Images/partners/dilers/zetoSert.pdf",
   },
-
   {
     title: "АО  «ДКС» (DKC)",
     imgSrc: "./Images/partners/dilers/dkc.svg",
