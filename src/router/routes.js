@@ -237,6 +237,13 @@ const routes = [
     ],
   },
   {
+    path: "/photos",
+    component: () => import("layouts/MainLayout.vue"),
+    children: [
+      { path: "", component: () => import("pages/CurrentPhotos.vue") },
+    ],
+  },
+  {
     path: "/rent",
     component: () => import("layouts/MainLayout.vue"),
     children: [
