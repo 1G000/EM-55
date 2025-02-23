@@ -65,7 +65,6 @@ const sectionTitle = "Вакансии";
           name="Мария Юрьевна"
           jobTitle="Руководитель кадровой службы"
           phoneNumber="+7-911-296-50-58"
-          ,
           phone="+79112965058"
           mail="personal@em-55.com"
         />

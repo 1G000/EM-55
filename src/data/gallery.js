@@ -2,8 +2,8 @@ export const galleryData = [
   {
     id: 1,
     title: "Благоустройство территории",
-    category: "landscaping",
-    year: "",
+    category: "Благоустройство территории",
+    year: "2024",
     imgSrc: "../assets/Gallery/landscaping/5370915775868692269.jpg",
     photos: [
       "../assets/Gallery/landscaping/5370915775868692275.jpg",
@@ -16,8 +16,8 @@ export const galleryData = [
   {
     id: 2,
     title: "Прокладка кабеля",
-    category: "cablelaying",
-    year: "",
+    category: "Благоустройство территории",
+    year: "2020",
     imgSrc: "../assets/Gallery/cablelaying/5370915775868692280.jpg",
     photos: [
       "../assets/Gallery/cablelaying/5370892166433467319.jpg",
@@ -34,8 +34,8 @@ export const galleryData = [
   {
     id: 3,
     title: "Благоустройство территории",
-    category: "landscaping",
-    year: "",
+    category: "Благоустройство территории",
+    year: "2019",
     imgSrc: "../assets/Gallery/landscaping2/5370915775868692286.jpg",
     photos: [
       "../assets/Gallery/landscaping/5370915775868692269.jpg",
@@ -48,8 +48,8 @@ export const galleryData = [
   {
     id: 4,
     title: "Благоустройство территории",
-    category: "landscaping",
-    year: "",
+    category: "Благоустройство территории",
+    year: "2018",
     imgSrc: "../assets/Gallery/landscaping3/5370915775868692294.jpg",
     photos: [
       "../assets/Gallery/landscaping/5370915775868692269.jpg",
@@ -62,8 +62,8 @@ export const galleryData = [
   {
     id: 5,
     title: "Благоустройство территории",
-    category: "landscaping",
-    year: "",
+    category: "Благоустройство территории",
+    year: "2017",
     imgSrc: "../assets/Gallery/landscaping4/5370915775868692320.jpg",
     photos: [
       "../assets/Gallery/landscaping/5370915775868692269.jpg",
@@ -76,8 +76,8 @@ export const galleryData = [
   {
     id: 6,
     title: "Прокладка кабеля",
-    category: "cablelaying",
-    year: "",
+    category: "Прокладка кабеля",
+    year: "2017",
     imgSrc: "../assets/Gallery/cablelaying2/IMG_4585.jpg",
     photos: [
       "../assets/Gallery/cablelaying/5370892166433467319.jpg",
@@ -94,8 +94,8 @@ export const galleryData = [
   {
     id: 7,
     title: "Ремонт теплотрассы",
-    category: "teplotrassa",
-    year: "",
+    category: "Ремонт теплотрассы",
+    year: "2016",
     imgSrc: "../assets/Gallery/teplotrassa/IMG_4487.jpg",
     photos: [
       "../assets/Gallery/cablelaying/5370892166433467319.jpg",
@@ -108,8 +108,8 @@ export const galleryData = [
   {
     id: 8,
     title: "Ремонт теплотрассы",
-    category: "teplotrassa",
-    year: "",
+    category: "Ремонт теплотрассы",
+    year: "2016",
     imgSrc: "../assets/Gallery/teplotrassa2/IMG_4530.jpg",
     photos: [
       "../assets/Gallery/cablelaying/5370892166433467319.jpg",
@@ -122,8 +122,8 @@ export const galleryData = [
   {
     id: 9,
     title: "Ремонт теплотрассы",
-    category: "teplotrassa",
-    year: "",
+    category: "Ремонт теплотрассы",
+    year: "2015",
     imgSrc: "../assets/Gallery/teplotrassa3/IMG_4463.jpg",
     photos: [
       "../assets/Gallery/cablelaying/5370892166433467319.jpg",
@@ -136,8 +136,8 @@ export const galleryData = [
   {
     id: 10,
     title: "Строительство ТП",
-    category: "teplotrassa",
-    year: "",
+    category: "Строительство ТП",
+    year: "2015",
     imgSrc: "../assets/Gallery/tp/IMG_4870.jpg",
     photos: [
       "../assets/Gallery/cablelaying/5370892166433467319.jpg",
