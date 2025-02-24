@@ -50,6 +50,21 @@ const goToPhotos = (item) => {
     <UiSectionTitle tag="h1" :title-text="sectionTitle" />
 
     <div class="filters">
+      <!-- <q-select
+        outlined
+        v-model="selectedYear"
+        :options="getUniqueYears()"
+        label="Выберите год"
+        style="width: 300px"
+      />
+      <q-select
+        outlined
+        v-model="selectedCategory"
+        :options="getUniqueCategories()"
+        label="Выберите категорию"
+        style="width: 300px"
+      /> -->
+
       <div class="year-filter">
         <label for="year-select">Выберите год:</label>
         <select id="year-select" v-model="selectedYear">

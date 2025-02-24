@@ -15,7 +15,7 @@ if (galleryId) {
   );
 }
 
-const visible = ref(false); // Видимость лайтбокса
+const visible = ref(false);
 const currentSlide = ref(0);
 const sectionTitle = `Коллекция ${galleryId}`;
 
@@ -38,20 +38,19 @@ const hideLightbox = () => {
     <UiSectionTitle tag="h1" :title-text="selectedGallery.title" />
     <div v-if="selectedGallery" class="photos">
       <div class="photo-grid">
-        <img
-          v-for="(photo, index) in selectedGallery.photos"
-          :key="index"
-          :src="photo"
-          :alt="`Фото ${index + 1}`"
-          @click="openLightbox(index)"
-        />
+        <div v-for="(photo, index) in selectedGallery.photos" :key="index">
+          <img
+            :src="photo"
+            :alt="`Фото ${index + 1}`"
+            @click="openLightbox(index)"
+          />
+        </div>
       </div>
     </div>
     <div v-else>
       <p>Карточка не выбрана.</p>
     </div>
 
-    <!-- Лайтбокс -->
     <q-dialog v-model="visible" full-width>
       <q-card class="full-height">
         <q-carousel
@@ -73,7 +72,6 @@ const hideLightbox = () => {
           </q-carousel-slide>
         </q-carousel>
 
-        <!-- Кнопка "Закрыть" -->
         <q-btn
           label="Закрыть"
           color="primary"
@@ -92,7 +90,7 @@ const hideLightbox = () => {
 
 .photo-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 10px;
 }
 
@@ -100,13 +98,14 @@ const hideLightbox = () => {
   width: 100%;
   height: 200px;
   object-fit: cover;
-  border-radius: 8px;
   cursor: pointer;
-  transition: transform 0.2s ease;
+  transition: transform 0.3s ease;
 }
 
-.photo-grid img:hover {
-  transform: scale(1.05);
+.photo-grid div {
+  overflow: hidden;
+  position: relative;
+  height: 200px;
 }
 
 .full-height-carousel {
@@ -122,18 +121,24 @@ const hideLightbox = () => {
 
 .carousel-image {
   max-width: 100%;
-  max-height: 90vh; /* Ограничиваем высоту изображения */
-  object-fit: contain; /* Сохраняем пропорции изображения */
+  max-height: 90vh;
+  object-fit: contain;
 }
 
 .close-btn {
   position: absolute;
   top: 16px;
   right: 16px;
-  z-index: 1000; /* Убедимся, что кнопка поверх изображения */
-  background: rgba(0, 0, 0, 0.5); /* Полупрозрачный фон */
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.5);
   color: white;
   border-radius: 8px;
   padding: 8px;
+}
+
+@media (hover: hover) {
+  .photo-grid div:hover img {
+    transform: scale(1.1);
+  }
 }
 </style>

@@ -18,21 +18,9 @@
         },
         {
           "title": "Галерея",
-
-          "thirdLevel": true,
+          "thirdLevel": false,
           "expandedSecondLevel": false,
-          "thirdLevelItems": [
-            { "title": "За все время", "href": "/gallery" },
-            { "title": "2016", "href": "/gallery" },
-            { "title": "2017", "href": "/gallery" },
-            { "title": "2018", "href": "/gallery" },
-            { "title": "2019", "href": "/gallery" },
-            { "title": "2020", "href": "/gallery" },
-            { "title": "2021", "href": "/gallery" },
-            { "title": "2022", "href": "/gallery" },
-            { "title": "2023", "href": "/gallery" },
-            { "title": "2024", "href": "/gallery" }
-          ]
+          "href": "/gallery"
         },
         { "title": "Отзывы", "thirdLevel": false, "href": "/sorry" },
         { "title": "Вакансии", "thirdLevel": false, "href": "/vacancies" },
