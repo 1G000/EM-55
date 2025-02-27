@@ -1,7 +1,8 @@
 export const sliderData = [
   {
-    imgSrc: `../assets/hero-jpg-1.jpg`,
-    imgSmallSrc: "../assets/hero-jpg-1.jpg",
+    videoSrc: "/public/Images/Slider/video.mp4", // Путь к видео
+    imgSrc: "./src/assets/images/hero-jpg-3.jpg", // Оставьте для совместимости
+    imgSmallSrc: "./Images/Slider/slide-31.png", // Оставьте для совместимости
     title: "ЭЛЕКТРОМОНТАЖ&nbsp;55",
     textcontent:
       "На&nbsp;протяжении 30&nbsp;лет мы изготавливаем электротехническое оборудование и&nbsp;выполняем все&nbsp;виды электромонтажных работ",
@@ -10,46 +11,6 @@ export const sliderData = [
         btnTitle: "Написать нам",
         style: "btn__left",
         to: { path: "/", hash: "#form" },
-      },
-      {
-        btnTitle: "О компании",
-        style: "btn__right",
-        to: { path: "/about" },
-      },
-    ],
-  },
-  {
-    imgSrc: "./src/assets/images/hero-jpg-2.jpg",
-    imgSmallSrc: "./Images/Slider/slide-21.png",
-    title: "ЭЛЕКТРОМОНТАЖ&nbsp;55",
-    subtitle: "Выполняем все&nbsp;виды электромонтажных работ",
-    textcontent:
-      "Ремонт кабельных линий напряжением 0,4кВ - 10кВ, поиск места повреждения&nbsp;КЛ, все&nbsp;виды испытаний, восстановление нарушенного благоустройства ",
-    buttons: [
-      {
-        btnTitle: "Услуги",
-        style: "btn__left",
-        to: { path: "/", hash: "#service" },
-      },
-      {
-        btnTitle: "О компании",
-        style: "btn__right",
-        to: { path: "/about" },
-      },
-    ],
-  },
-  {
-    imgSrc: "./src/assets/images/hero-jpg-3.jpg",
-    imgSmallSrc: "./Images/Slider/slide-31.png",
-    title: "ЭЛЕКТРОМОНТАЖ&nbsp;55",
-    subtitle: "Производим электрооборудование напряжением 0,4кВ - 10кВ",
-    textcontent:
-      "Изготавливаем БКТП, КТПН, КСО, УВР, ГРЩ&nbsp;под&nbsp;Ваши нужды ",
-    buttons: [
-      {
-        btnTitle: "Продукция",
-        style: "btn__left",
-        to: { path: "/", hash: "#production" },
       },
       {
         btnTitle: "О компании",

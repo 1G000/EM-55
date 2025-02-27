@@ -94,17 +94,34 @@ const selectedImgSrc = computed(() => (index) => {
     infinite
     :autoplay-speed="5000"
     control-color="secondary"
-    swipeable
-    navigation
   >
     <q-carousel-slide
       v-for="(slideData, index) in slideData"
       :key="index"
       :name="index + 1"
       class="slide"
-      :img-src="selectedImgSrc(index)"
+      :style="{
+        backgroundImage: slideData.videoSrc
+          ? 'none'
+          : `url(${selectedImgSrc(index)})`,
+      }"
     >
       <div class="carousel-wrapper">
+        <!-- Видео -->
+        <video
+          v-if="slideData.videoSrc"
+          autoplay
+          muted
+          loop
+          playsinline
+          preload="auto"
+          class="video-background"
+        >
+          <source :src="slideData.videoSrc" type="video/mp4" />
+          Ваш браузер не поддерживает видео.
+        </video>
+
+        <!-- Текстовый контент -->
         <div class="text-overlay">
           <div class="text-overlay__text">
             <h2 class="slide__title" v-html="slideData.title"></h2>
@@ -184,6 +201,7 @@ const selectedImgSrc = computed(() => (index) => {
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
+  z-index: 2;
 }
 
 .slide__subtitle {
@@ -192,6 +210,7 @@ const selectedImgSrc = computed(() => (index) => {
   font-size: 25px;
   line-height: 1.2em;
   color: white;
+  z-index: 2;
 }
 
 .slide__textcontent {
@@ -202,6 +221,7 @@ const selectedImgSrc = computed(() => (index) => {
   color: white;
   letter-spacing: 0.3px;
   margin-top: 20px;
+  z-index: 2;
 }
 
 .buttons__container {
@@ -224,8 +244,9 @@ const selectedImgSrc = computed(() => (index) => {
 
 .btn__right {
   background-color: transparent;
-  border: 2px solid #86002a;
-  color: white;
+  /* border: 2px solid #86002a; */
+  color: #86002a;
+  background-color: #e5c696;
   width: 222px;
   height: 56px;
   border-radius: 8px;
@@ -236,13 +257,13 @@ const selectedImgSrc = computed(() => (index) => {
   bottom: 15px;
 }
 
-@media (hover: hover) {
+/* @media (hover: hover) {
   .btn__right:hover {
     border: none;
     color: #86002a;
     background-color: #e5c696;
   }
-}
+} */
 
 @media screen and (max-width: 1285px) {
   .q-carousel {
@@ -321,5 +342,14 @@ const selectedImgSrc = computed(() => (index) => {
   .text-overlay__text {
     max-width: 800px;
   }
+}
+.video-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0; /* Чтобы текст был поверх видео */
 }
 </style>
