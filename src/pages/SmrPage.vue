@@ -1,10 +1,11 @@
 <script setup>
-import { ref, onMounted } from "vue";
+import { ref, onMounted, computed } from "vue";
 import UiSection from "src/components/UiSection.vue";
 import UiSectionTitle from "src/components/UiSectionTitle.vue";
 import BreadCrumbs from "src/components/BreadCrumbs.vue";
 import { shallowRef } from "vue";
 import ComplexServiceSection from "src/components/ComplexServiceSection.vue";
+import { useQuasar } from "quasar";
 
 import {
   YandexMap,
@@ -16,33 +17,32 @@ import {
   YandexMapControls,
   YandexMapZoomControl,
 } from "vue-yandex-maps";
-
+const q = useQuasar();
 const sectionTitle = "Строительно-монтажные работы";
 const map = shallowRef(null);
-
 const markers = [
   {
     coordinates: [30.296384, 59.913753],
     properties: {
-      hint: "<b>Рижский пр. д. 4-6 - Монтаж БКТП</b>",
+      hint: "<div style='display: flex; flex-direction: column; gap: 5px'><b>Рижский пр. д. 4-6</b><b>Монтаж БКТП</b></div>",
     },
   },
   {
     coordinates: [30.283592, 59.927924],
     properties: {
-      hint: "<b>Набережная реки Мойки, 122 - Монтаж БКТП</b>",
+      hint: "<div style='display: flex; flex-direction: column; gap: 5px'><b>Наб. реки Мойки, 122</b><b>Монтаж БКТП</b></div>",
     },
   },
   {
     coordinates: [30.335137, 59.92272],
     properties: {
-      hint: "<b>Звенигородская улица, 1 - Монтаж БКТП</b>",
+      hint: "<div style='display: flex; flex-direction: column; gap: 5px'><b>Звенигородская ул., 1</b><b>Монтаж БКТП</b></div>",
     },
   },
   {
     coordinates: [30.356086, 59.937215],
     properties: {
-      hint: "<b>Ковенский переулок, 5 - Монтаж БКТП</b>",
+      hint: "<div style='display: flex; flex-direction: column; gap: 5px'><b>Ковенский пер., 5</b><b>Монтаж БКТП</b></div>",
     },
   },
 ];
@@ -72,7 +72,11 @@ const markers = [
       <yandex-map-controls :settings="{ position: 'right' }">
         <yandex-map-zoom-control />
       </yandex-map-controls>
-      <yandex-map-marker v-for="marker in markers" :key="marker.title" :settings="marker">
+      <yandex-map-marker
+        v-for="marker in markers"
+        :key="marker.title"
+        :settings="marker"
+      >
         <div class="marker"></div>
       </yandex-map-marker>
       <yandex-map-hint hint-property="hint">
@@ -105,12 +109,13 @@ const markers = [
 }
 .hint-window {
   position: absolute;
-  transform: translate(7px, -100%);
-  padding: 4px 20px;
+  transform: translate(15px, -10%);
+  padding: 4px 10px;
   background: var(--q-primary);
   color: var(--color-white);
   border: 1px solid var(--q-primary);
   white-space: nowrap;
   border-radius: 4px;
+  font-size: 12px;
 }
 </style>
