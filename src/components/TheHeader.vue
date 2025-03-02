@@ -70,7 +70,10 @@ const showMobileMenu = ref(false);
       </q-toolbar>
     </div>
     <div class="header__navbar shadow-1">
-      <DesktopNavigationMenu v-if="$q.screen.width > 767" :navItems="navItems" />
+      <DesktopNavigationMenu
+        v-if="$q.screen.width > 767"
+        :navItems="navItems"
+      />
       <div class="nav__title-mobile" v-if="$q.screen.width < 767">
         Оборудование для трансформаторных подстанций
       </div>
@@ -162,7 +165,7 @@ const showMobileMenu = ref(false);
 }
 
 .second-line,
-.second-line-left {
+.first-line-left {
   background-color: var(--q-secondary);
 }
 .second-line-left {
