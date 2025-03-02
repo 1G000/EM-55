@@ -1,6 +1,6 @@
 export const sliderData = [
   {
-    videoSrc: "/public/Images/Slider/video.mp4", // Путь к видео
+    videoSrc: "./Images/Slider/video.mp4", // Путь к видео
     imgSrc: "./src/assets/images/hero-jpg-3.jpg", // Оставьте для совместимости
     imgSmallSrc: "./Images/Slider/slide-31.png", // Оставьте для совместимости
     title: "ЭЛЕКТРОМОНТАЖ&nbsp;55",

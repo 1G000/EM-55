@@ -65,7 +65,7 @@
           "thirdLevel": false,
           "href": "/certificates"
         },
-        { "title": "Опросные листы", "thirdLevel": false, "href": "/sorry" },
+        { "title": "Опросные листы", "thirdLevel": false, "href": "/opros" },
         { "title": "Сроки поставки", "thirdLevel": false, "href": "/sorry" },
         { "title": "Доставка", "thirdLevel": false, "href": "/sorry" },
         { "title": "Инструкции", "thirdLevel": false, "href": "/sorry" },

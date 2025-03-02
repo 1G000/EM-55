@@ -404,6 +404,11 @@ const routes = [
     children: [{ path: "", component: () => import("pages/PrivacyPage.vue") }],
   },
   {
+    path: "/opros",
+    component: () => import("layouts/MainLayout.vue"),
+    children: [{ path: "", component: () => import("pages/OprosPage.vue") }],
+  },
+  {
     path: "/partners",
     component: () => import("layouts/MainLayout.vue"),
     children: [
