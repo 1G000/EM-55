@@ -407,6 +407,43 @@ const routes = [
     path: "/opros",
     component: () => import("layouts/MainLayout.vue"),
     children: [{ path: "", component: () => import("pages/OprosPage.vue") }],
+    meta: {
+      title: "Опросные листы",
+      metaTags: [
+        {
+          name: "description",
+          content: "Опросные листы",
+        },
+        {
+          name: "keywords",
+          content: "Опросные листы",
+        },
+        {
+          property: "og:title",
+          content: "Опросные листы",
+        },
+        {
+          property: "og:description",
+          content: "Опросные листы",
+        },
+        {
+          property: "og:image",
+          content: "https://em-55.ru/assets/logo-white.94e19ee4.png",
+        },
+        {
+          property: "og:url",
+          content: "https://em-55.ru/opros",
+        },
+        {
+          property: "og:type",
+          content: "website",
+        },
+        {
+          name: "robots",
+          content: "index, follow",
+        },
+      ],
+    },
   },
   {
     path: "/partners",
