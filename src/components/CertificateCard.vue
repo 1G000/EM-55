@@ -55,7 +55,6 @@ const props = defineProps({
   font-family: Montserrat-bold, serif;
   font-size: clamp(0.8rem, 1.1vw, 0.9rem);
   color: var(--color-black);
-  text-transform: uppercase;
 }
 
 @media (hover: hover) {
