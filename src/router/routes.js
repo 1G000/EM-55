@@ -229,7 +229,7 @@ const routes = [
     children: [
       {
         path: "",
-        component: () => import("pages/ObjectsMap.vue"),
+        component: () => import("src/pages/MapPage.vue"),
         meta: {
           title: "Карта объектов",
           metaTags: [
