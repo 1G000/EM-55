@@ -121,7 +121,7 @@
       "secondLevel": true,
       "expandedFirstLevel": false,
       "secondLevelItems": [
-        { "title": "Карта объектов", "thirdLevel": false, "href": "/smr" },
+        { "title": "Карта объектов", "thirdLevel": false, "href": "/map" },
         {
           "title": "Строительно-монтажные работы",
           "thirdLevel": false,

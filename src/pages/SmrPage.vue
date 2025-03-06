@@ -1,61 +1,9 @@
 <script setup>
-import { ref, onMounted, computed } from "vue";
 import UiSection from "src/components/UiSection.vue";
 import UiSectionTitle from "src/components/UiSectionTitle.vue";
 import BreadCrumbs from "src/components/BreadCrumbs.vue";
-import { shallowRef } from "vue";
-import ComplexServiceSection from "src/components/ComplexServiceSection.vue";
-import { useQuasar } from "quasar";
 
-import {
-  YandexMap,
-  YandexMapDefaultSchemeLayer,
-  YandexMapDefaultFeaturesLayer,
-  YandexMapDefaultMarker,
-  YandexMapMarker,
-  YandexMapHint,
-  YandexMapControls,
-  YandexMapZoomControl,
-} from "vue-yandex-maps";
-const q = useQuasar();
 const sectionTitle = "Строительно-монтажные работы";
-const map = shallowRef(null);
-const markers = [
-  {
-    coordinates: [30.296384, 59.913753],
-    properties: {
-      src: "Images/Gallery/1.png",
-      address: "Рижский пр. д. 4-6",
-      title: "Монтаж БКТП",
-    },
-  },
-  {
-    coordinates: [30.283592, 59.927924],
-    properties: {
-      src: "Images/Gallery/1.png",
-      address: "Звенигородская ул., 1",
-      title: "Монтаж БКТП",
-    },
-  },
-  {
-    coordinates: [30.335137, 59.92272],
-    properties: {
-      src: "Images/Gallery/3.png",
-      address: "Звенигородская ул., 1",
-      title: "Монтаж БКТП",
-    },
-  },
-  {
-    coordinates: [30.356086, 59.937215],
-    properties: {
-      src: "Images/Gallery/2.png",
-      address: "Звенигородская ул., 1",
-      title: "Монтаж БКТП",
-    },
-  },
-];
-
-const openMarker = ref(null);
 </script>
 
 <template>
@@ -65,61 +13,7 @@ const openMarker = ref(null);
   >
     <BreadCrumbs :page-route="sectionTitle" />
     <UiSectionTitle tag="h1" :title-text="sectionTitle" />
-    <yandex-map
-      v-model="map"
-      @click.stop="openMarker = null"
-      :settings="{
-        location: {
-          center: [30.3351, 59.9343],
-          zoom: 12,
-          showScaleInCopyrights: true,
-        },
-      }"
-      width="100%"
-      height="500px"
-    >
-      <yandex-map-default-scheme-layer />
-      <yandex-map-default-features-layer />
-      <yandex-map-controls :settings="{ position: 'right' }">
-        <yandex-map-zoom-control />
-      </yandex-map-controls>
-      <!-- <yandex-map-marker
-        v-for="marker in markers"
-        :key="marker.title"
-        :settings="marker"
-      >
-        <div class="marker"></div>
-      </yandex-map-marker>
-      <yandex-map-hint hint-property="hint">
-        <template #default="{ content }">
-          <div class="hint-window" v-html="content" />
-        </template>
-      </yandex-map-hint> -->
-      <yandex-map-marker
-        v-for="(marker, index) in markers"
-        :key="index"
-        :settings="{
-          coordinates: marker.coordinates,
-          onClick: () => (openMarker = index),
-          zIndex: openMarker === index ? 1 : 0,
-        }"
-      >
-        <div class="marker">
-          <div v-if="openMarker === index" class="popup">
-            <a href="/gallery" class="image-container"
-              ><img class="map-popup-img" :src="marker.properties.src" /><span
-                class="hover-text"
-                >В галерею</span
-              ></a
-            >
-            <b>{{ marker.properties.address }}</b>
-            <router-link class="map-popup-title" to="/gallery">{{
-              marker.properties.title
-            }}</router-link>
-          </div>
-        </div>
-      </yandex-map-marker>
-    </yandex-map>
+
     <q-img src="Images/Gallery/1.png"> </q-img>
 
     <q-img src="Images/Gallery/2.png"> </q-img>

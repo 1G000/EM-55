@@ -224,6 +224,53 @@ const routes = [
     ],
   },
   {
+    path: "/map",
+    component: () => import("layouts/MainLayout.vue"),
+    children: [
+      {
+        path: "",
+        component: () => import("pages/ObjectsMap.vue"),
+        meta: {
+          title: "Карта объектов",
+          metaTags: [
+            {
+              name: "description",
+              content: "Карта объектов",
+            },
+            {
+              name: "keywords",
+              content: "Карта объектов, выполненные объекты на карте",
+            },
+            {
+              property: "og:title",
+              content: "Карта объектов",
+            },
+            {
+              property: "og:description",
+              content: "Карта объектов",
+            },
+            {
+              property: "og:image",
+              content: "https://em-55.ru/assets/logo-white.94e19ee4.png",
+            },
+            {
+              property: "og:url",
+              content: "https://em-55.ru/map",
+            },
+            {
+              property: "og:type",
+              content: "website",
+            },
+            {
+              name: "robots",
+              content: "index, follow",
+            },
+          ],
+        },
+      },
+    ],
+  },
+  {
     path: "/smr",
     component: () => import("layouts/MainLayout.vue"),
     children: [{ path: "", component: () => import("pages/SmrPage.vue") }],
@@ -233,14 +280,94 @@ const routes = [
     path: "/certificates",
     component: () => import("layouts/MainLayout.vue"),
     children: [
-      { path: "", component: () => import("pages/CertificatesPage.vue") },
+      {
+        path: "",
+        component: () => import("pages/CertificatesPage.vue"),
+        meta: {
+          title: "Сертификаты",
+          metaTags: [
+            {
+              name: "description",
+              content: "Сертификаты",
+            },
+            {
+              name: "keywords",
+              content: "Сертификаты",
+            },
+            {
+              property: "og:title",
+              content: "Сертификаты",
+            },
+            {
+              property: "og:description",
+              content: "Сертификаты",
+            },
+            {
+              property: "og:image",
+              content: "https://em-55.ru/assets/logo-white.94e19ee4.png",
+            },
+            {
+              property: "og:url",
+              content: "https://em-55.ru/certificates",
+            },
+            {
+              property: "og:type",
+              content: "website",
+            },
+            {
+              name: "robots",
+              content: "index, follow",
+            },
+          ],
+        },
+      },
     ],
   },
   {
     path: "/photos",
     component: () => import("layouts/MainLayout.vue"),
     children: [
-      { path: "", component: () => import("pages/CurrentPhotos.vue") },
+      {
+        path: "",
+        component: () => import("pages/CurrentPhotos.vue"),
+        meta: {
+          title: "Фотографии",
+          metaTags: [
+            {
+              name: "description",
+              content: "Фотографии",
+            },
+            {
+              name: "keywords",
+              content: "Фотографии",
+            },
+            {
+              property: "og:title",
+              content: "Фотографии",
+            },
+            {
+              property: "og:description",
+              content: "Фотографии",
+            },
+            {
+              property: "og:image",
+              content: "https://em-55.ru/assets/logo-white.94e19ee4.png",
+            },
+            {
+              property: "og:url",
+              content: "https://em-55.ru/photos",
+            },
+            {
+              property: "og:type",
+              content: "website",
+            },
+            {
+              name: "robots",
+              content: "index, follow",
+            },
+          ],
+        },
+      },
     ],
   },
   {
@@ -296,7 +423,49 @@ const routes = [
   {
     path: "/gallery",
     component: () => import("layouts/MainLayout.vue"),
-    children: [{ path: "", component: () => import("pages/GalleryPage.vue") }],
+    children: [
+      {
+        path: "",
+        component: () => import("pages/GalleryPage.vue"),
+        meta: {
+          title: "Галерея",
+          metaTags: [
+            {
+              name: "description",
+              content: "Галерея",
+            },
+            {
+              name: "keywords",
+              content: "Галерея",
+            },
+            {
+              property: "og:title",
+              content: "Галерея",
+            },
+            {
+              property: "og:description",
+              content: "Галерея",
+            },
+            {
+              property: "og:image",
+              content: "https://em-55.ru/assets/logo-white.94e19ee4.png",
+            },
+            {
+              property: "og:url",
+              content: "https://em-55.ru/gallery",
+            },
+            {
+              property: "og:type",
+              content: "website",
+            },
+            {
+              name: "robots",
+              content: "index, follow",
+            },
+          ],
+        },
+      },
+    ],
   },
   {
     path: "/payment-information",
