@@ -9,9 +9,11 @@ const openPrivacyPage = () => {
 
 <template>
   <footer class="footer">
-    <q-avatar square class="footer__logo">
-      <img width="217px" height="103px" src="../assets/logo-white.png" />
-    </q-avatar>
+    <router-link to="/">
+      <q-avatar square class="footer__logo">
+        <img width="217px" height="103px" src="../assets/logo-white.png" />
+      </q-avatar>
+    </router-link>
 
     <q-list dense padding class="flex text-white footer__content-top">
       <q-item clickable v-ripple to="/about">
