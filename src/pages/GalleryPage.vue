@@ -6,6 +6,7 @@ import UiSectionTitle from "src/components/UiSectionTitle.vue";
 import BreadCrumbs from "src/components/BreadCrumbs.vue";
 import { galleryData } from "src/data/gallery";
 import ProductCard from "src/components/ProductCard.vue";
+import CustomSelect from "src/components/CustomSelect.vue";
 
 const router = useRouter();
 const sectionTitle = "Галерея";
@@ -41,6 +42,7 @@ const goToPhotos = (item) => {
   });
 };
 </script>
+
 <template>
   <UiSection
     class="content__wrapper"
@@ -50,43 +52,19 @@ const goToPhotos = (item) => {
     <UiSectionTitle tag="h1" :title-text="sectionTitle" />
 
     <div class="filters">
-      <!-- <q-select
-        outlined
+      <CustomSelect
         v-model="selectedYear"
         :options="getUniqueYears()"
-        label="Выберите год"
-        style="width: 300px"
+        label="Выберите год:"
       />
-      <q-select
-        outlined
+
+      <CustomSelect
         v-model="selectedCategory"
         :options="getUniqueCategories()"
-        label="Выберите категорию"
-        style="width: 300px"
-      /> -->
-
-      <div class="year-filter">
-        <label for="year-select">Выберите год:</label>
-        <select id="year-select" v-model="selectedYear">
-          <option v-for="year in getUniqueYears()" :key="year" :value="year">
-            {{ year }}
-          </option>
-        </select>
-      </div>
-
-      <div class="year-filter">
-        <label for="category-select">Выберите категорию:</label>
-        <select id="category-select" v-model="selectedCategory">
-          <option
-            v-for="category in getUniqueCategories()"
-            :key="category"
-            :value="category"
-          >
-            {{ category }}
-          </option>
-        </select>
-      </div>
+        label="Выберите категорию:"
+      />
     </div>
+
     <div class="gallery">
       <ProductCard
         v-for="item in filteredGalleryData()"
@@ -106,6 +84,7 @@ const goToPhotos = (item) => {
   grid-gap: 20px;
   justify-content: center;
 }
+
 .filters {
   display: flex;
   gap: 40px;
@@ -115,22 +94,6 @@ const goToPhotos = (item) => {
   margin-bottom: 24px;
   text-align: justify;
   user-select: none;
-}
-.year-filter {
-  display: flex;
-  margin-bottom: 20px;
-}
-
-.year-filter label {
-  margin-right: 10px;
-}
-
-.year-filter select,
-.year-filter select:active {
-  padding: 5px 10px;
-  border-radius: 4px;
-  border: 2px solid var(--q-primary);
-  font-size: 1rem;
 }
 
 @media (max-width: 865px) {

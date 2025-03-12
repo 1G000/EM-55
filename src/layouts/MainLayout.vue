@@ -63,6 +63,7 @@ onMounted(async () => {
         icon="arrow_upward"
         @click="scrollToTop"
         v-if="showScrollButton"
+        class="btn_to-top"
       />
     </q-page-sticky>
   </q-layout>
@@ -74,5 +75,9 @@ onMounted(async () => {
   margin-left: auto;
   margin-right: auto;
   max-width: 1920px;
+}
+
+.btn_to-top {
+  box-shadow: 0 0 2px 2px rgba(255, 255, 255, 0.5);
 }
 </style>
