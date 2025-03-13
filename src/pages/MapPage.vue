@@ -3,8 +3,8 @@ import { ref, onMounted, computed } from "vue";
 import UiSection from "src/components/UiSection.vue";
 import UiSectionTitle from "src/components/UiSectionTitle.vue";
 import BreadCrumbs from "src/components/BreadCrumbs.vue";
+import CustomSelect from "src/components/CustomSelect.vue";
 import { shallowRef } from "vue";
-import ComplexServiceSection from "src/components/ComplexServiceSection.vue";
 import { useQuasar } from "quasar";
 
 import {
@@ -17,6 +17,7 @@ import {
   YandexMapControls,
   YandexMapZoomControl,
 } from "vue-yandex-maps";
+import ServiceCard from "src/components/ServiceCard.vue";
 const q = useQuasar();
 const sectionTitle = "Выполненные объекты на карте города";
 const map = shallowRef(null);
@@ -27,35 +28,103 @@ const markers = [
       src: "Images/Gallery/1.png",
       address: "Рижский пр. д. 4-6",
       title: "Монтаж БКТП",
-    },
-  },
-  {
-    coordinates: [30.283592, 59.927924],
-    properties: {
-      src: "Images/Gallery/1.png",
-      address: "Звенигородская ул., 1",
-      title: "Монтаж БКТП",
+      year: 2023,
     },
   },
   {
     coordinates: [30.335137, 59.92272],
     properties: {
-      src: "Images/Gallery/3.png",
+      src: "Images/Gallery/1.png",
       address: "Звенигородская ул., 1",
       title: "Монтаж БКТП",
+      year: 2023,
+    },
+  },
+  {
+    coordinates: [30.303956, 59.925182],
+    properties: {
+      src: "Images/Gallery/3.png",
+      address: "ул. Средняя Подьяческая, д. 14",
+      title: "Монтаж БКТП",
+      year: 2022,
+    },
+  },
+  {
+    coordinates: [30.335137, 59.92272],
+    properties: {
+      src: "Images/Gallery/2.png",
+      address: "Звенигородская ул., 1 (Адамант)",
+      title: "Монтаж БКТП",
+      year: 2022,
+    },
+  },
+  {
+    coordinates: [30.283592, 59.927924],
+    properties: {
+      src: "Images/Gallery/2.png",
+      address: "наб.р.Мойки, д. 122 (Дом Музыки)",
+      title: "Монтаж БКТП",
+      year: 2021,
+    },
+  },
+  {
+    coordinates: [30.425786, 59.848425],
+    properties: {
+      src: "Images/Gallery/2.png",
+      address: "ул. Софийская, д. 81 (Почта России)",
+      title: "Монтаж БКТП",
+      year: 2020,
     },
   },
   {
     coordinates: [30.356086, 59.937215],
     properties: {
       src: "Images/Gallery/2.png",
-      address: "Звенигородская ул., 1",
+      address: "Ковенский пер. 5",
       title: "Монтаж БКТП",
+      year: 2020,
+    },
+  },
+  {
+    coordinates: [30.324564, 59.92364],
+    properties: {
+      src: "Images/Gallery/2.png",
+      address: "наб. р. Фонтанки 100, лит А (УФСБ)",
+      title: "Монтаж БКТП",
+      year: 2019,
+    },
+  },
+  {
+    coordinates: [30.328975, 59.934199],
+    properties: {
+      src: "Images/Gallery/2.png",
+      address: "ул. Думская, 1-3",
+      title: "Монтаж БКТП",
+      year: 2019,
+    },
+  },
+  {
+    coordinates: [30.490438, 59.935056],
+    properties: {
+      src: "Images/Gallery/2.png",
+      address: "ул. Хасанская, 15 (рынок)",
+      title: "Монтаж БКТП",
+      year: 2019,
     },
   },
 ];
+const mapMarkers = computed(() =>
+  selectedYear.value === "Все"
+    ? markers
+    : markers.filter((obj) => obj.properties.year === selectedYear.value)
+);
+const getUniqueYears = () => {
+  const years = new Set(markers.map((obj) => obj.properties.year));
+  return ["Все", ...years];
+};
 
 const openMarker = ref(null);
+const selectedYear = ref("Все");
 </script>
 
 <template>
@@ -65,6 +134,11 @@ const openMarker = ref(null);
   >
     <BreadCrumbs page-route="Карта объектов" />
     <UiSectionTitle tag="h1" :title-text="sectionTitle" />
+    <CustomSelect
+      v-model="selectedYear"
+      :options="getUniqueYears()"
+      label="Выберите год:"
+    />
     <yandex-map
       v-model="map"
       @click.stop="openMarker = null"
@@ -96,7 +170,7 @@ const openMarker = ref(null);
         </template>
       </yandex-map-hint> -->
       <yandex-map-marker
-        v-for="(marker, index) in markers"
+        v-for="(marker, index) in mapMarkers"
         :key="index"
         :settings="{
           coordinates: marker.coordinates,
