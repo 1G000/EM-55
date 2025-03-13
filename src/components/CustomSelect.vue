@@ -3,8 +3,10 @@
     v-model="modelValue"
     :options="options"
     :label="label"
+    label-color="grey"
     outlined
     map-options
+    dense
     emit-value
     class="select"
   />
@@ -40,10 +42,11 @@ watch(modelValue, (newValue) => {
 <style scoped>
 .select {
   min-width: 300px;
+  max-width: 300px;
   width: auto;
-  border-radius: 8px;
-  border: 2px solid var(--q-primary);
-  font-size: clamp(1.1rem, 1vw, 1.2rem);
+  border-radius: 4px;
+  border: 1px solid var(--color-black);
+  font-size: 0.8rem;
   font-family: Montserrat-regular, serif;
 }
 </style>
