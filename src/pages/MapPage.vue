@@ -50,10 +50,10 @@ const markers = [
     },
   },
   {
-    coordinates: [30.335137, 59.92272],
+    coordinates: [30.452726, 59.920388],
     properties: {
       src: "Images/Gallery/2.png",
-      address: "Звенигородская ул., 1 (Адамант)",
+      address: "ул. Джона Рида, 8к2",
       title: "Монтаж БКТП",
       year: 2022,
     },
@@ -62,7 +62,7 @@ const markers = [
     coordinates: [30.283592, 59.927924],
     properties: {
       src: "Images/Gallery/2.png",
-      address: "наб.р.Мойки, д. 122 (Дом Музыки)",
+      address: "наб.р.Мойки, д. 122",
       title: "Монтаж БКТП",
       year: 2021,
     },
@@ -71,7 +71,7 @@ const markers = [
     coordinates: [30.425786, 59.848425],
     properties: {
       src: "Images/Gallery/2.png",
-      address: "ул. Софийская, д. 81 (Почта России)",
+      address: "ул. Софийская, д. 81",
       title: "Монтаж БКТП",
       year: 2020,
     },
@@ -89,7 +89,7 @@ const markers = [
     coordinates: [30.324564, 59.92364],
     properties: {
       src: "Images/Gallery/2.png",
-      address: "наб. р. Фонтанки 100, лит А (УФСБ)",
+      address: "наб. р. Фонтанки 100, лит А",
       title: "Монтаж БКТП",
       year: 2019,
     },
@@ -107,9 +107,117 @@ const markers = [
     coordinates: [30.490438, 59.935056],
     properties: {
       src: "Images/Gallery/2.png",
-      address: "ул. Хасанская, 15 (рынок)",
+      address: "ул. Хасанская, 15",
       title: "Монтаж БКТП",
       year: 2019,
+    },
+  },
+  {
+    coordinates: [30.358044, 59.91572],
+    properties: {
+      src: "Images/Gallery/2.png",
+      address: "ул. Черняховского, д. 7б лит В",
+      title: "Монтаж БКТП",
+      year: 2018,
+    },
+  },
+  {
+    coordinates: [30.350777, 59.916374],
+    properties: {
+      src: "Images/Gallery/2.png",
+      address: "Лиговский пр, 145/2, лит. А",
+      title: "Монтаж БКТП",
+      year: 2018,
+    },
+  },
+  {
+    coordinates: [30.348863, 59.916293],
+    properties: {
+      src: "Images/Gallery/2.png",
+      address: "ул. Воронежская, 30К",
+      title: "Монтаж БКТП",
+      year: 2018,
+    },
+  },
+  {
+    coordinates: [30.288991, 59.913],
+    properties: {
+      src: "Images/Gallery/2.png",
+      address: "пер. Лодыгина, 5",
+      title: "Монтаж БКТП",
+      year: 2020,
+    },
+  },
+  {
+    coordinates: [30.288991, 59.913],
+    properties: {
+      src: "Images/Gallery/2.png",
+      address: "пер. Лодыгина, 5",
+      title: "Монтаж БКТП",
+      year: 2020,
+    },
+  },
+  {
+    coordinates: [30.339539, 59.92525],
+    properties: {
+      src: "Images/Gallery/2.png",
+      address: "Загородный пр., 19",
+      title: "Монтаж БКТП",
+      year: 2020,
+    },
+  },
+  {
+    coordinates: [30.346977, 59.924055],
+    properties: {
+      src: "Images/Gallery/2.png",
+      address: "ул. Разъезжая, 19, лит. Б",
+      title: "Монтаж БКТП",
+      year: 2020,
+    },
+  },
+  {
+    coordinates: [30.266048, 59.950335],
+    properties: {
+      src: "Images/Gallery/2.png",
+      address: "ул. Уральская, 4",
+      title: "Монтаж БКТП",
+      year: 2020,
+    },
+  },
+  {
+    coordinates: [30.197012, 59.994319],
+    properties: {
+      src: "Images/Gallery/2.png",
+      address: "ул. Мебельная, 47к1",
+      title: "Монтаж БКТП",
+      year: 2021,
+    },
+  },
+  {
+    coordinates: [30.197012, 59.994319],
+    properties: {
+      src: "Images/Gallery/2.png",
+      address: "ул. Мебельная, 47к1",
+      title: "Монтаж БКТП",
+      year: 2021,
+    },
+  },
+  {
+    coordinates: [30.400067, 60.003934],
+    properties: {
+      src: "Images/Gallery/2.png",
+      address: "ул. Бутлерова, 9к5",
+      title: "Монтаж БКТП",
+      year: 2024,
+    },
+  },
+  {
+    coordinates: [30.375139, 59.958138],
+    properties: {
+      src: "Images/Gallery/2.png",
+      address: "Кондратьевский пр., 3",
+      title: "Монтаж БКТП",
+      year: 2024,
     },
   },
 ];
