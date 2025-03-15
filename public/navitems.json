@@ -61,15 +61,19 @@
           ]
         },
         {
-          "title": "Сертификаты",
+          "title": "Сертификаты и декларации",
           "thirdLevel": false,
           "href": "/certificates"
         },
         { "title": "Опросные листы", "thirdLevel": false, "href": "/opros" },
         { "title": "Сроки поставки", "thirdLevel": false, "href": "/sorry" },
         { "title": "Доставка", "thirdLevel": false, "href": "/sorry" },
-        { "title": "Инструкции", "thirdLevel": false, "href": "/sorry" },
-        { "title": "Вопрос-ответ", "thirdLevel": false, "href": "/sorry" },
+        {
+          "title": "Инструкции и руководства по эксплуатации",
+          "thirdLevel": false,
+          "href": "/instructions"
+        },
+        { "title": "Вопрос-ответ", "thirdLevel": false, "href": "/questions" },
         { "title": "Сервис", "thirdLevel": false, "href": "/sorry" }
       ]
     },

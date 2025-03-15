@@ -275,7 +275,6 @@ const routes = [
     component: () => import("layouts/MainLayout.vue"),
     children: [{ path: "", component: () => import("pages/SmrPage.vue") }],
   },
-
   {
     path: "/certificates",
     component: () => import("layouts/MainLayout.vue"),
@@ -309,6 +308,100 @@ const routes = [
             {
               property: "og:url",
               content: "https://em-55.ru/certificates",
+            },
+            {
+              property: "og:type",
+              content: "website",
+            },
+            {
+              name: "robots",
+              content: "index, follow",
+            },
+          ],
+        },
+      },
+    ],
+  },
+  {
+    path: "/instructions",
+    component: () => import("layouts/MainLayout.vue"),
+    children: [
+      {
+        path: "",
+        component: () => import("pages/InstructionsPage.vue"),
+        meta: {
+          title: "Инструкции и руководства по эксплуатации",
+          metaTags: [
+            {
+              name: "description",
+              content: "Инструкции и руководства по эксплуатации",
+            },
+            {
+              name: "keywords",
+              content: "Инструкции и руководства по эксплуатации",
+            },
+            {
+              property: "og:title",
+              content: "Инструкции и руководства по эксплуатации",
+            },
+            {
+              property: "og:description",
+              content: "Инструкции и руководства по эксплуатации",
+            },
+            {
+              property: "og:image",
+              content: "https://em-55.ru/assets/logo-white.94e19ee4.png",
+            },
+            {
+              property: "og:url",
+              content: "https://em-55.ru/instructions",
+            },
+            {
+              property: "og:type",
+              content: "website",
+            },
+            {
+              name: "robots",
+              content: "index, follow",
+            },
+          ],
+        },
+      },
+    ],
+  },
+  {
+    path: "/questions",
+    component: () => import("layouts/MainLayout.vue"),
+    children: [
+      {
+        path: "",
+        component: () => import("pages/QuestionsPage.vue"),
+        meta: {
+          title: "Вопрос-Ответ",
+          metaTags: [
+            {
+              name: "description",
+              content: "Вопрос-Ответ",
+            },
+            {
+              name: "keywords",
+              content: "Вопрос-Ответ",
+            },
+            {
+              property: "og:title",
+              content: "Вопрос-Ответ",
+            },
+            {
+              property: "og:description",
+              content: "Вопрос-Ответ",
+            },
+            {
+              property: "og:image",
+              content: "https://em-55.ru/assets/logo-white.94e19ee4.png",
+            },
+            {
+              property: "og:url",
+              content: "https://em-55.ru/questions",
             },
             {
               property: "og:type",
