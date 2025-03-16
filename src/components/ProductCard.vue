@@ -8,13 +8,17 @@ const props = defineProps({
 </script>
 
 <template>
-  <q-responsive :ratio="1 / 1" class="col product-card">
+  <q-responsive :ratio="4 / 3" class="col product-card">
     <q-card
       class="q-ma-none shadow-0 my-card cursor-pointer column"
       flat
       clickable
     >
-      <q-img class="col" :src="product.imgSrc" :lazy-src="product.imgSrc" />
+      <q-img
+        class="col q-my-md product-img"
+        :src="product.imgSrc"
+        :lazy-src="product.imgSrc"
+      />
 
       <q-card-section class="card__text product-card__text-wrapper q-py-md">
         <q-item-section class="card__text">{{ product.title }}</q-item-section>
@@ -32,6 +36,7 @@ const props = defineProps({
 .product-card {
   border-radius: 8px;
   transition: 0.3s linear;
+  box-shadow: 0px -1px 13px 1px rgba(34, 60, 80, 0.2);
 }
 
 .product-card__text-wrapper {
@@ -61,7 +66,7 @@ const props = defineProps({
 
 :deep(.q-img__container) {
   max-width: 70%;
-  max-height: 70%;
+  max-height: 100%;
   margin: 0 auto;
   overflow: hidden;
 }
@@ -77,9 +82,9 @@ const props = defineProps({
 
 @media (hover: hover) {
   .product-card:hover {
-    -webkit-box-shadow: 0px -1px 13px 1px rgba(34, 60, 80, 0.2);
-    -moz-box-shadow: 0px -1px 13px 1px rgba(34, 60, 80, 0.2);
-    box-shadow: 0px -1px 13px 1px rgba(34, 60, 80, 0.2);
+    -webkit-box-shadow: 0px -3px 10px 3px rgba(32, 54, 71, 0.2);
+    -moz-box-shadow: 0px -3px 10px 3px rgba(32, 54, 71, 0.2);
+    box-shadow: 0px -3px 10px 3px rgba(32, 54, 71, 0.2);
   }
   .product-card:hover .card__text {
     color: var(--q-primary);

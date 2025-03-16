@@ -9,11 +9,7 @@ defineProps({
 
 <template>
   <q-responsive :ratio="1 / 1" class="col service-card">
-    <q-card
-      class="q-ma-none shadow-0 my-card cursor-pointer column"
-      flat
-      clickable
-    >
+    <q-card class="q-ma-none my-card cursor-pointer column" flat clickable>
       <q-img class="col" :src="service.imgSrc" :lazy-src="service.imgSrc" />
       <q-card-section class="card__text service-card__text-wrapper q-py-md">
         <q-item-section class="card__text">{{ service.title }}</q-item-section>
@@ -31,6 +27,7 @@ defineProps({
 .service-card {
   border-radius: 8px;
   transition: 0.3s linear;
+  /* box-shadow: 0px -1px 13px 1px rgba(34, 60, 80, 0.2); */
 }
 .card__text {
   font-family: Montserrat-bold, serif;

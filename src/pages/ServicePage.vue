@@ -2,6 +2,7 @@
 import UiSection from "src/components/UiSection.vue";
 import UiSectionTitle from "src/components/UiSectionTitle.vue";
 import BreadCrumbs from "src/components/BreadCrumbs.vue";
+import serviceImg1 from "../assets/service3_new1.jpg";
 
 const sectionTitle = "Сервис";
 </script>
@@ -28,7 +29,7 @@ const sectionTitle = "Сервис";
       д., предлагает услуги по ремонту и модернизации действующих
       электроустановок.
     </p>
-    <img src="/src/assets/service3.jpg" />
+    <img :src="serviceImg1" />
 
     <a class="download__link" href="./service.pdf"
       ><span>Письмо о сервисном центре ООО «Электромонтаж 55»</span
