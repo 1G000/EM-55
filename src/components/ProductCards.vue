@@ -7,23 +7,23 @@ const sectionTitle = "Продукция";
 const production = [
   {
     title: "БКТП/БРТП в бетонной оболочке",
-    imgSrc: "./Images/Production/product-1.webp",
+    imgSrc: "./Images/Production/product-1.png",
     href: "",
   },
 
   {
     title: "КТП внутренней установки",
-    imgSrc: "./Images/Production/product-3.webp",
+    imgSrc: "./Images/Production/product-3.png",
     href: "",
   },
   {
     title: "КТПН в металлической оболочке",
-    imgSrc: "./Images/Production/product-2.webp",
+    imgSrc: "./Images/Production/product-2.png",
     href: "",
   },
   {
     title: "Низковольтные комплектные устройства",
-    imgSrc: "./Images/Production/product-4.jpg",
+    imgSrc: "./Images/Production/product-4.png",
     href: "",
   },
 ];

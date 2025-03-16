@@ -7,6 +7,7 @@ import ServicesSection from "src/components/ServicesSection.vue";
 import ContactsSection from "src/components/ContactsSection.vue";
 import FormSection from "src/components/FormSection.vue";
 import PartnersSection from "src/components/PartnersSection.vue";
+import PromoSection from "src/components/PromoSection.vue";
 
 defineOptions({
   name: "IndexPage",
@@ -18,6 +19,7 @@ defineOptions({
   <div class="content__wrapper">
     <h1 class="hidden">"Электромонтаж-55"</h1>
     <TheAdvantages />
+    <!-- <PromoSection /> -->
     <ProductCards />
     <ComplexServiceSection />
     <ServicesSection />

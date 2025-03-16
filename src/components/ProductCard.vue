@@ -55,6 +55,17 @@ const props = defineProps({
   font-size: 16px;
 }
 
+:deep(.q-img__image) {
+  object-fit: contain !important;
+}
+
+:deep(.q-img__container) {
+  max-width: 70%;
+  max-height: 70%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
 .text__content {
   min-height: 130px;
   height: 70px;
@@ -64,9 +75,6 @@ const props = defineProps({
   background-color: #0e0d0d99;
 }
 
-:deep(.q-img__container) {
-  overflow: hidden;
-}
 @media (hover: hover) {
   .product-card:hover {
     -webkit-box-shadow: 0px -1px 13px 1px rgba(34, 60, 80, 0.2);
