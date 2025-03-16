@@ -74,7 +74,7 @@
           "href": "/instructions"
         },
         { "title": "Вопрос-ответ", "thirdLevel": false, "href": "/questions" },
-        { "title": "Сервис", "thirdLevel": false, "href": "/sorry" }
+        { "title": "Сервис", "thirdLevel": false, "href": "/service" }
       ]
     },
     {

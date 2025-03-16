@@ -417,6 +417,53 @@ const routes = [
     ],
   },
   {
+    path: "/service",
+    component: () => import("layouts/MainLayout.vue"),
+    children: [
+      {
+        path: "",
+        component: () => import("pages/ServicePage.vue"),
+        meta: {
+          title: "Сервис",
+          metaTags: [
+            {
+              name: "description",
+              content: "Сервис",
+            },
+            {
+              name: "keywords",
+              content: "Сервис",
+            },
+            {
+              property: "og:title",
+              content: "Сервис",
+            },
+            {
+              property: "og:description",
+              content: "Сервис",
+            },
+            {
+              property: "og:image",
+              content: "https://em-55.ru/assets/logo-white.94e19ee4.png",
+            },
+            {
+              property: "og:url",
+              content: "https://em-55.ru/service",
+            },
+            {
+              property: "og:type",
+              content: "website",
+            },
+            {
+              name: "robots",
+              content: "index, follow",
+            },
+          ],
+        },
+      },
+    ],
+  },
+  {
     path: "/photos",
     component: () => import("layouts/MainLayout.vue"),
     children: [
