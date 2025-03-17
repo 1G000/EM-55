@@ -29,10 +29,7 @@ defineProps({
     <q-slide-transition>
       <div v-show="expanded">
         <q-card-section>
-          <div class="title">
-            <q-icon name="question_answer" class="icon" color="primary" />
-            Ответ:
-          </div>
+          <div class="title">Ответ:</div>
           <div class="description">
             {{ answer }}
           </div>

@@ -15,8 +15,6 @@ const sectionTitle = "Сервис";
   >
     <BreadCrumbs :page-route="sectionTitle" />
     <UiSectionTitle tag="h1" :title-text="sectionTitle" />
-    <p class="text"></p>
-
     <div class="content_container">
       <div class="content__left">
         <q-card class="q-mb no-border">
@@ -61,7 +59,8 @@ const sectionTitle = "Сервис";
             </q-list>
             <a class="download__link" href="./service.pdf"
               ><p>
-                Письмо о сервисном центре ООО «Электромонтаж 55»<q-icon
+                Письмо о сервисном центре
+                ООО&nbsp;«Электромонтаж&nbsp;55»&nbsp;<q-icon
                   color="gray"
                   name="download"
                   class="download_ico"
@@ -136,7 +135,7 @@ const sectionTitle = "Сервис";
   gap: 16px;
   font-family: Montserrat-regular, serif;
   font-size: 20px;
-  padding: 20px 0px 0px 0px;
+  padding: 0px;
 }
 
 .no-border {
@@ -191,6 +190,10 @@ const sectionTitle = "Сервис";
   display: flex;
   align-items: center;
   gap: 10px;
+}
+
+.download__link p {
+  text-align: center;
 }
 
 .download_ico {
