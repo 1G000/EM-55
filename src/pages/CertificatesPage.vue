@@ -38,7 +38,7 @@ const declarationConformity = [
 const certsSootv = [
   {
     title: "Сертификат соответствия БКРТП",
-    href: "/Certificates/2/БКРТП сертификат.pdf",
+    href: "/Certificates/2/БКРТП_сертификат.pdf",
   },
   {
     title: "Сертификат соответствия БКТП",
