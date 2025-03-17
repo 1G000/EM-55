@@ -33,7 +33,7 @@ import UiSection from "./UiSection.vue";
       <div class="promo__section-item">
         <div class="left__side-partner">
           <q-img
-            src="/public/Images/partners/dilers/zeto.svg"
+            src="/public/Images/partners/ZETO.png"
             class="service__img"
             style="height: 250px"
             :ratio="1"
@@ -41,10 +41,15 @@ import UiSection from "./UiSection.vue";
         </div>
         <div class="right__side-partner">
           <p>
-            Являемся официальным дилером <b>ЗАО «ЗЭТО»</b> и имеем эксклюзивное
-            право по обеспечению сбыта выключателей нагрузки серии ВНМ-10
+            Являемся официальным дилером
+            <a href="https://zeto.ru/" target="_blank"
+              ><span class="bold-text">ЗАО «ЗЭТО»</span></a
+            >
+            и имеем эксклюзивное право по обеспечению сбыта выключателей
+            нагрузки серии ВНМ-10
           </p>
-          <q-btn class="hide__btn-blue" flat dense @click="toggleExpand(index)">
+
+          <q-btn class="hide__btn" flat dense @click="toggleExpand(index)">
             <span>Посмотреть сертификат</span>
           </q-btn>
         </div>
@@ -80,7 +85,8 @@ import UiSection from "./UiSection.vue";
 
 .promo__section-item {
   display: flex;
-  border: 2px solid rgb(7, 119, 172);
+  /* border: 2px solid rgb(7, 119, 172); */
+  background-color: rgb(7, 119, 172);
   border-radius: 8px;
   width: 50%;
   padding: 15px;
@@ -115,6 +121,7 @@ import UiSection from "./UiSection.vue";
   justify-content: space-between;
   font-family: Montserrat-regular, serif;
   font-size: clamp(1.2rem, 1.1vw, 1.1rem);
+  color: white;
   padding-bottom: 0;
 }
 
@@ -131,6 +138,15 @@ import UiSection from "./UiSection.vue";
 
 .hide__btn-blue {
   border: 1px solid rgb(7, 119, 172);
+}
+
+.bold-text {
+  color: var(--q-primary);
+  font-weight: 700;
+}
+.bold-text:hover {
+  color: rgb(7, 119, 172);
+  cursor: pointer;
 }
 
 .hide__btn-blue span {
