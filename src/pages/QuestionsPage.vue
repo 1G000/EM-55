@@ -102,24 +102,20 @@ const questions = [
     class="content__wrapper"
     :padding="$q.screen.width > 768 ? '64px 40px 0 40px' : '32px 20px 0 20px'"
   >
-    <div class="bottom-section">
-      <div class="left_side">
-        <q-icon name="text_snippet" color="primary" class="icon" />
-        <span class="question__text">
-          Не нашли ответ на свой вопрос?&nbsp;Напишите&nbsp;нам!
-        </span>
-      </div>
-      <div class="question__button-wrapper">
-        <q-btn
-          unelevated
-          style="width: 350px"
-          class="question__button"
-          color="primary"
-          :to="{ path: '/', hash: '#form' }"
-        >
-          Задать вопрос
-        </q-btn>
-      </div>
+    <p class="question__text">
+      Если у Вас остались вопросы, напишите нам, заполнив форму. Мы с
+      удовольствием предоставим ответ на интересующий Вас вопрос.
+    </p>
+    <div class="question__button-wrapper">
+      <q-btn
+        unelevated
+        style="width: 350px"
+        class="question__button"
+        color="primary"
+        :to="{ path: '/', hash: '#form' }"
+      >
+        Задать вопрос
+      </q-btn>
     </div>
   </UiSection>
 </template>
@@ -144,12 +140,6 @@ const questions = [
   display: flex;
   justify-content: center;
 }
-
-.left_side {
-  display: flex;
-  gap: 30px;
-}
-
 .question__button {
   width: 350px;
   height: 60px;
@@ -161,53 +151,9 @@ const questions = [
   line-height: 21.6px;
   transition: 0.3s linear;
 }
-
-.bottom-section {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 40px;
-  padding: 16px 32px;
-  background-color: var(--background-light-accent);
-  border-radius: 8px;
-}
-
-.bottom-section span {
-  font-family: Montserrat-bold, serif;
-  font-size: clamp(1rem, 2.3vw, 1.2rem);
-  vertical-align: middle;
-  line-height: 46px;
-}
-
-.icon {
-  font-size: 48px;
-  align-self: center;
-}
-
 @media (hover: hover) {
   .question__button:hover {
     color: var(--q-accent) !important;
-  }
-}
-
-@media screen and (max-width: 1100px) {
-  .bottom-section span {
-    line-height: 28px;
-  }
-}
-
-@media screen and (max-width: 880px) {
-  .bottom-section {
-    flex-direction: column;
-    padding: 16px 16px;
-    gap: 20px;
-  }
-
-  .bottom-section span {
-    text-align: center;
-  }
-  .icon {
-    display: none;
   }
 }
 </style>
