@@ -98,6 +98,26 @@ const questions = [
       />
     </article>
   </UiSection>
+  <UiSection
+    class="content__wrapper"
+    :padding="$q.screen.width > 768 ? '64px 40px 0 40px' : '32px 20px 0 20px'"
+  >
+    <p class="question__text">
+      Если у Вас остались вопросы, напишите нам, заполнив форму. Мы с
+      удовольствием предоставим ответ на интересующий Вас вопрос.
+    </p>
+    <div class="question__button-wrapper">
+      <q-btn
+        unelevated
+        style="width: 350px"
+        class="question__button"
+        color="primary"
+        :to="{ path: '/', hash: '#form' }"
+      >
+        Задать вопрос
+      </q-btn>
+    </div>
+  </UiSection>
 </template>
 <style scoped>
 .partner-cards {
@@ -111,5 +131,29 @@ const questions = [
   font-family: Montserrat-regular, serif;
   font-size: clamp(1.3rem, 2.3vw, 1.7rem);
   line-height: 1em;
+}
+.question__text {
+  font-family: Montserrat-regular, serif;
+  font-size: clamp(1rem, 1vw, 1.2rem);
+}
+.question__button-wrapper {
+  display: flex;
+  justify-content: center;
+}
+.question__button {
+  width: 350px;
+  height: 60px;
+  text-transform: none;
+  border-radius: 8px;
+  font-family: Montserrat-bold, serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 21.6px;
+  transition: 0.3s linear;
+}
+@media (hover: hover) {
+  .question__button:hover {
+    color: var(--q-accent) !important;
+  }
 }
 </style>
