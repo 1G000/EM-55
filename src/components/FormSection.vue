@@ -3,8 +3,9 @@ import { ref, computed } from "vue";
 import UiSection from "./UiSection.vue";
 import { useRouter } from "vue-router";
 import { useQuasar } from "quasar";
-import background from "../assets/form-background-new.jpg";
-import backgroundMobile from "../assets/form-background-mobile-new.jpg";
+// import background from "../assets/form-background-new.jpg";
+import background from "../assets/new-back.jpg";
+// import backgroundMobile from "../assets/form-background-mobile-new.jpg";
 
 const q = useQuasar();
 const router = useRouter();
@@ -15,13 +16,18 @@ const openPrivacyPage = () => {
 const accept = ref(false);
 const textMessage = ref("Данные успешно отправлены.");
 const currentBackground = computed(() => {
-  if (q.screen.width > 767) {
-    return `url(${background}`;
-  }
-  return `url(${backgroundMobile})`;
+  // if (q.screen.width > 767) {
+  //   return `url(${background}`;
+  // }
+  return `url(${background})`;
 });
 
-const userData = ref({ clientName: null, clientTel: null, clientFiles: null });
+const userData = ref({
+  clientName: null,
+  clientTel: null,
+  clientText: null,
+  clientFiles: null,
+});
 
 const resetUserData = () => {
   for (const key of Object.keys(userData.value)) {
@@ -33,6 +39,7 @@ const submitForm = async () => {
   const formData = new FormData();
   formData.append("clientName", userData.value.clientName);
   formData.append("clientTel", userData.value.clientTel);
+  formData.append("clientText", userData.value.clientText);
 
   userData.value.clientFiles.forEach((file, index) => {
     formData.append(`clientFiles[${index}]`, file);
@@ -60,7 +67,7 @@ const submitForm = async () => {
     class="form-section"
     id="form"
     :background="currentBackground"
-    :padding="$q.screen.width > 1024 ? '100px 60px' : '40px 20px'"
+    :padding="$q.screen.width > 1024 ? '40px 60px' : '40px 20px'"
   >
     <div class="q-pa-md form-section__content">
       <q-list padding class="form__text-content">
@@ -77,15 +84,16 @@ const submitForm = async () => {
           </q-item-section>
         </q-item>
       </q-list>
-      <q-form @submit="submitForm" class="q-gutter-md form__wrapper" ref="form">
+      <q-form @submit="submitForm" class="form__wrapper" ref="form">
         <q-input
           color="black"
           bg-color="white"
           label-color="grey-6"
           filled
+          dense
           class="input-wrapper"
           v-model="userData.clientName"
-          label="Ваше имя"
+          label="Имя"
           lazy-rules
           :rules="[
             (val) =>
@@ -98,10 +106,11 @@ const submitForm = async () => {
           bg-color="white"
           label-color="grey-6"
           filled
+          dense
           class="input-wrapper"
           type="tel"
           v-model="userData.clientTel"
-          label="Ваш телефон"
+          label="Телефон"
           mask="+7 (###) ###-##-##"
           lazy-rules
           :rules="[
@@ -109,19 +118,36 @@ const submitForm = async () => {
               (val !== null && val !== '') || 'Поле обязательно для заполнения',
           ]"
         ></q-input>
+        <q-input
+          color="black"
+          bg-color="white"
+          label-color="grey-6"
+          filled
+          dense
+          type="textarea"
+          class="input-wrapper"
+          v-model="userData.clientText"
+          label="Текст обращения или вопрос"
+          lazy-rules
+          :rules="[
+            (val) =>
+              (val && val.length > 0) || 'Поле обязательно для заполнения',
+          ]"
+        ></q-input>
         <q-file
           color="black"
           bg-color="white"
           label-color="grey-6"
           filled
+          dense
           multiple
           max-files="3"
           max-file-size="10485760"
-          accept=".jpg, .png, application/pdf, application/vnd.openxmlformats-officedocument.wordprocessingml.document, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+          accept=".jpg, application/pdf, application/vnd.openxmlformats-officedocument.wordprocessingml.document, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
           use-chips
           append
-          label="jpg, pdf, png, doc, docx, xlsx до 10Мб, макс 3 файла"
-          class="input-wrapper"
+          label="JPG, PDF, DOCX, XLSX до 10Мб, макс 3 файла"
+          class="input-wrapper q-mb-md"
           v-model="userData.clientFiles"
         >
           <template v-slot:prepend>
@@ -135,13 +161,13 @@ const submitForm = async () => {
           color="primary"
           size="lg"
           class="input-wrapper"
-          label="Я даю свое согласие на обработку и использование моих персональных данных и соглашаюсь с условиям"
+          label="Я даю согласие на обработку моих персональных данных и принимаю условия"
           ><span class="form__privacy-link" @click="openPrivacyPage"
             >Политики конфиденциальности</span
           ></q-checkbox
         >
 
-        <div class="form__button-wrapper">
+        <div class="form__button-wrapper q-mt-md">
           <q-btn
             type="submit"
             unelevated
@@ -168,6 +194,7 @@ const submitForm = async () => {
   /* background: v-bind(currentBackground); */
   background-repeat: no-repeat !important;
   background-size: cover !important;
+  background-position: center bottom;
 }
 .form-section__content {
   display: flex;
@@ -196,10 +223,13 @@ const submitForm = async () => {
   line-height: 21.6px;
   text-align: center;
 }
-.form__wrapper,
 .form__text-content {
   width: 50%;
   gap: 20px;
+}
+.form__wrapper {
+  gap: 6px;
+  width: 50%;
 }
 .form__privacy-link {
   padding-left: 5px;
@@ -222,8 +252,8 @@ const submitForm = async () => {
   justify-content: center;
 }
 .form__button {
-  width: 410px;
-  height: 60px;
+  width: 100%;
+  height: 40px;
   text-transform: none;
   border-radius: 8px;
   font-family: Montserrat-bold, serif;
