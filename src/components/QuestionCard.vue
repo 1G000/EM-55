@@ -59,7 +59,6 @@ defineProps({
   font-family: Montserrat-regular, serif;
   font-size: clamp(1rem, 2.3vw, 1.2rem);
   line-height: 1.5em;
-  line-height: 1.5em;
 }
 
 .icon {

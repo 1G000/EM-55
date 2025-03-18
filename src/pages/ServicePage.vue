@@ -19,7 +19,6 @@ const sectionTitle = "Сервис";
       <div class="content__left">
         <q-card class="q-mb no-border">
           <q-card-section class="card_section">
-            <div class="text-h5">Техническое и сервисное обслуживание</div>
             <p>
               Компания на своей производственной базе занимается техническим и
               сервисным обслуживанием, в том числе:

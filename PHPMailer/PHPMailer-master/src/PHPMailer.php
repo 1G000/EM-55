@@ -1434,7 +1434,7 @@ class PHPMailer
                 );
             case 'php':
             default:
-                return filter_var($address, FILTER_VALIDATE_EMAIL) !== false;
+                return filter_$address, FILTER_VALIDATE_EMAIL) !== false;
         }
     }
 
