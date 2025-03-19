@@ -32,15 +32,11 @@ const sectionTitle = "Результаты поиска";
   color: #000000 !important;
 }
 
-#ya-site-results {
-  font-family: Arial !important;
-}
-
 #ya-site-results :visited,
 #ya-site-results .b-pager :visited,
 #ya-site-results .b-foot__link:visited,
 #ya-site-results .b-copyright__link:visited {
-  color: #800080;
+  color: var(--q-primary);
 }
 
 #ya-site-results a:link,
@@ -56,13 +52,13 @@ const sectionTitle = "Результаты поиска";
 #ya-site-results .b-copyright__link:link,
 #ya-site-results .b-serp-item__mime,
 #ya-site-results .b-pager :link {
-  color: #0033ff;
+  color: #0d0e13;
 }
 
 #ya-site-results :link:hover,
 #ya-site-results :visited:hover,
 #ya-site-results .b-pseudo-link:hover {
-  color: #ff0000 !important;
+  color: var(--q-accent) !important;
 }
 
 #ya-site-results .l-page,
@@ -171,14 +167,12 @@ const sectionTitle = "Результаты поиска";
 .b-specification-item__content .b-link,
 .b-specification-list .b-specification-list__reset .b-link {
   color: #000000 !important;
-  font-family: Arial;
   font-size: 13px;
   font-style: normal;
   font-weight: normal;
 }
 
 .b-specification-item__content .b-calendar__title {
-  font-family: Arial;
   color: #000000;
   font-size: 13px;
   font-style: normal;
@@ -194,17 +188,16 @@ const sectionTitle = "Результаты поиска";
 }
 
 .b-specification-item__content {
-  font-family: Arial !important;
   font-size: 13px;
 }
 
 .b-specification-item__content :visited {
-  color: #800080;
+  color: var(--q-primary);
 }
 
 .b-specification-item__content .b-pseudo-link:hover,
 .b-specification-item__content :visited:hover {
-  color: #ff0000 !important;
+  color: var(-q-primary) !important;
 }
 
 #ya-site-results .b-popupa .b-popupa__tail-i {
