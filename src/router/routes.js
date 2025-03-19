@@ -417,6 +417,19 @@ const routes = [
     ],
   },
   {
+    path: "/search",
+    component: () => import("layouts/MainLayout.vue"),
+    children: [
+      {
+        path: "",
+        component: () => import("pages/SearchPage.vue"),
+        meta: {
+          title: "Поиск",
+        },
+      },
+    ],
+  },
+  {
     path: "/service",
     component: () => import("layouts/MainLayout.vue"),
     children: [

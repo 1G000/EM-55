@@ -5,6 +5,7 @@ import DesktopNavigationMenu from "./DesktopNavigationMenu.vue";
 import LogoSvg from "./icons/LogoSvg.vue";
 import RIcon from "./icons/RIcon.vue";
 import { ref } from "vue";
+import SearchInput from "src/components/SearchInput.vue";
 
 defineOptions({
   name: "TheHeader",
@@ -35,7 +36,7 @@ const showMobileMenu = ref(false);
         <q-toolbar-title class="nav__title" v-if="$q.screen.width > 767">
           Оборудование для трансформаторных подстанций
         </q-toolbar-title>
-
+        <SearchInput />
         <div class="tel-wrapper">
           <q-toolbar-title class="tel-toolbar" v-if="$q.screen.width > 560"
             ><a href="tel:+78122942013" class="links-tel">+7 (812) 294–20–13</a
