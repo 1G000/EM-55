@@ -3,9 +3,7 @@ import { ref, computed } from "vue";
 import UiSection from "./UiSection.vue";
 import { useRouter } from "vue-router";
 import { useQuasar } from "quasar";
-// import background from "../assets/form-background-new.jpg";
-import background from "../assets/new-back.jpg";
-// import backgroundMobile from "../assets/form-background-mobile-new.jpg";
+import background from "../assets/form-bridge.jpg";
 
 const q = useQuasar();
 const router = useRouter();

@@ -18,6 +18,7 @@ defineProps({
 });
 
 const showMobileMenu = ref(false);
+const showSearch = ref(false);
 </script>
 
 <template>
@@ -36,37 +37,46 @@ const showMobileMenu = ref(false);
         <q-toolbar-title class="nav__title" v-if="$q.screen.width > 767">
           Оборудование для трансформаторных подстанций
         </q-toolbar-title>
-        <SearchInput />
         <div class="tel-wrapper">
+          <SearchInput v-if="showSearch" />
+          <q-icon
+            color="accent"
+            size="sm"
+            name="search"
+            style="cursor: pointer"
+            v-if="!showSearch"
+            @click="showSearch = true"
+          />
+          <!-- <div class="header__telegram"> -->
+          <svg
+            width="24"
+            height="19"
+            viewBox="0 0 24 19"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            style="cursor: pointer"
+          >
+            <path
+              d="M9.02668 17.8491C8.3116 17.8491 8.43317 17.5943 8.18654 16.9516L6.08398 10.4204L22.2688 1.35754"
+              fill="#D4AC67"
+            />
+            <path
+              d="M9.02734 17.8491C9.5791 17.8491 9.82279 17.611 10.1309 17.3284L13.0735 14.6276L9.4029 12.5383"
+              fill="#BE9145"
+            />
+            <path
+              d="M9.40215 12.5388L18.2964 18.7412C19.3115 19.2698 20.0438 18.996 20.2967 17.8519L23.9172 1.74863C24.2878 0.345979 23.3507 -0.290422 22.3796 0.125686L1.12049 7.86301C-0.330623 8.41244 -0.321979 9.17661 0.856018 9.51703L6.31159 11.1243L18.9418 3.60332C19.5381 3.26204 20.0854 3.44535 19.6363 3.82171"
+              fill="#E2C490"
+            />
+          </svg>
+          <ToolbarContactButton />
           <q-toolbar-title class="tel-toolbar" v-if="$q.screen.width > 560"
             ><a href="tel:+78122942013" class="links-tel">+7 (812) 294–20–13</a
             ><a href="tel:+78122942303" class="links-tel"
               >+7 (812) 294–23–03</a
             ></q-toolbar-title
           >
-          <div class="header__telegram">
-            <svg
-              width="24"
-              height="19"
-              viewBox="0 0 24 19"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M9.02668 17.8491C8.3116 17.8491 8.43317 17.5943 8.18654 16.9516L6.08398 10.4204L22.2688 1.35754"
-                fill="#D4AC67"
-              />
-              <path
-                d="M9.02734 17.8491C9.5791 17.8491 9.82279 17.611 10.1309 17.3284L13.0735 14.6276L9.4029 12.5383"
-                fill="#BE9145"
-              />
-              <path
-                d="M9.40215 12.5388L18.2964 18.7412C19.3115 19.2698 20.0438 18.996 20.2967 17.8519L23.9172 1.74863C24.2878 0.345979 23.3507 -0.290422 22.3796 0.125686L1.12049 7.86301C-0.330623 8.41244 -0.321979 9.17661 0.856018 9.51703L6.31159 11.1243L18.9418 3.60332C19.5381 3.26204 20.0854 3.44535 19.6363 3.82171"
-                fill="#E2C490"
-              />
-            </svg>
-          </div>
-          <ToolbarContactButton />
+          <!-- </div> -->
         </div>
       </q-toolbar>
     </div>
@@ -197,6 +207,7 @@ const showMobileMenu = ref(false);
 }
 .tel-wrapper {
   display: flex;
+  align-items: center;
   gap: 18px;
   padding: 0;
 }
@@ -259,6 +270,7 @@ const showMobileMenu = ref(false);
   border-radius: 8px;
   padding: 9px 17px 9px 13px;
 }
+
 .burger-icon {
   cursor: pointer;
   background: none;

@@ -17,7 +17,7 @@
 
 <template>
   <div
-    class="ya-site-form ya-site-form_inited_no"
+    class="ya-site-form ya-site-form_inited_no search__form"
     data-bem='{"action":"https://em-55.ru/search","arrow":false,"bg":"transparent","fontsize":12,"fg":"#000000","language":"ru","logo":"rb","publicname":"Поиск по em-55.ru","suggest":true,"target":"_self","tld":"ru","type":2,"usebigdictionary":true,"searchid":12256391,"input_fg":"#000000","input_bg":"#ffffff","input_fontStyle":"normal","input_fontWeight":"bold","input_placeholder":"Поиск","input_placeholderColor":"#000000","input_borderColor":"#cc0066"}'
   >
     <q-form
@@ -34,32 +34,46 @@
       />
       <input name="text" value="" type="search" class="search" />
 
-      <button
+      <button type="submit" class="search__button">
+        <!-- <q-btn
         type="submit"
-        style="
-          background: none;
-          border: none;
-          cursor: pointer;
-          margin-left: 10px;
-        "
-      >
-        <q-icon color="accent" size="md" name="search" />
+        color="accent"
+        class="q-ml-sm"
+        text-color="primary"
+        unelevated
+        label="Найти"
+      /> -->
+
+        <q-icon color="accent" size="sm" name="search" />
       </button>
     </q-form>
   </div>
 </template>
 <style scoped>
+.search__form {
+  display: flex;
+  align-items: center;
+  margin-right: -10px;
+}
 .search,
 .search:focus,
 .search:active {
   border: 1px solid var(--q-accent);
   background: transparent;
-  border-radius: 8px;
+  border-radius: 4px;
   padding: 9px 17px 9px 13px;
   min-width: 250px;
   color: var(--color-white);
+  height: 32px;
 }
-
+.search__button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  margin-left: 10px;
+  padding: 5px 10px;
+  border-radius: 4px;
+}
 .ya-page_js_yes .ya-site-form_inited_no {
 }
 </style>
