@@ -80,11 +80,20 @@ const goToPhotos = (item) => {
 <style scoped>
 .gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fill, 350px);
+  grid-template-columns: repeat(4, 1fr);
   grid-gap: 20px;
   justify-content: center;
 }
-
+.gallery-card :deep(.q-img__container) {
+  max-width: 100%;
+}
+.gallery-card :deep(.q-img__image) {
+  object-fit: cover !important;
+}
+.gallery-card :deep(.q-img) {
+  margin-top: 0;
+  margin-bottom: 0;
+}
 .filters {
   display: flex;
   gap: 40px;
@@ -95,7 +104,21 @@ const goToPhotos = (item) => {
   text-align: justify;
   user-select: none;
 }
-
+@media (max-width: 1280px) {
+  .gallery {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 1024px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 650px) {
+  .gallery {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
 @media (max-width: 865px) {
   .filters {
     flex-direction: column;
