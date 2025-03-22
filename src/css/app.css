@@ -182,3 +182,11 @@ a {
   font-weight: bold;
   margin-bottom: 30px;
 }
+
+.q-btn-dropdown--simple *+.q-btn-dropdown__arrow {
+  margin-left: 0;
+}
+
+.q-btn--fab-mini {
+  padding-right: 0;
+}

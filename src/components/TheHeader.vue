@@ -18,9 +18,29 @@ defineProps({
 });
 
 const showMobileMenu = ref(false);
-const showSearch = ref(false);
+const showSearch = ref(true);
+const showTitle = ref(true);
 </script>
-
+<script type="text/javascript">
+(function (w, d, c) {
+  var s = d.createElement("script"),
+    h = d.getElementsByTagName("script")[0],
+    e = d.documentElement;
+  if ((" " + e.className + " ").indexOf(" ya-page_js_yes ") === -1) {
+    e.className += " ya-page_js_yes";
+  }
+  s.type = "text/javascript";
+  s.async = true;
+  s.charset = "utf-8";
+  s.src =
+    (d.location.protocol === "https:" ? "https:" : "http:") +
+    "//site.yandex.net/v2.0/js/all.js";
+  h.parentNode.insertBefore(s, h);
+  (w[c] || (w[c] = [])).push(function () {
+    Ya.Site.Form.init();
+  });
+})(window, document, "yandex_site_callbacks");
+</script>
 <template>
   <q-header unelevated class="header">
     <div class="container">
@@ -34,49 +54,70 @@ const showSearch = ref(false);
       <div class="first-line"></div>
       <div class="second-line"></div>
       <q-toolbar class="toolbar">
-        <q-toolbar-title class="nav__title" v-if="$q.screen.width > 767">
-          Оборудование для трансформаторных подстанций
-        </q-toolbar-title>
+        <Transition name="slide-fade">
+          <q-toolbar-title
+            class="nav__title"
+            v-if="$q.screen.width > 767 && showTitle"
+          >
+            Оборудование для трансформаторных подстанций
+          </q-toolbar-title></Transition
+        >
         <div class="tel-wrapper">
-          <SearchInput v-if="showSearch" />
-          <q-icon
-            color="accent"
-            size="sm"
-            name="search"
-            style="cursor: pointer"
-            v-if="!showSearch"
-            @click="showSearch = true"
-          />
-          <!-- <div class="header__telegram"> -->
-          <svg
-            width="24"
-            height="19"
-            viewBox="0 0 24 19"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            style="cursor: pointer"
-          >
-            <path
-              d="M9.02668 17.8491C8.3116 17.8491 8.43317 17.5943 8.18654 16.9516L6.08398 10.4204L22.2688 1.35754"
-              fill="#D4AC67"
-            />
-            <path
-              d="M9.02734 17.8491C9.5791 17.8491 9.82279 17.611 10.1309 17.3284L13.0735 14.6276L9.4029 12.5383"
-              fill="#BE9145"
-            />
-            <path
-              d="M9.40215 12.5388L18.2964 18.7412C19.3115 19.2698 20.0438 18.996 20.2967 17.8519L23.9172 1.74863C24.2878 0.345979 23.3507 -0.290422 22.3796 0.125686L1.12049 7.86301C-0.330623 8.41244 -0.321979 9.17661 0.856018 9.51703L6.31159 11.1243L18.9418 3.60332C19.5381 3.26204 20.0854 3.44535 19.6363 3.82171"
-              fill="#E2C490"
-            />
-          </svg>
-          <ToolbarContactButton />
-          <q-toolbar-title class="tel-toolbar" v-if="$q.screen.width > 560"
-            ><a href="tel:+78122942013" class="links-tel">+7 (812) 294–20–13</a
-            ><a href="tel:+78122942303" class="links-tel"
-              >+7 (812) 294–23–03</a
-            ></q-toolbar-title
-          >
-          <!-- </div> -->
+          <div class="search-wrapper" v-if="$q.screen.width > 768">
+            <Transition name="slide-fade">
+              <SearchInput
+                :class="{
+                  header__search: showSearch,
+                  'header__search-active': !showSearch,
+                }"
+            /></Transition>
+            <Transition name="fade">
+              <q-icon
+                :color="showSearch ? 'accent' : 'grey'"
+                size="sm"
+                :name="showSearch ? 'search' : 'close'"
+                style="cursor: pointer"
+                :class="{ active: showSearch }"
+                class="search-close-icon"
+                @click="
+                  {
+                    (showSearch = !showSearch), (showTitle = !showTitle);
+                  }
+                "
+            /></Transition>
+          </div>
+          <div class="header__telegram-wrapper">
+            <svg
+              width="24"
+              height="19"
+              viewBox="0 0 24 19"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              style="cursor: pointer"
+            >
+              <path
+                d="M9.02668 17.8491C8.3116 17.8491 8.43317 17.5943 8.18654 16.9516L6.08398 10.4204L22.2688 1.35754"
+                fill="#D4AC67"
+              />
+              <path
+                d="M9.02734 17.8491C9.5791 17.8491 9.82279 17.611 10.1309 17.3284L13.0735 14.6276L9.4029 12.5383"
+                fill="#BE9145"
+              />
+              <path
+                d="M9.40215 12.5388L18.2964 18.7412C19.3115 19.2698 20.0438 18.996 20.2967 17.8519L23.9172 1.74863C24.2878 0.345979 23.3507 -0.290422 22.3796 0.125686L1.12049 7.86301C-0.330623 8.41244 -0.321979 9.17661 0.856018 9.51703L6.31159 11.1243L18.9418 3.60332C19.5381 3.26204 20.0854 3.44535 19.6363 3.82171"
+                fill="#E2C490"
+              />
+            </svg>
+
+            <ToolbarContactButton />
+            <q-toolbar-title class="tel-toolbar" v-if="$q.screen.width > 900"
+              ><a href="tel:+78122942013" class="links-tel"
+                >+7 (812) 294–20–13</a
+              ><a href="tel:+78122942303" class="links-tel"
+                >+7 (812) 294–23–03</a
+              ></q-toolbar-title
+            >
+          </div>
         </div>
       </q-toolbar>
     </div>
@@ -85,17 +126,45 @@ const showSearch = ref(false);
         v-if="$q.screen.width > 767"
         :navItems="navItems"
       />
-      <div class="nav__title-mobile" v-if="$q.screen.width < 767">
+      <div class="nav__title-mobile" v-if="$q.screen.width < 768 && showTitle">
         Оборудование для трансформаторных подстанций
       </div>
-      <q-icon
-        v-if="$q.screen.width <= 1230"
-        name="menu"
-        size="34px"
-        color="primary"
-        class="burger-icon"
-        @click="showMobileMenu = !showMobileMenu"
-      />
+
+      <div
+        v-if="$q.screen.width < 768"
+        class="search-wrapper search-mobile-wrapper"
+      >
+        <Transition name="slide-fade">
+          <SearchInput
+            :class="{
+              header__search: showSearch,
+              'header__search-active': !showSearch,
+            }"
+        /></Transition>
+        <Transition name="fade">
+          <q-icon
+            :color="showSearch ? 'primary' : 'grey'"
+            size="sm"
+            :name="showSearch ? 'search' : 'close'"
+            style="cursor: pointer"
+            :class="{ active: showSearch }"
+            class="search-close-icon__mobile"
+            @click="
+              {
+                (showSearch = !showSearch), (showTitle = !showTitle);
+              }
+            "
+        /></Transition>
+
+        <q-icon
+          v-if="$q.screen.width <= 1230"
+          name="menu"
+          size="34px"
+          color="primary"
+          class="burger-icon"
+          @click="showMobileMenu = !showMobileMenu"
+        />
+      </div>
     </div>
     <!-- Выплывающее меню -->
     <q-drawer
@@ -208,8 +277,17 @@ const showSearch = ref(false);
 .tel-wrapper {
   display: flex;
   align-items: center;
+
   gap: 18px;
   padding: 0;
+}
+.search-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  gap: 18px;
+  padding: 0;
+  position: relative;
 }
 .tel-toolbar {
   display: flex;
@@ -311,7 +389,66 @@ const showSearch = ref(false);
   text-transform: none;
   transition: 0.3s linear;
 }
+.header__search {
+  opacity: 0;
+  pointer-events: none;
+  width: 0;
+  transform: translateX(-10%);
+}
+.header__search-active {
+  background-color: var(--q-primary);
+  width: 85%;
+  height: 100%;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  transition: 0.2s linear;
+}
+.search-mobile-wrapper {
+  background-color: var(--color-white);
+  border: none;
+  align-items: center;
+}
+.header__telegram-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.search-close-icon {
+  position: absolute;
+  z-index: 4;
+  right: 80px;
+}
+.search-close-icon__mobile {
+  position: absolute;
+  z-index: 4;
+  right: 144px;
+}
+.active {
+  position: static;
+}
 
+.slide-fade-enter-active,
+.slide-fade-leave-active {
+  transition: all 0.2s linear;
+}
+
+.slide-fade-enter-from,
+.slide-fade-leave-to {
+  opacity: 0;
+}
+
+/* Анимация для иконки */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s linear;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
 @media (max-width: 1244px) {
   .toolbar {
     justify-content: end;
@@ -338,11 +475,8 @@ const showSearch = ref(false);
     max-width: 276px;
   }
 }
-@media (max-width: 850px) {
-  .nav__title {
-    display: none;
-  }
-}
+/* @media (max-width: 768px) {
+} */
 @media (max-width: 767px) {
   .left-part-of-toolbar {
     width: 30px;
@@ -350,6 +484,9 @@ const showSearch = ref(false);
   .header__navbar {
     padding-left: 16px;
     padding-bottom: 5px;
+  }
+  .nav__title {
+    display: none;
   }
 }
 

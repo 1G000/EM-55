@@ -125,7 +125,7 @@ import UiSection from "./UiSection.vue";
   padding-bottom: 0;
 }
 
-.service__img >>> .q-img__image {
+.service__img :deep(.q-img__image) {
   object-fit: contain !important;
 }
 
