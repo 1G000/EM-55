@@ -59,7 +59,7 @@ const submitForm = async () => {
   <UiSection
     class="form-section"
     id="form"
-    :background="currentBackground"
+    :background="`center ${currentBackground}`"
     :padding="$q.screen.width > 1024 ? '40px 60px' : '20px 20px'"
   >
     <div class="q-pa-md form-section__content">
