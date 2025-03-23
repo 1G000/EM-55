@@ -60,7 +60,7 @@ const submitForm = async () => {
     class="form-section"
     id="form"
     :background="`center ${currentBackground}`"
-    :padding="$q.screen.width > 1024 ? '40px 60px' : '20px 20px'"
+    :padding="$q.screen.width > 1024 ? '40px 60px' : '20px 0 40px'"
   >
     <div class="q-pa-md form-section__content">
       <q-list padding class="form__text-content">
