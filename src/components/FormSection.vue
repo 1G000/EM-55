@@ -13,12 +13,7 @@ const openPrivacyPage = () => {
 };
 const accept = ref(false);
 const textMessage = ref("Данные успешно отправлены.");
-const currentBackground = computed(() => {
-  // if (q.screen.width > 767) {
-  //   return `url(${background}`;
-  // }
-  return `url(${background})`;
-});
+const currentBackground = computed(() => `url(${background}`);
 
 const userData = ref({
   clientName: null,
@@ -65,7 +60,7 @@ const submitForm = async () => {
     class="form-section"
     id="form"
     :background="currentBackground"
-    :padding="$q.screen.width > 1024 ? '40px 60px' : '40px 20px'"
+    :padding="$q.screen.width > 1024 ? '40px 60px' : '20px 20px'"
   >
     <div class="q-pa-md form-section__content">
       <q-list padding class="form__text-content">
@@ -189,10 +184,9 @@ const submitForm = async () => {
   gap: 0px;
 }
 .form-section {
-  /* background: v-bind(currentBackground); */
   background-repeat: no-repeat !important;
   background-size: cover !important;
-  background-position: center bottom;
+  background-position: center;
 }
 .form-section__content {
   display: flex;
@@ -269,6 +263,7 @@ const submitForm = async () => {
     width: 100%;
     align-items: center;
     padding: 0;
+    gap: 20px;
   }
   .form-section__title,
   .form-section__title-accent {
@@ -278,7 +273,7 @@ const submitForm = async () => {
 
   .section {
     margin: 0;
-    padding: 40px 0;
+    padding: 20px 0 30px;
   }
   .form__wrapper,
   .form__text-content {
