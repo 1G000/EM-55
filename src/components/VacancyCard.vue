@@ -78,15 +78,6 @@ const toggleExpand = (index) => {
             </li>
           </ul>
           <div class="btns__container">
-            <q-btn
-              class="hide__btn"
-              color="primary"
-              flat
-              dense
-              @click="responseDialog[index] = true"
-            >
-              <span>Откликнуться</span>
-            </q-btn>
             <q-btn class="hide__btn" color="primary" flat dense to="/contacts">
               <span>Контакты</span>
             </q-btn>

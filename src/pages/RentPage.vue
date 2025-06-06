@@ -141,26 +141,15 @@ const rentDialog = ref(false);
     <UiSectionTitle tag="h1" :title-text="sectionTitle" />
     <div class="text__content">
       <p>
-        Компания «Электромонтаж 55» предлагает взять в аренду специальную строительную
-        технику из своего автопарка.
+        Компания «Электромонтаж 55» предлагает взять в аренду специальную
+        строительную технику из своего автопарка.
       </p>
-      <p>
-        Заполните форму на сайте или отправьте нам заполненный бланк заявки на электронную
-        почту.
-      </p>
+      <p>Отправьте нам заполненный бланк заявки на электронную почту.</p>
     </div>
     <div class="rent__button-wrapper">
-      <q-btn
-        unelevated
-        style="width: 350px"
-        class="rent__button"
-        color="primary"
-        @click="rentDialog = true"
-      >
-        Заполнить форму
-      </q-btn>
       <a class="download__link rent__button" href="./rent.docx"
-        ><span>Скачать бланк заявки</span><q-icon color="gray" name="download"></q-icon
+        ><span>Скачать бланк заявки</span
+        ><q-icon color="gray" name="download"></q-icon
       ></a>
     </div>
 

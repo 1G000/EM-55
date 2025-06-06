@@ -10,7 +10,7 @@ export const sliderData = [
       {
         btnTitle: "Написать нам",
         style: "btn__left",
-        to: { path: "/", hash: "#form" },
+        to: { path: "/contacts" },
       },
       {
         btnTitle: "О компании",

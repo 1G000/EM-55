@@ -108,17 +108,6 @@ const sectionTitle = "Контакты";
             </div>
           </div>
         </div>
-        <div class="contact__button-wrapper">
-          <q-btn
-            unelevated
-            style="width: 350px"
-            class="contact__button"
-            color="primary"
-            :to="{ path: '/', hash: '#form' }"
-          >
-            Написать нам
-          </q-btn>
-        </div>
       </div>
     </div>
   </UiSection>

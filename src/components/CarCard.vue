@@ -51,11 +51,18 @@ const openRentDialog = () => {
 
 <template>
   <q-responsive :ratio="4 / 3" class="partner-card">
-    <q-card class="column partner-card__accent" flat clickable @click="openDialog">
+    <q-card
+      class="column partner-card__accent"
+      flat
+      clickable
+      @click="openDialog"
+    >
       <img class="col image" :src="imgSrc" />
       <q-card-section class="partner-card__title">
         <q-item>
-          <q-item-section class="partner-card__text">{{ title }}</q-item-section>
+          <q-item-section class="partner-card__text">{{
+            title
+          }}</q-item-section>
         </q-item>
       </q-card-section>
     </q-card>
@@ -63,7 +70,10 @@ const openRentDialog = () => {
 
   <!-- Диалоговое окно с увеличенной фотографией -->
   <q-dialog v-model="dialogVisible">
-    <q-card class="q-pa-md" style="width: 90vw; max-width: 1200px; max-height: 80vh">
+    <q-card
+      class="q-pa-md"
+      style="width: 90vw; max-width: 1200px; max-height: 80vh"
+    >
       <q-card-section class="q-pb-none" align="right">
         <q-icon
           name="close"
@@ -81,7 +91,10 @@ const openRentDialog = () => {
       <q-card-section class="row q-gutter-md q-pa-md">
         <!-- Фотография слева -->
         <div class="col-6">
-          <img :src="imgSrc" style="width: 100%; height: auto; border-radius: 8px" />
+          <img
+            :src="imgSrc"
+            style="width: 100%; height: auto; border-radius: 8px"
+          />
         </div>
 
         <!-- Описание справа -->
@@ -100,9 +113,6 @@ const openRentDialog = () => {
           <h4 class="price q-mb-md">Стоимость аренды</h4>
           <p class="price__item">{{ price[0] }}</p>
           <p class="price__item">{{ price[1] }}</p>
-          <q-btn class="form__button q-mt-md" color="primary" @click="openRentDialog"
-            >Оставить заявку</q-btn
-          >
         </div>
       </q-card-section>
     </q-card>

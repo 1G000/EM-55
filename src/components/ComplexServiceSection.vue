@@ -166,17 +166,6 @@ const complex = {
       </div>
       <p class="complex__text-long">{{ complex.sectionTextSecond }}</p>
     </div>
-    <div class="complex__button-wrapper">
-      <q-btn
-        unelevated
-        style="width: 350px"
-        class="complex__button"
-        color="primary"
-        :to="{ path: '/', hash: '#form' }"
-      >
-        Заказать оборудование
-      </q-btn>
-    </div>
   </UiSection>
 </template>
 

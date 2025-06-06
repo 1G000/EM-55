@@ -103,19 +103,20 @@ const questions = [
     :padding="$q.screen.width > 768 ? '64px 40px 0 40px' : '32px 20px 0 20px'"
   >
     <p class="question__text">
-      Если у Вас остались вопросы, напишите нам, заполнив форму. Мы с
-      удовольствием предоставим ответ на интересующий Вас вопрос.
+      Если у Вас остались вопросы, напишите нам. Мы с удовольствием предоставим
+      ответ на интересующий Вас вопрос.
     </p>
     <div class="question__button-wrapper">
-      <q-btn
-        unelevated
-        style="width: 350px"
-        class="question__button"
-        color="primary"
-        :to="{ path: '/', hash: '#form' }"
-      >
-        Задать вопрос
-      </q-btn>
+      <a href="mailto:referent@em-55.ru" target="_blank">
+        <q-btn
+          unelevated
+          style="width: 350px"
+          class="question__button"
+          color="primary"
+        >
+          Задать вопрос
+        </q-btn>
+      </a>
     </div>
   </UiSection>
 </template>

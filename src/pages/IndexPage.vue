@@ -23,7 +23,6 @@ defineOptions({
     <ProductCards />
     <ComplexServiceSection />
     <ServicesSection />
-    <FormSection />
     <PartnersSection />
     <ContactsSection padding="0 20px" />
   </div>
